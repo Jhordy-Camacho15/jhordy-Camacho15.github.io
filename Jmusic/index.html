@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J's Music</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css'>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+
+
+  <main>
+    <nav class="main-menu">
+      <div class="artists">
+        <h1>Tus Artistas Favoritos</h1>
+        <div class="artist-container container-artists">
+          <div class="artist">
+            <img src="img/artista/artista_1.png" alt="" />
+            <p>Flawed Mangoes</p>
+          </div>
+
+          <div class="artist">
+            <img src="img/artista/artista_2.png" alt="" />
+            <p>Strawberry Guy</p>
+          </div>
+
+          <div class="artist">
+            <img src="img/artista/artista_3.png" alt="" />
+            <p>Clairo</p>
+          </div>
+
+          <div class="artist">
+            <img src="img/artista/artista_4.png" alt="" />
+            <p>Enjambre</p>
+          </div>
+
+          <div class="artist">
+            <img src="img/artista/artista_5.png" alt="" />
+            <p>Mac DeMarco</p>
+          </div>
+
+          <div class="artist">
+            <img src="img/artista/artista_6.png" alt="" />
+            <p>Lana del Rey</p>
+          </div>
+
+          <div class="artist">
+            <img src="img/artista/artista_7.png" alt="" />
+            <p>Darviin</p>
+          </div>
+
+          <div class="artist">
+            <img src="img/artista/artista_8.png" alt="" />
+            <p>Los Retros</p>
+          </div>
+
+          <div class="artist">
+            <img src="img/artista/artista_9.png" alt="" />
+            <p>Michael Jackson</p>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!--
+      <div>
+       
+
+      
+          <ul>
+            <li class="nav-item active">
+              <a href="#">
+                <i class="fa fa-map nav-icon"></i>
+                <span class="nav-text">Discover</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#">
+                <i class="fa fa-arrow-trend-up nav-icon"></i>
+                <span class="nav-text">Trending</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#">
+                <i class="fa fa-compact-disc nav-icon"></i>
+                <span class="nav-text">Album</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#">
+                <i class="fa fa-circle-play nav-icon"></i>
+                <span class="nav-text">Playlist</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#">
+                <i class="fa fa-heart nav-icon"></i>
+                <span class="nav-text">Favorites</span>
+              </a>
+            </li>
+          </ul>
+           
+      </div>
+
+      <ul>
+        <li class="nav-item">
+          <a href="#">
+            <i class="fa fa-user nav-icon"></i>
+            <span class="nav-text">Profile</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#">
+            <i class="fa fa-gear nav-icon"></i>
+            <span class="nav-text">Settings</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#">
+            <i class="fa fa-right-from-bracket nav-icon"></i>
+            <span class="nav-text">Logout</span>
+          </a>
+        </li>
+      </ul>
+      -->
+    </nav>
+
+    <section class="content">
+
+
+
+
+
+      <div class="left-content">
+
+
+        <div class="user-info">
+          <img src="img/user.jpeg" alt="user" />
+
+          <p>J's Music ♥</p>
+        </div>
+
+
+
+        <div class="music-player">
+          <div class="album-cover">
+            <img src="images/album-cover.png" id="rotatingImage" alt="" />
+            <span class="point"></span>
+          </div>
+
+          <h2>Canción</h2>
+          <p>Artista</p>
+
+          <audio id="song">
+            <source src="Besomorph-Coopex-Redemption.mp3" type="audio/mpeg" />
+          </audio>
+
+          <input type="range" value="0" id="progress" />
+
+          <div class="controls">
+            <button class="backward">
+              <i class="fa-solid fa-backward"></i>
+            </button>
+            <button class="play-pause-btn">
+              <i class="fa-solid fa-play" id="controlIcon"></i>
+            </button>
+            <button class="forward">
+              <i class="fa-solid fa-forward"></i>
+            </button>
+          </div>
+        </div>
+
+
+
+        <div class="slider-container">
+          <h1>Fotitos</h1>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="img/galeria/gal_1.jpeg" />
+                <div class="slide-overlay">
+                  <h2>Estrellitas</h2>
+                  <button>
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="img/galeria/gal_2.jpeg" />
+                <div class="slide-overlay">
+                  <h2>La luna</h2>
+                  <button>
+                   <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="img/galeria/gal_3.jpeg" />
+                <div class="slide-overlay">
+                  <h2>Metas</h2>
+                  <button>
+                   <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="img/galeria/gal_4.jpeg" />
+                <div class="slide-overlay">
+                  <h2>Pump it up</h2>
+                  <button>
+                   <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                </div>
+              </div>
+
+
+              <div class="swiper-slide">
+                <img
+                  src="img/galeria/gal_5.jpeg" />
+                <div class="slide-overlay">
+                  <h2>Melody</h2>
+                  <button>
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <img
+                  src="img/galeria/gal_6.jpeg" />
+                <div class="slide-overlay">
+                  <h2>Cena</h2>
+                  <button>
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <img
+                  src="img/galeria/gal_7.jpeg" />
+                <div class="slide-overlay">
+                  <h2>Anillo</h2>
+                  <button>
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+
+
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+
+
+
+        <!--
+       
+        
+
+        <div class="albums">
+          <h1>Albums que recomiendo</h1>
+          <div class="album-container containers">
+            <div class="album">
+              <div class="album-frame">
+                <img
+                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/74c4f0f9-d73e-4737-83fa-ea4afe392229"
+                  alt="" />
+              </div>
+              <div>
+                <h2>Views</h2>
+                <p>Drake</p>
+              </div>
+            </div>
+
+            <div class="album">
+              <div class="album-frame">
+                <img
+                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/d3a0bac0-fdb4-467e-bdf5-f3f415928f24"
+                  alt="" />
+              </div>
+              <div>
+                <h2>Speak Now</h2>
+                <p>Taylor Swift</p>
+              </div>
+            </div>
+
+            <div class="album">
+              <div class="album-frame">
+                <img
+                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/85521a12-cc46-4b9f-a742-21ba407ebd5e"
+                  alt="" />
+              </div>
+              <div>
+                <h2>Born to Die</h2>
+                <p>Lana Del Rey</p>
+              </div>
+            </div>
+
+            <div class="album">
+              <div class="album-frame">
+                <img
+                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4e7bf466-7fa5-4dad-b628-5bca12833b64"
+                  alt="" />
+              </div>
+              <div>
+                <h2>Endless Summer Vacation</h2>
+                <p>Miley Cyrus</p>
+              </div>
+            </div>
+
+            <div class="album">
+              <div class="album-frame">
+                <img
+                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/f01f546a-7ab7-4e90-acb9-1c1e817b676d"
+                  alt="" />
+              </div>
+              <div>
+                <h2>The Dark Side of The Moon</h2>
+                <p>Pink Floyd</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
+
+
+
+      </div>
+
+      <div class="right-content">
+        <div class="recommended-songs">
+          <h1>Canciones que te dedico que están en el reproductor</h1>
+          <div class="song-container">
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_7.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Arrancacorazones</h2>
+                <p>Attaque 77</p>
+              </div>
+              <span>T</span>
+            </div>
+
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_8.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Me gusta</h2>
+                <p>Ciro y los persas</p>
+              </div>
+              <span>E</span>
+            </div>
+
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_9.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Rompecabezas de amor</h2>
+                <p>Las pastillas del abuelo</p>
+              </div>
+              <span>♥</span>
+            </div>
+
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_10.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Vicio</h2>
+                <p>Camilo Séptimo</p>
+              </div>
+              <span>Q</span>
+            </div>
+
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_11.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Siempre te busqué</h2>
+                <p>Monocordio</p>
+              </div>
+              <span>U</span>
+            </div>
+
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_12.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Es por ti</h2>
+                <p>Inspector</p>
+              </div>
+              <span>I</span>
+            </div>
+
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_13.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Creo que me enamoré</h2>
+                <p>Vicentico</p>
+              </div>
+              <span>E</span>
+            </div>
+
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_14.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Night Moves</h2>
+                <p>Bob Seger</p>
+              </div>
+              <span>R</span>
+            </div>
+
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_15.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Haz de Luz</h2>
+                <p>Rayden</p>
+              </div>
+              <span>O</span>
+            </div>
+
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_16.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Me estoy enamorando</h2>
+                <p>Inspector</p>
+              </div>
+              <span>♥</span>
+            </div>
+
+            <div class="song">
+              <div class="song-img">
+                <img src="img/portada/portada_17.png" alt="" />
+                <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              </div>
+              <div class="song-title">
+                <h2>Eliza Mi Hortaliza</h2>
+                <p>Enjambre</p>
+              </div>
+              <span>♥</span>
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+  </main>
+
+
+  <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
