@@ -56,6 +56,22 @@ let rotationInterval;
 
 const songs = [
   {
+    title: "Milnochez",
+    name: "songs of the night - extended",
+    source:
+      "canciones/cancion_j_completo.mp3",
+    cover:
+      "img/portada/portada_j.jpg",
+  },
+  {
+    title: "Milnochez",
+    name: "songs of the night",
+    source:
+      "canciones/cancion_j_soloVoz.mp3",
+    cover:
+      "img/portada/portada_j.jpg",
+  },
+  {
     title: "The Edge of Memory",
     name: "Flawed Mangoes",
     source:
