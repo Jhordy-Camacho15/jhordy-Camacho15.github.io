@@ -61,7 +61,7 @@ const songs = [
     source:
       "canciones/cancion_j_completo.mp3",
     cover:
-      "img/portada/portada_j.jpg",
+      "img/portada/portada_J.jpg",
   },
   {
     title: "Milnochez",
@@ -69,7 +69,7 @@ const songs = [
     source:
       "canciones/cancion_j_soloVoz.mp3",
     cover:
-      "img/portada/portada_j.jpg",
+      "img/portada/portada_J.jpg",
   },
   {
     title: "The Edge of Memory",
