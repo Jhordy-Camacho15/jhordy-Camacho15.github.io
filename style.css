@@ -1,0 +1,500 @@
+
+/* Estilos base (para pantallas grandes) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #414141;
+    overflow-x: hidden;
+
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    background-color: #e2e2e2;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    height: 90vh;
+    overflow: hidden;
+    border-radius: 10px;
+    overflow-x: hidden;
+
+}
+
+.content-container {
+    width: 75%;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.tabs {
+    display: flex;
+    align-items: end;
+    border-bottom: 2px solid #E23C1B;
+    padding: 10px 10px 0px 10px;
+    background-color: #000000;
+    border-radius: 8px 8px 0 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+/* Logo Responsive */
+.tabs img.logo-completo {
+    display: block;
+}
+
+.tabs img.logo-simbolo {
+    display: none;
+}
+
+
+.tabs img {
+    width: 100px;
+    margin-right: 0;
+}
+
+.tablink {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #E23C1B;
+}
+
+.tablink:hover {
+    background-color: #ddd;
+    color: #E23C1B;
+}
+
+.tablink.active {
+    background-color: #E23C1B;
+    color: white;
+    font-weight: bold;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+/* Sección de Introducción (50/50) */
+.introduccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    margin-bottom: 10px;
+    background-color: #c0c0c0 !important;
+    flex-wrap: wrap;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.introduccion:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.contenedor-texto {
+    width: 45%;
+    justify-content: center;
+}
+
+.contenedor-texto .fila {
+    margin-bottom: 0px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+.contenedor-texto h2 {
+    font-size: 2rem;
+    color: #234F9E;
+    margin-bottom: 0px;
+}
+
+.contenedor-texto p {
+    font-size: 1.5rem;
+    color: #252525;
+    line-height: 1;
+    text-align:center;
+}
+
+.contenedor-texto .boton {
+    display: inline-block;
+    width: 75%;
+    padding: 10px 20px;
+    background-color: #E23C1B;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.contenedor-texto .boton:hover {
+    background-color: #c53316;
+}
+
+.contenedor-imagen {
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Slider */
+.slider-frame {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-frame ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 300%;
+    animation: slide 20s infinite alternate ease-in-out;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+}
+
+.slider-frame li {
+    list-style: none;
+    width: 100%;
+}
+
+.slider-frame img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    75% {
+        margin-left: -200%;
+    }
+    95% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+/* Media Queries para las 6 resoluciones */
+
+/* 1440px */
+@media (max-width: 1440px) {
+    .container {
+        width: 95%;
+        max-width: 95%;
+        height: 95vh;
+    }
+
+    .profile-pic {
+        height: 25%;
+    }
+
+    .secciones {
+        height: 75%;
+    }
+
+    .cursos-list {
+        gap: 8px;
+    }
+
+    .cursos-list .logo-container {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* 1280px */
+@media (max-width: 1280px) {
+    .cursos-list .logo-container {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* 1024px - Cambio a diseño móvil */
+@media (max-width: 1024px) {
+    .tabs img.logo-completo {
+        display: none;
+    }
+
+    .tabs img.logo-simbolo {
+        display: flex;
+        width: 50px;
+    }
+
+    .info-container {
+        width: 40%;
+        height: auto;
+        position: relative;
+        padding-top: 20px;
+    }
+
+    .profile-pic {
+        position: relative;
+        top: auto;
+        height: auto;
+        padding: 15px 0;
+        margin-bottom: 20px;
+        box-shadow: none;
+    }
+
+    .secciones {
+        height: auto;
+        overflow: visible;
+        padding: 0 15px 20px;
+    }
+
+    .cursos-list {
+        gap: 6px;
+    }
+
+    .cursos-list .logo-container {
+        width: 35px;
+        height: 35px;
+    }
+
+    .introduccion {
+        flex-direction: column;
+    }
+
+    .introduccion:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .contenedor-texto, .contenedor-imagen {
+        width: 100%;
+    }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    html {
+        overflow-x: hidden;
+    }
+    
+    body {
+        position: relative;
+        overflow-x: hidden;
+    }
+    .container {
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        overflow-y: auto;
+    }
+
+    .info-container {
+        width: 100%;
+        position: relative;
+        padding-top: 20px;
+        height: 50%;
+    }
+
+    .content-container {
+        width: 95%;
+    }
+
+    .profile-pic img {
+        max-width: 120px;
+    }
+
+    .logo-container {
+        width: 35px;
+        height: 35px;
+    }
+
+    .institu, .habili {
+        width: 80%;
+    }
+
+    .cursos-list .logo-container {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tablink {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
+/* 425px - Mobile L */
+@media (max-width: 425px) {
+    .profile-pic img {
+        max-width: 100px;
+    }
+
+    .logo-container {
+        width: 30px;
+        height: 30px;
+    }
+
+    .institu, .habili {
+        width: 75%;
+    }
+
+    .section h4 {
+        font-size: 16px;
+    }
+
+    .cursos-list .logo-container {
+        width: 25px;
+        height: 25px;
+    }
+
+    .tablink {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    .contenedor-texto p{
+        font-size: 18px;
+    }
+    .contenedor-texto h2{
+        font-size: 22px;
+    }
+}
+
+/* 375px - Mobile M */
+@media (max-width: 375px) {
+    .profile-pic img {
+        max-width: 90px;
+    }
+
+    .logo-container {
+        width: 25px;
+        height: 25px;
+    }
+
+    .institu p {
+        font-size: 14px;
+    }
+
+    .habili strong {
+        font-size: 14px;
+    }
+
+    .cursos-list .logo-container {
+        width: 20px;
+        height: 20px;
+    }
+
+    .tablink {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+
+/* 320px - Mobile S */
+@media (max-width: 320px) {
+    .profile-pic img {
+        max-width: 80px;
+    }
+
+    .logo-container {
+        width: 20px;
+        height: 20px;
+    }
+
+    .institu p {
+        font-size: 13px;
+    }
+
+    .habili strong {
+        font-size: 13px;
+    }
+
+    .section h4 {
+        font-size: 15px;
+    }
+
+    .cursos-list .logo-container {
+        width: 15px;
+        height: 15px;
+    }
+
+    .tablink {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
