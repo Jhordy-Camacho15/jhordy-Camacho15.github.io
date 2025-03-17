@@ -1,0 +1,70 @@
+.certificados-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.certificado-item {
+    border: 1px solid #E23C1B;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.certificado-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #e2e2e2;
+    transition: background-color 0.3s;
+}
+
+.certificado-header:hover {
+    background-color: #d0d0d0;
+}
+
+.certificado-header .icon {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    transition: transform 0.3s;
+    background-color: #234e9e80;
+    border-radius: 50%;
+    color: white;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.certificado-header:hover .icon{
+    background-color: #234e9e;
+
+}
+
+.certificado-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    justify-content: center;
+    display: flex;
+    align-items: center
+}
+
+.certificado-content img {
+    width: ;
+    height: 400px;
+    display: inline-block;
+    padding: 10px;
+}
+
+/* Estilo cuando el acordeón está abierto */
+.certificado-item.active .certificado-content {
+    max-height: 500px; /* Ajusta según el tamaño de la imagen */
+}
+
+.certificado-item.active .certificado-header .icon {
+    transform: rotate(45deg); /* Cambia el símbolo a una "x" */
+}

@@ -1,0 +1,463 @@
+
+
+.info-container {
+    width: 30%;
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.profile-pic {
+    background-color: black;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.profile-pic img {
+    width: 80%;
+    max-width: 150px;
+    border-radius: 50%;
+    margin: 0;
+    padding: 10px;
+}
+
+h3 {
+    text-align: center;
+    margin: 0;
+    color: #234e9e;
+}
+
+.secciones {
+    overflow-y: auto;
+    height: 70%;
+    padding: 0 20px; /* Añadido para dar espacio interno */
+}
+
+.section {
+    margin: 0;
+    padding: 0;
+}
+
+.section h4 {
+    padding: 0;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #E23C1B;
+    display: flex;
+    align-items: center;
+}
+
+.estudios-list,
+.habilidades-list,
+.cursos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.estudios-list li,
+.habilidades-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+/* Ajustes para la lista de cursos */
+.cursos-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los logos se envuelvan a la siguiente línea */
+    justify-content: center; /* Centra los logos horizontalmente */
+    align-items: center;
+    gap: 10px; /* Espacio entre los logos */
+    max-width: 100%; /* Limita el ancho al contenedor padre */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 10px 0; /* Espaciado interno */
+    overflow: hidden; /* Oculta la barra de desplazamiento */
+}
+
+.cursos-list li {
+    flex: 0 0 auto; /* Evita que los elementos se estiren o encogan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Elimina el margen inferior */
+}
+.cursos-list .logo-container {
+    width: 50px; /* Tamaño base para los logos */
+    height: 50px; /* Tamaño base para los logos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0;
+}
+.cursos-list .logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+}
+.logo-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+}
+
+.institu {
+    width: 85%;
+}
+
+.institu p {
+    margin: 3px 0;
+}
+
+.habili {
+    width: 85%;
+}
+
+.habilidades-list .progress-bar {
+    width: 100%;
+    background-color: #234e9e86;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.habilidades-list .progress {
+    height: 10px;
+    background-color: #E23C1B;
+    border-radius: 5px;
+}
+
+.contacto-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.contacto-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    overflow: hidden;
+    border-radius: 0;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.contacto-icons img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+}
+
+.contacto-icons a:hover {
+    transform: scale(1.1);
+}
+
+.contacto-icons a:hover img {
+    transform: scale(1.1);
+}
+
+
+
+.secciones::-webkit-scrollbar {
+    width: 5px;
+}
+
+.secciones::-webkit-scrollbar-track {
+    background: #234e9e7f;
+    border-radius: 4px;
+}
+
+.secciones::-webkit-scrollbar-thumb {
+    background: #E23C1B;
+    border-radius: 4px;
+}
+
+.secciones::-webkit-scrollbar-thumb:hover {
+    background: #ff5c3a;
+}
+/*
+.secciones {
+    scrollbar-width: thin;
+    scrollbar-color: #E23C1B #234e9e82;
+}
+*/
+
+
+
+
+
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #234e9e7f;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E23C1B;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff5c3a;
+}
+/*
+.info-container {
+    scrollbar-width: thin;
+    scrollbar-color: #E23C1B #234e9e82;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries para las 6 resoluciones */
+
+/* 1440px */
+@media (max-width: 1440px) {
+    .container {
+        width: 95%;
+        max-width: 95%;
+        height: 95vh;
+    }
+
+    .profile-pic {
+        height: 25%;
+    }
+
+    .secciones {
+        height: 75%;
+    }
+
+    /* Ajuste para la lista de cursos */
+    .cursos-list {
+        gap: 8px; /* Reduce el espacio entre logos */
+    }
+
+    .cursos-list .logo-container {
+        width: 45px; /* Reduce el tamaño de los logos */
+        height: 45px;
+    }
+}
+
+
+/* 1280px */
+@media (max-width: 1280px) {
+    .cursos-list .logo-container {
+        width: 40px; /* Reduce el tamaño de los logos */
+        height: 40px;
+    }
+}
+
+/* 1024px - Cambio a diseño móvil */
+@media (max-width: 1024px) {
+
+
+    .info-container {
+        width: 40%;
+        height: auto;
+        position: relative;
+        padding-top: 20px;
+    }
+
+    .profile-pic {
+        position: relative;
+        top: auto;
+        height: auto;
+        padding: 15px 0;
+        margin-bottom: 20px;
+        box-shadow: none;
+    }
+
+    .secciones {
+        height: auto;
+        overflow: visible;
+        padding: 0 15px 20px;
+    }
+
+    /* Ajuste para la lista de cursos */
+    .cursos-list {
+        gap: 6px; /* Reduce el espacio entre logos */
+    }
+
+    .cursos-list .logo-container {
+        width: 35px; /* Reduce el tamaño de los logos */
+        height: 35px;
+    }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        overflow-y: auto;
+    }
+    .info-container {
+        width: 100%;
+        position: relative;
+        padding-top: 20px;
+        height: 50%;
+    }
+    .content-container{
+        width: 95%;
+    }
+    .profile-pic img {
+        max-width: 120px;
+    }
+
+    .logo-container {
+        width: 35px; /* Reduce el tamaño de los logos */
+        height: 35px;
+    }
+
+    .institu, .habili {
+        width: 80%;
+    }
+
+    /* Ajuste para la lista de cursos */
+    .cursos-list .logo-container {
+        width: 30px; /* Reduce el tamaño de los logos */
+        height: 30px;
+    }
+}
+
+/* 425px - Mobile L */
+@media (max-width: 425px) {
+    .profile-pic img {
+        max-width: 100px;
+    }
+
+    .logo-container {
+        width: 30px; /* Reduce el tamaño de los logos */
+        height: 30px;
+    }
+
+    .institu, .habili {
+        width: 75%;
+    }
+
+    .section h4 {
+        font-size: 16px;
+    }
+
+    /* Ajuste para la lista de cursos */
+    .cursos-list .logo-container {
+        width: 25px; /* Reduce el tamaño de los logos */
+        height: 25px;
+    }
+}
+
+/* 375px - Mobile M */
+@media (max-width: 375px) {
+    .profile-pic img {
+        max-width: 90px;
+    }
+
+    .logo-container {
+        width: 25px; /* Reduce el tamaño de los logos */
+        height: 25px;
+    }
+
+    .institu p {
+        font-size: 14px;
+    }
+
+    .habili strong {
+        font-size: 14px;
+    }
+
+    /* Ajuste para la lista de cursos */
+    .cursos-list .logo-container {
+        width: 20px; /* Reduce el tamaño de los logos */
+        height: 20px;
+    }
+}
+
+/* 320px - Mobile S */
+@media (max-width: 320px) {
+    .profile-pic img {
+        max-width: 80px;
+    }
+
+    .logo-container {
+        width: 20px; /* Reduce el tamaño de los logos */
+        height: 20px;
+    }
+
+    .institu p {
+        font-size: 13px;
+    }
+
+    .habili strong {
+        font-size: 13px;
+    }
+
+    .section h4 {
+        font-size: 15px;
+    }
+
+    /* Ajuste para la lista de cursos */
+    .cursos-list .logo-container {
+        width: 15px; /* Reduce el tamaño de los logos */
+        height: 15px;
+    }
+}

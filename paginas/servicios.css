@@ -1,0 +1,182 @@
+/* Sección de Introducción (50/50) */
+.introduccion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  margin-bottom: 10px;
+  background-color: #c0c0c0 !important;
+  flex-wrap: wrap;
+  /* Permite que los elementos se ajusten en pantallas pequeñas */
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+
+}
+
+
+
+
+.contenedor-texto {
+  width: 45%;
+  /* Ocupa el 45% del ancho en desktop */
+  justify-content: center;
+}
+
+.contenedor-texto .fila {
+  margin-bottom: 0px;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+.contenedor-texto h2 {
+  font-size: 2rem;
+  color: #234F9E;
+  margin-bottom: 0px;
+}
+
+.contenedor-texto p {
+  font-size: 1.5rem;
+  color: #252525;
+  line-height: 1;
+}
+
+
+.contenedor-texto .boton {
+  display: inline-block;
+  width: 75%;
+  padding: 10px 20px;
+  background-color: #E23C1B;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.contenedor-texto .boton:hover {
+  background-color: #c53316;
+}
+
+.contenedor-imagen {
+  width: 50%;
+  /* Ocupa el 50% del ancho en desktop */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.contenedor-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Slider */
+.slider-frame {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-frame ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 300%;
+  animation: slide 20s infinite alternate ease-in-out;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.slider-frame li {
+  list-style: none;
+  width: 100%;
+}
+
+.slider-frame img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes slide {
+  0% {
+    margin-left: 0;
+  }
+
+  20% {
+    margin-left: 0;
+  }
+
+  25% {
+    margin-left: -100%;
+  }
+
+  45% {
+    margin-left: -100%;
+  }
+
+  50% {
+    margin-left: -200%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+
+  75% {
+    margin-left: -200%;
+  }
+
+  95% {
+    margin-left: -200%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tabcontent::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tabcontent::-webkit-scrollbar-track {
+  background: #234e9e7f;
+  border-radius: 4px;
+}
+
+.tabcontent::-webkit-scrollbar-thumb {
+  background: #E23C1B;
+  border-radius: 4px;
+}
+
+.tabcontent::-webkit-scrollbar-thumb:hover {
+  background: #ff5c3a;
+}
+
+/*
+.info-container {
+  scrollbar-width: thin;
+  scrollbar-color: #E23C1B #234e9e82;
+}
+*/

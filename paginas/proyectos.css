@@ -1,0 +1,174 @@
+
+.proyectos {
+    padding: 30px 10px;
+    background-color: #c0c0c0;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 3rem;
+    color: #234F9E;
+    margin: 10px;
+}
+
+/* Estilos base para las cartas */
+.cartas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.carta {
+    width: 30%;
+    /* 3 cartas por fila en pantallas grandes */
+    height: 260px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+    text-decoration: none;
+    display: block;
+}
+
+.carta .contenedor-imagen {
+    width: 100%;
+    height: 100%;
+    /* Ajusta la altura del contenedor de la imagen */
+    overflow: hidden;
+}
+
+.carta .contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajusta la imagen al contenedor */
+}
+
+.carta .contenido {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.carta:hover .contenido {
+    transform: translateY(0);
+}
+
+.carta .contenido h2 {
+    font-size: 1.1rem;
+    color: #234F9E;
+    margin: 5px;
+}
+
+.carta .contenido p {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0;
+}
+
+.c-boton {
+    justify-content: center;
+    display: flex;
+}
+
+.c-boton a.boton {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    background-color: #E23C1B;
+    width: 20%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.c-boton a.boton:hover {
+    background-color: #e23c1bdb;
+}
+
+.filtros {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.boton-filtro {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.boton-filtro:hover {
+    background-color: #0056b3;
+}
+
+/* Media query para pantallas de 1024px o menos (2 cartas por fila) */
+@media (max-width: 1024px) {
+    .carta {
+        width: 45%;
+        height: 250px;
+
+        /* 2 cartas por fila */
+    }
+}
+
+@media (max-width: 768px) {
+    .carta {
+        width: 80%;
+        height: 250px;
+
+        /* 1 carta por fila */
+    }
+
+
+}
+
+/* Media query para pantallas de 767px o menos (1 carta por fila) */
+@media (max-width: 500px) {
+    .carta {
+        width: 90%;
+        height: 200px;
+
+        /* 1 carta por fila */
+    }
+
+
+}
+
+@media (max-width: 450px) {
+    .carta {
+        width: 90%;
+        height: 180px;
+
+        /* 1 carta por fila */
+    }
+
+
+}
+
+@media (max-width: 350px) {
+    .carta {
+        width: 90%;
+        height: 150px;
+
+        /* 1 carta por fila */
+    }
+
+
+}
