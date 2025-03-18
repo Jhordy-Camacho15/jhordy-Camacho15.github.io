@@ -278,11 +278,10 @@ h3 {
     }
 
     .profile-pic {
-        height: 25%;
     }
 
     .secciones {
-        height: 75%;
+        height: 90%;
     }
 
     /* Ajuste para la lista de cursos */
@@ -312,12 +311,11 @@ h3 {
     .info-container {
         width: 40%;
         height: auto;
-        position: relative;
         padding-top: 20px;
     }
 
     .profile-pic {
-        position: relative;
+        position: sticky;
         top: auto;
         height: auto;
         padding: 15px 0;
@@ -354,11 +352,10 @@ h3 {
     .info-container {
         width: 100%;
         position: relative;
-        padding-top: 20px;
-        height: 50%;
+        padding-top: 0px;
+        height: 30%;
     }
     .content-container{
-        width: 95%;
     }
     .profile-pic img {
         max-width: 120px;
@@ -382,6 +379,9 @@ h3 {
 
 /* 425px - Mobile L */
 @media (max-width: 425px) {
+    .profile-pic{
+        
+    }
     .profile-pic img {
         max-width: 100px;
     }
@@ -404,6 +404,7 @@ h3 {
         width: 25px; /* Reduce el tamaño de los logos */
         height: 25px;
     }
+    
 }
 
 /* 375px - Mobile M */
@@ -411,6 +412,7 @@ h3 {
     .profile-pic img {
         max-width: 90px;
     }
+    
 
     .logo-container {
         width: 25px; /* Reduce el tamaño de los logos */
