@@ -1,4 +1,3 @@
-
 /* Estilos base (para pantallas grandes) */
 body {
     font-family: Arial, sans-serif;
@@ -23,6 +22,8 @@ body {
     border-radius: 10px;
     overflow-x: hidden;
 
+
+
 }
 
 .content-container {
@@ -44,6 +45,7 @@ body {
     overflow-x: hidden;
 
 }
+
 /* Logo Responsive */
 .tabs img.logo-completo {
     display: block;
@@ -138,7 +140,7 @@ body {
     font-size: 1.5rem;
     color: #252525;
     line-height: 1;
-    text-align:center;
+    text-align: center;
 }
 
 .contenedor-texto .boton {
@@ -204,27 +206,35 @@ body {
     0% {
         margin-left: 0;
     }
+
     20% {
         margin-left: 0;
     }
+
     25% {
         margin-left: -100%;
     }
+
     45% {
         margin-left: -100%;
     }
+
     50% {
         margin-left: -200%;
     }
+
     70% {
         margin-left: -200%;
     }
+
     75% {
         margin-left: -200%;
     }
+
     95% {
         margin-left: -200%;
     }
+
     100% {
         margin-left: 0;
     }
@@ -241,7 +251,7 @@ body {
     }
 
     .profile-pic {
-        height: 25%;
+        height: ;
     }
 
     .secciones {
@@ -316,7 +326,8 @@ body {
         flex-direction: column;
     }
 
-    .contenedor-texto, .contenedor-imagen {
+    .contenedor-texto,
+    .contenedor-imagen {
         width: 100%;
     }
 }
@@ -326,11 +337,12 @@ body {
     html {
         overflow-x: hidden;
     }
-    
+
     body {
         position: relative;
         overflow-x: hidden;
     }
+
     .container {
         flex-direction: column;
         height: 100vh;
@@ -348,6 +360,8 @@ body {
 
     .content-container {
         width: 95%;
+        height: 70%;
+
     }
 
     .profile-pic img {
@@ -359,7 +373,8 @@ body {
         height: 35px;
     }
 
-    .institu, .habili {
+    .institu,
+    .habili {
         width: 80%;
     }
 
@@ -385,7 +400,8 @@ body {
         height: 30px;
     }
 
-    .institu, .habili {
+    .institu,
+    .habili {
         width: 75%;
     }
 
@@ -398,14 +414,26 @@ body {
         height: 25px;
     }
 
+    .tabs {
+        margin: 0;
+        padding: 0;
+    }
+
     .tablink {
         font-size: 14px;
         padding: 6px 12px;
     }
-    .contenedor-texto p{
+
+    .content-container {
+        height: 90%;
+        width: 90.5%;
+    }
+
+    .contenedor-texto p {
         font-size: 18px;
     }
-    .contenedor-texto h2{
+
+    .contenedor-texto h2 {
         font-size: 22px;
     }
 }
@@ -420,6 +448,10 @@ body {
         width: 25px;
         height: 25px;
     }
+    .content-container{
+        height: 95%;
+        width: 89.5%;
+    }
 
     .institu p {
         font-size: 14px;
@@ -432,6 +464,11 @@ body {
     .cursos-list .logo-container {
         width: 20px;
         height: 20px;
+    }
+
+    .tabs {
+        margin: 0;
+        padding: 0;
     }
 
     .tablink {
@@ -449,6 +486,10 @@ body {
     .logo-container {
         width: 20px;
         height: 20px;
+    }
+    .content-container{
+        height: 95%;
+        width: 88%;
     }
 
     .institu p {
@@ -468,33 +509,17 @@ body {
         height: 15px;
     }
 
+    .tabs {
+        margin: 0;
+        padding: 0;
+    }
+    .tabs img.logo-simbolo {
+        width: 40px;
+    }
+
     .tablink {
         font-size: 10px;
         padding: 4px 8px;
     }
 }
-
-
-
-@media (max-width: 768px) {
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
