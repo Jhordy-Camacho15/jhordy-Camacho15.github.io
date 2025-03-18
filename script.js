@@ -187,7 +187,7 @@ const cartas = [
     {
         titulo: "Restaurante",
         descripcion: "",
-        imagen: "/paginas/proyectos/cakeworld.png",
+        imagen: "/paginas/proyectos/cakeWorld.png",
         tag: "paginasWeb", // Etiqueta para filtrar
         enlace: "https://clubdisenodesarrollo.github.io/Proyectos/CakeWorld/index.html", // Enlace a la página del proyecto
     },
