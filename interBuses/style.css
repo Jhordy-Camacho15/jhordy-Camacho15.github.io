@@ -682,3 +682,29 @@
       font-size: 1rem;
     }
   }
+
+        @media (max-width: 320px) {
+    .card-grid, #terminal-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    
+    .path-btn span {
+      display: none;
+    }
+  
+    .path-btn {
+      padding: 0.5rem;
+    }
+    
+    .featured-description p {
+      text-align: center;
+    }
+    
+    .logo {
+      font-size: 1.2rem;
+    }
+    .section h2 {
+      font-size: 0.75rem;
+    }
+  }
