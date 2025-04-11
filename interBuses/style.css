@@ -74,7 +74,7 @@
   }
   
   .main-content {
-    padding: 1.5rem;
+    padding: 0.75rem;
     max-width: 1400px;
     margin: 0 auto;
   }
@@ -128,7 +128,7 @@
   .section {
     display: none;
     animation: fadeIn 0.5s ease;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
   }
   
   .section.active-section {
@@ -137,7 +137,7 @@
   
   .section h2 {
     color: var(--primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -381,7 +381,7 @@
   
   /* SECCIÓN DE COOPERATIVAS - GRID RESPONSIVO */
   #cooperative-container {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
@@ -647,11 +647,11 @@
     }
     
     .main-content {
-      padding: 1rem;
+      padding: 0.5rem;
     }
     
     .section h2 {
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
   }
   
@@ -675,5 +675,8 @@
     
     .logo {
       font-size: 1.2rem;
+    }
+    .section h2 {
+      font-size: 1rem;
     }
   }
