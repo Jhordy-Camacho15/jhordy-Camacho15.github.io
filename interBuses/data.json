@@ -233,8 +233,8 @@
             "nombre": "Bolivar",
             "terminales": [
                 {
-                    "id": "riobamba",
-                    "nombre": "Terminal de Riobamba",
+                    "id": "guaranda",
+                    "nombre": "Terminal Guaranda",
                     "cooperativas": [
                         {
                             "id": "coop7",
