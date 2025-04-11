@@ -653,6 +653,8 @@
     .section h2 {
       font-size: 1rem;
     }
+      .navbar{
+          padding: 0.5rem;
   }
   
   @media (max-width: 576px) {
