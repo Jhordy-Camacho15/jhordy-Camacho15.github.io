@@ -1,0 +1,227 @@
+{
+    "provincias": [
+        {
+            "id": 1,
+            "nombre": "Pichincha",
+            "cooperativas": [
+                {
+                    "id": 101,
+                    "nombre": "Transportes Pichincha",
+                    "logo": "assets/logos/pichincha.png",
+                    "rutas": [
+                        {
+                            "origen": "Quito",
+                            "destino": "Guayaquil",
+                            "horarios": ["06:00", "09:00", "12:00", "15:00", "18:00", "21:00"]
+                        },
+                        {
+                            "origen": "Quito",
+                            "destino": "Cuenca",
+                            "horarios": ["07:00", "13:00", "19:00"]
+                        },
+                        {
+                            "origen": "Quito",
+                            "destino": "Manta",
+                            "horarios": ["05:30", "08:30", "11:30", "14:30", "17:30"]
+                        }
+                    ]
+                },
+                {
+                    "id": 102,
+                    "nombre": "Express Ecuador",
+                    "logo": "assets/logos/express.png",
+                    "rutas": [
+                        {
+                            "origen": "Quito",
+                            "destino": "Ambato",
+                            "horarios": ["06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"]
+                        },
+                        {
+                            "origen": "Quito",
+                            "destino": "Latacunga",
+                            "horarios": ["05:00", "05:30", "06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "17:00", "18:00", "19:00"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Guayas",
+            "cooperativas": [
+                {
+                    "id": 201,
+                    "nombre": "Transportes Guayas",
+                    "logo": "assets/logos/guayas.png",
+                    "rutas": [
+                        {
+                            "origen": "Guayaquil",
+                            "destino": "Quito",
+                            "horarios": ["06:00", "09:00", "12:00", "15:00", "18:00", "21:00"]
+                        },
+                        {
+                            "origen": "Guayaquil",
+                            "destino": "Cuenca",
+                            "horarios": ["07:00", "10:00", "13:00", "16:00", "19:00"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Azuay",
+            "cooperativas": [
+                {
+                    "id": 301,
+                    "nombre": "Azuay Travel",
+                    "logo": "assets/logos/azuay.png",
+                    "rutas": [
+                        {
+                            "origen": "Cuenca",
+                            "destino": "Quito",
+                            "horarios": ["06:00", "12:00", "18:00"]
+                        },
+                        {
+                            "origen": "Cuenca",
+                            "destino": "Guayaquil",
+                            "horarios": ["07:00", "10:00", "13:00", "16:00", "19:00"]
+                        },
+                        {
+                            "origen": "Cuenca",
+                            "destino": "Loja",
+                            "horarios": ["08:00", "11:00", "14:00", "17:00"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "Manabí",
+            "cooperativas": [
+                {
+                    "id": 401,
+                    "nombre": "Manabí Tours",
+                    "logo": "assets/logos/manabi.png",
+                    "rutas": [
+                        {
+                            "origen": "Manta",
+                            "destino": "Guayaquil",
+                            "horarios": ["05:00", "08:00", "11:00", "14:00", "17:00"]
+                        },
+                        {
+                            "origen": "Portoviejo",
+                            "destino": "Quito",
+                            "horarios": ["06:00", "10:00", "14:00", "18:00"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "Tungurahua",
+            "cooperativas": [
+                {
+                    "id": 501,
+                    "nombre": "Tungurahua Express",
+                    "logo": "assets/logos/tungurahua.png",
+                    "rutas": [
+                        {
+                            "origen": "Ambato",
+                            "destino": "Quito",
+                            "horarios": ["05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"]
+                        },
+                        {
+                            "origen": "Ambato",
+                            "destino": "Guayaquil",
+                            "horarios": ["06:00", "10:00", "14:00", "18:00"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "chimborazo",
+            "cooperativas": [
+                {
+                    "id": 501,
+                    "nombre": "Riobamba",
+                    "logo": "assets/logos/tungurahua.png",
+                    "rutas": [
+                        {
+                            "origen": "Riobamba",
+                            "destino": "Santo Domingo",
+                            "horarios": ["03:20", "04:40", "05:50", "06:50", "08:45", "10:50", "12:20", "14:20", "15:50", "17:50"],
+                            "costo": "15.00"
+
+                        },
+                       
+                        {
+                            "origen": "Riobamba",
+                            "destino": "Quito",
+                            "horarios": ["03:45", "04:45", "06:15", "10:30", "11:15", "13:45", "16:00", "16:45","21:30"]
+                        },
+
+                        {
+                            "origen": "Riobamba",
+                            "destino": "Puyo",
+                            "horarios": ["09:00","14:30","18:00"]
+                        },
+                        {
+                            "origen": "Riobamba",
+                            "destino": "Puyo - Tena",
+                            "horarios": ["04:00","05:00","08:00","10:00","12:00","15:00"]
+                        },
+                        {
+                            "origen": "Riobamba",
+                            "destino": "Macas",
+                            "horarios": ["02:00","05:00","07:00","10:00","13:00","14:15","16:00","17:30","19:00"]
+                        },
+                        {
+                            "origen": "Riobamba",
+                            "destino": "Gualaquiza - Zamora",
+                            "horarios": ["19:00","20:45"]
+                        }
+                        ,
+                        {
+                            "origen": "Riobamba",
+                            "destino": "Guayaquil",
+                            "horarios": ["01:00","06:00","09:00","15:00"]
+                        }
+                        ,
+                        {
+                            "origen": "Riobamba",
+                            "destino": "Baños",
+                            "horarios": ["05:40","07:20","10:40","12:20","15:40","17:20","18:20"]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

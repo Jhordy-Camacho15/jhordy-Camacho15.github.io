@@ -1,0 +1,267 @@
+{
+    "provincias": [
+        {
+            "id": "chimborazo",
+            "nombre": "Chimborazo",
+            "terminales": [
+                {
+                    "id": "riobamba",
+                    "nombre": "Riobamba",
+                    "cooperativas": [
+                        {
+                            "id": "riobamba",
+                            "nombre": "Coop Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {
+                                "puntualidad": 4.5,
+                                "comodidad": 4.2,
+                                "cinturón de seguridad": 3,
+                                "horarios actualizados": 4
+                            },
+                            "telefono": "03 296 1583",
+                            "sitio_web": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA",
+                            "servicios": [
+                                "WiFi",
+                                "Aire acondicionado",
+                                "Enchufes"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Santo Domingo",
+                                    "horarios": [
+                                        "03:20",
+                                        "04:40",
+                                        "05:50",
+                                        "06:50",
+                                        "08:45",
+                                        "10:50",
+                                        "12:20",
+                                        "14:20",
+                                        "15:50",
+                                        "17:50"
+                                    ],
+                                    "costo": "08.00"
+                                },
+                                {
+                                    "destino": "Quito",
+                                    "horarios": [
+                                        "03:45",
+                                        "04:45",
+                                        "06:15",
+                                        "10:30",
+                                        "11:15",
+                                        "13:45",
+                                        "16:00",
+                                        "16:45",
+                                        "21:30"
+                                    ]
+                                },
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "01:00",
+                                        "06:00",
+                                        "09:00",
+                                        "15:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Puyo",
+                                    "horarios": [
+                                        "09:00",
+                                        "14:30",
+                                        "18:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Puyo - Tena",
+                                    "horarios": [
+                                        "04:00",
+                                        "05:00",
+                                        "08:00",
+                                        "10:00",
+                                        "12:00",
+                                        "15:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Macas",
+                                    "horarios": [
+                                        "02:00",
+                                        "05:00",
+                                        "07:00",
+                                        "10:00",
+                                        "13:00",
+                                        "14:15",
+                                        "16:00",
+                                        "17:30",
+                                        "19:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Gualaquiza - Zamora",
+                                    "horarios": [
+                                        "19:00",
+                                        "20:45"
+                                    ]
+                                },
+                               
+                                {
+                                    "destino": "Baños",
+                                    "horarios": [
+                                        "05:40",
+                                        "07:20",
+                                        "10:40",
+                                        "12:20",
+                                        "15:40",
+                                        "17:20",
+                                        "18:20"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "coop2",
+                            "nombre": "Panamericana",
+                            "logo": "panamericana.png",
+                            "rating_global": {
+                                "puntualidad": 4.8,
+                                "comodidad": 4.5,
+                                "servicio": 4.3,
+                                "precio": 4.0
+                            },
+                            "telefono": "02-7654321",
+                            "sitio_web": "https://www.panamericana.com.ec",
+                            "servicios": [
+                                "WiFi",
+                                "Aire acondicionado",
+                                "Baño",
+                                "TV"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Santo Domingo",
+                                    "horarios": [
+                                        "07:30",
+                                        "10:30",
+                                        "14:30",
+                                        "18:30"
+                                    ],
+                                    "costo": "8.50"
+                                },
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "08:45",
+                                        "13:15",
+                                        "17:45"
+                                    ],
+                                    "costo": "10.00"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "santo-domingo",
+            "nombre": "Sto Dgo de los Tsáchilas",
+            "terminales": [
+                {
+                    "id": "santo-domingo",
+                    "nombre": "Santo Domingo",
+                    "cooperativas": [
+                        {
+                            "id": "riobamba",
+                            "nombre": "Coop Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {
+                                "puntualidad": 4.5,
+                                "comodidad": 4.2,
+                                "cinturón de seguridad": 2,
+                                "horarios actualizados": 2
+                            },
+                            "telefono": "02 3778 852",
+                            "sitio_web": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA",
+                            "servicios": [
+                                "Aire acondicionado cuando quieren, no actualizan los horarios"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "02:00",
+                                        "03:45",
+                                        "06:00",
+                                        "07:00",
+                                        "08:00",
+                                        "09:00",
+                                        "10:30",
+                                        "11:30",
+                                        "13:30",
+                                        "14:45",
+                                        "15:45",
+                                        "16:50",
+                                        "19:00"
+                                    ],
+                                    "costo": "08.00"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },    
+        {
+            "id": "bolivar",
+            "nombre": "Bolivar",
+            "terminales": [
+                {
+                    "id": "riobamba",
+                    "nombre": "Terminal de Riobamba",
+                    "cooperativas": [
+                        {
+                            "id": "coop7",
+                            "nombre": "Riobamba Tours",
+                            "logo": "riobamba-tours.png",
+                            "rating_global": {
+                                "puntualidad": 4.1,
+                                "comodidad": 3.9,
+                                "servicio": 4.0,
+                                "precio": 4.3
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Quito",
+                                    "horarios": [
+                                        "07:00",
+                                        "10:00",
+                                        "13:00",
+                                        "16:00"
+                                    ],
+                                    "costo": "10.00"
+                                },
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "08:00",
+                                        "14:00"
+                                    ],
+                                    "costo": "12.00"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "ciudades_principales": [
+        "Quito",
+        "Guayaquil",
+        "Cuenca",
+        "Santo Domingo",
+        "Riobamba"
+    ]
+}
