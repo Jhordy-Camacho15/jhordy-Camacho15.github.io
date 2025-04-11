@@ -125,17 +125,12 @@
                             "nombre": "Coop Chimborazo",
                             "logo": "chimborazo.png",
                             "rating_global": {
-                                "puntualidad": 4.8,
-                                "comodidad": 4.5,
-                                "servicio": 4.3,
-                                "precio": 4.0
                             },
-                            "telefono": "02-7654321",
-                            "sitio_web": "https://www.panamericana.com.ec",
+                            "telefono": "(03) 2962 012",
+                            "sitio_web": "https://cooperativachimborazo.com",
                             "servicios": [
                                 "WiFi",
                                 "Aire acondicionado",
-                                "Baño",
                                 "TV"
                             ],
                             "rutas": [
@@ -170,6 +165,78 @@
                                         "14:30",
                                         "17:30",
                                         "18:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "bolivar",
+                            "nombre": "Coop Bolivar",
+                            "logo": "bolivar.png",
+                            "rating_global": {
+                              
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Guaranda",
+                                    "horarios": [
+                                        "05:00",
+                                        "05:45",
+                                        "08:30",
+                                        "11:00",
+                                        "13:10",
+                                        "14:00",
+                                        "15:00",
+                                        "17:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "bolivar",
+                            "nombre": "Coop Bolivar",
+                            "logo": "bolivar.png",
+                            "rating_global": {
+                              
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Guaranda",
+                                    "horarios": [
+                                        "05:00",
+                                        "05:45",
+                                        "08:30",
+                                        "11:00",
+                                        "13:10",
+                                        "14:00",
+                                        "15:00",
+                                        "17:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "bolivar",
+                            "nombre": "Coop Bolivar",
+                            "logo": "bolivar.png",
+                            "rating_global": {
+                              
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Guaranda",
+                                    "horarios": [
+                                        "05:00",
+                                        "05:45",
+                                        "08:30",
+                                        "11:00",
+                                        "13:10",
+                                        "14:00",
+                                        "15:00",
+                                        "17:00"
                                     ],
                                     "costo": ""
                                 }
@@ -237,33 +304,26 @@
                     "nombre": "Guaranda",
                     "cooperativas": [
                         {
-                            "id": "coop7",
-                            "nombre": "Riobamba Tours",
-                            "logo": "riobamba-tours.png",
+                            "id": "bolivar",
+                            "nombre": "Coop Bolivar",
+                            "logo": "bolivar.png",
                             "rating_global": {
-                                "puntualidad": 4.1,
-                                "comodidad": 3.9,
-                                "servicio": 4.0,
-                                "precio": 4.3
+                              
                             },
                             "rutas": [
                                 {
-                                    "destino": "Quito",
+                                    "destino": "Riobamba",
                                     "horarios": [
-                                        "07:00",
-                                        "10:00",
-                                        "13:00",
-                                        "16:00"
-                                    ],
-                                    "costo": "10.00"
-                                },
-                                {
-                                    "destino": "Guayaquil",
-                                    "horarios": [
+                                        "06:00",
                                         "08:00",
-                                        "14:00"
+                                        "10:00",
+                                        "12:00",
+                                        "13:00",
+                                        "14:00",
+                                        "16:00",
+                                        "18:00"
                                     ],
-                                    "costo": "12.00"
+                                    "costo": ""
                                 }
                             ]
                         }
