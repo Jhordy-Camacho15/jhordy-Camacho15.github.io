@@ -234,7 +234,7 @@
             "terminales": [
                 {
                     "id": "guaranda",
-                    "nombre": "Terminal Guaranda",
+                    "nombre": "Guaranda",
                     "cooperativas": [
                         {
                             "id": "coop7",
