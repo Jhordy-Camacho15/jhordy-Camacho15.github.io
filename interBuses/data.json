@@ -11,7 +11,7 @@
                         {
                             "id": "riobamba",
                             "nombre": "Coop Riobamba",
-                            "logo": "Riobamba.png",
+                            "logo": "riobamba.png",
                             "rating_global": {
                                 "puntualidad": 4.5,
                                 "comodidad": 4.2,
@@ -121,9 +121,9 @@
                             ]
                         },
                         {
-                            "id": "coop2",
-                            "nombre": "Panamericana",
-                            "logo": "panamericana.png",
+                            "id": "chimborazo",
+                            "nombre": "Coop Chimborazo",
+                            "logo": "chimborazo.png",
                             "rating_global": {
                                 "puntualidad": 4.8,
                                 "comodidad": 4.5,
@@ -140,23 +140,38 @@
                             ],
                             "rutas": [
                                 {
-                                    "destino": "Santo Domingo",
+                                    "destino": "Quito",
                                     "horarios": [
-                                        "07:30",
-                                        "10:30",
-                                        "14:30",
-                                        "18:30"
+                                        "03:15",
+                                        "05:30",
+                                        "06:30",
+                                        "06:45",
+                                        "09:15",
+                                        "09:30",
+                                        "10:45",
+                                        "11:00",
+                                        "12:00",
+                                        "12:30",
+                                        "13:15",
+                                        "14:00",
+                                        "15:15",
+                                        "17:00",
+                                        "17:30",
+                                        "19:00"
                                     ],
-                                    "costo": "8.50"
+                                    "costo": ""
                                 },
                                 {
-                                    "destino": "Riobamba",
+                                    "destino": "Guayaquil",
                                     "horarios": [
-                                        "08:45",
-                                        "13:15",
-                                        "17:45"
+                                        "05:30",
+                                        "10:00",
+                                        "12:00",
+                                        "14:30",
+                                        "17:30",
+                                        "18:30"
                                     ],
-                                    "costo": "10.00"
+                                    "costo": ""
                                 }
                             ]
                         }
