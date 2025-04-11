@@ -657,7 +657,7 @@
           padding: 0.5rem;
   }
   
-  @media (max-width: 576px) {
+   @media (max-width: 576px) {
     .card-grid, #terminal-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
@@ -681,9 +681,25 @@
     .section h2 {
       font-size: 1rem;
     }
+    .coop-header {
+      padding: 0.4rem;
+      gap: 0.5rem;
+    }
+
+    .coop-rating {
+      padding: 0.2rem 0.5rem;
+      font-weight: 500;
+      gap: 0.2rem;
+      font-size: small;
+    }
+    
+    .info-icon {
+      font-size: 0.5rem;
+    }
   }
 
-        @media (max-width: 320px) {
+
+  @media (max-width: 320px) {
     .card-grid, #terminal-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
