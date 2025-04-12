@@ -379,122 +379,121 @@
     gap: 1.5rem;
   }
   
-  /* SECCIÓN DE COOPERATIVAS - GRID RESPONSIVO */
-  #cooperative-container {
-    margin-top: 0.5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
   
-  .cooperative-card {
-    background: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-  }
-  
-  .cooperative-card:hover {
-    box-shadow: var(--shadow-md);
-  }
-  
-  .coop-header {
-    background: var(--primary);
-    color: var(--white);
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
-  }
-  
-  .coop-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--white);
-  }
-  
-  .coop-info {
-    flex-grow: 1;
-  }
-  
-  .coop-info h3 {
-    margin-bottom: 0.3rem;
-    font-size: 1.1rem;
-  }
-  
-  .coop-rating {
-    background: rgba(255,255,255,0.2);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .info-icon {
-    margin-left: auto;
-    cursor: pointer;
-    font-size: 1.2rem;
-    opacity: 0.8;
-    transition: var(--transition);
-    position: relative;
-  }
-  
-  .info-icon:hover {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  
-  .coop-body {
-    padding: 1rem;
-  }
-  
-  .route {
-    margin-bottom: 0.25rem;
-    padding-bottom: 0.25rem;
-    border-bottom: 1px dashed var(--gray-light);
-  }
-  
-  .route:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-  }
-  
-  .route-title {
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .route-schedule {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0.8rem 0;
-  }
-  
-  .time {
-    background: var(--light);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-  }
-  
-  .route-price {
-    color: var(--accent);
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
+/* SECCIÓN DE COOPERATIVAS - GRID RESPONSIVO */
+#cooperative-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: dense;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.cooperative-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Asegura que el contenido no desborde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cooperative-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.coop-header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.coop-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.coop-info {
+  flex-grow: 1;
+}
+
+.coop-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.coop-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.coop-body {
+  max-height: 200px; /* Ajusta según el diseño */
+  overflow-y: auto; /* Habilita el desplazamiento vertical */
+  padding-right: 0.5rem; /* Espacio para evitar que el scroll tape el contenido */
+}
+
+.info-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.info-icon:hover {
+  opacity: 1;
+}
+
+.route {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.route:last-child {
+  border-bottom: none;
+}
+
+.route-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.route-schedule {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.time {
+  background: #f0f0f0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.route-price {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
   
   /* MODALES */
   .modal-overlay {
