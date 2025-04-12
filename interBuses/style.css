@@ -494,6 +494,41 @@
   color: var(--accent);
 }
 
+
+
+
+
+
+.scroll-indicator {
+    text-align: center;
+    margin-top: 1rem;
+    animation: bounce 1.5s infinite;
+    opacity: 0.8;
+}
+
+.scroll-indicator i {
+    font-size: 1.5rem;
+    color: var(--gray);
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover i {
+    opacity: 1;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+}
+
+
+
   
   /* MODALES */
   .modal-overlay {
