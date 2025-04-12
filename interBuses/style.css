@@ -501,13 +501,13 @@
 
 .scroll-indicator {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 0.25rem;
     animation: bounce 1.5s infinite;
     opacity: 0.8;
 }
 
 .scroll-indicator i {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--gray);
     transition: opacity 0.3s ease;
 }
