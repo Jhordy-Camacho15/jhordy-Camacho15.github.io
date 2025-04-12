@@ -154,44 +154,47 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 5. Renderizar cooperativas de un terminal
-    function renderCooperatives() {
-        DOM.cooperativeContainer.innerHTML = '';
-
-        appData.currentTerminal.cooperativas.forEach(coop => {
-            const card = document.createElement('div');
-            card.className = 'cooperative-card';
-
-            const rating = calculateAverageRating(coop.rating_global);
-
-            card.innerHTML = `
-                <div class="coop-header">
-                    <img src="img/terminales/${coop.logo || 'default.png'}" 
-                         alt="${coop.nombre}" class="coop-logo">
-                    <div class="coop-info">
-                        <h3>${coop.nombre}</h3>
-                        <div class="coop-rating" data-rating='${JSON.stringify(coop.rating_global)}'>
-                            ${generateStarRating(rating)}
-                            <span>${rating.toFixed(1)}</span>
-                        </div>
+   function renderCooperatives() {
+    DOM.cooperativeContainer.innerHTML = '';
+    
+    appData.currentTerminal.cooperativas.forEach(coop => {
+        const card = document.createElement('div');
+        card.className = 'cooperative-card';
+        
+        const rating = calculateAverageRating(coop.rating_global);
+        
+        card.innerHTML = `
+            <div class="coop-header">
+                <img src="img/terminales/${coop.logo || 'default.png'}" 
+                     alt="${coop.nombre}" class="coop-logo">
+                <div class="coop-info">
+                    <h3>${coop.nombre}</h3>
+                    <div class="coop-rating" data-rating='${JSON.stringify(coop.rating_global)}'>
+                        ${generateStarRating(rating)}
+                        <span>${rating.toFixed(1)}</span>
                     </div>
-                    <i class="fas fa-info-circle info-icon" data-coop='${JSON.stringify({
-                nombre: coop.nombre,
-                telefono: coop.telefono,
-                sitio_web: coop.sitio_web,
-                servicios: coop.servicios
-            })}'></i>
                 </div>
-                <div class="coop-body">
-                    ${renderRoutes(coop.rutas)}
-                </div>
-                ${renderCoopModal(coop)}
-            `;
-
-            addModalEvents(card, coop);
-            addTooltipEvents(card);
-            DOM.cooperativeContainer.appendChild(card);
-        });
-    }
+                <i class="fas fa-info-circle info-icon" data-coop='${JSON.stringify({
+                    nombre: coop.nombre,
+                    telefono: coop.telefono,
+                    sitio_web: coop.sitio_web,
+                    servicios: coop.servicios
+                })}'></i>
+            </div>
+            <div class="coop-body">
+                ${renderRoutes(coop.rutas)}
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            ${renderCoopModal(coop)}
+        `;
+        
+        addModalEvents(card, coop);
+        addTooltipEvents(card);
+        DOM.cooperativeContainer.appendChild(card);
+    });
+}
 
     /* ========== COOPERATIVAS DESTACADAS ========== */
     function renderFeaturedCooperatives() {
