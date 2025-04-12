@@ -807,7 +807,7 @@ img {
   }
 
   .coop-body {
-    max-height: 300px;
+    max-height: 260px;
     /* Ajusta según el diseño */
     overflow-y: auto;
     /* Habilita el desplazamiento vertical */
