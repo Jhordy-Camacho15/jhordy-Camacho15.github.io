@@ -442,7 +442,7 @@
 }
 
 .coop-body {
-  max-height: 200px; /* Ajusta según el diseño */
+  max-height: 350px; /* Ajusta según el diseño */
   overflow-y: auto; /* Habilita el desplazamiento vertical */
   padding-right: 0.5rem; /* Espacio para evitar que el scroll tape el contenido */
 }
@@ -730,6 +730,11 @@
     .info-icon {
       font-size: 1rem;
     }
+       .coop-body {
+  max-height: 300px; /* Ajusta según el diseño */
+  overflow-y: auto; /* Habilita el desplazamiento vertical */
+  padding-right: 0.2rem; /* Espacio para evitar que el scroll tape el contenido */
+}
   }
 
 
