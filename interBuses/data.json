@@ -193,55 +193,8 @@
                                     "costo": ""
                                 }
                             ]
-                        },
-                        {
-                            "id": "bolivar",
-                            "nombre": "Coop Bolivar",
-                            "logo": "bolivar.png",
-                            "rating_global": {
-                              
-                            },
-                            "rutas": [
-                                {
-                                    "destino": "Guaranda",
-                                    "horarios": [
-                                        "05:00",
-                                        "05:45",
-                                        "08:30",
-                                        "11:00",
-                                        "13:10",
-                                        "14:00",
-                                        "15:00",
-                                        "17:00"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        },
-                        {
-                            "id": "bolivar",
-                            "nombre": "Coop Bolivar",
-                            "logo": "bolivar.png",
-                            "rating_global": {
-                              
-                            },
-                            "rutas": [
-                                {
-                                    "destino": "Guaranda",
-                                    "horarios": [
-                                        "05:00",
-                                        "05:45",
-                                        "08:30",
-                                        "11:00",
-                                        "13:10",
-                                        "14:00",
-                                        "15:00",
-                                        "17:00"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
                         }
+                        
                     ]
                 }
             ]
