@@ -8,7 +8,7 @@ const profile = {
     ],
     studies: [
         { logo: "img/logo_espoch.png", institution: "ESPOCH", description: "Diseñador Gráfico" },
-        { logo: "img/logo_unir.png", institution: "UNIR", description: "ESTUDIANDO: Maestría en Diseño y Desarrollo de Interfaz de Usuario Web" }
+        { logo: "img/logo_unir.png", institution: "UNIR", description: "EN PROGRESO: Maestría en Diseño y Desarrollo de Interfaz de Usuario Web" }
     ],
     skills: [
         { logo: "img/logo_wordpress.png", name: "Wordpress", progress: 80 },
