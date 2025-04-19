@@ -99,7 +99,7 @@
 }
 
 .filtros {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -169,6 +169,13 @@
 
         /* 1 carta por fila */
     }
-
+    .boton-filtro{
+        padding: 5px 10px;
+    }
+    .filtros{
+        margin: 0;
+        padding: 0;
+    }
+    
 
 }
