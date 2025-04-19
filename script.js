@@ -84,10 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="logo-container">
                 <img src="${item.logo}" alt="${item.name} Logo">
             </div>
-            <div class="habili">
-                <strong>${item.name}</strong>
-                
-            </div>
+            
         </li>
     `).join(''));
     habilidadesSection.querySelector("ul").classList.add("cursos-list");
