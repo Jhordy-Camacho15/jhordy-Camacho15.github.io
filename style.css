@@ -104,7 +104,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px;
+    padding: 25px;
     margin-bottom: 10px;
     background-color: #c0c0c0 !important;
     flex-wrap: wrap;
@@ -165,7 +165,7 @@ body {
     background-position: center;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 .contenedor-imagen img {
@@ -173,12 +173,14 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    border-radius: 10px;
 }
 
 /* Slider */
 .slider-frame {
     width: 100%;
     overflow: hidden;
+    padding: 10px;
 }
 
 .slider-frame ul {
@@ -198,8 +200,10 @@ body {
 }
 
 .slider-frame img {
-    width: 100%;
+    width: 90%;
     height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 @keyframes slide {
@@ -228,11 +232,11 @@ body {
     }
 
     75% {
-        margin-left: -200%;
+        margin-left: -100%;
     }
 
     95% {
-        margin-left: -200%;
+        margin-left: -100%;
     }
 
     100% {
