@@ -86,13 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="habili">
                 <strong>${item.name}</strong>
-                <div class="progress-bar">
-                    <div class="progress" style="width: ${item.progress}%;"></div>
-                </div>
+                
             </div>
         </li>
     `).join(''));
-    habilidadesSection.querySelector("ul").classList.add("habilidades-list");
+    habilidadesSection.querySelector("ul").classList.add("cursos-list");
     secciones.appendChild(habilidadesSection);
 
     // Cursos
