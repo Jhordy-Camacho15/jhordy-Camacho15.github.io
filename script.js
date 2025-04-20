@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="logo-container">
                 <img src="${item.logo}" alt="${item.name} Logo">
             </div>
-            
+           
         </li>
     `).join(''));
     habilidadesSection.querySelector("ul").classList.add("cursos-list");
@@ -182,7 +182,7 @@ const cartas = [
     {
         titulo: "Restaurante",
         descripcion: "",
-        imagen: "/paginas/proyectos/cakeWorld.png",
+        imagen: "/paginas/proyectos/cakeworld.png",
         tag: "paginasWeb", // Etiqueta para filtrar
         enlace: "https://clubdisenodesarrollo.github.io/Proyectos/CakeWorld/index.html", // Enlace a la página del proyecto
     },
