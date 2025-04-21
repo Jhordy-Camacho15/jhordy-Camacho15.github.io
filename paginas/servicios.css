@@ -397,6 +397,10 @@
     .contenedor-texto h2 {
         font-size: 22px;
     }
+    .tabs{
+        padding: 0;
+    }
+
 
     .tablink {
         font-size: 14px;
