@@ -294,7 +294,7 @@
     }
 
     .content-container {
-        width: 94%;
+        width: 94.5%;
         height: 72%;
         position: relative;
         z-index: 1; /* Debajo del .info-container */
