@@ -404,10 +404,11 @@
     }
 }
 
+
 /* 375px */
 @media (max-width: 375px) {
     .info-container {
-        height: 23%;
+        height: 26%;
     }
 
     .content-container {
