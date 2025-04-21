@@ -452,7 +452,7 @@
         padding: 10px;
     }
     .info-container {
-        height: 22%;
+        height: 25%;
     }
 
     .content-container {
@@ -497,6 +497,6 @@
 
     .tablink {
         font-size: 10px;
-        padding: 4px 8px;
+        padding: 4px;
     }
 }
