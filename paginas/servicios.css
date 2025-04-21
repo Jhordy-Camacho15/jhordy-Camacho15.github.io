@@ -304,11 +304,11 @@
 
     /* Cuando se activa el menú */
     .info-container.expanded {
-        height: 90%; /* Aumentar la altura del contenedor */
+        height: 100%; /* Aumentar la altura del contenedor */
     }
 
     .content-container.shifted {
-        height: 10%;
+        height: 0%;
         transform: translateY(0%); /* Desplazar hacia abajo */
     }
 
