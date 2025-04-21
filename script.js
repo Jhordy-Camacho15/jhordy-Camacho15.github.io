@@ -283,18 +283,20 @@ document.addEventListener("DOMContentLoaded", () => renderCartas());
 
 
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const hamburgerButton = document.querySelector(".hamburger");
     const infoContainer = document.querySelector(".info-container");
     const contentContainer = document.querySelector(".content-container");
 
+    // Agregar animación de atención al cargar la página
+    hamburgerButton.classList.add("attention");
+
     // Alternar clases al hacer clic en el botón de hamburguesa
     hamburgerButton.addEventListener("click", () => {
         infoContainer.classList.toggle("expanded"); // Expandir o contraer .info-container
         contentContainer.classList.toggle("shifted"); // Desplazar o restaurar .content-container
+
+        // Quitar la animación de atención después del primer clic
+        hamburgerButton.classList.remove("attention");
     });
 });
