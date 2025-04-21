@@ -42,10 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const profilePic = document.createElement("div");
     profilePic.classList.add("profile-pic");
     profilePic.innerHTML = `
-        <img src="${profile.image}" alt="Tu Foto">
-        <h3>${profile.name}</h3>
-    `;
+    <img src="${profile.image}" alt="Tu Foto">
+    <h3>${profile.name}</h3>
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+`;
     infoContainer.appendChild(profilePic);
+
 
     // Secciones
     const secciones = document.createElement("div");
@@ -285,23 +287,14 @@ document.addEventListener("DOMContentLoaded", () => renderCartas());
 
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
-    const certificados = document.querySelectorAll(".certificado-item");
+    const hamburgerButton = document.querySelector(".hamburger");
+    const infoContainer = document.querySelector(".info-container");
+    const contentContainer = document.querySelector(".content-container");
 
-    certificados.forEach(certificado => {
-        const header = certificado.querySelector(".certificado-header");
-
-        header.addEventListener("click", () => {
-            // Cerrar todos los certificados
-            certificados.forEach(item => {
-                if (item !== certificado) {
-                    item.classList.remove("active");
-                }
-            });
-
-            // Abrir o cerrar el certificado clickeado
-            certificado.classList.toggle("active");
-        });
+    // Alternar clases al hacer clic en el botón de hamburguesa
+    hamburgerButton.addEventListener("click", () => {
+        infoContainer.classList.toggle("expanded"); // Expandir o contraer .info-container
+        contentContainer.classList.toggle("shifted"); // Desplazar o restaurar .content-container
     });
 });
