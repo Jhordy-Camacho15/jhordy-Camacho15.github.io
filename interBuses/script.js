@@ -154,47 +154,53 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 5. Renderizar cooperativas de un terminal
-   function renderCooperatives() {
-    DOM.cooperativeContainer.innerHTML = '';
+    function renderCooperatives() {
+        DOM.cooperativeContainer.innerHTML = '';
     
-    appData.currentTerminal.cooperativas.forEach(coop => {
-        const card = document.createElement('div');
-        card.className = 'cooperative-card';
-        
-        const rating = calculateAverageRating(coop.rating_global);
-        
-        card.innerHTML = `
-            <div class="coop-header">
-                <img src="img/terminales/${coop.logo || 'default.png'}" 
-                     alt="${coop.nombre}" class="coop-logo">
-                <div class="coop-info">
-                    <h3>${coop.nombre}</h3>
-                    <div class="coop-rating" data-rating='${JSON.stringify(coop.rating_global)}'>
-                        ${generateStarRating(rating)}
-                        <span>${rating.toFixed(1)}</span>
+        appData.currentTerminal.cooperativas.forEach((coop, index) => {
+            const card = document.createElement('div');
+            card.className = 'cooperative-card';
+    
+            const rating = calculateAverageRating(coop.rating_global);
+    
+            card.innerHTML = `
+                <div class="coop-header" data-index="${index}">
+                    <img src="img/terminales/${coop.logo || 'default.png'}" 
+                         alt="${coop.nombre}" class="coop-logo">
+                    <div class="coop-info">
+                        <h3>${coop.nombre}</h3>
+                        <div class="coop-rating" data-rating='${JSON.stringify(coop.rating_global)}'>
+                            ${generateStarRating(rating)}
+                            <span>${rating.toFixed(1)}</span>
+                        </div>
                     </div>
+                    <button class="accordion-toggle" aria-expanded="${index === 0}">></button>
                 </div>
-                <i class="fas fa-info-circle info-icon" data-coop='${JSON.stringify({
-                    nombre: coop.nombre,
-                    telefono: coop.telefono,
-                    sitio_web: coop.sitio_web,
-                    servicios: coop.servicios
-                })}'></i>
-            </div>
-            <div class="coop-body">
-                ${renderRoutes(coop.rutas)}
-            </div>
-            <div class="scroll-indicator">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            ${renderCoopModal(coop)}
-        `;
-        
-        addModalEvents(card, coop);
-        addTooltipEvents(card);
-        DOM.cooperativeContainer.appendChild(card);
-    });
-}
+                <div class="coop-body" style="display: ${index === 0 ? 'block' : 'none'};">
+                    ${renderRoutes(coop.rutas)}
+                </div>
+            `;
+    
+            // Add event listener for the entire header
+            const header = card.querySelector('.coop-header');
+            header.addEventListener('click', () => {
+                const allBodies = DOM.cooperativeContainer.querySelectorAll('.coop-body');
+                const allToggles = DOM.cooperativeContainer.querySelectorAll('.accordion-toggle');
+    
+                // Close all other accordions
+                allBodies.forEach(body => (body.style.display = 'none'));
+                allToggles.forEach(toggle => toggle.setAttribute('aria-expanded', 'false'));
+    
+                // Open the clicked accordion
+                const body = card.querySelector('.coop-body');
+                body.style.display = body.style.display === 'block' ? 'none' : 'block';
+                const toggleButton = header.querySelector('.accordion-toggle');
+                toggleButton.setAttribute('aria-expanded', body.style.display === 'block');
+            });
+    
+            DOM.cooperativeContainer.appendChild(card);
+        });
+    }
 
     /* ========== COOPERATIVAS DESTACADAS ========== */
     function renderFeaturedCooperatives() {
@@ -384,31 +390,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showTooltip(element, content, position = 'top') {
         if (!DOM.tooltip) return;
-
+    
         DOM.tooltip.innerHTML = content;
         DOM.tooltip.className = `tooltip ${position}`;
         DOM.tooltip.style.opacity = '1';
-
+    
         const rect = element.getBoundingClientRect();
         const tooltipHeight = DOM.tooltip.offsetHeight;
         const tooltipWidth = DOM.tooltip.offsetWidth;
-
+    
         switch (position) {
             case 'top':
                 DOM.tooltip.style.left = `${rect.left + rect.width / 2 - tooltipWidth / 2}px`;
-                DOM.tooltip.style.top = `${rect.top - tooltipHeight - 10}px`;
+                DOM.tooltip.style.top = `${rect.top + window.scrollY - tooltipHeight - 10}px`;
                 break;
             case 'bottom':
                 DOM.tooltip.style.left = `${rect.left + rect.width / 2 - tooltipWidth / 2}px`;
-                DOM.tooltip.style.top = `${rect.bottom + 10}px`;
+                DOM.tooltip.style.top = `${rect.bottom + window.scrollY + 10}px`;
                 break;
             case 'left':
-                DOM.tooltip.style.left = `${rect.left - tooltipWidth - 10}px`;
-                DOM.tooltip.style.top = `${rect.top + rect.height / 2 - tooltipHeight / 2}px`;
+                DOM.tooltip.style.left = `${rect.left + window.scrollX - tooltipWidth - 10}px`;
+                DOM.tooltip.style.top = `${rect.top + window.scrollY + rect.height / 2 - tooltipHeight / 2}px`;
                 break;
             case 'right':
-                DOM.tooltip.style.left = `${rect.right + 10}px`;
-                DOM.tooltip.style.top = `${rect.top + rect.height / 2 - tooltipHeight / 2}px`;
+                DOM.tooltip.style.left = `${rect.right + window.scrollX + 10}px`;
+                DOM.tooltip.style.top = `${rect.top + window.scrollY + rect.height / 2 - tooltipHeight / 2}px`;
                 break;
         }
     }
@@ -454,22 +460,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function addModalEvents(card, coop) {
-        const modal = document.getElementById(`modal-${coop.id}`);
-        if (!modal) return;
-
-        const infoIcon = card.querySelector('.info-icon');
-        if (!infoIcon) return;
-
-        infoIcon.addEventListener('click', () => {
-            modal.classList.add('active');
-        });
-
-        modal.querySelector('.close-modal').addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-    }
-
     /* ========== FUNCIONES UTILITARIAS ========== */
     function toggleSidebar() {
         DOM.sidebar.classList.toggle('active');
@@ -494,3 +484,82 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
     }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleAllButton = document.getElementById('toggle-all');
+    const DOM = {
+        cooperativeContainer: document.getElementById('cooperative-container')
+    };
+
+    // Función para verificar si todos los acordeones están abiertos
+    function areAllAccordionsOpen() {
+        const allBodies = DOM.cooperativeContainer.querySelectorAll('.coop-body');
+        return Array.from(allBodies).every(body => {
+            const computedStyle = window.getComputedStyle(body);
+            return computedStyle.display === 'block' || body.style.display === 'block';
+        });
+    }
+
+    // Función para alternar todos los acordeones
+    function toggleAllAccordions(open) {
+        const allBodies = DOM.cooperativeContainer.querySelectorAll('.coop-body');
+        const allToggles = DOM.cooperativeContainer.querySelectorAll('.accordion-toggle');
+
+        allBodies.forEach(body => {
+            body.style.display = open ? 'block' : 'none';
+        });
+
+        allToggles.forEach(toggle => {
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        toggleAllButton.textContent = open ? 'OCULTAR TODAS' : 'MOSTRAR TODAS';
+    }
+
+    // Manejador del botón
+    toggleAllButton.addEventListener('click', () => {
+        const allOpen = areAllAccordionsOpen();
+        toggleAllAccordions(!allOpen);
+    });
+
+    // Manejo de pantallas grandes
+    function handleLargeScreens() {
+        const screenWidth = window.innerWidth;
+        if (screenWidth > 767) {
+            // En pantallas grandes, abre todos pero no sobrescribe el estilo
+            const allBodies = DOM.cooperativeContainer.querySelectorAll('.coop-body');
+            const allToggles = DOM.cooperativeContainer.querySelectorAll('.accordion-toggle');
+            
+            allBodies.forEach(body => {
+                if (!body.style.display) { // Solo si no hay estilo definido
+                    body.style.display = 'block';
+                }
+            });
+            
+            allToggles.forEach(toggle => {
+                toggle.setAttribute('aria-expanded', 'true');
+            });
+            
+            toggleAllButton.textContent = 'OCULTAR TODAS';
+        }
+    }
+
+    window.addEventListener('resize', handleLargeScreens);
+    handleLargeScreens(); // Inicializa al cargar
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
