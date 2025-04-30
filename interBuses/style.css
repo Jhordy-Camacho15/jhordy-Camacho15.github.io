@@ -134,7 +134,7 @@ img {
 }
 
 .path-btn:disabled {
-  color: var(--gray);
+  color: var(--secondary);
   cursor: default;
 }
 
@@ -226,6 +226,7 @@ img {
 }
 
 .card-body {
+  background-color: rgb(246, 246, 246);
   padding: 1rem;
   text-align: center;
 }
@@ -436,7 +437,7 @@ img {
   overflow: hidden;
   /* Asegura que el contenido no desborde */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 0.75rem 0.75rem 0rem 0.75rem;
+  padding: 0rem 0rem 0rem 0rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -463,18 +464,42 @@ img {
   /* Asegura que el gradiente esté sobre el contenido */
 }
 
+/* Estado abierto del acordeón */
+.coop-body.open {
+  display: block;
+}
+
+
+/* Botón de alternar */
+.accordion-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: transform 0.3s ease;
+  transform: rotate(90deg);
+}
+
+.accordion-toggle[aria-expanded="true"] {
+  transform: rotate(180deg);
+}
+
+/* Estilos para el acordeón */
 .coop-body {
+  display: none; /* Cerrado por defecto */
   max-height: 350px;
   /* Ajusta según el diseño */
   overflow-y: auto;
   /* Habilita el desplazamiento vertical */
-  padding-right: 0.5rem;
+  padding: 0rem 1rem;
 }
 
 
 .coop-header {
   background: var(--primary);
-  color: var(--text-dark); /* Texto claro */
+  color: var(--text-dark);
+  /* Texto claro */
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -522,7 +547,7 @@ img {
 }
 
 .route {
-  padding: 0.8rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid #eee;
 }
 
@@ -556,6 +581,13 @@ img {
   font-weight: bold;
   color: var(--accent);
 }
+
+
+
+
+
+
+
 
 
 
@@ -596,38 +628,45 @@ img {
 
 
 
+
+
+
+
+
+
 /* MODALES */
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 2000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition);
+  position: absolute;
+  top: 100%;
+  /* Aparece justo debajo del ícono */
+  left: 50%;
+  /* Centrado horizontalmente */
+  transform: translateX(-50%);
+  width: 200px;
+  /* Ajusta según el diseño */
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  z-index: 10;
+  display: none;
+  /* Oculto por defecto */
 }
 
 .modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
+  display: block;
+  /* Mostrar cuando esté activo */
 }
 
 .modal {
   background: var(--white);
   border-radius: 10px;
   width: 90%;
-  max-width: 500px;
-  max-height: 90vh;
-  overflow-y: auto;
+  max-width: 300px;
+  padding: 1rem;
   box-shadow: var(--shadow-lg);
-  transform: translateY(-20px);
-  transition: var(--transition);
+  text-align: center;
 }
 
 .modal-overlay.active .modal {
@@ -759,7 +798,20 @@ img {
     padding: 0.5rem;
   }
 
+  .accordion-toggle {
+    display: inline-block;
+    /* Mostrar el botón de acordeón */
+  }
 
+  #cooperative-section h2 {
+    flex-wrap: wrap;
+    /* Permite que el botón baje si no hay espacio */
+  }
+
+  .toggle-all-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -807,15 +859,19 @@ img {
   }
 
   .coop-body {
-    max-height: 260px;
+    max-height: 300px;
     /* Ajusta según el diseño */
     overflow-y: auto;
     /* Habilita el desplazamiento vertical */
     padding-right: 0.2rem;
     /* Espacio para evitar que el scroll tape el contenido */
   }
-}
 
+  .toggle-all-btn {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
 
 @media (max-width: 320px) {
 
@@ -843,5 +899,110 @@ img {
 
   .section h2 {
     font-size: 0.75rem;
+  }
+
+  .toggle-all-btn {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+/* Contenedor para el título y el botón */
+#cooperative-section h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  /* Espaciado entre el título y el botón */
+  margin: 0;
+  /* Elimina márgenes adicionales */
+}
+
+/* Estilo del botón MOSTRAR TODAS */
+.toggle-all-btn {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-all-btn:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.toggle-all-btn:active {
+  transform: scale(0.95);
+}
+
+
+
+
+/* Contenedor para el título y el botón */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  /* Espaciado entre el título y el botón */
+  margin-bottom: 1rem;
+  /* Espaciado inferior para separar del contenido */
+}
+
+
+
+/* Estilo general para el botón "MOSTRAR TODAS" */
+.toggle-all-btn {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-all-btn:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+  /* Efecto de hover */
+}
+
+.toggle-all-btn:active {
+  transform: scale(0.95);
+  /* Efecto al hacer clic */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 767px) {
+  .header-container {
+    flex-wrap: wrap;
+    /* Permite que el botón baje si no hay espacio */
+  }
+
+  .toggle-all-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .toggle-all-btn {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .toggle-all-btn {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
   }
 }
