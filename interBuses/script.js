@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function () {
             toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
 
-        toggleAllButton.textContent = open ? 'OCULTAR TODAS' : 'MOSTRAR TODAS';
+        toggleAllButton.textContent = open ? 'OCULTAR' : 'MOSTRAR';
     }
 
     // Manejador del botón
@@ -542,7 +542,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 toggle.setAttribute('aria-expanded', 'true');
             });
             
-            toggleAllButton.textContent = 'OCULTAR TODAS';
+            toggleAllButton.textContent = 'OCULTAR';
         }
     }
 
