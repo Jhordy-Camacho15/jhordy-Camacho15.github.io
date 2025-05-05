@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
             card.innerHTML = `
                 <div class="card-img-container">
                     <img src="img/provincias/${provincia.id}.png" alt="${provincia.nombre}" 
-                         class="card-img" onerror="this.src='img/provincias/default.png'">
+                         class="card-img">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">${provincia.nombre}</h3>
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
             card.innerHTML = `
                 <div class="card-img-container">
                     <img src="img/provincias/ciudades/${terminal.id}.png" alt="Terminal ${terminal.nombre}" 
-                         class="card-img" onerror="this.src='img/provincias/default.png'">
+                         class="card-img" >
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Terminal ${terminal.nombre}</h3>
@@ -184,18 +184,19 @@ document.addEventListener('DOMContentLoaded', function () {
             // Add event listener for the entire header
             const header = card.querySelector('.coop-header');
             header.addEventListener('click', () => {
-                const allBodies = DOM.cooperativeContainer.querySelectorAll('.coop-body');
-                const allToggles = DOM.cooperativeContainer.querySelectorAll('.accordion-toggle');
-    
-                // Close all other accordions
-                allBodies.forEach(body => (body.style.display = 'none'));
-                allToggles.forEach(toggle => toggle.setAttribute('aria-expanded', 'false'));
-    
-                // Open the clicked accordion
                 const body = card.querySelector('.coop-body');
-                body.style.display = body.style.display === 'block' ? 'none' : 'block';
                 const toggleButton = header.querySelector('.accordion-toggle');
-                toggleButton.setAttribute('aria-expanded', body.style.display === 'block');
+                
+                // Obtener el estado actual usando getComputedStyle
+                const isOpen = window.getComputedStyle(body).display === 'block';
+                
+                // Alternar el estado del acordeón actual
+                body.style.display = isOpen ? 'none' : 'block';
+                toggleButton.setAttribute('aria-expanded', !isOpen);
+                header.setAttribute('aria-expanded', !isOpen); // Si usas CSS basado en header
+                
+                // Actualizar el estado del botón "toggle-all"
+                updateToggleButtonState();
             });
     
             DOM.cooperativeContainer.appendChild(card);
@@ -487,71 +488,94 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
-    const toggleAllButton = document.getElementById('toggle-all');
     const DOM = {
-        cooperativeContainer: document.getElementById('cooperative-container')
+        cooperativeContainer: document.getElementById('cooperative-container'),
+        toggleAllButton: document.getElementById('toggle-all')
     };
 
-    // Función para verificar si todos los acordeones están abiertos
+    // Verificar si todos los acordeones están abiertos
     function areAllAccordionsOpen() {
-        const allBodies = DOM.cooperativeContainer.querySelectorAll('.coop-body');
-        return Array.from(allBodies).every(body => {
-            const computedStyle = window.getComputedStyle(body);
-            return computedStyle.display === 'block' || body.style.display === 'block';
-        });
+        return Array.from(DOM.cooperativeContainer.querySelectorAll('.coop-header')).every(header =>
+            header.getAttribute('aria-expanded') === 'true'
+        );
     }
 
-    // Función para alternar todos los acordeones
+    // Verificar si todos los acordeones están cerrados
+    function areAllAccordionsClosed() {
+        return Array.from(DOM.cooperativeContainer.querySelectorAll('.coop-header')).every(header =>
+            header.getAttribute('aria-expanded') === 'false'
+        );
+    }
+
+    // Alternar todos los acordeones
     function toggleAllAccordions(open) {
+        const allHeaders = DOM.cooperativeContainer.querySelectorAll('.coop-header');
         const allBodies = DOM.cooperativeContainer.querySelectorAll('.coop-body');
         const allToggles = DOM.cooperativeContainer.querySelectorAll('.accordion-toggle');
+
+        allHeaders.forEach(header => {
+            header.setAttribute('aria-expanded', open);
+        });
 
         allBodies.forEach(body => {
             body.style.display = open ? 'block' : 'none';
         });
 
         allToggles.forEach(toggle => {
-            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-expanded', open);
         });
 
-        toggleAllButton.textContent = open ? 'OCULTAR' : 'MOSTRAR';
+        DOM.toggleAllButton.textContent = open ? 'OCULTAR' : 'MOSTRAR';
+        updateToggleButtonState();
     }
 
-    // Manejador del botón
-    toggleAllButton.addEventListener('click', () => {
+    // Manejar el botón "toggle-all"
+    DOM.toggleAllButton.addEventListener('click', () => {
         const allOpen = areAllAccordionsOpen();
         toggleAllAccordions(!allOpen);
     });
 
-    // Manejo de pantallas grandes
-    function handleLargeScreens() {
-        const screenWidth = window.innerWidth;
-        if (screenWidth > 767) {
-            // En pantallas grandes, abre todos pero no sobrescribe el estilo
-            const allBodies = DOM.cooperativeContainer.querySelectorAll('.coop-body');
-            const allToggles = DOM.cooperativeContainer.querySelectorAll('.accordion-toggle');
-            
-            allBodies.forEach(body => {
-                if (!body.style.display) { // Solo si no hay estilo definido
-                    body.style.display = 'block';
-                }
-            });
-            
-            allToggles.forEach(toggle => {
-                toggle.setAttribute('aria-expanded', 'true');
-            });
-            
-            toggleAllButton.textContent = 'OCULTAR';
+    // Actualizar estado del botón según el estado actual
+    function updateToggleButtonState() {
+        if (areAllAccordionsOpen()) {
+            DOM.toggleAllButton.textContent = 'OCULTAR';
+        } else if (areAllAccordionsClosed()) {
+            DOM.toggleAllButton.textContent = 'MOSTRAR';
+        } else {
+            const someOpen = Array.from(DOM.cooperativeContainer.querySelectorAll('.coop-header')).some(header =>
+                header.getAttribute('aria-expanded') === 'true'
+            );
+            DOM.toggleAllButton.textContent = someOpen ? 'OCULTAR' : 'MOSTRAR';
         }
     }
 
-    window.addEventListener('resize', handleLargeScreens);
-    handleLargeScreens(); // Inicializa al cargar
+    // Manejar el clic en un acordeón individual
+    function handleAccordionClick(header, body) {
+        const isOpen = header.getAttribute('aria-expanded') === 'true';
+        const toggleButton = header.querySelector('.accordion-toggle');
+
+        header.setAttribute('aria-expanded', !isOpen);
+        body.style.display = isOpen ? 'none' : 'block';
+        toggleButton.setAttribute('aria-expanded', !isOpen);
+
+        updateToggleButtonState();
+    }
+
+    // Agregar eventos a cada acordeón
+    function setupAccordionEvents() {
+        const allHeaders = DOM.cooperativeContainer.querySelectorAll('.coop-header');
+        allHeaders.forEach(header => {
+            const body = header.nextElementSibling;
+            header.addEventListener('click', () => handleAccordionClick(header, body));
+        });
+    }
+
+    // Inicialización
+    setupAccordionEvents();
+    updateToggleButtonState();
 });
-
-
-
 
 
 
