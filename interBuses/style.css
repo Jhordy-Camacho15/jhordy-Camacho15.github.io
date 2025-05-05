@@ -384,7 +384,7 @@ img {
   margin-bottom: 0rem;
   display: flex;
   align-items: center;
-  gap: 0rem;
+  gap: 0.2rem;
   font-size: 1.5rem;
 }
 
@@ -416,6 +416,7 @@ img {
   transition: var(--transition);
   cursor: pointer;
   height: auto;
+  width: auto;
 }
 
 .card:hover {
@@ -855,13 +856,13 @@ img {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1024px) {
   #cooperative-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
 
   .card-grid,
   #terminal-grid {
@@ -873,7 +874,14 @@ img {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .card-grid,
+  #terminal-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    transition: 0.5s;
+  }
+
   #cooperative-container {
     grid-template-columns: 1fr;
   }
@@ -902,17 +910,74 @@ img {
 
   .toggle-all-btn {
     font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 0.5rem;
   }
 }
 
-@media (max-width: 576px) {
-
+@media (max-width: 375px) {
   .card-grid,
   #terminal-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    transition: 1s;
   }
+
+  .card-body {
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    cursor: pointer;
+    height: auto;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .card-img-container {
+    padding: 5px;
+    height: 50px;
+    overflow: hidden;
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+  }
+
+  .card-title {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+  }
+  
+  .card-meta {
+    font-size: 0.55rem;
+    color: var(--gray);
+  }
+
+ 
+
+
+
+
+
+
+
+
+
+
 
   .path-btn span {
     display: none;
@@ -938,11 +1003,11 @@ img {
   }
 
   .section h2 {
-    font-size: 0.rem;
+    font-size: 0.85rem;
   }
 
   .coop-header {
-    padding: 0.4rem;
+    padding: 0.5rem;
     gap: 0.5rem;
   }
 
@@ -967,8 +1032,8 @@ img {
   }
 
   .toggle-all-btn {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    padding: 0.3rem;
   }
 }
 
@@ -976,7 +1041,7 @@ img {
 
   .card-grid,
   #terminal-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
 
@@ -999,8 +1064,8 @@ img {
   }
 
   .toggle-all-btn {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.5rem;
+    font-size: 0.5rem;
+    padding: 0.2rem;
   }
 }
 
@@ -1090,20 +1155,20 @@ img {
 
   .toggle-all-btn {
     font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 0.7rem;
   }
 }
 
 @media (max-width: 576px) {
   .toggle-all-btn {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    padding: 0.3rem ;
   }
 }
 
 @media (max-width: 320px) {
   .toggle-all-btn {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.2rem ;
   }
 }
