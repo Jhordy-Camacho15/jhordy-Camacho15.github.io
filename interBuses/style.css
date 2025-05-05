@@ -133,7 +133,6 @@ img {
   gap: 0.5rem;
 }
 
-
 .path-btn:disabled {
   color: var(--secondary);
   cursor: default;
@@ -153,11 +152,12 @@ img {
   margin: 0 0.3rem;
 }
 
+
 /* SECCIONES */
 .section {
   display: none;
   animation: fadeIn 0.5s ease;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .section.active-section {
@@ -167,10 +167,10 @@ img {
 .section h2 {
   --primary: #2c3e50;
   /* Color principal */
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0rem;
   font-size: 1.5rem;
 }
 
@@ -418,12 +418,13 @@ img {
 }
 
 
+
 /* SECCIÓN DE COOPERATIVAS - GRID RESPONSIVO */
 #cooperative-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-flow: dense;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: start;
 }
 
