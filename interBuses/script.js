@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
         btnProvince: document.getElementById('btn-province'),
         btnTerminal: document.getElementById('btn-terminal'),
 
+
+
+
         // Secciones
         sections: {
             home: document.getElementById('home-section'),
@@ -55,24 +58,26 @@ document.addEventListener('DOMContentLoaded', function () {
         setupEventListeners();
         renderProvinces();
         renderFeaturedCooperatives();
+        renderAllAds(); // Renderizar anuncios
         showSection('home'); // Mostrar provincias al inicio
     }
 
     // Cargar datos del JSON
-    async function loadData() {
-        try {
-            const response = await fetch('data.json');
-            if (!response.ok) throw new Error('Error al cargar datos');
-            const data = await response.json();
-            appData.provincias = data.provincias;
-            if (data.ciudades_principales) {
-                appData.ciudadesPrincipales = data.ciudades_principales;
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            showError('Error al cargar los datos. Por favor recarga la página.');
-        }
+  async function loadData() {
+    try {
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('Error al cargar datos');
+        const data = await response.json();
+
+        // Asignar datos cargados a appData
+        appData.provincias = data.provincias;
+        appData.ciudadesPrincipales = data.ciudades_principales || [];
+        appData.anuncios = data.anuncios || {}; // Asegúrate de que anuncios esté definido
+    } catch (error) {
+        console.error('Error:', error);
+        showError('Error al cargar los datos. Por favor recarga la página.');
     }
+}
 
     /* ========== RENDERIZADO PRINCIPAL ========== */
 
@@ -156,13 +161,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // 5. Renderizar cooperativas de un terminal
     function renderCooperatives() {
         DOM.cooperativeContainer.innerHTML = '';
-    
+
         appData.currentTerminal.cooperativas.forEach((coop, index) => {
             const card = document.createElement('div');
             card.className = 'cooperative-card';
-    
+
             const rating = calculateAverageRating(coop.rating_global);
-    
+
             card.innerHTML = `
                 <div class="coop-header" data-index="${index}">
                     <img src="img/terminales/${coop.logo || 'default.png'}" 
@@ -180,25 +185,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     ${renderRoutes(coop.rutas)}
                 </div>
             `;
-    
+
             // Add event listener for the entire header
             const header = card.querySelector('.coop-header');
             header.addEventListener('click', () => {
                 const body = card.querySelector('.coop-body');
                 const toggleButton = header.querySelector('.accordion-toggle');
-                
+
                 // Obtener el estado actual usando getComputedStyle
                 const isOpen = window.getComputedStyle(body).display === 'block';
-                
+
                 // Alternar el estado del acordeón actual
                 body.style.display = isOpen ? 'none' : 'block';
                 toggleButton.setAttribute('aria-expanded', !isOpen);
                 header.setAttribute('aria-expanded', !isOpen); // Si usas CSS basado en header
-                
+
                 // Actualizar el estado del botón "toggle-all"
                 updateToggleButtonState();
             });
-    
+
             DOM.cooperativeContainer.appendChild(card);
         });
     }
@@ -391,15 +396,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showTooltip(element, content, position = 'top') {
         if (!DOM.tooltip) return;
-    
+
         DOM.tooltip.innerHTML = content;
         DOM.tooltip.className = `tooltip ${position}`;
         DOM.tooltip.style.opacity = '1';
-    
+
         const rect = element.getBoundingClientRect();
         const tooltipHeight = DOM.tooltip.offsetHeight;
         const tooltipWidth = DOM.tooltip.offsetWidth;
-    
+
         switch (position) {
             case 'top':
                 DOM.tooltip.style.left = `${rect.left + rect.width / 2 - tooltipWidth / 2}px`;
@@ -484,7 +489,57 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     `;
     }
+
+    function renderAds(section, adData) {
+        const adsContainer = document.getElementById(`${section}-ads`);
+        adsContainer.innerHTML = '';
+
+        if (adData) {
+            const adElement = document.createElement('a');
+            adElement.href = adData.link;
+            adElement.target = '_blank';
+            adElement.innerHTML = `<img src="${adData.imagen}" alt="Anuncio">`;
+            adsContainer.appendChild(adElement);
+        }
+    }
+
+    // Llama a esta función después de cargar los datos
+    function renderAllAds() {
+        renderAds('province', appData.anuncios.provincias);
+        renderAds('terminal', appData.anuncios.terminales);
+        renderAds('cooperative', appData.anuncios.cooperativas);
+    }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -495,14 +550,14 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleAllButton: document.getElementById('toggle-all')
     };
 
-    // Verificar si todos los acordeones están abiertos
+    // Verifica si todos los acordeones están abiertos
     function areAllAccordionsOpen() {
         return Array.from(DOM.cooperativeContainer.querySelectorAll('.coop-header')).every(header =>
             header.getAttribute('aria-expanded') === 'true'
         );
     }
 
-    // Verificar si todos los acordeones están cerrados
+    // Verifica si todos los acordeones están cerrados
     function areAllAccordionsClosed() {
         return Array.from(DOM.cooperativeContainer.querySelectorAll('.coop-header')).every(header =>
             header.getAttribute('aria-expanded') === 'false'
@@ -531,7 +586,7 @@ document.addEventListener('DOMContentLoaded', function () {
         updateToggleButtonState();
     }
 
-    // Manejar el botón "toggle-all"
+    // Manejador del botón "toggle-all"
     DOM.toggleAllButton.addEventListener('click', () => {
         const allOpen = areAllAccordionsOpen();
         toggleAllAccordions(!allOpen);
@@ -554,12 +609,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Manejar el clic en un acordeón individual
     function handleAccordionClick(header, body) {
         const isOpen = header.getAttribute('aria-expanded') === 'true';
-        const toggleButton = header.querySelector('.accordion-toggle');
-
         header.setAttribute('aria-expanded', !isOpen);
         body.style.display = isOpen ? 'none' : 'block';
+        const toggleButton = header.querySelector('.accordion-toggle');
         toggleButton.setAttribute('aria-expanded', !isOpen);
-
         updateToggleButtonState();
     }
 
@@ -576,6 +629,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setupAccordionEvents();
     updateToggleButtonState();
 });
+
 
 
 
