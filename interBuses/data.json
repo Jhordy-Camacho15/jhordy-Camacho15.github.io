@@ -720,17 +720,17 @@
         "Riobamba"
     ],
     "anuncios": {
-        "provincias": {
+         "provincias": {
             "imagen": "img/anuncios/banner-ofi.png",
-            "link": "https://example.com/provincia"
+            "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
         },
         "terminales": {
             "imagen": "img/anuncios/banner-ofi.png",
-            "link": "https://example.com/terminal"
+            "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
         },
         "cooperativas": {
             "imagen": "img/anuncios/banner-ofi.png",
-            "link": "https://example.com/cooperativa"
+            "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
         }
     }
 }
