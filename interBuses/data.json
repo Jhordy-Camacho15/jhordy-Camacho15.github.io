@@ -105,7 +105,6 @@
                                         "20:45"
                                     ]
                                 },
-                               
                                 {
                                     "destino": "Baños",
                                     "horarios": [
@@ -124,8 +123,7 @@
                             "id": "chimborazo",
                             "nombre": "Coop Chimborazo",
                             "logo": "chimborazo.png",
-                            "rating_global": {
-                            },
+                            "rating_global": {},
                             "telefono": "(03) 2962 012",
                             "sitio_web": "https://cooperativachimborazo.com",
                             "servicios": [
@@ -174,9 +172,7 @@
                             "id": "bolivar",
                             "nombre": "Coop Bolivar",
                             "logo": "bolivar.png",
-                            "rating_global": {
-                              
-                            },
+                            "rating_global": {},
                             "rutas": [
                                 {
                                     "destino": "Guaranda",
@@ -198,9 +194,7 @@
                             "id": "10noviembre",
                             "nombre": "Coop 10 de Noviembre",
                             "logo": "10noviembre.png",
-                            "rating_global": {
-                              
-                            },
+                            "rating_global": {},
                             "rutas": [
                                 {
                                     "destino": "Guaranda - San Miguel",
@@ -225,9 +219,7 @@
                             "id": "sangay",
                             "nombre": "Coop Sangay",
                             "logo": "sangay.png",
-                            "rating_global": {
-                              
-                            },
+                            "rating_global": {},
                             "rutas": [
                                 {
                                     "destino": "Latacunga",
@@ -248,8 +240,7 @@
                             "id": "banos",
                             "nombre": "Coop Baños",
                             "logo": "banos.png",
-                            "rating_global": {
-                            },
+                            "rating_global": {},
                             "rutas": [
                                 {
                                     "destino": "Baños",
@@ -329,9 +320,7 @@
                             "id": "patria",
                             "nombre": "Coop Patria",
                             "logo": "patria.png",
-                            "rating_global": {
-                              
-                            },
+                            "rating_global": {},
                             "rutas": [
                                 {
                                     "destino": "Guayaquil",
@@ -445,10 +434,8 @@
                             "id": "ecuador",
                             "nombre": "Coop Ecuador",
                             "logo": "ecuador.png",
-                            "rating_global": {
-                              
-                            },
-                            "telefono":"032 962 011",
+                            "rating_global": {},
+                            "telefono": "032 962 011",
                             "rutas": [
                                 {
                                     "destino": "Quito",
@@ -583,7 +570,7 @@
                     ]
                 }
             ]
-        },    
+        },
         {
             "id": "bolivar",
             "nombre": "Bolivar",
@@ -596,9 +583,7 @@
                             "id": "bolivar",
                             "nombre": "Coop Bolivar",
                             "logo": "bolivar.png",
-                            "rating_global": {
-                              
-                            },
+                            "rating_global": {},
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -632,9 +617,7 @@
                             "id": "patria",
                             "nombre": "Coop Patria",
                             "logo": "patria.png",
-                            "rating_global": {
-                              
-                            },
+                            "rating_global": {},
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -668,9 +651,7 @@
                             "id": "cariamanga",
                             "nombre": "Coop Union Cariamanga Int",
                             "logo": "cariamanga.png",
-                            "rating_global": {
-                              
-                            },
+                            "rating_global": {},
                             "rutas": [
                                 {
                                     "destino": "Loja",
@@ -700,9 +681,7 @@
                             "id": "cariamanga",
                             "nombre": "Coop Union Cariamanga Int",
                             "logo": "cariamanga.png",
-                            "rating_global": {
-                              
-                            },
+                            "rating_global": {},
                             "rutas": [
                                 {
                                     "destino": "Loja",
@@ -739,5 +718,19 @@
         "Cuenca",
         "Santo Domingo",
         "Riobamba"
-    ]
+    ],
+    "anuncios": {
+        "provincias": {
+            "imagen": "img/anuncios/banner-ofi.png",
+            "link": "https://example.com/provincia"
+        },
+        "terminales": {
+            "imagen": "img/anuncios/banner-ofi.png",
+            "link": "https://example.com/terminal"
+        },
+        "cooperativas": {
+            "imagen": "img/anuncios/banner-ofi.png",
+            "link": "https://example.com/cooperativa"
+        }
+    }
 }
