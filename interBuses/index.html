@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminales de Buses Ecuador</title>
+    <title>Busvas - horarios</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,6 +31,9 @@
         </button>
     </div>
 
+
+    
+
     <!-- Sidebar para móviles -->
     <aside class="sidebar">
         <button class="close-sidebar">
@@ -46,6 +49,9 @@
         <!-- SECCIÓN PRINCIPAL (HOME) - PROVINCIAS -->
         <section id="home-section" class="section active-section">
             <h2><i class="fas fa-map-marked-alt"></i> Seleccione su provincia</h2>
+            <div id="province-ads" class="ads-container">
+                <!-- Contenedor para anuncios de provincias -->
+            </div>
             <div id="province-grid" class="card-grid">
                 <!-- Cartas de provincias se insertarán aquí via JS -->
             </div>
@@ -63,6 +69,9 @@
         <!-- Sección de terminales -->
         <section id="terminal-section" class="section">
             <h2><i class="fas fa-bus-alt"></i> Terminales en <span id="current-province-name"></span></h2>
+            <div id="terminal-ads" class="ads-container">
+                <!-- Contenedor para anuncios de terminales -->
+            </div>
             <div id="terminal-grid" class="card-grid">
                 <!-- Tarjetas de terminales se insertarán aquí via JS -->
             </div>
@@ -72,7 +81,10 @@
         <section id="cooperative-section" class="section">
             <div class="header-container">
                 <h2><i class="fas fa-route"></i> Rutas desde <span id="current-terminal-name"></span></h2>
-                <button id="toggle-all" class="toggle-all-btn">MOSTRAR</button>
+                <button id="toggle-all" class="toggle-all-btn">MOSTRAR TODAS</button>
+            </div>
+            <div id="cooperative-ads" class="ads-container">
+                <!-- Contenedor para anuncios de cooperativas -->
             </div>
             <div id="cooperative-container" class="cooperative-grid">
                 <!-- Tarjetas de cooperativas se insertarán aquí via JS -->
