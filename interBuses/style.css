@@ -207,7 +207,7 @@ img {
 }
 
 .main-content {
-  padding:  0.75rem;
+  padding: 0.75rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -301,6 +301,7 @@ img {
   top: 0px;
   z-index: 900;
   box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
 }
 
 .path-btn {
@@ -674,7 +675,8 @@ img {
 
 /* Estilos para el acordeón */
 .coop-body {
-  display: none; /* Cerrado por defecto */
+  display: none;
+  /* Cerrado por defecto */
   max-height: 320px;
   overflow-y: auto;
   padding: 0 1rem;
@@ -682,13 +684,13 @@ img {
 }
 
 /* Mostrar cuando el header tiene aria-expanded="true" */
-.coop-header[aria-expanded="true"] + .coop-body {
+.coop-header[aria-expanded="true"]+.coop-body {
   display: block;
   max-height: 320px;
 }
 
 /* Ocultar el cuerpo cuando está colapsado */
-[aria-expanded="false"] + .coop-body {
+[aria-expanded="false"]+.coop-body {
   display: none;
 }
 
@@ -862,19 +864,10 @@ img {
   }
 }
 
-@media (max-width: 768px) {
 
-  .card-grid,
-  #terminal-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-
-  .featured-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-}
 
 @media (max-width: 768px) {
+
   .card-grid,
   #terminal-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -912,9 +905,57 @@ img {
     font-size: 0.9rem;
     padding: 0.4rem 0.5rem;
   }
+
+  .path-bar {
+    position: fixed;
+    bottom: 0; /* Mueve la barra a la parte inferior */
+    top: auto; /* Elimina la posición sticky superior */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    border-top: 1px solid var(--gray-light); /* Agrega un borde superior */
+    border-bottom: none; /* Elimina el borde inferior */
+    box-shadow: var(--shadow-md); /* Ajusta la sombra para que parezca un menú inferior */
+  }
+
+  .path-btn {
+    flex-grow: 1; /* Asegura que los botones ocupen el espacio disponible */
+    justify-content: center; /* Centra el contenido de los botones */
+    text-align: center;
+  }
+
+  .path-btn span {
+    display: none; /* Oculta el texto en botones si es necesario */
+  }
+
+  .path-bar .path-separator {
+    display: none; /* Oculta los separadores entre botones */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 @media (max-width: 375px) {
+
   .card-grid,
   #terminal-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -936,18 +977,18 @@ img {
     cursor: pointer;
     height: auto;
   }
-  
+
   .card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
   }
-  
+
   .card-img-container {
     padding: 5px;
     height: 50px;
     overflow: hidden;
   }
-  
+
   .card-img {
     width: 100%;
     height: 100%;
@@ -961,13 +1002,13 @@ img {
     margin-bottom: 0.3rem;
     font-size: 0.8rem;
   }
-  
+
   .card-meta {
     font-size: 0.55rem;
     color: var(--gray);
   }
 
- 
+
 
 
 
@@ -986,13 +1027,15 @@ img {
   .path-btn {
     padding: 0.25rem 0.5rem;
   }
+
   #btn-province {
     padding: 0.25rem;
   }
+
   #btn-terminal {
     padding: 0.25rem;
   }
-  
+
 
   .featured-description p {
     text-align: center;
@@ -1031,10 +1074,7 @@ img {
     /* Espacio para evitar que el scroll tape el contenido */
   }
 
-  .toggle-all-btn {
-    font-size: 0.7rem;
-    padding: 0.3rem;
-  }
+
 }
 
 @media (max-width: 320px) {
@@ -1049,7 +1089,7 @@ img {
     display: none;
   }
 
-  
+
 
   .featured-description p {
     text-align: center;
@@ -1063,10 +1103,7 @@ img {
     font-size: 0.75rem;
   }
 
-  .toggle-all-btn {
-    font-size: 0.5rem;
-    padding: 0.2rem;
-  }
+
 }
 
 /* Contenedor para el título y el botón */
@@ -1162,13 +1199,13 @@ img {
 @media (max-width: 576px) {
   .toggle-all-btn {
     font-size: 0.8rem;
-    padding: 0.3rem ;
+    padding: 0.3rem;
   }
 }
 
 @media (max-width: 320px) {
   .toggle-all-btn {
     font-size: 0.7rem;
-    padding: 0.2rem ;
+    padding: 0.2rem;
   }
 }
