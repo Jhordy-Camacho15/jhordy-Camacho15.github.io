@@ -401,6 +401,95 @@ img {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contenedor de anuncios */
+.ads-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  text-align: center;
+  margin: 0.5rem auto; /* Centra el contenedor y agrega margen */
+  border-radius: 10px;
+  max-height: 150px; /* Altura máxima del contenedor */
+  overflow: hidden; /* Asegura que el contenido no desborde */
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-light);
+  background-color: var(--white);
+}
+
+/* Imagen dentro del contenedor */
+.ads-container img {
+  width: 100%; /* Por defecto, ocupa todo el ancho del contenedor */
+  height: 100%; /* Ajusta la altura al contenedor */
+  object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+  border-radius: 5px;
+}
+
+/* Media queries para ajustar el ancho del contenedor */
+@media (min-width: 1024px) {
+  .ads-container {
+    width: 50%; /* En pantallas grandes, ocupa el 50% del ancho */
+  }
+}
+
+@media (max-width: 1024px) {
+  .ads-container {
+    width: 70%; /* En pantallas medianas, ocupa el 70% del ancho */
+  }
+}
+
+@media (max-width: 768px) {
+  .ads-container {
+    width: 90%; /* En pantallas pequeñas, ocupa el 90% del ancho */
+  }
+}
+
+@media (max-width: 576px) {
+  .ads-container {
+    width: 100%; /* En pantallas muy pequeñas, ocupa el 100% del ancho */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* CARDS DE PROVINCIAS (PRIMERA PANTALLA) */
 .card-grid {
   display: grid;
@@ -888,7 +977,7 @@ img {
   }
 
   .navbar {
-    padding: 0.5rem;
+    padding: 0rem;
   }
 
   .accordion-toggle {
@@ -908,26 +997,36 @@ img {
 
   .path-bar {
     position: fixed;
-    bottom: 0; /* Mueve la barra a la parte inferior */
-    top: auto; /* Elimina la posición sticky superior */
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    border-top: 1px solid var(--gray-light); /* Agrega un borde superior */
-    border-bottom: none; /* Elimina el borde inferior */
-    box-shadow: var(--shadow-md); /* Ajusta la sombra para que parezca un menú inferior */
+    bottom: 0;
+    /* Mueve la barra a la parte inferior */
+    top: auto;
+    /* Elimina la posición sticky superior */
+    width: 100%;
+    /* Asegura que ocupe todo el ancho */
+    border-top: 1px solid var(--gray-light);
+    /* Agrega un borde superior */
+    border-bottom: none;
+    /* Elimina el borde inferior */
+    box-shadow: var(--shadow-md);
+    /* Ajusta la sombra para que parezca un menú inferior */
   }
 
   .path-btn {
-    flex-grow: 1; /* Asegura que los botones ocupen el espacio disponible */
-    justify-content: center; /* Centra el contenido de los botones */
+    flex-grow: 1;
+    /* Asegura que los botones ocupen el espacio disponible */
+    justify-content: center;
+    /* Centra el contenido de los botones */
     text-align: center;
   }
 
   .path-btn span {
-    display: none; /* Oculta el texto en botones si es necesario */
+    display: none;
+    /* Oculta el texto en botones si es necesario */
   }
 
   .path-bar .path-separator {
-    display: none; /* Oculta los separadores entre botones */
+    display: none;
+    /* Oculta los separadores entre botones */
   }
 
 
