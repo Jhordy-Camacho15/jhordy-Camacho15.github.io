@@ -63,21 +63,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Cargar datos del JSON
-  async function loadData() {
-    try {
-        const response = await fetch('data.json');
-        if (!response.ok) throw new Error('Error al cargar datos');
-        const data = await response.json();
+    async function loadData() {
+        try {
+            const response = await fetch('data.json');
+            if (!response.ok) throw new Error('Error al cargar datos');
+            const data = await response.json();
 
-        // Asignar datos cargados a appData
-        appData.provincias = data.provincias;
-        appData.ciudadesPrincipales = data.ciudades_principales || [];
-        appData.anuncios = data.anuncios || {}; // Asegúrate de que anuncios esté definido
-    } catch (error) {
-        console.error('Error:', error);
-        showError('Error al cargar los datos. Por favor recarga la página.');
+            // Asignar datos cargados a appData
+            appData.provincias = data.provincias;
+            appData.ciudadesPrincipales = data.ciudades_principales || [];
+            appData.anuncios = data.anuncios || {}; // Asegúrate de que anuncios esté definido
+        } catch (error) {
+            console.error('Error:', error);
+            showError('Error al cargar los datos. Por favor recarga la página.');
+        }
     }
-}
 
     /* ========== RENDERIZADO PRINCIPAL ========== */
 
@@ -454,15 +454,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // Navegación
         DOM.btnHome.addEventListener('click', () => {
             resetNavigation();
-            showSection('home');
+            navigateTo('home'); // Antes: showSection('home');
         });
 
         DOM.btnProvince.addEventListener('click', () => {
-            showSection('terminal');
+            navigateTo('terminal'); // Antes: showSection('terminal');
         });
 
         DOM.btnTerminal.addEventListener('click', () => {
-            showSection('cooperative');
+            navigateTo('cooperative'); // Antes: showSection('cooperative');
         });
     }
 
@@ -509,6 +509,50 @@ document.addEventListener('DOMContentLoaded', function () {
         renderAds('terminal', appData.anuncios.terminales);
         renderAds('cooperative', appData.anuncios.cooperativas);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    function navigateTo(section) {
+        // Muestra la sección correspondiente
+        showSection(section);
+        // Guarda el estado en el historial
+        history.pushState({ section }, "", `#${section}`);
+    }
+
+    // Maneja el botón "Atrás"
+    window.addEventListener("popstate", (event) => {
+        if (event.state && event.state.section) {
+            showSection(event.state.section);
+        } else {
+            // Si no hay estado, vuelve al inicio
+            showSection('home');
+        }
+    });
+
+    // Inicialización
+    window.addEventListener("load", () => {
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+            showSection(hash);
+        } else {
+            showSection('home');
+        }
+    });
 });
 
 
