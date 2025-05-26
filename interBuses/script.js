@@ -528,18 +528,32 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
     function navigateTo(section) {
-        // Muestra la sección correspondiente
+        // Guarda el estado relevante
+        const state = {
+            section,
+            currentProvince: appData.currentProvince ? appData.currentProvince.id : null,
+            currentTerminal: appData.currentTerminal ? appData.currentTerminal.id : null
+        };
         showSection(section);
-        // Guarda el estado en el historial
-        history.pushState({ section }, "", `#${section}`);
+        history.pushState(state, "", `#${section}`);
     }
 
-    // Maneja el botón "Atrás"
     window.addEventListener("popstate", (event) => {
         if (event.state && event.state.section) {
+            // Restaurar estado de la UI
+            if (event.state.currentProvince) {
+                const provincia = appData.provincias.find(p => p.id === event.state.currentProvince);
+                if (provincia) appData.currentProvince = provincia;
+            }
+            if (event.state.currentTerminal && appData.currentProvince) {
+                const terminal = appData.currentProvince.terminales.find(t => t.id === event.state.currentTerminal);
+                if (terminal) appData.currentTerminal = terminal;
+            }
             showSection(event.state.section);
+            // Si es necesario, renderiza la UI de provincia/terminal/cooperativa
+            if (event.state.section === 'terminal') renderTerminals();
+            if (event.state.section === 'cooperative') renderCooperatives();
         } else {
-            // Si no hay estado, vuelve al inicio
             showSection('home');
         }
     });
@@ -554,6 +568,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+window.onbeforeunload = function () {
+    // Solo advertir si está en la sección principal
+    if (window.location.hash === '' || window.location.hash === '#home') {
+        return "¿Seguro que quieres salir de la aplicación?";
+    }
+};
 
 
 
