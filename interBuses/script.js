@@ -510,39 +510,37 @@ document.addEventListener('DOMContentLoaded', function () {
         renderAds('cooperative', appData.anuncios.cooperativas);
     }
 
-    let currentSection = 'home'; // Al nivel superior de tu script
-    let exitPromptShown = false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
     function navigateTo(section) {
-        if (currentSection === section) return; // No agregues si ya estás ahí
+        // Muestra la sección correspondiente
         showSection(section);
+        // Guarda el estado en el historial
         history.pushState({ section }, "", `#${section}`);
-        currentSection = section;
     }
 
     // Maneja el botón "Atrás"
     window.addEventListener("popstate", (event) => {
         if (event.state && event.state.section) {
             showSection(event.state.section);
-            currentSection = event.state.section;
-            exitPromptShown = false; // Reinicia la bandera si navega a otra sección
         } else {
-            // Ya está en 'home'
-            if (currentSection === 'home') {
-                if (!exitPromptShown) {
-                    // Primera vez: muestra el mensaje y vuelve a poner el estado en el historial
-                    exitPromptShown = true;
-                    history.pushState({ section: 'home' }, "", "#home");
-                    showExitToast();
-                } else {
-                    // Segunda vez: permite salir (no haces nada, el navegador retrocede)
-                    exitPromptShown = false;
-                }
-            } else {
-                showSection('home');
-                currentSection = 'home';
-                exitPromptShown = false;
-            }
+            // Si no hay estado, vuelve al inicio
+            showSection('home');
         }
     });
 
@@ -551,41 +549,44 @@ document.addEventListener('DOMContentLoaded', function () {
         const hash = window.location.hash.substring(1);
         if (hash) {
             showSection(hash);
-            currentSection = hash;
         } else {
             showSection('home');
-            currentSection = 'home';
         }
     });
 });
 
-function showExitToast(message = "¿Está seguro de salir? ¿Haz encontrado el horario que buscabas?") {
-    let toast = document.getElementById('custom-exit-toast');
-    if (!toast) {
-        toast = document.createElement('div');
-        toast.id = 'custom-exit-toast';
-        toast.className = 'exit-toast';
-        document.body.appendChild(toast);
-    }
-    toast.textContent = message;
 
-    // Crea el fondo opaco
-    let backdrop = document.getElementById('exit-toast-backdrop');
-    if (!backdrop) {
-        backdrop = document.createElement('div');
-        backdrop.id = 'exit-toast-backdrop';
-        backdrop.className = 'exit-toast-backdrop';
-        document.body.appendChild(backdrop);
-    }
 
-    toast.classList.add('show');
-    backdrop.style.display = 'block';
 
-    setTimeout(() => {
-        toast.classList.remove('show');
-        backdrop.style.display = 'none';
-    }, 2000);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const DOM = {
@@ -672,37 +673,6 @@ document.addEventListener('DOMContentLoaded', function () {
     setupAccordionEvents();
     updateToggleButtonState();
 });
-
-window.addEventListener("popstate", (event) => {
-    if (event.state && event.state.section) {
-        showSection(event.state.section);
-        currentSection = event.state.section;
-    } else {
-        showSection('home');
-        currentSection = 'home';
-    }
-});
-
-window.addEventListener("load", () => {
-    const hash = window.location.hash.substring(1);
-    if (hash) {
-        showSection(hash);
-        currentSection = hash;
-    } else {
-        showSection('home');
-        currentSection = 'home';
-    }
-});
-
-function navigateTo(section) {
-    if (currentSection === section) return;
-    showSection(section);
-    history.pushState({ section }, "", `#${section}`);
-    if (section === 'home') {
-        history.replaceState({ section }, "", location.pathname);
-    }
-    currentSection = section;
-}
 
 
 
