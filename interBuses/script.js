@@ -510,25 +510,13 @@ document.addEventListener('DOMContentLoaded', function () {
         renderAds('cooperative', appData.anuncios.cooperativas);
     }
 
+    let homeBackCount = 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
+    // Modifica navigateTo para resetear el contador si no es home
     function navigateTo(section) {
-        // Guarda el estado relevante
+        if (section !== 'home') {
+            homeBackCount = 0;
+        }
         const state = {
             section,
             currentProvince: appData.currentProvince ? appData.currentProvince.id : null,
@@ -538,77 +526,40 @@ document.addEventListener('DOMContentLoaded', function () {
         history.pushState(state, "", `#${section}`);
     }
 
+    // Modifica el popstate
     window.addEventListener("popstate", (event) => {
-        if (event.state && event.state.section) {
-            // Restaurar estado de la UI
-            if (event.state.currentProvince) {
-                const provincia = appData.provincias.find(p => p.id === event.state.currentProvince);
-                if (provincia) appData.currentProvince = provincia;
-            }
-            if (event.state.currentTerminal && appData.currentProvince) {
-                const terminal = appData.currentProvince.terminales.find(t => t.id === event.state.currentTerminal);
-                if (terminal) appData.currentTerminal = terminal;
-            }
-            showSection(event.state.section);
-            // Si es necesario, renderiza la UI de provincia/terminal/cooperativa
-            if (event.state.section === 'terminal') renderTerminals();
-            if (event.state.section === 'cooperative') renderCooperatives();
+        const section = event.state && event.state.section ? event.state.section : 'home';
+
+        if (section !== 'home') {
+            // Siempre que no sea home, ve a home
+            navigateTo('home');
+            // Evita que el usuario salga accidentalmente
+            homeBackCount = 1;
         } else {
-            showSection('home');
+            // Si ya está en home, cuenta los intentos de retroceso
+            homeBackCount++;
+            if (homeBackCount >= 2) {
+                // Permite salir, resetea el contador
+                homeBackCount = 0;
+                // Deja que el navegador maneje el back (mostrará la advertencia si existe)
+                window.history.go(-1);
+            } else {
+                // Vuelve a home y muestra la advertencia si el usuario intenta salir
+                showSection('home');
+            }
         }
     });
 
-    // Inicialización
-    window.addEventListener("load", () => {
-        const hash = window.location.hash.substring(1);
-        if (hash) {
-            showSection(hash);
-        } else {
-            showSection('home');
+    // onbeforeunload solo muestra advertencia si está en home
+    window.onbeforeunload = function () {
+        if (window.location.hash === '' || window.location.hash === '#home') {
+            return "¿Seguro que quieres salir de la aplicación?";
         }
-    });
-});
+    };
 
-window.onbeforeunload = function () {
-    // Solo advertir si está en la sección principal
-    if (window.location.hash === '' || window.location.hash === '#home') {
-        return "¿Seguro que quieres salir de la aplicación?";
-    }
-};
+}); // <--- CIERRA el primer bloque aquí
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Segundo bloque para acordeones
 document.addEventListener('DOMContentLoaded', function () {
     const DOM = {
         cooperativeContainer: document.getElementById('cooperative-container'),
