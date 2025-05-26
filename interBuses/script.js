@@ -553,7 +553,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // onbeforeunload solo muestra advertencia si está en home
     window.onbeforeunload = function () {
         if (window.location.hash === '' || window.location.hash === '#home') {
-            return "¿Seguro que quieres salir de la aplicación?";
+            return true; // O simplemente: return '';
         }
     };
 
