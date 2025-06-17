@@ -38,8 +38,8 @@ html, body {
 /* Contenedor general (NO MODIFICAR) */
 .container {
   width: 550px;
-  margin: 40px auto;
-  padding: 100px 10px 0px 10px;
+  margin: 20px 10px;
+  padding: 80px 20px 0px 20px;
   background: rgba(0, 0, 0, 0.203);
   border-radius: 18px;
   box-shadow: var(--box-shadow);
@@ -229,7 +229,7 @@ h2 {
 p {
   font-family: 'Satoshi Medium', Arial, sans-serif;
   color: var(--white);
-  margin: 10px;
+  margin: 5px;
   font-size: 2.1em;
   justify-content: center;
   text-align: center;
@@ -303,6 +303,58 @@ p {
   }
   .main-btn, .mundo-btn, .nivel-btn {
     font-size: 1em;
+  }
+}
+@media (max-width: 320px) {
+  .container {
+    width: 95%;
+    min-height: 90vh;
+    padding: 100px 2vw 0 2vw;
+  }
+  .main-btn, .volver-btn, .mundo-btn, .nivel-btn {
+    font-size: 0.95em;
+    padding: 8px 10px;
+    min-width: 90px;
+  }
+  .img-over {
+    width: 60px;
+  }
+  .img5 {
+    width: 70px;
+  }
+  .world-img, .level-img {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+  .geo-box, .memorama-card {
+    width: 80px !important;
+    height: 30px;
+    font-size: 1.2em !important;
+    scale: 0.95;
+  }
+  .geo-shape.square,
+  .geo-shape.circle {
+    width: 18px;
+    height: 18px;
+  }
+  .geo-shape.triangle {
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 18px solid;
+  }
+  .geo-shape.question {
+    font-size: 1.2em;
+    height: 18px;
+  }
+  .progress-bar-container {
+    padding: 10px 0 6px 0;
+  }
+  .progress-bar {
+    gap: 4px;
+  }
+  .progress-step {
+    width: 18px;
+    height: 7px;
   }
 }
 
@@ -389,11 +441,11 @@ p {
 /* Estilos para las tarjetas del memorama */
 .memorama-card {
   color: var(--white);
-  width: 90px;
-  height: 85px;
-  font-size: 1.5em;
+  width: 80px;
+  height: 70px;
+  font-size: 1.3em;
   border-radius: 12px;
-  border: 2px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
   font-family: 'Super Kinds', Arial, sans-serif;
   cursor: pointer;
   transition: opacity 0.3s, background 0.2s, transform 0.2s;
