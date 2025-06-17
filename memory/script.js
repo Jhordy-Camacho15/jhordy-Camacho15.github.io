@@ -830,6 +830,145 @@ window.showExercise = function (world, nivel) {
     return;
   }
 
+  // --- MUNDO 4: NUEVO MEMORAMA ---
+  if (world === 'extra' && nivel >= 1 && nivel <= 5) {
+    const coloresBase = ["bg-secondary", "bg-naranja", "bg-primary", "bg-rojo"];
+const numPairs = 6 + (nivel - 1) * 2; // 6, 8, 10, 12, 14 cartas
+const paresCount = numPairs / 2;
+
+// Genera la lista de colores para los pares, repitiendo si es necesario
+let colores = [];
+while (colores.length < paresCount) {
+  colores = colores.concat(coloresBase);
+}
+colores = colores.slice(0, paresCount);
+
+// Selecciona pares únicos aleatorios
+const nums = [1,2,3,4,5,6,7,8,9,10];
+const textos = ["UNO","DOS","TRES","CUATRO","CINCO","SEIS","SIETE","OCHO","NUEVE","DIEZ"];
+const indices = [];
+while (indices.length < paresCount) {
+  let idx = Math.floor(Math.random() * nums.length);
+  if (!indices.includes(idx)) indices.push(idx);
+}
+
+// Genera pares con el color correspondiente
+let pares = [];
+indices.forEach((idx, i) => {
+  const color = colores[i];
+  pares.push({valor: nums[idx], color, texto: nums[idx].toString()});
+  pares.push({valor: nums[idx], color, texto: textos[idx]});
+});
+
+// Mezcla los pares
+for (let i = pares.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [pares[i], pares[j]] = [pares[j], pares[i]];
+}
+// Determina columnas
+const columns = pares.length > 12 ? 4 : 3;
+let grid = '';
+pares.forEach((par, idx) => {
+  grid += `
+    <div class="memocarta ${par.color}" data-value="${par.valor}" data-text="${par.texto}" data-idx="${idx}">
+      <div class="memocarta-inner">
+        <div class="memocarta-front"></div>
+        <div class="memocarta-back">${par.texto}</div>
+      </div>
+    </div>
+  `;
+});
+
+app.innerHTML = `
+  ${renderProgressBar(world, nivel)}
+  <div class="background-img">
+    <img src="f-m4-n${nivel}.png" alt="Fondo Mundo 4 Nivel ${nivel}">
+  </div>
+  <div class="container level${nivel}-bg level-bg-extra">
+    <p>Memoriza y encuentra los pares</p>
+    <div id="memorama-grid" style="display: grid; grid-template-columns: repeat(${columns}, 80px); gap: 18px; justify-content: center; margin: 40px 0;">
+      ${grid}
+    </div>
+    <button onclick="showLevels('${world}')" class="main-btn volver-btn" style="margin-top:24px;">Volver</button>
+  </div>
+`;
+
+    // Lógica de memorama con giro 3D y máximo 2 abiertas
+    let openCards = [];
+    let matched = 0;
+    let locked = false;
+    const valueMap = {
+      "1": "UNO", "UNO": "1",
+      "2": "DOS", "DOS": "2",
+      "3": "TRES", "TRES": "3",
+      "4": "CUATRO", "CUATRO": "4",
+      "5": "CINCO", "CINCO": "5",
+      "6": "SEIS", "SEIS": "6",
+      "7": "SIETE", "SIETE": "7",
+      "8": "OCHO", "OCHO": "8",
+      "9": "NUEVE", "NUEVE": "9",
+      "10": "DIEZ", "DIEZ": "10"
+    };
+    const cards = Array.from(document.querySelectorAll('.memocarta'));
+    cards.forEach(card => {
+      card.onclick = function () {
+        if (locked || card.classList.contains('matched') || card.classList.contains('open')) return;
+        card.classList.add('open');
+        openCards.push(card);
+
+        if (openCards.length === 2) {
+          locked = true;
+          const [c1, c2] = openCards;
+          // Comparación estricta: color, número y texto
+          if (
+            (valueMap[c1.querySelector('.memocarta-back').textContent] === c2.querySelector('.memocarta-back').textContent ||
+             valueMap[c2.querySelector('.memocarta-back').textContent] === c1.querySelector('.memocarta-back').textContent) &&
+            c1.dataset.value === c2.dataset.value &&
+            c1.className === c2.className
+          ) {
+            setTimeout(() => {
+              c1.classList.add('matched');
+              c2.classList.add('matched');
+              c1.classList.remove('open');
+              c2.classList.remove('open');
+              matched += 2;
+              openCards = [];
+              locked = false;
+              if (matched === pares.length) {
+                setTimeout(() => {
+                  showModal({
+                    title: '¡Correcto!',
+                    message: nivel === 5
+                      ? '¡Has completado todos los ejercicios de este mundo!'
+                      : '¡Muy bien!',
+                    btnText: nivel === 5 ? 'Volver a Mundos' : 'Siguiente',
+                    onClose: () => {
+                      if (nivel === 5) showWorlds();
+                      else window.showExercise(world, nivel + 1);
+                    }
+                  });
+                }, 400);
+              }
+            }, 600);
+          } else {
+            setTimeout(() => {
+              c1.classList.remove('open');
+              c2.classList.remove('open');
+              openCards = [];
+              locked = false;
+            }, 900);
+          }
+        } else if (openCards.length > 2) {
+          // Si por alguna razón hay más de 2 abiertas, ciérralas todas menos la última
+          openCards.slice(0, -1).forEach(c => c.classList.remove('open'));
+          openCards = [openCards[openCards.length - 1]];
+          locked = false;
+        }
+      };
+    });
+    return;
+  }
+
 };
 
 
@@ -1020,6 +1159,7 @@ window.showExercise = function (world, nivel) {
     cards.forEach(card => {
       card.onclick = function () {
         if (locked || card.classList.contains('matched')) return;
+        // Deseleccionar si ya está seleccionada
         if (card === first) {
           card.classList.remove('selected');
           first = null;
@@ -1032,6 +1172,7 @@ window.showExercise = function (world, nivel) {
           card.classList.add('selected');
           second = card;
           locked = true;
+          // Solo es par si valor, color y texto/numero coinciden
           if (
             (valueMap[first.textContent] === second.textContent || valueMap[second.textContent] === first.textContent) &&
             first.dataset.value === second.dataset.value &&
@@ -1058,7 +1199,7 @@ window.showExercise = function (world, nivel) {
                     btnText: nivel === 5 ? 'Volver a Mundos' : 'Siguiente',
                     onClose: () => {
                       if (nivel === 5) showWorlds();
-                      else window.showExercise(world, nivel + 1);
+                      else showExercise(world, nivel + 1);
                     }
                   });
                 }, 400);
