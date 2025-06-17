@@ -309,15 +309,15 @@ p {
   .container {
     width: 95%;
     min-height: 90vh;
-    padding: 100px 2vw 0 2vw;
+    padding: 150px 2vw 0 2vw;
   }
   .main-btn, .volver-btn, .mundo-btn, .nivel-btn {
     font-size: 0.95em;
-    padding: 8px 10px;
-    min-width: 90px;
+    padding: 8px 5px;
+    width: 100px;
   }
   .img-over {
-    width: 60px;
+    width: 100px;
   }
   .img5 {
     width: 70px;
