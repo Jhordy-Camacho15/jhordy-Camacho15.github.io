@@ -1,0 +1,1013 @@
+{
+    "cursos": [
+        {
+            "id": 1,
+            "nombre": "Diseño y Desarrollo de interfaces del usuario web",
+            "asignaturas": [
+                {
+                    "id": 101,
+                    "nombre": "Diseño y Creación Web con Gestores de Contenidos",
+                    "temas": [
+                        {
+                            "id": 1001,
+                            "nombre": "Tema 1: Conociendo WordPress",
+                            "teoria": [
+                                "WordPress utiliza MySQL como sistema de gestión de bases de datos relacionales (RDBMS). Referencia: Tabla 6 del PDF, página 28.",
+                                "El lenguaje de programación de WordPress es PHP, usado para webs dinámicas. Apache necesita un módulo PHP para interpretarlo. Referencia: Páginas 27-28.",
+                                "WordPress es un CMS (sistema de gestión de contenidos) creado en 2003. Dominio el 64.2% del mercado de CMS. Referencia: Página 5 y 21-25.",
+                                "Apache HTTP Server es software gratuito para servidores web, usado por el 46% de sitios globales. Referencia: Tabla 6, página 28.",
+                                "Las versiones de WordPress honran a músicos de jazz (ej: v5.6 = Nina Simone). Referencia: Páginas 8-9.",
+                                "La carpeta wp-admin contiene los archivos del backend (área de administración). Referencia: Páginas 29-30.",
+                                "Un CMS permite gestionar contenido web sin programación. Ejemplos: WordPress, Joomla, Drupal. Referencia: Página 21-25.",
+                                "FTP (File Transfer Protocol) transfiere archivos entre cliente y servidor. Los hostings ofrecen cuentas FTP. Referencia: Tabla 3, página 17.",
+                                "Hosting es el servicio que almacena sitios web en servidores. WordPress.org requiere hosting externo. Referencia: Páginas 15-20.",
+                                "La carpeta wp-content almacena plugins, temas e imágenes. Es la más modificada durante desarrollo. Referencia: Páginas 29-30.",
+                                "WordPress usa la licencia GNU GPLv2, que permite libertad para modificar y redistribuir el código. Es 'copyleft': los derivados deben mantenerse abiertos (p. 27).",
+                                "WordPress.com es operado por Automattic (empresa con fines de lucro), mientras WordPress.org es de la fundación sin ánimo de lucro The WordPress Foundation (p. 12).",
+                                "Los dominios .com son para sitios comerciales, .org para organizaciones. El DNS traduce nombres (ej: google.com) a direcciones IP (ej: 172.217.3.195) (p. 15).",
+                                "Hostings populares en España: SiteGround (soporte), Webempresa (velocidad), Hostinger (económico). Usan cPanel para gestión (Tablas 4-5, p. 19-20).",
+                                "phpMyAdmin es una herramienta en hosting para administrar bases de datos MySQL (crear tablas, ejecutar consultas) sin usar comandos SQL (Tabla 3, p. 17).",
+                                "WordPress domina el 64.2% del mercado CMS. Otros: Joomla (3.5%), Drupal (2.4%), Shopify (5.2% para eCommerce) (p. 21-25).",
+                                "La carpeta 'wp-includes' contiene archivos PHP esenciales para el núcleo de WordPress (no temas/plugins). Es crítica para el funcionamiento (p. 30).",
+                                "El archivo 'wp-config.php' guarda las credenciales de la base de datos (usuario, contraseña). Se genera durante la instalación (p. 30).",
+                                "Joomla (3.5% de uso) es flexible, Drupal (2.4%) para desarrolladores, Magento (1.2%) para eCommerce. Alternativas a WordPress (p. 22-25).",
+                                "El sistema DNS (Domain Name System) asocia dominios legibles (ej: unir.edu) con direcciones IP numéricas (ej: 193.144.12.1) (p. 15)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Cuál es la base de datos que usa WordPress?",
+                                    "opciones": [
+                                        "PostgraseSQL",
+                                        "MySQL",
+                                        "Notes",
+                                        "Oracle"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "WordPress utiliza MySQL, un sistema de gestión de bases de datos relacionales (RDBMS) de código abierto. Referencia: Tabla 6, página 28."
+                                },
+                                {
+                                    "pregunta": "¿En qué lenguaje de programación está escrito WordPress?",
+                                    "opciones": [
+                                        "Perl",
+                                        "Python",
+                                        "C",
+                                        "PHP"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "WordPress está escrito en PHP, un lenguaje para desarrollo web que Apache interpreta mediante módulos. Referencia: Páginas 27-28."
+                                },
+                                {
+                                    "pregunta": "¿Qué es WordPress?",
+                                    "opciones": [
+                                        "Editor de portadas web",
+                                        "Creador de plugins",
+                                        "Gestor de contenidos o CMS",
+                                        "Una red social"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "WordPress es un CMS (Content Management System) para crear y gestionar sitios web. Domina el 64.2% del mercado de CMS. Referencia: Páginas 5-6 y 21-25."
+                                },
+                                {
+                                    "pregunta": "¿Qué es Apache HTTP server?",
+                                    "opciones": [
+                                        "Software de servidor web gratuito",
+                                        "Un lugar en el que los datos son almacenados y organizados",
+                                        "Es un sistema de gestión de bases de datos relacionales de código abierto",
+                                        "Es un subconjunto de lenguajes de secuencia como JavaScript y Python"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Apache es un software gratuito para servidores web, usado por el 46% de sitios globales. WordPress lo recomienda. Referencia: Tabla 6, página 28."
+                                },
+                                {
+                                    "pregunta": "Los desarrolladores del núcleo de WordPress comparten una afición de género musical y en cada nueva versión que sacan del software le colocan el nombre de un cantante, ¿a qué género musical se refiere?",
+                                    "opciones": [
+                                        "Jazz",
+                                        "Blues",
+                                        "Rock",
+                                        "Soul"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Cada versión de WordPress honra a un músico de jazz (ej: v5.8 = Chet Baker). Referencia: Tabla 2, páginas 8-9."
+                                },
+                                {
+                                    "pregunta": "Al descargar el documento .zip de WordPress, la carpeta «Wp-admin», contiene:",
+                                    "opciones": [
+                                        "Themes y plugins",
+                                        "Archivos PHP",
+                                        "Es un fichero que permite hacer redirecciones en el sitio web",
+                                        "Contiene el backend de WordPress"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "La carpeta `wp-admin` almacena los archivos del panel de administración (backend). Los temas/plugins están en `wp-content`. Referencia: Páginas 29-30."
+                                },
+                                {
+                                    "pregunta": "¿Qué es un CMS?",
+                                    "opciones": [
+                                        "Editor de imágenes y vídeos",
+                                        "Creador de Temas dinámicos para web",
+                                        "Sistema de Gestor de contenidos",
+                                        "Archivo que controla el acceso al administrador de WordPress"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "CMS = Content Management System. Permite gestionar contenido web sin programación (ej: WordPress, Joomla). Referencia: Página 21."
+                                },
+                                {
+                                    "pregunta": "¿Qué es FTP?",
+                                    "opciones": [
+                                        "Servicio que permite crear bases de datos",
+                                        "Aplicación programada en PHP",
+                                        "Es un protocolo de comunicación",
+                                        "Archivo que se descarga en el .zip del software de WordPress"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "FTP (File Transfer Protocol) transfiere archivos entre cliente y servidor. Los hostings ofrecen cuentas FTP. Referencia: Tabla 3, página 17."
+                                },
+                                {
+                                    "pregunta": "¿Qué es un hosting?",
+                                    "opciones": [
+                                        "Alojamiento web",
+                                        "Archivo que se crea cuando se habilitan las URLs amigables",
+                                        "Sistema de identificación",
+                                        "Es un gestor de contenidos"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Hosting es el servicio que almacena sitios web en servidores. WordPress.org requiere hosting externo. Referencia: Páginas 15-17."
+                                },
+                                {
+                                    "pregunta": "¿Qué incluye la carpeta «Wp-content»?",
+                                    "opciones": [
+                                        "Todos los archivos de la Base de datos",
+                                        "Plugins, temas, imágenes, etc.",
+                                        "Archivos PHP",
+                                        "Datos del administrador de WordPress"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La carpeta `wp-content` almacena plugins, temas, imágenes y archivos subidos por usuarios. Referencia: Páginas 29-30."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2001,
+                            "nombre": "Tema 2: Instalación del software de WordPress",
+                            "teoria": [
+                                "WordPress puede instalarse en servidor local (offline para pruebas) o remoto (online). Requiere descargar el software desde wordpress.org (p. 5-6).",
+                                "Para instalación local se usa XAMPP (Windows/Mac) o MAMP (Mac). XAMPP incluye Apache, MySQL, PHP y Perl (p. 7-8).",
+                                "En XAMPP, se activan los módulos Apache y MySQL, y se guardan los archivos de WordPress en la carpeta 'htdocs' (p. 11-12).",
+                                "La base de datos se crea en phpMyAdmin (localhost/phpmyadmin) con el mismo nombre del proyecto (p. 13-15).",
+                                "Para instalar WordPress localmente, se accede a 'localhost/nombredelproyecto' y se completan los datos: nombre BD, usuario 'root', contraseña vacía (p. 16-18).",
+                                "En servidor remoto, se necesita un hosting y dominio. Los archivos se suben via FTP (FileZilla) a la carpeta 'public_html' (p. 20-23).",
+                                "En hosting remoto, la base de datos se crea desde el cPanel (MySQL Databases). Requiere usuario, contraseña y privilegios totales (p. 24).",
+                                "El instalador remoto pide: nombre BD, usuario/contraseña del hosting, y prefijo de tabla (evitar 'wp_' por seguridad) (p. 24-25).",
+                                "Tras la instalación, el sitio se accede con 'dominio.com' y el panel de administración con 'dominio.com/wp-admin' (p. 25-26).",
+                                "XAMPP está disponible para Windows, Linux, macOS y Solaris. No es solo para desarrollo local (p. 7).",
+                                "FileZilla es un cliente FTP gratuito para transferir archivos al hosting. Requiere datos del servidor (host, usuario, contraseña) (p. 20-22).",
+                                "El prefijo de tabla en WordPress (ej: 'wp_') puede cambiarse durante la instalación para mejorar la seguridad (p. 25).",
+                                "Durante la instalación remota, marcar 'Disuadir motores de búsqueda' evita indexación en Google hasta que el sitio esté listo (p. 25).",
+                                "phpMyAdmin permite gestionar bases de datos MySQL: crear tablas, ejecutar consultas SQL y asignar permisos (p. 13-15).",
+                                "En local, el usuario de MySQL siempre es 'root' y la contraseña vacía. En remoto, se usan las credenciales del hosting (p. 16, 24).",
+                                "La carpeta 'wp-content' almacena plugins, temas y archivos subidos. Es independiente del núcleo de WordPress (p. 12-13).",
+                                "El archivo 'wp-config.php' contiene las credenciales de la base de datos. Se genera automáticamente durante la instalación (p. 30).",
+                                "Para problemas de conexión en local, verificar que Apache y MySQL estén activos en XAMPP (p. 11).",
+                                "En hosting compartido, los archivos de WordPress van en 'public_html' o en un subdirectorio (ej: 'public_html/misitio') (p. 22-23).",
+                                "WordPress Multisite permite gestionar múltiples sitios desde una instalación. Requiere configuración adicional (p. 26)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Qué es XAMPP?",
+                                    "opciones": [
+                                        "Servidor local",
+                                        "Base de datos",
+                                        "Plugins",
+                                        "Para ser usado solo en Mac"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "XAMPP es un servidor local que incluye Apache, MySQL, PHP y Perl. Permite instalar WordPress offline (p. 7)."
+                                },
+                                {
+                                    "pregunta": "¿Dentro del archivo htdocs cuántos proyectos se pueden crear?",
+                                    "opciones": [
+                                        "Diez proyectos",
+                                        "Cincuenta proyectos",
+                                        "Un solo proyecto por instalación",
+                                        "Todos los proyectos que sean necesarios"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "La carpeta 'htdocs' puede albergar múltiples proyectos, cada uno en su propia subcarpeta (p. 12)."
+                                },
+                                {
+                                    "pregunta": "Al descargar WordPress de su página oficial, ¿qué tipo de archivo es descargado?",
+                                    "opciones": [
+                                        ".php",
+                                        ".png",
+                                        ".zip",
+                                        ".htdocs"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "WordPress se descarga como un archivo .zip que luego se descomprime (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Para ingresar en el sitio web en servidor local se debe colocar en el navegador «____/nombredelsitioweb»?",
+                                    "opciones": [
+                                        "localhost/nombredelsitioweb",
+                                        "phpMyAdmin/nombredelsitioweb",
+                                        "wordpresslocal/nombredelsitioweb",
+                                        "basededatos/nombredelsitioweb"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "En local, se usa 'localhost/nombredelproyecto' para acceder al sitio (p. 18)."
+                                },
+                                {
+                                    "pregunta": "¿Para instalar WordPress en un servidor remoto lo primero que se necesita tener contratado es un servicio de?",
+                                    "opciones": [
+                                        "Base de datos",
+                                        "SEO",
+                                        "Servicio de hosting",
+                                        "FTP"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Se requiere un hosting (alojamiento web) y un dominio para instalar WordPress en remoto (p. 20)."
+                                },
+                                {
+                                    "pregunta": "¿Para subir archivos y carpetas desde un ordenador a un servidor remoto se requiere?",
+                                    "opciones": [
+                                        "Un cliente FTP",
+                                        "Archivos PHP",
+                                        "Es un fichero que permite hacer redirecciones en el sitio web",
+                                        "Un dominio"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "FileZilla (cliente FTP) transfiere archivos al hosting. Requiere datos del servidor (p. 20-22)."
+                                },
+                                {
+                                    "pregunta": "¿WordPress es un CMS que opera con?",
+                                    "opciones": [
+                                        "Editor de imágenes y vídeos",
+                                        "Base de datos alojada en el servidor",
+                                        "Compresor de archivos",
+                                        "Aplicaciones móviles"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "WordPress usa una base de datos MySQL para almacenar contenido y configuraciones (p. 24)."
+                                },
+                                {
+                                    "pregunta": "Para ingresar en el administrador de WordPress en servidor remoto, ¿por lo general se coloca nombredeldominio.es/______?",
+                                    "opciones": [
+                                        "Nombredeldominio.es/php",
+                                        "Nombredeldominio.es/.es",
+                                        "Nombredeldominio.es/wpadmin",
+                                        "Nombredeldominio.es/.com"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El panel de administración se accede con 'dominio.com/wp-admin' (p. 25-26)."
+                                },
+                                {
+                                    "pregunta": "¿Qué datos son, generalmente, requeridos para ingresar en el administrador de WordPress?",
+                                    "opciones": [
+                                        "Nombre de la base de datos",
+                                        "Usuario phpMyAdmin",
+                                        "Datos php",
+                                        "Usuario (o correo electrónico) y contraseña"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Se usan las credenciales creadas durante la instalación (usuario/correo + contraseña) (p. 19, 25)."
+                                },
+                                {
+                                    "pregunta": "¿XAMPP está disponible para equipos?",
+                                    "opciones": [
+                                        "Solo para Mac",
+                                        "Microsoft Windows, GNU/Linux, Solaris, y MacOS X",
+                                        "Equipos Sony",
+                                        "Solo para Windows"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "XAMPP funciona en Windows, Linux, macOS y Solaris (p. 7)."
+                                },
+                                {
+                                    "pregunta": "¿Qué módulos de XAMPP deben activarse para instalar WordPress localmente?",
+                                    "opciones": [
+                                        "Apache y MySQL",
+                                        "FileZilla y Mercury",
+                                        "Perl y Tomcat",
+                                        "Solo PHP"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Apache (servidor web) y MySQL (base de datos) son esenciales. PHP viene incluido (p. 11)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es el usuario por defecto de MySQL en instalaciones locales con XAMPP?",
+                                    "opciones": [
+                                        "admin",
+                                        "root",
+                                        "user",
+                                        "No requiere usuario"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "En XAMPP, el usuario de MySQL es 'root' y la contraseña está vacía por defecto (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Dónde se guardan los plugins y temas en WordPress?",
+                                    "opciones": [
+                                        "En la carpeta wp-admin",
+                                        "En la carpeta wp-content",
+                                        "En la carpeta wp-includes",
+                                        "En la base de datos"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La carpeta 'wp-content' almacena plugins, temas y archivos subidos (p. 12-13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué herramienta se usa para gestionar bases de datos MySQL en XAMPP?",
+                                    "opciones": [
+                                        "File Manager",
+                                        "phpMyAdmin",
+                                        "FTP Client",
+                                        "cPanel"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "phpMyAdmin es la interfaz web para administrar bases de datos MySQL (p. 13-15)."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción de instalación evita que Google indexe el sitio temporalmente?",
+                                    "opciones": [
+                                        "Marcar 'Disuadir motores de búsqueda'",
+                                        "Usar un dominio temporal",
+                                        "No crear base de datos",
+                                        "Instalar sin temas"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Esta opción en el instalador evita indexación hasta que el sitio esté listo (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Qué carpeta del hosting remoto almacena los archivos públicos del sitio web?",
+                                    "opciones": [
+                                        "private_html",
+                                        "public_ftp",
+                                        "public_html",
+                                        "wp-config"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los archivos de WordPress deben subirse a 'public_html' o un subdirectorio (p. 22-23)."
+                                },
+                                {
+                                    "pregunta": "¿Qué archivo contiene las credenciales de la base de datos en WordPress?",
+                                    "opciones": [
+                                        "wp-login.php",
+                                        "wp-config.php",
+                                        "index.php",
+                                        ".htaccess"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El archivo 'wp-config.php' guarda los datos de conexión a la BD (p. 30)."
+                                },
+                                {
+                                    "pregunta": "¿Qué prefijo de tabla NO se recomienda usar por seguridad?",
+                                    "opciones": [
+                                        "wp_",
+                                        "site_",
+                                        "user_",
+                                        "db_"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "'wp_' es el predeterminado y conocido por hackers. Debe cambiarse (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Qué incluye el paquete XAMPP?",
+                                    "opciones": [
+                                        "Solo Apache y MySQL",
+                                        "Apache, MySQL, PHP y Perl",
+                                        "WordPress preinstalado",
+                                        "Solo PHP y Perl"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "XAMPP incluye Apache (servidor), MySQL (BD), PHP y Perl (p. 7)."
+                                },
+                                {
+                                    "pregunta": "¿Qué se debe verificar si el sitio local no carga en el navegador?",
+                                    "opciones": [
+                                        "Que FileZilla esté instalado",
+                                        "Que Apache y MySQL estén activos en XAMPP",
+                                        "Que el dominio esté contratado",
+                                        "Que phpMyAdmin tenga plugins"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Apache y MySQL deben estar en ejecución en XAMPP para que el sitio funcione (p. 11)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3001,
+                            "nombre": "Tema 3: Configuración básica de WordPress",
+                            "teoria": [
+                                "Los ajustes generales de WordPress incluyen título del sitio, descripción corta (importante para SEO), dirección de WordPress (URL), correo electrónico para notificaciones, idioma, y formatos de fecha/hora (p. 6-8).",
+                                "En 'Ajustes de escritura' se define la categoría y formato de entrada predeterminados (estándar, galería, video, etc.), y opciones para publicar vía correo electrónico usando servidores SMTP (p. 9-11).",
+                                "Los 'Ajustes de lectura' permiten elegir si la página principal muestra entradas recientes o una página estática, y configurar la visibilidad para motores de búsqueda (p. 12-14).",
+                                "Los comentarios en WordPress pueden gestionarse con pingbacks (notificaciones automáticas entre sitios enlazados) y trackbacks (notificaciones manuales). Se pueden moderar y filtrar spam (p. 15-18).",
+                                "En 'Ajustes de medios' se configuran tamaños de imágenes (miniaturas, medianas, grandes) y la organización de archivos por fecha en la carpeta /uploads (p. 19-20).",
+                                "Los enlaces permanentes (permalinks) deben ser 'amigables' para SEO. Opciones incluyen: nombre de entrada, fecha, o estructura personalizada (ej: /%postname%/) (p. 21-22).",
+                                "Todo sitio web debe tener una página de política de privacidad, configurable en 'Ajustes de privacidad'. Puede usarse un modelo adaptado a las leyes locales (p. 23-24).",
+                                "WordPress tiene 6 roles de usuario predeterminados: Suscriptor (solo comentarios), Colaborador (crea borradores), Autor (publica entradas), Editor (gestiona contenido), Administrador (control total), y Super Admin (para redes multisitio) (p. 25-28).",
+                                "Para permitir registros públicos, activar 'Cualquiera puede registrarse' en Ajustes > Generales. Los nuevos usuarios reciben un correo con sus credenciales (p. 29-30).",
+                                "Los avatares en comentarios usan Gravatar. Pueden desactivarse o personalizarse en 'Ajustes > Comentarios' (p. 17-18).",
+                                "El formato de entrada 'Galería' muestra imágenes en cuadrícula, 'Cita' destaca texto con estilo tipográfico especial, y 'Audio' incrusta reproductores (p. 9-10).",
+                                "Para evitar spam en comentarios, usar la lista de 'palabras rechazadas' en Ajustes > Comentarios. WordPress enviará comentarios con esas palabras a moderación (p. 17).",
+                                "Los feeds RSS pueden mostrar contenido completo o resúmenes. Esto se configura en 'Ajustes > Lectura' (p. 13).",
+                                "El rol 'Colaborador' no puede subir medios ni publicar directamente. Sus entradas requieren aprobación del Editor/Administrador (p. 27).",
+                                "Los Super Admins solo existen en instalaciones Multisite. Gestionan toda la red de sitios, incluyendo plugins y temas globales (p. 28).",
+                                "La URL de trackback es la URL del post más '/trackback'. Se usa para notificaciones manuales entre blogs (p. 16).",
+                                "En 'Ajustes > Medios', desactivar 'Organizar en carpetas por fecha' si se prefieren URLs más cortas para imágenes (p. 20).",
+                                "Los enlaces permanentes basados en categorías usan la estructura '/%category%/%postname%/', mejorando la organización y SEO (p. 22).",
+                                "Los usuarios pueden filtrarse por rol en 'Usuarios > Todos los usuarios'. También se pueden editar en lote (p. 30-31).",
+                                "Para optimizar imágenes antes de subirlas a WordPress, usar herramientas como TinyPNG o plugins como Smush (p. 36)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "En ajustes generales, los campos de título y descripción del sitio ayudan a:",
+                                    "opciones": [
+                                        "Registrar usuarios",
+                                        "Robots de Google encuentren el sitio",
+                                        "Cambiar fuente del título",
+                                        "Modificar el idioma de la web"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El título y descripción son clave para SEO. Los motores de búsqueda como Google los usan para indexar el sitio (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿El rol de Editor permite?",
+                                    "opciones": [
+                                        "Configurar el sitio web",
+                                        "Cambiar la descripción corta del sitio",
+                                        "Crear y editar páginas, enlaces, administrar categorías",
+                                        "Habilitar el multisite de WordPress"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los Editores gestionan contenido (páginas, entradas, categorías) pero no ajustes globales del sitio (p. 27)."
+                                },
+                                {
+                                    "pregunta": "Los ajustes de privacidad de WordPress permiten:",
+                                    "opciones": [
+                                        "Configurar la política de privacidad del sitio",
+                                        "Administrar usuarios",
+                                        "Instalar temas",
+                                        "Permitir suscripción de usuarios"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "En 'Ajustes > Privacidad' se asigna una página para la política de privacidad, requerida por ley (p. 23)."
+                                },
+                                {
+                                    "pregunta": "¿Qué es el pingback?",
+                                    "opciones": [
+                                        "Software de servidor web",
+                                        "Sistema de comunicación automática entre sitios enlazados",
+                                        "Rol de súper administrador",
+                                        "Sistema de gestión de usuarios"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Pingback notifica automáticamente a un sitio cuando otro lo enlaza (p. 16)."
+                                },
+                                {
+                                    "pregunta": "La casilla «Publicar por correo electrónico» en ajustes permite:",
+                                    "opciones": [
+                                        "Registrar nuevos usuarios",
+                                        "Modificar correos de usuarios",
+                                        "Publicar entradas enviadas a un correo asignado",
+                                        "Verificar posts publicados"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Requiere configurar un servidor de correo para publicar automáticamente entradas enviadas por email (p. 10)."
+                                },
+                                {
+                                    "pregunta": "El rol de Colaborador se diferencia del Suscriptor porque:",
+                                    "opciones": [
+                                        "Puede ver comentarios en el área de administrador",
+                                        "Puede registrar otros roles",
+                                        "Puede añadir medios",
+                                        "Puede editar publicaciones de otros"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Los Colaboradores pueden crear borradores y ver comentarios, pero no subir medios ni publicar directamente (p. 27)."
+                                },
+                                {
+                                    "pregunta": "Los enlaces permanentes amigables permiten:",
+                                    "opciones": [
+                                        "Administrar multisitios",
+                                        "Optimizar correos electrónicos",
+                                        "Ampliar capacidades de Multisite",
+                                        "Mejorar el SEO"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "URLs como '/nombre-entrada/' son legibles y mejoran el posicionamiento (p. 22)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tamaños de imagen crea WordPress por defecto?",
+                                    "opciones": [
+                                        "Grande, mediano, miniatura",
+                                        "Grande y pequeño",
+                                        "500px, 550px, 555px",
+                                        "Solo PNG"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "WordPress genera 3 versiones de cada imagen subida (p. 19)."
+                                },
+                                {
+                                    "pregunta": "¿Cuántos roles de usuario tiene WordPress por defecto?",
+                                    "opciones": [
+                                        "Cinco",
+                                        "Diez",
+                                        "Infinitos",
+                                        "Seis"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Suscriptor, Colaborador, Autor, Editor, Administrador y Super Admin (p. 26)."
+                                },
+                                {
+                                    "pregunta": "En 'Ajustes de escritura', ¿qué opciones muestra 'Formato de entrada por defecto'?",
+                                    "opciones": [
+                                        "Temas, medios, suscripción",
+                                        "Plugins, temas, imágenes",
+                                        "Estándar, minientrada, chat, galería, enlace, imagen, cita, estado, vídeo, audio",
+                                        "Estándar, minientrada, plugins, galería, enlace, imagen, temas, estado, vídeo, audio"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Son formatos predefinidos para entradas, compatibles con la mayoría de temas (p. 9-10)."
+                                },
+                                {
+                                    "pregunta": "¿Dónde se activa el registro público de usuarios en WordPress?",
+                                    "opciones": [
+                                        "Ajustes > Lectura",
+                                        "Ajustes > Generales > 'Cualquiera puede registrarse'",
+                                        "Usuarios > Perfil",
+                                        "Ajustes > Privacidad"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "En 'Ajustes > Generales', marcando la casilla correspondiente (p. 29)."
+                                },
+                                {
+                                    "pregunta": "¿Qué rol puede instalar plugins y temas?",
+                                    "opciones": [
+                                        "Editor",
+                                        "Autor",
+                                        "Administrador",
+                                        "Colaborador"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Solo Administradores y Super Admins tienen este privilegio (p. 28)."
+                                },
+                                {
+                                    "pregunta": "¿Qué estructura de permalink es mejor para SEO?",
+                                    "opciones": [
+                                        "?p=123",
+                                        "/%postname%/",
+                                        "/%year%/%monthnum%/",
+                                        "/%author%/"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Usar el nombre de la entrada (/%postname%/) hace URLs legibles y optimizadas (p. 22)."
+                                },
+                                {
+                                    "pregunta": "¿Qué hace WordPress con las imágenes subidas?",
+                                    "opciones": [
+                                        "Las comprime automáticamente a 72dpi",
+                                        "Crea tres tamaños (mini, mediano, grande)",
+                                        "Las convierte a formato WebP",
+                                        "No las modifica"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Genera miniaturas, medianas y grandes para usar en diferentes áreas del sitio (p. 19)."
+                                },
+                                {
+                                    "pregunta": "¿Qué es un trackback?",
+                                    "opciones": [
+                                        "Un rol de usuario avanzado",
+                                        "Notificación manual entre sitios enlazados",
+                                        "Tipo de formato de entrada",
+                                        "Plugin para comentarios"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Método manual para notificar a otro blog que lo has enlazado (URL + /trackback) (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Qué ajuste evita que Google indexe el sitio temporalmente?",
+                                    "opciones": [
+                                        "Visibilidad en 'Ajustes > Lectura'",
+                                        "Política de privacidad",
+                                        "Desactivar pingbacks",
+                                        "Modo mantenimiento"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Marcar 'Disuadir motores de búsqueda' en 'Ajustes > Lectura' (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué rol puede publicar entradas sin aprobación?",
+                                    "opciones": [
+                                        "Colaborador",
+                                        "Suscriptor",
+                                        "Autor",
+                                        "Ninguno, siempre requieren aprobación"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los Autores publican directamente, los Colaboradores necesitan aprobación (p. 27)."
+                                },
+                                {
+                                    "pregunta": "¿Dónde se configura el idioma del sitio?",
+                                    "opciones": [
+                                        "Ajustes > Generales",
+                                        "Ajustes > Escritura",
+                                        "Ajustes > Lectura",
+                                        "Apariencia > Temas"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "En 'Ajustes > Generales' se selecciona el idioma del backend y frontend (p. 7)."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción organiza archivos subidos por fecha?",
+                                    "opciones": [
+                                        "Subida de archivos en 'Ajustes > Medios'",
+                                        "Permalinks basados en fecha",
+                                        "Carpetas por categoría",
+                                        "No es posible en WordPress"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Activando 'Organizar en carpetas por fecha' en 'Ajustes > Medios' (p. 20)."
+                                },
+                                {
+                                    "pregunta": "¿Qué rol NO puede asignar categorías a entradas?",
+                                    "opciones": [
+                                        "Editor",
+                                        "Autor",
+                                        "Colaborador",
+                                        "Administrador"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los Colaboradores solo usan categorías existentes, no pueden crear nuevas (p. 27)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4001,
+                            "nombre": "tema 4: Creación de entradas y librería multimedia en WordPress",
+                            "teoria": [
+                                "Los títulos de entradas en WordPress admiten cualquier carácter, pero los símbolos se eliminan automáticamente en el slug de la URL (p. 7-8).",
+                                "El editor de texto de WordPress (TinyMCE) tiene funciones similares a procesadores como Word: negritas, cursivas, listas y alineación (p. 8-9).",
+                                "Los formatos predeterminados de entradas incluyen: estándar, galería, imagen, cita, vídeo y audio, dependiendo del tema instalado (p. 13).",
+                                "El extracto es un resumen breve (2-3 frases) del contenido de una entrada, útil para SEO y vistas previas (p. 15).",
+                                "Los extractos pueden generarse automáticamente (55 palabras) o escribirse manualmente (p. 15).",
+                                "La biblioteca multimedia soporta imágenes, vídeos, audios y PDFs, almacenados en wp-content/uploads (p. 20-21).",
+                                "Desde la biblioteca se editan metadatos como título alternativo, leyenda, descripción y URL de cada medio (p. 21-22).",
+                                "Los vídeos en la biblioteca se identifican con un icono de cámara y no admiten título alternativo (p. 23-24).",
+                                "La etiqueta 'more' (icono de cuadrados con línea punteada) inserta un corte 'Leer más' en las entradas (p. 9, Tabla 1).",
+                                "El icono de tres puntos verticales (⋮) extiende la barra de herramientas del editor con opciones avanzadas (p. 10, Tabla 2).",
+                                "Los archivos multimedia se guardan en wp-content/uploads, organizados por año/mes si está activo en ajustes (p. 20).",
+                                "El módulo 'Publicar inmediatamente' permite programar entradas para fechas futuras (p. 12).",
+                                "El formato 'Galería' muestra imágenes en cuadrícula, ideal para colecciones (p. 13).",
+                                "El título alternativo (alt text) en imágenes es clave para SEO y accesibilidad (p. 21-22).",
+                                "El slug es la parte editable de la URL, basada en el título pero sin caracteres especiales (p. 7-8).",
+                                "El botón 'Añadir objeto' permite insertar galerías, listas de reproducción o medios externos (p. 25-26).",
+                                "Los 'Autores' pueden publicar entradas y subir medios, pero no gestionar contenido de otros (p. 27).",
+                                "Los trackbacks son notificaciones manuales a otros blogs cuando se enlazan sus contenidos (p. 16).",
+                                "Formatos como JPEG o PNG son ideales para web por su equilibrio calidad-peso (p. 29).",
+                                "Insertar vídeos desde YouTube (en lugar de subirlos) reduce la carga en el servidor (p. 27)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "El título de una entrada o post en WordPress puede contener:",
+                                    "opciones": [
+                                        "Cualquier carácter, signos de puntuación, símbolos, etc.",
+                                        "Solo símbolos HTML.",
+                                        "Números arábicos.",
+                                        "Solo mayúsculas."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Aunque el título admite cualquier carácter, WordPress limpia automáticamente los símbolos en el slug (p. 7-8)."
+                                },
+                                {
+                                    "pregunta": "En la sección de textos de las entradas tiene un formato similar a:",
+                                    "opciones": [
+                                        "MySQL.",
+                                        "PHP.",
+                                        "Word.",
+                                        "CMS."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El editor visual de WordPress simula las funciones básicas de procesadores como Microsoft Word (p. 8-9)."
+                                },
+                                {
+                                    "pregunta": "¿El módulo de formato en las entradas viene por defecto con cuáles formatos?",
+                                    "opciones": [
+                                        "Estándar, enlace, minientrada, galería, imagen, cita, estado, vídeo, audio y chat.",
+                                        "Estándar, medios, minientrada, tamaño, imagen, cita, estructura, vídeo, audio y chat.",
+                                        "Estándar, HTML, minientrada, galería, imagen, CCS, estado, vídeo, audio y chat.",
+                                        "Estándar, enlace, minientrada, JavaScript, imagen, cita, estado, vídeo, audio y chat."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Estos formatos predeterminados pueden variar según el tema instalado en WordPress (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué es el extracto de una entrada?",
+                                    "opciones": [
+                                        "Es un software de servidor web gratuito.",
+                                        "Un lugar en el que los datos son almacenados y organizados.",
+                                        "Es una descripción breve del contenido de una entrada.",
+                                        "Es un subconjunto de lenguajes de secuencia como JavaScript y Python."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El extracto es un resumen opcional que aparece en listados de entradas o resultados de búsqueda (p. 15)."
+                                },
+                                {
+                                    "pregunta": "El extracto de una entrada suele tener una extensión de:",
+                                    "opciones": [
+                                        "Una palabra.",
+                                        "Un párrafo de sesenta palabras.",
+                                        "Es el texto enlazado 'leer más'.",
+                                        "Dos o tres frases."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Los extractos manuales son breves (2-3 frases) para mantener la claridad en vistas previas (p. 15)."
+                                },
+                                {
+                                    "pregunta": "En la biblioteca de medios de WordPress se pueden subir archivos:",
+                                    "opciones": [
+                                        "Videos, imágenes, documentos PDF, audios, entre otros.",
+                                        "Archivos PHP.",
+                                        "Solo imágenes jpg y png.",
+                                        "Archivo .com."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La biblioteca soporta múltiples formatos multimedia, pero no archivos ejecutables como PHP (p. 20-21)."
+                                },
+                                {
+                                    "pregunta": "Desde la biblioteca de medios se puede añadir o editar información:",
+                                    "opciones": [
+                                        "Título alternativo, título, leyenda, descripción y copiar la URL.",
+                                        "Configurar la URL amigable del medio.",
+                                        "Cambiar y editar solo el título del audiovisual.",
+                                        "Toda la información de los archivos jpg."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Estos metadatos son editables para optimizar SEO y organización (p. 21-22)."
+                                },
+                                {
+                                    "pregunta": "Los medios de vídeo se representan en la biblioteca a través de:",
+                                    "opciones": [
+                                        "Visualización miniatura de imagen del vídeo.",
+                                        "Archivo .zip.",
+                                        "Un icono de cámara de vídeo.",
+                                        "Una configuración PHP."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "WordPress muestra un icono genérico de cámara para vídeos, a menos que un plugin añada miniaturas (p. 23-24)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es el icono que representa la etiqueta 'more' en la sección del texto de una entrada?",
+                                    "opciones": [
+                                        "Icono de cita (\").",
+                                        "Icono de lista (•).",
+                                        "Icono de dos cuadrados con línea punteada.",
+                                        "Icono de enlace (🔗)."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Este icono inserta la etiqueta <!--more--> para dividir el contenido en vistas previas (p. 9, Tabla 1)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es el icono que representa la extensión de la barra de herramientas en la sección del texto de una entrada?",
+                                    "opciones": [
+                                        "Icono de flecha hacia abajo (↓).",
+                                        "Icono de llave inglesa (🔧).",
+                                        "Icono de tres puntos verticales (⋮).",
+                                        "Icono de signo más (+)."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Al hacer clic en ⋮, se despliegan herramientas avanzadas como tachado, caracteres especiales y más (p. 10, Tabla 2)."
+                                },
+                                {
+                                    "pregunta": "¿Dónde se almacenan físicamente los archivos multimedia subidos a WordPress?",
+                                    "opciones": [
+                                        "En la base de datos MySQL.",
+                                        "En el directorio wp-content/uploads.",
+                                        "En la carpeta /themes.",
+                                        "En la raíz del servidor (public_html)."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "WordPress organiza los medios en subcarpetas por año/mes dentro de wp-content/uploads (p. 20)."
+                                },
+                                {
+                                    "pregunta": "¿Qué acción permite programar la publicación de una entrada para una fecha futura?",
+                                    "opciones": [
+                                        "Opciones de pantalla.",
+                                        "Módulo de publicación > 'Publicar inmediatamente'.",
+                                        "Editar el slug.",
+                                        "Añadir una etiqueta 'programado'."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El campo 'Publicar inmediatamente' en el módulo de publicación permite definir fechas futuras (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué formato de entrada sería ideal para mostrar una colección de imágenes en cuadrícula?",
+                                    "opciones": [
+                                        "Formato 'Cita'.",
+                                        "Formato 'Galería'.",
+                                        "Formato 'Audio'.",
+                                        "Formato 'Enlace'."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El formato 'Galería' está diseñado para exhibir múltiples imágenes con miniaturas (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué metadato es especialmente importante para el SEO en imágenes?",
+                                    "opciones": [
+                                        "Título alternativo.",
+                                        "Nombre del archivo.",
+                                        "Fecha de subida.",
+                                        "Tamaño en píxeles."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "El texto alternativo (alt text) describe la imagen para motores de búsqueda y usuarios con discapacidad visual (p. 21-22)."
+                                },
+                                {
+                                    "pregunta": "¿Qué función cumple el 'slug' en una entrada?",
+                                    "opciones": [
+                                        "Define el color de fondo del post.",
+                                        "Genera la URL amigable de la entrada.",
+                                        "Activa la opción de comentarios.",
+                                        "Establece la imagen destacada."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El slug es la versión simplificada del título que aparece en la URL (ej: /mi-entrada/) (p. 7-8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción NO se encuentra en el módulo 'Añadir objeto'?",
+                                    "opciones": [
+                                        "Insertar desde URL externa.",
+                                        "Crear una galería.",
+                                        "Cambiar el rol de usuario.",
+                                        "Añadir lista de reproducción de audio."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los roles de usuario se gestionan en el panel 'Usuarios', no en el editor de entradas (p. 25-26)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica tiene el rol 'Autor' en WordPress?",
+                                    "opciones": [
+                                        "Puede editar entradas de otros usuarios.",
+                                        "Puede publicar y subir medios.",
+                                        "Puede instalar plugins.",
+                                        "Puede cambiar ajustes del sitio."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los Autores tienen permisos limitados: publicar sus propias entradas y subir medios (p. 27)."
+                                },
+                                {
+                                    "pregunta": "¿Para qué sirve la opción 'Enviar trackbacks'?",
+                                    "opciones": [
+                                        "Notificar manualmente a otros blogs que los has enlazado.",
+                                        "Optimizar imágenes automáticamente.",
+                                        "Programar copias de seguridad.",
+                                        "Filtrar comentarios spam."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Los trackbacks son notificaciones manuales entre sitios, diferentes a los pingbacks automáticos (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Qué formato de imagen es recomendable para web según el PDF?",
+                                    "opciones": [
+                                        "BMP sin comprimir.",
+                                        "TIFF alta resolución.",
+                                        "JPEG optimizado o PNG.",
+                                        "PSD editable."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "JPEG y PNG ofrecen buena calidad con tamaños reducidos, ideal para velocidad de carga (p. 29)."
+                                },
+                                {
+                                    "pregunta": "¿Qué ventaja tiene insertar un vídeo desde YouTube en lugar de subirlo directamente?",
+                                    "opciones": [
+                                        "Mejora la calidad del vídeo.",
+                                        "Reduce la carga en el servidor de WordPress.",
+                                        "Permite editar el vídeo en WordPress.",
+                                        "Bloquea los anuncios en el vídeo."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Insertar desde YouTube evita consumir espacio de almacenamiento y ancho de banda del hosting (p. 27)."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 201,
+                    "nombre": "Desarrollo de Recursos Animados",
+                    "temas": [
+                        {
+                            "id": 2001,
+                            "nombre": "Tema 1: Conociendo WordPress",
+                            "teoria": [
+                                "WordPress utiliza MySQL como sistema de gestión de bases de datos relacionales (RDBMS). Referencia: Tabla 6 del PDF, página 28."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Cuál es la base de datos que usa WordPress?",
+                                    "opciones": [
+                                        "PostgraseSQL",
+                                        "MySQL",
+                                        "Notes",
+                                        "Oracle"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "WordPress utiliza MySQL, un sistema de gestión de bases de datos relacionales (RDBMS) de código abierto. Referencia: Tabla 6, página 28."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 301,
+                    "nombre": "Desarrollo Web Responsive",
+                    "temas": [
+                        {
+                            "id": 3001,
+                            "nombre": "Tema 1: Conociendo WordPress",
+                            "teoria": [
+                                "WordPress utiliza MySQL como sistema de gestión de bases de datos relacionales (RDBMS). Referencia: Tabla 6 del PDF, página 28."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Cuál es la base de datos que usa WordPress?",
+                                    "opciones": [
+                                        "PostgraseSQL",
+                                        "MySQL",
+                                        "Notes",
+                                        "Oracle"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "WordPress utiliza MySQL, un sistema de gestión de bases de datos relacionales (RDBMS) de código abierto. Referencia: Tabla 6, página 28."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 301,
+                    "nombre": "Metodologías Agiles en el Proceso",
+                    "temas": [
+                        {
+                            "id": 3001,
+                            "nombre": "Tema 1: Conociendo WordPress",
+                            "teoria": [
+                                "WordPress utiliza MySQL como sistema de gestión de bases de datos relacionales (RDBMS). Referencia: Tabla 6 del PDF, página 28."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Cuál es la base de datos que usa WordPress?",
+                                    "opciones": [
+                                        "PostgraseSQL",
+                                        "MySQL",
+                                        "Notes",
+                                        "Oracle"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "WordPress utiliza MySQL, un sistema de gestión de bases de datos relacionales (RDBMS) de código abierto. Referencia: Tabla 6, página 28."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                 {
+                    "id": 301,
+                    "nombre": "UX y UI",
+                    "temas": [
+                        {
+                            "id": 3001,
+                            "nombre": "Tema 1: Conociendo WordPress",
+                            "teoria": [
+                                "WordPress utiliza MySQL como sistema de gestión de bases de datos relacionales (RDBMS). Referencia: Tabla 6 del PDF, página 28."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Cuál es la base de datos que usa WordPress?",
+                                    "opciones": [
+                                        "PostgraseSQL",
+                                        "MySQL",
+                                        "Notes",
+                                        "Oracle"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "WordPress utiliza MySQL, un sistema de gestión de bases de datos relacionales (RDBMS) de código abierto. Referencia: Tabla 6, página 28."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Segundo Semestre",
+            "asignaturas": [
+                {
+                    "id": 201,
+                    "nombre": "Matemáticas Avanzadas",
+                    "temas": []
+                }
+            ]
+        }
+    ]
+}
