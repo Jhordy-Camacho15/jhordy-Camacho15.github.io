@@ -741,11 +741,11 @@ window.showExercise = function (world, nivel) {
     app.innerHTML = `
       ${renderProgressBar(world, nivel)}
       <div class="background-img">
-        <img src="f-m3-n1.png" alt="Fondo Mundo 3 Nivel ${nivel}">
+        <img src="f-m3-n${nivel}.png" alt="Fondo Mundo 3 Nivel ${nivel}">
       </div>
       <div class="container level${nivel}-bg level-bg-rojo">
         <h2>Memorama: Une los pares</h2>
-        <div id="memorama-grid" style="display: grid; grid-template-columns: repeat(${columns}, 80px); gap: 18px; justify-content: center; margin: 40px 0;">
+        <div id="memorama-grid" style="display: grid; grid-template-columns: repeat(${columns}, 70px); gap: 10px; justify-content: center; margin: 20px 0;">
           ${grid}
         </div>
         <p>Haz clic en los pares iguales (número y texto).</p>
@@ -993,11 +993,11 @@ window.showExercise = function (world, nivel) {
     app.innerHTML = `
       ${renderProgressBar(world, nivel)}
       <div class="background-img">
-        <img src="f-m3-n${nivel}.png" alt="Fondo Mundo 3 Nivel ${nivel}">
+        <img src="f-m3-n1.png" alt="Fondo Mundo 3 Nivel ${nivel}">
       </div>
       <div class="container level${nivel}-bg level-bg-rojo">
         <p>Une los pares</p>
-        <div id="memorama-grid" style="display: grid; grid-template-columns: repeat(${columns}, 80px); gap: 18px; justify-content: center; margin: 40px 0;">
+        <div id="memorama-grid" style="display: grid; grid-template-columns: repeat(${columns}, 70px); gap: 15px; justify-content: center; margin: 10px 0;">
           ${grid}
         </div>
         <button onclick="showLevels('${world}')" class="main-btn volver-btn" style="margin-top:24px;">Volver</button>
