@@ -305,57 +305,52 @@ p {
     font-size: 1em;
   }
 }
+@media (max-width: 768px) {
+  .worlds-btns, .levels-btns {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 12px;
+    justify-items: center;
+  }
+  .world-btn-group, .level-btn-group {
+    width: 90%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 425px) {
+  .worlds-btns, .levels-btns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 8px;
+  }
+  .world-btn-group, .level-btn-group {
+    max-width: 160px;
+  }
+}
+@media (max-width: 375px) {
+  .worlds-btns, .levels-btns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 4px;
+  }
+  .world-btn-group, .level-btn-group {
+    max-width: 120px;
+  }
+}
 @media (max-width: 320px) {
-  .container {
-    width: 95%;
-    min-height: 90vh;
-    padding: 150px 2vw 0 2vw;
+  .worlds-btns, .levels-btns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 2px;
   }
-  .main-btn, .volver-btn, .mundo-btn, .nivel-btn {
-    font-size: 0.95em;
-    padding: 8px 5px;
-    width: 100px;
+  .world-btn-group, .level-btn-group {
+    max-width: 90vw;
   }
-  .img-over {
-    width: 100px;
-  }
-  .img5 {
-    width: 70px;
-  }
-  .world-img, .level-img {
-    width: 40px;
-    margin-bottom: 10px;
-  }
-  .geo-box, .memorama-card {
-    width: 80px !important;
-    height: 30px;
-    font-size: 1.2em !important;
-    scale: 0.95;
-  }
-  .geo-shape.square,
-  .geo-shape.circle {
-    width: 18px;
-    height: 18px;
-  }
-  .geo-shape.triangle {
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    border-bottom: 18px solid;
-  }
-  .geo-shape.question {
-    font-size: 1.2em;
-    height: 18px;
-  }
-  .progress-bar-container {
-    padding: 10px 0 6px 0;
-  }
-  .progress-bar {
-    gap: 4px;
-  }
-  .progress-step {
-    width: 18px;
-    height: 7px;
-  }
+}
+
+/* Centrar el último elemento si es impar */
+.worlds-btns > .world-btn-group:last-child:nth-child(odd),
+.levels-btns > .level-btn-group:last-child:nth-child(odd) {
+  grid-column: 1 / span 2;
+  justify-self: center;
 }
 
 /* Imagen de fondo */
