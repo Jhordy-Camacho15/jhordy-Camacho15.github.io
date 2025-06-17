@@ -396,7 +396,8 @@ p {
   font-family: 'Satoshi Medium', Arial, sans-serif;
   color: var(--white);
   margin: 5px;
-  font-size: 2.1em;
+  margin: 5px 20px;
+  font-size: 1.5em;
   justify-content: center;
   text-align: center;
 }
@@ -636,7 +637,7 @@ p {
 /* Estilos para las tarjetas del memorama */
 .memorama-card {
   color: var(--white);
-  width: 80px;
+  width: 85px;
   height: 70px;
   font-size: 1.3em;
   border-radius: 12px;
@@ -650,7 +651,7 @@ p {
 .memorama-card.selected {
   background: rgba(0, 0, 0, 0.307);
   color: #fff;
-  transform: scale(1.08);
+  transform: scale(0.8);
 }
 
 .memorama-card.matched {
@@ -778,5 +779,65 @@ p {
 
   .container {
     padding: 12px 2vw 24px 2vw;
+  }
+}
+
+/* Asegura que el grid nunca se salga del .container */
+#memorama-grid {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+  justify-content: center;
+  grid-template-columns: repeat(4, 80px); /* Por defecto 3 columnas */
+}
+
+/* Si hay más de 12 cartas, fuerza 4 columnas */
+#memorama-grid.four-cols {
+  grid-template-columns: repeat(4, 80px);
+}
+
+/* Tamaño fijo para las cartas */
+.memocarta, .memorama-card {
+  width: 80px;
+  height: 80px;
+  font-size: 1.5em;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 500px) {
+  #memorama-grid,
+  #memorama-grid.four-cols {
+    gap: 10px;
+  }
+  #memorama-grid {
+    grid-template-columns: repeat(4, 56px);
+  }
+  #memorama-grid.four-cols {
+    grid-template-columns: repeat(4, 56px);
+  }
+  .memocarta, .memorama-card {
+    width: 56px;
+    height: 56px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 340px) {
+  #memorama-grid,
+  #memorama-grid.four-cols {
+    gap: 12px;
+  }
+  #memorama-grid {
+    grid-template-columns: repeat(4, 50px);
+  }
+  #memorama-grid.four-cols {
+    grid-template-columns: repeat(4, 50px);
+  }
+  .memocarta, .memorama-card {
+    width: 55px;
+    height: 44px;
+    font-size: 1em;
   }
 }
