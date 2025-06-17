@@ -109,9 +109,9 @@ window.showExercise = function (world, nivel) {
     app.innerHTML = `
       ${renderProgressBar(world, nivel)}
 
-    <div class="background-img">
-      <img src="f-m1-n1.png" alt="f-m1-n1.png">
-    </div>
+      <div class="background-img">
+        <img src="f-m1-n1.png" alt="f-m1-n1.png">
+      </div>
       <div class="container ${levelBgClass}">
         <h2>Nivel 1</h2>
         <div style="margin:24px 0;">
@@ -886,7 +886,7 @@ app.innerHTML = `
   </div>
   <div class="container level${nivel}-bg level-bg-extra">
     <p>Memoriza y encuentra los pares</p>
-    <div id="memorama-grid" style="display: grid; grid-template-columns: repeat(${columns}, 80px); gap: 18px; justify-content: center; margin: 40px 0;">
+    <div id="memorama-grid" >
       ${grid}
     </div>
     <button onclick="showLevels('${world}')" class="main-btn volver-btn" style="margin-top:24px;">Volver</button>
@@ -1136,7 +1136,7 @@ window.showExercise = function (world, nivel) {
       </div>
       <div class="container level${nivel}-bg level-bg-rojo">
         <p>Une los pares</p>
-        <div id="memorama-grid" style="display: grid; grid-template-columns: repeat(${columns}, 70px); gap: 15px; justify-content: center; margin: 10px 0;">
+        <div id="memorama-grid" >
           ${grid}
         </div>
         <button onclick="showLevels('${world}')" class="main-btn volver-btn" style="margin-top:24px;">Volver</button>
@@ -1234,4 +1234,5 @@ window.showExercise = function (world, nivel) {
     return originalShowExercise.apply(this, arguments);
   }
 };
+
 
