@@ -741,7 +741,7 @@ window.showExercise = function (world, nivel) {
     app.innerHTML = `
       ${renderProgressBar(world, nivel)}
       <div class="background-img">
-        <img src="f-m3-n${nivel}.png" alt="Fondo Mundo 3 Nivel ${nivel}">
+        <img src="f-m3-n1.png" alt="Fondo Mundo 3 Nivel ${nivel}">
       </div>
       <div class="container level${nivel}-bg level-bg-rojo">
         <h2>Memorama: Une los pares</h2>
