@@ -67,7 +67,7 @@ body,
   top: 50%;
   left: 50%;
   /* ancho típico de móvil */
-  height: 700px;
+  height: 600px;
   /* alto típico de móvil */
   max-width: 90%;
   height: 80%;
@@ -249,7 +249,7 @@ body,
   bottom: 32px;
   transform: translateX(-50%);
   z-index: 10;
-  margin-top: 0;
+  margin-bottom: 100px;
   background-color: var(--white);
   color: black;
 }
@@ -267,7 +267,7 @@ body,
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .world-btn-group,
@@ -279,7 +279,8 @@ body,
   cursor: pointer;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  padding: 10px 10px;
+  padding: 10px 20px;
+  margin: 20px;
   transition: box-shadow 0.2s, background 0.2s;
   height: 170px; /* Ajusta este valor según el tamaño de tus imágenes y botones */
   box-sizing: border-box;
@@ -471,27 +472,7 @@ p {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-  .container {
-    max-width: 98vw;
-  }
 
-  .worlds-btns,
-  .levels-btns {
-    gap: 16px;
-  }
-
-  .world-img,
-  .level-img {
-    width: 60px;
-  }
-
-  .main-btn,
-  .mundo-btn,
-  .nivel-btn {
-    font-size: 1em;
-  }
-}
 
 @media (max-width: 768px) {
 
@@ -539,7 +520,7 @@ p {
   .worlds-btns,
   .levels-btns {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px 4px;
+    gap: 10px 20px;
   }
 
   .world-btn-group,
