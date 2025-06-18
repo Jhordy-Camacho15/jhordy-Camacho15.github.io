@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
+   height: 100vh;
     background: #e0f2fe;
     position: relative;
     overflow: hidden;
@@ -93,6 +93,33 @@ footer {
   background: #e6e6e6;
 }
 
+@media (max-width: 1440px) {
+  .container {
+    width: 400px;
+    height: 750px;
+    font-size: 1.1rem;
+  }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .container {
+    width: 350px;
+    height: 700px;
+    font-size: 1rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .container {
+    width: 320px;
+    height: 600px;
+    font-size: 0.95rem;
+  }
+}
+
+/* 425px */
 @media (max-width: 425px) {
   .container {
     width: 100vw;
@@ -100,12 +127,31 @@ footer {
     border-radius: 0;
     max-width: 100vw;
     max-height: 100vh;
+    font-size: 0.92rem;
+  }
+}
+
+/* 375px */
+@media (max-width: 375px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    font-size: 0.9rem;
+  }
+}
+
+/* 320px */
+@media (max-width: 320px) {
+  .container {
+    width: 100vw;
+    height: 90vh;
+    font-size: 0.85rem;
   }
 }
 
 .home, .grades-list, .subjects-list, .lecture-content {
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
