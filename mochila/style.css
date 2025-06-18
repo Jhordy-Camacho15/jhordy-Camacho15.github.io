@@ -135,7 +135,7 @@ footer {
 @media (max-width: 375px) {
   .container {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     font-size: 0.9rem;
   }
 }
@@ -144,10 +144,11 @@ footer {
 @media (max-width: 320px) {
   .container {
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
     font-size: 0.85rem;
   }
 }
+
 
 .home, .grades-list, .subjects-list, .lecture-content {
   width: 100%;
