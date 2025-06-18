@@ -82,7 +82,7 @@ function renderLecture() {
   document.getElementById('app').innerHTML = `
     <div class="container lecture-container">
       <button class="back-btn" onclick="showSubjects('${currentGrade.id}')">←</button>
-      <div class="lecture-audio" onclick="playAudio('${lecture.audio}')">
+      <div class="lecture-audio" id="audioBtn">
         <span>🔊 AUDIO</span>
       </div>
       <div class="lecture-content">
@@ -103,6 +103,8 @@ function renderLecture() {
       </div>
     </div>
   `;
+  // Vincula el botón de audio después de renderizar
+  document.getElementById('audioBtn').onclick = playAudio;
 }
 
 // Navegación de páginas
@@ -132,19 +134,12 @@ function setFontSize(val) {
 }
 
 // Reproducir audio o leer texto
-function playAudio(audioFile) {
-  // Si tienes un archivo de audio, puedes reproducirlo así:
-  if (audioFile && audioFile.endsWith('.mp3')) {
-    let audio = new Audio(audioFile);
-    audio.play();
-    return;
-  }
-  // Obtener el texto visible en pantalla
+function playAudio() {
+  window.speechSynthesis.cancel(); // Detener cualquier lectura anterior
   const text = document.getElementById('lectureText')?.innerText;
   if (text) {
     const utterance = new window.SpeechSynthesisUtterance(text);
     utterance.lang = 'es-ES';
-    window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
   }
 }
