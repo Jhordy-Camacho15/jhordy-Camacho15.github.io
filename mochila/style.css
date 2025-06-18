@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    height: 100vh;
     background: #e0f2fe;
     position: relative;
     overflow: hidden;
