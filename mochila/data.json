@@ -1,0 +1,39 @@
+{
+  "grados": [
+    {
+      "id": "1",
+      "nombre": "Primer Grado",
+      "imagen": "grado.png",
+      "materias": [
+        {
+          "id": "mat1",
+          "nombre": "Lenguaje y Literatura",
+          "imagen": "espanol.png",
+          "lecturas": [
+            {
+              "id": "lec1",
+              "titulo": "La comunicación",
+              "audio": "aventura.mp3",
+              "paginas": [
+                "La comunicación es una interacción social en la que se transmite información entre un emisor y un receptor. Existe comunicación cuando dos o más personas expresan y comparten sus ideas.",
+                "A veces, busca informar al receptor; otras veces, pretende influenciar en él para que cambie su manera de pensar o para que actúe de una forma determinada; en ocasiones, el emisor solo pretende expresar o compartir sus emociones y sentimientos."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Segundo Grado",
+      "imagen": "grado.png",
+      "materias": []
+    },
+    {
+      "id": "3",
+      "nombre": "Tercer Grado",
+      "imagen": "grado.png",
+      "materias": []
+    }
+  ]
+}
