@@ -7,7 +7,7 @@
       "materias": [
         {
           "id": "mat1",
-          "nombre": "Lenguaje y Literatura",
+          "nombre": "Lengua y Literatura",
           "imagen": "espanol.png",
           "lecturas": [
             {
@@ -15,8 +15,8 @@
               "titulo": "La comunicación",
               "audio": "aventura.mp3",
               "paginas": [
-                "La comunicación es una interacción social en la que se transmite información entre un emisor y un receptor. Existe comunicación cuando dos o más personas expresan y comparten sus ideas.",
-                "A veces, busca informar al receptor; otras veces, pretende influenciar en él para que cambie su manera de pensar o para que actúe de una forma determinada; en ocasiones, el emisor solo pretende expresar o compartir sus emociones y sentimientos."
+                "La comunicación es una interacción social en la que se transmite información entre un emisor y un receptor. Existe comunicación cuando dos o más personas expresan y comparten sus ideas. La comunicación puede ocurrir de manera oral o escrita y, en la actualidad, es cada vez más frecuente que las familias, los amigos, las comunidades y países de todo el mundo empleen nuevas y diversas formas de lengua escrita para comunicarse y trasmitir información.",
+                "Cuando el emisor transmite su mensaje, siempre tiene un propósito. A veces, busca informar al receptor; otras veces, pretende influenciar en él para que cambie su manera de pensar o para que actúe de una forma determinada; en ocasiones, el emisor solo pretende expresar o compartir sus emociones y sentimientos.", "Según su propósito o intención comunicativa, el emisor escoge el medio que utilizará para transmitir el mensaje. Para que el receptor pueda comprender mejor este mensaje, es importante que conozca la intención o propósito que tiene el emisor. "
               ]
             }
           ]
@@ -27,13 +27,47 @@
       "id": "2",
       "nombre": "Segundo Grado",
       "imagen": "grado.png",
-      "materias": []
+      "materias": [
+        {
+          "id": "mat1",
+          "nombre": "Lengua y Literatura",
+          "imagen": "espanol.png",
+          "lecturas": [
+            {
+              "id": "lec1",
+              "titulo": "Importancia de las lenguas",
+              "audio": "aventura.mp3",
+              "paginas": [
+                "Una lengua, además de permitir la comunicación, representa la cultura del pueblo que la habla. Es el elemento que constituye el primer referente de identidad para sus habitantes, pues es mediante la lengua que las personas interpretan la realidad de su entorno. Co la pérdida de una o varias lenguas, toda la sociedad se perjudica en el conocimiento, en la ciencia y en el arte. También se pierde una forma de entender y representar el mundo. Actualmente hay 6000 lenguas que se hablan en el mundo. ",
+                "En Asia se localizan 32% de las lenguas habladas en el mundo. Le sigue África con un 30%, en América se habla el 19% de las lenguas del mundo, en el Pacífico el 15% y en Europa solo el 3% de todas las lenguas del mundo. A lo largo de la historia se ha hecho uso de una lengua franca para facilitar la comunicación entre diferentes países. Por ejemplo, en el Imperio romano se utilizó el latín como lengua de comunicación. Ahora ese lugar lo ocupa el inglés. ", "Esta necesidad de contar con una sola lengua que permita a las personas comunicarse, ha inspirado proyectos de creación de una sola lengua, como es el caso del esperanto, creado por el polaco Lázaro Zamenhof en 1887. Zamenhof quería que el esperanto sea la lengua que pudiera unir a los pueblos con actitud fraterna, olvidando los conflictos por raza, fronteras, religión, etc. Si bien esta lengua “universal” se mantiene como el idioma artificial más difundido, no logró cobrar mayor fuerza. Ahora bien, el hecho de que se encuentre una lengua que facilite la comunicación, no quiere decir que deban abolirse las demás lenguas. Por el contrario, estas deberán mantenerse porque enriquecen las formas de pensar, conducirse socialmente y resolver problemas "
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "3",
       "nombre": "Tercer Grado",
       "imagen": "grado.png",
-      "materias": []
+      "materias": [
+        {
+          "id": "mat1",
+          "nombre": "Lengua y Literatura",
+          "imagen": "espanol.png",
+          "lecturas": [
+            {
+              "id": "lec1",
+              "titulo": "Importancia de la lengua escrita",
+              "audio": "aventura.mp3",
+              "paginas": [
+                "Las personas se comunican mediante la lengua oral y también mediante la lengua escrita. La lengua escrita, a diferencia de la lengua oral, es totalmente artificial y utiliza símbolos gráficos; por lo tanto, la comunicación se realiza mediante el canal visual, gracias a la lectura y la escritura. Las personas no leen ni escriben de manera natural, necesitan una mediación intencionada para hacerlo. En cambio, para aprender hablar, los niños y las niñas solo necesitan convivir con las palabras de su entorno.  ",
+                "El uso de la visión para decodificar la lengua escrita permite que una persona escriba o lea un texto donde y como quiera, sin incomodar a las personas que estén a su alrededor. En otras palabras, uno puede escribir o leer un texto en silencio. ", "La comunicación oral es espontánea e inmediata. Esto significa que la persona que habla, aunque pueda rectificar su emisión, no puede borrarla. Por su parte, la persona que escucha (receptor) debe ir comprendiendo el mensaje a medida que este es emitido. Por el contrario, la lengua escrita presenta la peculiaridad de que puede ser planificada, revisada, corregida y mejorada. Si la profesora nos pide escribir una redacción sobre nuestra familia podemos planificar los temas que queremos incluir, pedirle a alguien que revise y corrija el texto y que nos diga sugerencias para mejorarla. Este proceso de reescribir un texto es parte del proceso escritor. "
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
