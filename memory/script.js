@@ -833,8 +833,8 @@ window.showExercise = function (world, nivel) {
   // --- MUNDO 4: NUEVO MEMORAMA ---
   if (world === 'extra' && nivel >= 1 && nivel <= 5) {
     const coloresBase = ["bg-secondary", "bg-naranja", "bg-primary", "bg-rojo"];
-const numPairs = 6 + (nivel - 1) * 2; // 6, 8, 10, 12, 14 cartas
-const paresCount = numPairs / 2;
+  const numPairs = (nivel === 5) ? 16 : 6 + (nivel - 1) * 2; // 6, 8, 10, 12, 16 cartas en nivel 5
+  const paresCount = numPairs / 2;
 
 // Genera la lista de colores para los pares, repitiendo si es necesario
 let colores = [];
