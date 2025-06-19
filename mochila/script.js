@@ -7,6 +7,9 @@ let currentSubject = null;
 let currentLecture = null;
 let currentPage = 0;
 let fontSize = 18;
+let utterance = null;
+let isSpeaking = false;
+let isPaused = false;
 
 // Cargar datos JSON
 async function loadData() {
@@ -17,6 +20,7 @@ async function loadData() {
 
 // Pantalla HOME
 function showHome() {
+  stopSpeech();
   currentGrade = null;
   currentSubject = null;
   currentLecture = null;
@@ -32,6 +36,7 @@ function showHome() {
 
 // Pantalla GRADOS
 function showGrades() {
+  stopSpeech();
   let gradesHtml = data.grados.map(g => `
     <div class="grade-row" onclick="showSubjects('${g.id}')">
       <div class="grade-img"><img src="grado.png" alt="${g.nombre}"></div>
@@ -48,6 +53,7 @@ function showGrades() {
 
 // Pantalla MATERIAS
 function showSubjects(gradeId) {
+  stopSpeech();
   currentGrade = data.grados.find(g => g.id === gradeId);
   let subjects = currentGrade.materias;
   let subjectsHtml = subjects.map(m => `
@@ -66,6 +72,7 @@ function showSubjects(gradeId) {
 
 // Pantalla LECTURAS
 function showLectures(subjectId) {
+  stopSpeech();
   currentSubject = currentGrade.materias.find(m => m.id === subjectId);
   let lectures = currentSubject.lecturas;
   let lecture = lectures[0]; // Solo una por ahora
@@ -79,11 +86,13 @@ function renderLecture() {
   let lecture = currentLecture;
   let totalPages = lecture.paginas.length;
   let pageText = lecture.paginas[currentPage];
+  let audioIcon = isSpeaking ? '⏸️' : '▶️';
+  if (isPaused) audioIcon = '▶️';
   document.getElementById('app').innerHTML = `
     <div class="container lecture-container">
       <button class="back-btn" onclick="showSubjects('${currentGrade.id}')">←</button>
       <div class="lecture-audio" id="audioBtn">
-        <span>🔊 AUDIO</span>
+        <span>${audioIcon} AUDIO</span>
       </div>
       <div class="lecture-content">
         <div class="lecture-title">${lecture.titulo}</div>
@@ -103,20 +112,63 @@ function renderLecture() {
       </div>
     </div>
   `;
-  // Vincula el botón de audio después de renderizar
-  document.getElementById('audioBtn').onclick = playAudio;
+  document.getElementById('audioBtn').onclick = toggleAudio;
+}
+
+// Control de audio: play, pause, resume
+function toggleAudio() {
+  const text = document.getElementById('lectureText')?.innerText;
+  if (!isSpeaking && !isPaused) {
+    // Iniciar lectura
+    stopSpeech();
+    utterance = new window.SpeechSynthesisUtterance(text);
+    utterance.lang = 'es-ES';
+    utterance.onend = () => {
+      isSpeaking = false;
+      isPaused = false;
+      renderLecture();
+    };
+    utterance.onerror = () => {
+      isSpeaking = false;
+      isPaused = false;
+      renderLecture();
+    };
+    isSpeaking = true;
+    isPaused = false;
+    window.speechSynthesis.speak(utterance);
+    renderLecture();
+  } else if (isSpeaking && !isPaused) {
+    // Pausar lectura
+    window.speechSynthesis.pause();
+    isSpeaking = false;
+    isPaused = true;
+    renderLecture();
+  } else if (!isSpeaking && isPaused) {
+    // Reanudar lectura
+    window.speechSynthesis.resume();
+    isSpeaking = true;
+    isPaused = false;
+    renderLecture();
+  }
+}
+
+// Detener la voz completamente
+function stopSpeech() {
+  window.speechSynthesis.cancel();
+  isSpeaking = false;
+  isPaused = false;
 }
 
 // Navegación de páginas
 function nextPage() {
-  window.speechSynthesis.cancel();
+  stopSpeech();
   if (currentPage < currentLecture.paginas.length - 1) {
     currentPage++;
     renderLecture();
   }
 }
 function prevPage() {
-  window.speechSynthesis.cancel();
+  stopSpeech();
   if (currentPage > 0) {
     currentPage--;
     renderLecture();
@@ -125,23 +177,14 @@ function prevPage() {
 
 // Cambiar tamaño de fuente
 function changeFontSize(delta) {
+  stopSpeech();
   fontSize = Math.max(14, Math.min(32, fontSize + delta));
   renderLecture();
 }
 function setFontSize(val) {
+  stopSpeech();
   fontSize = parseInt(val, 10);
   renderLecture();
-}
-
-// Reproducir audio o leer texto
-function playAudio() {
-  window.speechSynthesis.cancel(); // Detener cualquier lectura anterior
-  const text = document.getElementById('lectureText')?.innerText;
-  if (text) {
-    const utterance = new window.SpeechSynthesisUtterance(text);
-    utterance.lang = 'es-ES';
-    window.speechSynthesis.speak(utterance);
-  }
 }
 
 // Inicializar
@@ -156,4 +199,4 @@ window.nextPage = nextPage;
 window.prevPage = prevPage;
 window.changeFontSize = changeFontSize;
 window.setFontSize = setFontSize;
-window.playAudio = playAudio;
+window.playAudio = toggleAudio;
