@@ -10,11 +10,13 @@ function showHome() {
       <img src="fondo1.png" alt="Fondo pantalla inicio">
     </div>
     <div class="container home-bg">
-      <img src="mundo1.png" class="img-over img1 anim-scale-lr" alt="Decoración 1">
+
       <img src="mundo2.png" class="img-over img2 anim-scale-rl" alt="Decoración 2">
       <img src="mundo3.png" class="img-over img3 anim-scale-bu" alt="Decoración 3">
       <img src="mundo4.png" class="img-over img4 anim-scale-ub" alt="Decoración 4">
       <img src="nave.png" class="img-over img5 anim-scale-center" alt="Decoración 5">
+            <img src="logo.png" class="img-over img6 " alt="Decoración 5">
+
       <button id="playBtn" class="main-btn">JUGAR AHORA</button>
     </div>
   `;
@@ -744,11 +746,10 @@ window.showExercise = function (world, nivel) {
         <img src="f-m3-n1.png" alt="Fondo Mundo 3 Nivel ${nivel}">
       </div>
       <div class="container level${nivel}-bg level-bg-rojo">
-        <h2>Memorama: Une los pares</h2>
-        <div id="memorama-grid" style="display: grid; grid-template-columns: repeat(${columns}, 70px); gap: 10px; justify-content: center; margin: 20px 0;">
+        <p>Une los pares</p>
+        <div id="memorama-grid" >
           ${grid}
         </div>
-        <p>Haz clic en los pares iguales (número y texto).</p>
         <button onclick="showLevels('${world}')" class="main-btn volver-btn" style="margin-top:24px;">Volver</button>
       </div>
     `;
@@ -833,43 +834,43 @@ window.showExercise = function (world, nivel) {
   // --- MUNDO 4: NUEVO MEMORAMA ---
   if (world === 'extra' && nivel >= 1 && nivel <= 5) {
     const coloresBase = ["bg-secondary", "bg-naranja", "bg-primary", "bg-rojo"];
-  const numPairs = (nivel === 5) ? 16 : 6 + (nivel - 1) * 2; // 6, 8, 10, 12, 16 cartas en nivel 5
-  const paresCount = numPairs / 2;
+    const numPairs = (nivel === 5) ? 16 : 6 + (nivel - 1) * 2; // 6, 8, 10, 12, 16 cartas en nivel 5
+    const paresCount = numPairs / 2;
 
-// Genera la lista de colores para los pares, repitiendo si es necesario
-let colores = [];
-while (colores.length < paresCount) {
-  colores = colores.concat(coloresBase);
-}
-colores = colores.slice(0, paresCount);
+    // Genera la lista de colores para los pares, repitiendo si es necesario
+    let colores = [];
+    while (colores.length < paresCount) {
+      colores = colores.concat(coloresBase);
+    }
+    colores = colores.slice(0, paresCount);
 
-// Selecciona pares únicos aleatorios
-const nums = [1,2,3,4,5,6,7,8,9,10];
-const textos = ["UNO","DOS","TRES","CUATRO","CINCO","SEIS","SIETE","OCHO","NUEVE","DIEZ"];
-const indices = [];
-while (indices.length < paresCount) {
-  let idx = Math.floor(Math.random() * nums.length);
-  if (!indices.includes(idx)) indices.push(idx);
-}
+    // Selecciona pares únicos aleatorios
+    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const textos = ["UNO", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE", "DIEZ"];
+    const indices = [];
+    while (indices.length < paresCount) {
+      let idx = Math.floor(Math.random() * nums.length);
+      if (!indices.includes(idx)) indices.push(idx);
+    }
 
-// Genera pares con el color correspondiente
-let pares = [];
-indices.forEach((idx, i) => {
-  const color = colores[i];
-  pares.push({valor: nums[idx], color, texto: nums[idx].toString()});
-  pares.push({valor: nums[idx], color, texto: textos[idx]});
-});
+    // Genera pares con el color correspondiente
+    let pares = [];
+    indices.forEach((idx, i) => {
+      const color = colores[i];
+      pares.push({ valor: nums[idx], color, texto: nums[idx].toString() });
+      pares.push({ valor: nums[idx], color, texto: textos[idx] });
+    });
 
-// Mezcla los pares
-for (let i = pares.length - 1; i > 0; i--) {
-  const j = Math.floor(Math.random() * (i + 1));
-  [pares[i], pares[j]] = [pares[j], pares[i]];
-}
-// Determina columnas
-const columns = pares.length > 12 ? 4 : 3;
-let grid = '';
-pares.forEach((par, idx) => {
-  grid += `
+    // Mezcla los pares
+    for (let i = pares.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pares[i], pares[j]] = [pares[j], pares[i]];
+    }
+    // Determina columnas
+    const columns = pares.length > 12 ? 4 : 3;
+    let grid = '';
+    pares.forEach((par, idx) => {
+      grid += `
     <div class="memocarta ${par.color}" data-value="${par.valor}" data-text="${par.texto}" data-idx="${idx}">
       <div class="memocarta-inner">
         <div class="memocarta-front"></div>
@@ -877,9 +878,9 @@ pares.forEach((par, idx) => {
       </div>
     </div>
   `;
-});
+    });
 
-app.innerHTML = `
+    app.innerHTML = `
   ${renderProgressBar(world, nivel)}
   <div class="background-img">
     <img src="f-m4-n1.png" alt="Fondo Mundo 4 Nivel ${nivel}">
@@ -922,7 +923,7 @@ app.innerHTML = `
           // Comparación estricta: color, número y texto
           if (
             (valueMap[c1.querySelector('.memocarta-back').textContent] === c2.querySelector('.memocarta-back').textContent ||
-             valueMap[c2.querySelector('.memocarta-back').textContent] === c1.querySelector('.memocarta-back').textContent) &&
+              valueMap[c2.querySelector('.memocarta-back').textContent] === c1.querySelector('.memocarta-back').textContent) &&
             c1.dataset.value === c2.dataset.value &&
             c1.className === c2.className
           ) {
@@ -1043,9 +1044,29 @@ function showModal({ title, message, btnText, onClose }) {
   document.getElementById('modal-message').textContent = message;
   const btn = document.getElementById('modal-btn');
   btn.textContent = btnText;
+
+  // Elimina estrella previa si existe
+  const prevStar = modal.querySelector('.felicidad-estrella');
+  if (prevStar) prevStar.remove();
+
+  // Si es el mensaje de nivel 5 (ganó estrella), muestra la estrella
+  if (
+    (title.includes('¡Correcto!') || title.includes('¡Felicidades!')) &&
+    (message.includes('completado') || message.includes('estrella') || message.includes('todos los ejercicios'))
+  ) {
+    const estrellaDiv = document.createElement('div');
+    estrellaDiv.className = 'felicidad-estrella';
+    estrellaDiv.innerHTML = `
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="gold" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="60,10 73,45 110,45 80,68 90,105 60,82 30,105 40,68 10,45 47,45"/>
+      </svg>
+      <div style="font-size:1.3em;font-weight:bold;color:#e74c3c;margin-top:8px;">¡Ganaste una estrella!</div>
+    `;
+    btn.parentNode.insertBefore(estrellaDiv, btn);
+  }
+
   modal.style.display = 'flex';
 
-  // Cerrar modal al hacer clic fuera del contenido
   function outsideClick(e) {
     if (e.target === modal) {
       close();
@@ -1094,8 +1115,8 @@ function renderProgressBar(world, nivelActual) {
 
 // --- MEMORAMA PAIRS GENERATOR ---
 function getRandomMemoramaPairs(numPairs) {
-  const nums = [1,2,3,4,5,6,7,8,9,10];
-  const textos = ["UNO","DOS","TRES","CUATRO","CINCO","SEIS","SIETE","OCHO","NUEVE","DIEZ"];
+  const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const textos = ["UNO", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE", "DIEZ"];
   const colores = ["bg-secondary", "bg-naranja", "bg-primary", "bg-rojo"];
   const indices = [];
   while (indices.length < numPairs) {
@@ -1105,8 +1126,8 @@ function getRandomMemoramaPairs(numPairs) {
   let pares = [];
   indices.forEach(idx => {
     const color = colores[Math.floor(Math.random() * colores.length)];
-    pares.push({valor: nums[idx], color, texto: nums[idx].toString()});
-    pares.push({valor: nums[idx], color, texto: textos[idx]});
+    pares.push({ valor: nums[idx], color, texto: nums[idx].toString() });
+    pares.push({ valor: nums[idx], color, texto: textos[idx] });
   });
   for (let i = pares.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -1234,4 +1255,5 @@ window.showExercise = function (world, nivel) {
     return originalShowExercise.apply(this, arguments);
   }
 };
+
 
