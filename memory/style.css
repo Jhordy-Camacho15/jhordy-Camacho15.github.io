@@ -134,11 +134,17 @@ body,
 }
 
 .img5 {
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 30%;
   width: 80px;
   transform: translate(-50%, -50%);
 }
+.img6 {
+  z-index: 1000000 !important;
+  width: 70%;
+  opacity: 1;
+}
+
 
 /* Animaciones */
 @keyframes scale-lr {
@@ -243,16 +249,17 @@ body,
   background: var(--secondary-color);
   color: var(--primary-color);
   transform: scale(1.05);
+
 }
 
 /* Botón JUGAR en la parte inferior y sobre las imágenes */
 #playBtn.main-btn {
   position: absolute;
   left: 50%;
-  bottom: 32px;
+  bottom: 20px;
   transform: translateX(-50%);
   z-index: 10;
-  margin-bottom: 100px;
+  margin-bottom: 90px;
   background-color: var(--white);
   color: black;
 }
@@ -684,6 +691,7 @@ p {
   font-size: 1.2em;
   margin-bottom: 6px;
   letter-spacing: 1px;
+  color: var(--white) !important;
 }
 
 .progress-bar {
@@ -700,7 +708,7 @@ p {
 }
 
 .progress-step.active {
-  background: var(--rojo);
+  color: var(--white);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
 }
 
@@ -798,8 +806,9 @@ p {
   gap: 18px;
   justify-content: center;
   grid-template-columns: repeat(4, 80px);
-  /* Por defecto 3 columnas */
 }
+
+
 
 /* Si hay más de 12 cartas, fuerza 4 columnas */
 #memorama-grid.four-cols {
@@ -862,3 +871,23 @@ p {
     font-size: 1em;
   }
 }
+
+/* Nueva clase para la animación de las estrellas de felicidad */
+.felicidad-estrella {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+  animation: pop-star 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes pop-star {
+  0% { transform: scale(0.2) rotate(-30deg);
+   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0));}
+  70% { transform: scale(1.2) rotate(10deg);
+   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0));}
+  100% { transform: scale(1) rotate(0);
+   }
+}
+
