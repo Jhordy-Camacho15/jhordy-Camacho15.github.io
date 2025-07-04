@@ -33,7 +33,9 @@
         <section id="teoria-section" class="section-container hidden">
             <button id="back-to-temas" class="back-button">← Volver a Temas</button>
             <h2 id="teoria-title"></h2>
-            <div id="teoria-content" class="content-container"></div>
+            <div class="content-container">
+                <div id="teoria-content"></div>
+            </div>
             <div class="action-buttons">
                 <button id="start-leccion" class="primary-button">Comenzar Lección</button>
             </div>
@@ -48,14 +50,16 @@
                 </div>
                 <span class="progress-text">0/0</span>
             </div>
-            <div id="pregunta-container" class="content-container">
-                <div id="pregunta-text" class="pregunta"></div>
-                <div id="opciones-container" class="opciones"></div>
-                <div id="feedback-container" class="feedback hidden"></div>
-                <div class="action-buttons">
-                    <button id="reveal-answer" class="secondary-button">Revelar Respuesta</button>
-                    <button id="next-question" class="primary-button hidden">Siguiente</button>
+            <div class="content-container">
+                <div id="pregunta-container">
+                    <div id="pregunta-text" class="pregunta"></div>
+                    <div id="opciones-container" class="opciones"></div>
+                    <div id="feedback-container" class="feedback hidden"></div>
                 </div>
+            </div>
+            <div class="action-buttons">
+                <button id="reveal-answer" class="secondary-button">Revelar Respuesta</button>
+                <button id="next-question" class="primary-button hidden">Siguiente</button>
             </div>
         </section>
 
@@ -70,7 +74,7 @@
     </main>
 
     <footer class="app-footer">
-        <p>Aprendizaje Interactivo BeMáster</p>
+        <p></p>
     </footer>
 
     <script src="script.js"></script>
