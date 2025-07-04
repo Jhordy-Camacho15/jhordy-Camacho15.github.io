@@ -157,19 +157,24 @@ function startLeccion() {
 function loadQuestion() {
     const preguntaIndex = shuffledQuestionIndices[currentQuestionIndex];
     const pregunta = currentTopic.lecciones[preguntaIndex];
-    const totalQuestions = currentTopic.lecciones.length;
 
-    // Actualizar barra de progreso
-    const progressPercentage = (currentQuestionIndex / totalQuestions) * 100;
-    document.querySelector('.progress-fill').style.width = `${progressPercentage}%`;
-    document.querySelector('.progress-text').textContent = `${currentQuestionIndex + 1}/${totalQuestions}`;
+    // Mezclar opciones y guardar el nuevo índice de la respuesta correcta
+    const opcionesOriginales = pregunta.opciones.map((op, idx) => ({
+        texto: op,
+        esCorrecta: idx === pregunta.respuesta
+    }));
+    const opcionesMezcladas = shuffleArray(opcionesOriginales.slice());
+
+    // Guardar el índice de la opción correcta después de mezclar
+    pregunta.opcionesMezcladas = opcionesMezcladas.map(op => op.texto);
+    pregunta.respuestaMezclada = opcionesMezcladas.findIndex(op => op.esCorrecta);
 
     // Mostrar pregunta
     contentElements.preguntaText.textContent = pregunta.pregunta;
     contentElements.opcionesContainer.innerHTML = '';
 
-    // Mostrar opciones
-    pregunta.opciones.forEach((opcion, index) => {
+    // Mostrar opciones mezcladas
+    pregunta.opcionesMezcladas.forEach((opcion, index) => {
         const opcionElement = document.createElement('div');
         opcionElement.className = 'opcion';
         opcionElement.textContent = opcion;
@@ -184,7 +189,6 @@ function loadQuestion() {
     contentElements.revealAnswerBtn.classList.remove('hidden');
     contentElements.nextQuestionBtn.classList.add('hidden');
 }
-
 // Función para seleccionar respuesta
 function selectAnswer(selectedIndex) {
     const preguntaIndex = shuffledQuestionIndices[currentQuestionIndex];
@@ -211,17 +215,17 @@ function revealAnswer() {
 
     // Marcar respuestas correctas e incorrectas
     opciones.forEach((opcion, index) => {
-        if (index === pregunta.respuesta) {
+        if (index === pregunta.respuestaMezclada) {
             opcion.classList.add('correct');
-        } else if (index === selectedIndex && selectedIndex !== pregunta.respuesta) {
+        } else if (index === selectedIndex && selectedIndex !== pregunta.respuestaMezclada) {
             opcion.classList.add('incorrect');
         }
     });
 
     // Mostrar feedback
-    contentElements.feedbackContainer.className = selectedIndex === pregunta.respuesta ? 'feedback correct' : 'feedback incorrect';
+    contentElements.feedbackContainer.className = selectedIndex === pregunta.respuestaMezclada ? 'feedback correct' : 'feedback incorrect';
 
-    if (selectedIndex === pregunta.respuesta) {
+    if (selectedIndex === pregunta.respuestaMezclada) {
         contentElements.feedbackContainer.innerHTML = `
             <p><strong>¡Correcto!</strong></p>
             <p>${pregunta.explicacion}</p>
@@ -297,6 +301,22 @@ function startLeccion() {
     showSection('leccion');
 }
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+
+
+
+
+
+
+
+// para ordenar aleatoriamente las opciones de las preguntas
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
