@@ -181,7 +181,7 @@
                                         "Para ser usado solo en Mac"
                                     ],
                                     "respuesta": 0,
-                                    "explicacion": "XAMPP es un servidor local que incluye Apache, MySQL, PHP y Perl. Permite instalar WordPress offline (p. 7)."
+                                    "explicacion": "XAMPP es un servidor independiente local que incluye Apache, MySQL, PHP y Perl. Permite instalar WordPress offline (p. 7)."
                                 },
                                 {
                                     "pregunta": "¿Dentro del archivo htdocs cuántos proyectos se pueden crear?",
@@ -1135,6 +1135,1235 @@
                                     ],
                                     "respuesta": 2,
                                     "explicacion": "Los plugins no se agregan desde el editor de menús (p. 22)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 6001,
+                            "nombre": "Tema 6: Plugins para WordPress",
+                            "teoria": [
+                                "Los plugins son herramientas adicionales que amplían la funcionalidad de WordPress, desde seguridad hasta comercio electrónico, y se pueden encontrar en el directorio oficial de WordPress (p. 5).",
+                                "La descripción en la ficha de un plugin detalla su uso y características, lo que ayuda a determinar si cumple con las necesidades del sitio web (p. 8).",
+                                "La sección FAQ en la ficha de un plugin responde preguntas frecuentes de los usuarios, facilitando la resolución de dudas comunes (p. 9).",
+                                "Las capturas de pantalla (screenshots) muestran el plugin en funcionamiento, lo que permite visualizar su interfaz y características antes de instalarlo (p. 10).",
+                                "El soporte técnico de un plugin incluye un foro donde los usuarios reportan errores y buscan ayuda, lo que es crucial para resolver problemas (p. 11).",
+                                "La sección de desarrollo en la ficha de un plugin proporciona información sobre versiones anteriores y enlaces relevantes para desarrolladores (p. 11).",
+                                "Las reseñas y valoraciones de los usuarios ayudan a evaluar la calidad y confiabilidad de un plugin antes de instalarlo (p. 11).",
+                                "Los plugins de formularios de contacto, como WPForms, permiten crear formularios personalizados para que los visitantes se comuniquen fácilmente (p. 23).",
+                                "Polylang es un plugin que habilita la creación de sitios web multilingües, traduciendo contenido manualmente (p. 27).",
+                                "UpdraftPlus es un plugin esencial para crear copias de seguridad automáticas y restaurar sitios web con facilidad (p. 28).",
+                                "WooCommerce es el plugin más popular para convertir WordPress en una tienda online, con soporte para productos físicos y digitales (p. 28).",
+                                "La instalación de plugins puede realizarse desde el directorio de WordPress, subiendo un archivo .zip o manualmente en el directorio wp-content/plugins (p. 15-19).",
+                                "Los widgets, asociados a algunos plugins, permiten añadir bloques de contenido como texto, imágenes o enlaces en áreas específicas del sitio (p. 20).",
+                                "La edición avanzada de plugins requiere conocimientos de PHP/MySQL y se realiza desde el editor de plugins en el administrador de WordPress (p. 21).",
+                                "Plugins como Yoast SEO optimizan el posicionamiento en buscadores, mientras que iThemes Security protege el sitio de ataques (p. 28).",
+                                "La compatibilidad con la versión de WordPress y la fecha de última actualización son factores críticos al elegir un plugin (p. 12).",
+                                "El directorio oficial de WordPress ofrece plugins gratuitos revisados por profesionales, garantizando su seguridad y funcionalidad (p. 6).",
+                                "Plugins como Smush optimizan imágenes para mejorar el rendimiento del sitio, reduciendo su tamaño sin perder calidad (p. 24).",
+                                "Monarch y MashShare son plugins populares para integrar redes sociales en un sitio web, facilitando el compartir contenido (p. 26).",
+                                "All-in-One WP Migration simplifica la migración de sitios web, ideal para usuarios sin conocimientos técnicos (p. 28)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "En la ficha de información de un plugin, la «Descripción» informa sobre:",
+                                    "opciones": [
+                                        "Pasos necesarios para instalar el plugin.",
+                                        "Ofrece un listado de preguntas que los usuarios se plantean con frecuencia.",
+                                        "Son capturas de pantalla donde se muestra el plugin una vez instalado.",
+                                        "Define el uso del plugin y explica aquellas características que posee."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "La descripción detalla el propósito y características del plugin (p. 8)."
+                                },
+                                {
+                                    "pregunta": "En la ficha de información de un plugin, la «FAQ»:",
+                                    "opciones": [
+                                        "Pasos necesarios para instalar el plugin.",
+                                        "Ofrece un listado de preguntas que los usuarios se plantean con frecuencia.",
+                                        "Son capturas de pantalla donde se muestra el plugin una vez instalado.",
+                                        "Muestra una estadística sobre el número de veces que se ha descargado el plugin."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La sección FAQ responde preguntas frecuentes de los usuarios (p. 9)."
+                                },
+                                {
+                                    "pregunta": "Los screenshot o capturas de pantalla de la ficha de información de un plugin, muestran:",
+                                    "opciones": [
+                                        "Pasos necesarios para instalar el plugin.",
+                                        "Ofrece un listado de preguntas que los usuarios se plantean con frecuencia.",
+                                        "El plugin una vez instalado.",
+                                        "Muestra una estadística sobre el número de veces que se ha descargado el plugin."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Las capturas muestran el plugin en funcionamiento (p. 10)."
+                                },
+                                {
+                                    "pregunta": "La pestaña de «Soporte» en la información ofrecida por la ficha de un plugin muestra:",
+                                    "opciones": [
+                                        "Pasos necesarios para instalar el plugin.",
+                                        "Ofrece un listado de preguntas que los usuarios se plantean con frecuencia.",
+                                        "Un foro.",
+                                        "Muestra una estadística sobre el número de veces que se ha descargado el plugin."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El soporte incluye un foro para resolver problemas (p. 11)."
+                                },
+                                {
+                                    "pregunta": "En la ficha de información de un plugin, el «Desarrollo» hace referencia a:",
+                                    "opciones": [
+                                        "Pasos necesarios para instalar el plugin.",
+                                        "Información sobre el desarrollo del plugin, enlaces a versiones anteriores, entre otros.",
+                                        "Un foro.",
+                                        "Muestra una estadística sobre el número de veces que se ha descargado el plugin."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Esta sección proporciona detalles técnicos para desarrolladores (p. 11)."
+                                },
+                                {
+                                    "pregunta": "En la ficha de información de un plugin, las «Reseñas» hace referencia a:",
+                                    "opciones": [
+                                        "Es un listado de reseñas de los usuarios, puntuados en número del uno a cinco estrellas.",
+                                        "Información sobre el desarrollo del plugin, enlaces a versiones anteriores, entre otros.",
+                                        "Un foro.",
+                                        "Muestra una estadística sobre el número de veces que se ha descargado el plugin."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las reseñas reflejan la opinión y experiencia de otros usuarios (p. 11)."
+                                },
+                                {
+                                    "pregunta": "Los plugins para «Formularios de contacto», permiten:",
+                                    "opciones": [
+                                        "Crear temas adaptados a los usuarios.",
+                                        "Crear archivos PHP.",
+                                        "Es un fichero que permite hacer redirecciones en el sitio web.",
+                                        "Crear formularios para que los visitantes del sitio puedan comunicarse a través de mensajes privados a una dirección de correo."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Plugins como WPForms facilitan la comunicación con los visitantes (p. 23)."
+                                },
+                                {
+                                    "pregunta": "Polylang es un plugin que permite:",
+                                    "opciones": [
+                                        "Crear sitios webs multilidomas.",
+                                        "Crear tiendas o catálogos online.",
+                                        "Construir galerías de imágenes dinámicas.",
+                                        "Crear copias de seguridad de un sitio web."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Polylang habilita la traducción manual para sitios multilingües (p. 27)."
+                                },
+                                {
+                                    "pregunta": "UpdraftPlus es un plugin que permite:",
+                                    "opciones": [
+                                        "Crear sitios webs multilidomas.",
+                                        "Crear tiendas o catálogos online.",
+                                        "Construir galerías de imágenes dinámicas.",
+                                        "Crear copias de seguridad de un sitio web."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "UpdraftPlus automatiza las copias de seguridad y restauraciones (p. 28)."
+                                },
+                                {
+                                    "pregunta": "WooCommerce es un plugin que consiente en:",
+                                    "opciones": [
+                                        "Crear sitios webs multilidomas.",
+                                        "Crear tiendas o catálogos online.",
+                                        "Construir galerías de imágenes dinámicas.",
+                                        "Crear copias de seguridad de un sitio web."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "WooCommerce transforma WordPress en una plataforma de comercio electrónico (p. 28)."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción NO es un método para instalar plugins en WordPress?",
+                                    "opciones": [
+                                        "Desde el directorio oficial de WordPress.",
+                                        "Subiendo un archivo .zip en el administrador.",
+                                        "Editando manualmente el archivo wp-config.php.",
+                                        "Copiando la carpeta del plugin en wp-content/plugins."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El archivo wp-config.php no se usa para instalar plugins (p. 15-19)."
+                                },
+                                {
+                                    "pregunta": "¿Qué información NO se encuentra en la columna lateral de la ficha de un plugin?",
+                                    "opciones": [
+                                        "Versión de WordPress requerida.",
+                                        "Número de descargas.",
+                                        "Código fuente completo del plugin.",
+                                        "Fecha de última actualización."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El código fuente no se muestra en la ficha técnica (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué plugin es ideal para optimizar imágenes en WordPress?",
+                                    "opciones": [
+                                        "Yoast SEO.",
+                                        "Smush.",
+                                        "Gravity Forms.",
+                                        "Polylang."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Smush comprime y redimensiona imágenes sin perder calidad (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica es común en los plugins de redes sociales como Monarch?",
+                                    "opciones": [
+                                        "Crear copias de seguridad.",
+                                        "Añadir botones para compartir en redes.",
+                                        "Traducir contenido automáticamente.",
+                                        "Optimizar el SEO."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Monarch agrega botones para compartir contenido en redes sociales (p. 26)."
+                                },
+                                {
+                                    "pregunta": "¿Qué plugin permite monitorear el tráfico del sitio con Google Analytics?",
+                                    "opciones": [
+                                        "UpdraftPlus.",
+                                        "Google Analytics Dashboard for WP.",
+                                        "WooCommerce.",
+                                        "iThemes Security."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Este plugin integra Google Analytics en el escritorio de WordPress (p. 28)."
+                                },
+                                {
+                                    "pregunta": "¿Qué sección del administrador de WordPress permite editar el código de un plugin?",
+                                    "opciones": [
+                                        "Apariencia > Editor.",
+                                        "Plugins > Editor de plugins.",
+                                        "Herramientas > Importar.",
+                                        "Ajustes > General."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El editor de plugins está en 'Plugins > Editor de plugins' (p. 21)."
+                                },
+                                {
+                                    "pregunta": "¿Qué factor es crítico al elegir un plugin para WordPress?",
+                                    "opciones": [
+                                        "Color de la interfaz.",
+                                        "Compatibilidad con la versión de WordPress.",
+                                        "Idioma del autor.",
+                                        "Número de estrellas en el nombre."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La compatibilidad evita conflictos con el sitio (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué plugin NO está relacionado con la seguridad de WordPress?",
+                                    "opciones": [
+                                        "iThemes Security.",
+                                        "Wordfence.",
+                                        "Smush.",
+                                        "Sucuri Security."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Smush se enfoca en optimización de imágenes, no en seguridad (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción describe mejor la función de All-in-One WP Migration?",
+                                    "opciones": [
+                                        "Crear galerías de imágenes.",
+                                        "Migrar sitios web fácilmente.",
+                                        "Traducir contenido a múltiples idiomas.",
+                                        "Agregar botones de redes sociales."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Este plugin simplifica la migración de sitios web (p. 28)."
+                                },
+                                {
+                                    "pregunta": "¿Qué plugin es esencial para posicionar un sitio web en buscadores?",
+                                    "opciones": [
+                                        "Yoast SEO.",
+                                        "WPForms.",
+                                        "NextGen Gallery.",
+                                        "WP Rocket."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Yoast SEO optimiza el contenido para mejorar el SEO (p. 28)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 7001,
+                            "nombre": "Tema 7: Widgets y Shortcode en WordPress",
+                            "teoria": [
+                                "Los widgets son pequeñas aplicaciones que permiten añadir bloques de contenido y funcionalidad a áreas específicas de un sitio web, como barras laterales o pies de página (p. 5).",
+                                "Para gestionar widgets en WordPress, se debe acceder a 'Apariencia > Widgets' en el panel de administración, donde se pueden arrastrar y soltar elementos (p. 6).",
+                                "El plugin Jetpack permite agregar widgets de redes sociales en la barra lateral o pie de página, mejorando la interacción con los visitantes (p. 13).",
+                                "Google Maps es un plugin que añade widgets para mostrar mapas de ubicación, útil para negocios con dirección física (p. 13).",
+                                "YouTube Gallery es un plugin que habilita widgets para mostrar galerías de videos en cualquier parte del sitio web (p. 14).",
+                                "Login with Ajax es un plugin que agrega un widget de inicio de sesión para usuarios registrados, evitando redirecciones (p. 13).",
+                                "Yith WooCommerce Ajax Product Filter permite agregar widgets de filtrado de productos en tiendas online, mejorando la experiencia del usuario (p. 14).",
+                                "Un shortcode es un código abreviado que inserta funcionalidades específicas en el contenido sin necesidad de programación, como [shortcode id='1'] (p. 16).",
+                                "El plugin Shortcodes Ultimate ofrece más de 50 shortcodes preconfigurados, como botones, acordeones y pestañas, para enriquecer el diseño (p. 24).",
+                                "Los shortcodes pueden insertarse en páginas, entradas o widgets, y se visualizan como elementos funcionales una vez publicados (p. 18).",
+                                "Los widgets pueden personalizarse desde 'Apariencia > Personalizar > Widgets', donde se pueden previsualizar los cambios antes de publicarlos (p. 9).",
+                                "Al cambiar de tema en WordPress, los widgets pueden resetearse, por lo que es recomendable anotar su configuración previa (p. 11).",
+                                "Plugins como 'Amr shortcode any widget' permiten agregar widgets en cualquier parte del sitio mediante shortcodes (p. 13).",
+                                "Los shortcodes predeterminados de WordPress incluyen [audio], [video], y [gallery], para insertar multimedia fácilmente (p. 16).",
+                                "El plugin Contact Form 7 genera shortcodes para formularios de contacto, que pueden insertarse en páginas o widgets (p. 17).",
+                                "Los widgets inactivos pueden guardarse en WordPress para su uso futuro sin mostrarse en el sitio (p. 8).",
+                                "La API de shortcodes de WordPress permite a los desarrolladores crear funcionalidades personalizadas sin afectar el núcleo del CMS (p. 16).",
+                                "Plugins como 'Awesome Weather Widgets' añaden widgets meteorológicos, ideales para blogs de viajes o eventos (p. 13).",
+                                "Los shortcodes son compatibles con HTML y CSS, lo que permite mayor personalización en su apariencia (p. 24).",
+                                "La creación de widgets personalizados requiere conocimientos de PHP y la clase WP_Widget de WordPress (p. 32)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Qué son los widgets?",
+                                    "opciones": [
+                                        "Software de servidor web gratuito.",
+                                        "Pequeñas aplicaciones que permiten añadir bloques de contenido y funcionalidad a áreas un sitio web.",
+                                        "Es un sistema de gestión de bases de datos relacionales de código abierto.",
+                                        "Es un subconjunto de lenguajes de secuencia como JavaScript y Python."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los widgets son bloques de contenido funcional que se añaden a áreas específicas del sitio (p. 5)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es la ruta para gestionar los widgets?",
+                                    "opciones": [
+                                        "Apariencia > Widgets.",
+                                        "Herramientas > Widgets.",
+                                        "Usuarios > Widgets.",
+                                        "Ajustes > Widgets."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Los widgets se gestionan en 'Apariencia > Widgets' (p. 6)."
+                                },
+                                {
+                                    "pregunta": "Plugin que permite agregar Widgets de redes sociales en barra lateral o pie de página.",
+                                    "opciones": [
+                                        "Google Maps.",
+                                        "Jetpack.",
+                                        "Login with ajax.",
+                                        "YouTube Gallery."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Jetpack incluye widgets para redes sociales (p. 13)."
+                                },
+                                {
+                                    "pregunta": "Plugin que permite agregar Widgets de mapas de ubicación.",
+                                    "opciones": [
+                                        "Google Maps",
+                                        "Jetpack",
+                                        "Login with ajax",
+                                        "YouTube Gallery"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Google Maps añade widgets para mostrar ubicaciones (p. 13)."
+                                },
+                                {
+                                    "pregunta": "Plugin que permite agregar Widgets de galerías de vídeo:",
+                                    "opciones": [
+                                        "Google Maps",
+                                        "Jetpack",
+                                        "Login with ajax",
+                                        "YouTube Gallery"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "YouTube Gallery muestra galerías de videos (p. 14)."
+                                },
+                                {
+                                    "pregunta": "Plugin que permite agregar Widgets de inicio de sesión para usuarios registrados en la web:",
+                                    "opciones": [
+                                        "Google Maps.",
+                                        "Jetpack.",
+                                        "Login with Ajax.",
+                                        "YouTube Gallery."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Login with Ajax agrega un widget de inicio de sesión (p. 13)."
+                                },
+                                {
+                                    "pregunta": "Plugin que permite agregar Widgets de filtros de productos:",
+                                    "opciones": [
+                                        "Google Maps.",
+                                        "Jetpack.",
+                                        "Login with Ajax.",
+                                        "Yith WooCommerce Ajax Product Filter."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Este plugin facilita el filtrado de productos en tiendas online (p. 14)."
+                                },
+                                {
+                                    "pregunta": "¿Qué es un shortcode?",
+                                    "opciones": [
+                                        "Servicio que permite crear bases de datos.",
+                                        "Es un código abreviado (o corto) que agrega funcionalidad.",
+                                        "Es un protocolo de comunicación.",
+                                        "Archivo que se descarga en el zip. del software de WordPress."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los shortcodes son códigos que insertan funcionalidades (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Estructura genérica de un shortcode?",
+                                    "opciones": [
+                                        "(shortcode id='1')",
+                                        "(shortcode id='1')",
+                                        "<shortcode id='1'>",
+                                        "[shortcode id='1']"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Los shortcodes usan corchetes, por ejemplo: [shortcode id='1'] (p. 16)."
+                                },
+                                {
+                                    "pregunta": "Plugin que contiene cerca de cincuenta shortcode al instalarse:",
+                                    "opciones": [
+                                        "Shortcodes Premium.",
+                                        "Shortcodes Gallery.",
+                                        "Shortcodes Ultimate.",
+                                        "Shortcodes Widget."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Shortcodes Ultimate ofrece múltiples shortcodes preconfigurados (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Qué área NO es común para agregar widgets en WordPress?",
+                                    "opciones": [
+                                        "Barra lateral (sidebar).",
+                                        "Pie de página (footer).",
+                                        "Cabecera (header).",
+                                        "Editor de temas."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Los widgets no se gestionan en el editor de temas (p. 5-6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué acción NO se puede realizar con widgets?",
+                                    "opciones": [
+                                        "Cambiar su orden arrastrándolos.",
+                                        "Insertar shortcodes.",
+                                        "Editar el núcleo de WordPress.",
+                                        "Personalizar su contenido."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los widgets no modifican el núcleo de WordPress (p. 6-8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué plugin permite crear shortcodes para formularios de contacto?",
+                                    "opciones": [
+                                        "Contact Form 7.",
+                                        "Yoast SEO.",
+                                        "WooCommerce.",
+                                        "Smush."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Contact Form 7 genera shortcodes para formularios (p. 17)."
+                                },
+                                {
+                                    "pregunta": "¿Dónde se inserta un shortcode en WordPress?",
+                                    "opciones": [
+                                        "Solo en páginas.",
+                                        "Solo en widgets.",
+                                        "En páginas, widgets o entradas.",
+                                        "Solo en el editor de temas."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los shortcodes pueden usarse en múltiples áreas (p. 18-20)."
+                                },
+                                {
+                                    "pregunta": "¿Qué hace el plugin 'Amr shortcode any widget'?",
+                                    "opciones": [
+                                        "Optimiza imágenes.",
+                                        "Permite agregar widgets mediante shortcodes.",
+                                        "Crea tiendas online.",
+                                        "Traduce el sitio web."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Este plugin inserta widgets usando shortcodes (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué shortcode predeterminado de WordPress inserta una galería?",
+                                    "opciones": [
+                                        "[audio]",
+                                        "[video]",
+                                        "[gallery]",
+                                        "[form]"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "[gallery] muestra una galería de imágenes (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Qué ocurre al cambiar de tema en WordPress?",
+                                    "opciones": [
+                                        "Los widgets se eliminan permanentemente.",
+                                        "Los widgets pueden resetearse y deben reconfigurarse.",
+                                        "Los shortcodes dejan de funcionar.",
+                                        "El contenido de las páginas se borra."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Cambiar de tema puede resetear la configuración de widgets (p. 11)."
+                                },
+                                {
+                                    "pregunta": "¿Qué plugin es ideal para mostrar testimonios de clientes en widgets?",
+                                    "opciones": [
+                                        "Testimonial Rotator.",
+                                        "Google Maps.",
+                                        "Jetpack.",
+                                        "Login with Ajax."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Testimonial Rotator muestra testimonios en rotación (p. 14)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica NO tiene el plugin Shortcodes Ultimate?",
+                                    "opciones": [
+                                        "Editor de CSS.",
+                                        "Más de 50 shortcodes preconfigurados.",
+                                        "Integración con WooCommerce.",
+                                        "Elementos responsive."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "No está enfocado en WooCommerce (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Qué se necesita para crear widgets personalizados?",
+                                    "opciones": [
+                                        "Conocimientos de HTML básico.",
+                                        "Conocimientos de PHP y la clase WP_Widget.",
+                                        "Instalar el plugin Shortcodes Ultimate.",
+                                        "Usar solo el editor clásico de WordPress."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Requiere programación en PHP usando WP_Widget (p. 32)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 8001,
+                            "nombre": "Tema 8: Constructores de sitios web: Elementor y Divi",
+                            "teoria": [
+                                "Elementor y Divi son constructores visuales que permiten diseñar webs mediante la función de arrastrar y soltar (Drag and Drop), facilitando la creación de páginas sin necesidad de programación (p. 4).",
+                                "Elementor fue lanzado al mercado en 2016 y desde entonces ha alcanzado una gran popularidad con más de cinco millones de instalaciones activas (p. 5).",
+                                "Tanto Elementor como Divi son compatibles con WooCommerce, lo que permite la creación de tiendas en línea y comercio electrónico (p. 5).",
+                                "En los ajustes de Elementor, la opción 'Gestores de perfiles' permite definir qué perfiles de WordPress tienen acceso al editor de Elementor, como editores, autores o suscriptores (p. 10).",
+                                "Elementor ofrece una versión gratuita y una versión premium, esta última incluye funciones avanzadas como animaciones y ventanas emergentes (p. 5).",
+                                "En los ajustes avanzados de Elementor, se puede especificar dónde guardar el código CSS generado, lo que facilita la personalización del diseño (p. 8).",
+                                "En Divi, el logo del sitio web se carga desde la pestaña 'General' en los ajustes del constructor (p. 24).",
+                                "La pestaña 'Anuncios' en Divi permite gestionar e integrar banners publicitarios en el contenido para monetizar el sitio web (p. 32).",
+                                "Los datos de usuario y clave API de Divi se ingresan en la pestaña 'Actualizaciones', necesarios para habilitar todas las funciones del constructor (p. 24).",
+                                "La pestaña 'Integración' en Divi permite agregar código adicional en la cabecera, body o footer sin modificar el código interno del tema (p. 34).",
+                                "Elementor incluye una biblioteca de plantillas y widgets en su versión gratuita, lo que reduce la necesidad de plugins adicionales (p. 5).",
+                                "Divi permite editar texto en línea y ofrece control total sobre el diseño responsivo para dispositivos móviles y tablets (p. 22).",
+                                "La paleta de colores en Divi permite predefinir hasta 8 colores para el proyecto web, facilitando la coherencia visual (p. 25).",
+                                "Elementor cuenta con una pestaña de 'Experimentos' para probar funciones en desarrollo antes de su lanzamiento oficial (p. 8).",
+                                "Divi incluye más de 30 módulos personalizables, como textos, imágenes y mapas, que se pueden arrastrar y soltar en cualquier sección (p. 42).",
+                                "En Elementor, la opción 'Modo seguro' permite desactivar plugins y temas para diagnosticar errores en la construcción de la página (p. 10).",
+                                "Divi ofrece la posibilidad de clonar páginas existentes, lo que agiliza el proceso de diseño (p. 36).",
+                                "Elementor permite regenerar el CSS y sincronizar la biblioteca de elementos desde la pestaña 'Herramientas' (p. 10).",
+                                "Divi incluye una función de 'Desplazamiento suave' para mejorar la experiencia de navegación en el sitio web (p. 26).",
+                                "En Elementor, la pestaña 'Estilos' permite ajustar el ancho de contenido, fuentes y espacio de widgets, aunque en versiones recientes estas opciones se han movido al editor (p. 7)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "Una de las características principales de Elementor y Divi es:",
+                                    "opciones": [
+                                        "Diseñar webs con la característica de PostgraseSQL.",
+                                        "Diseñar webs con la característica de CSS personalizable.",
+                                        "Diseñar webs con la característica de crear plugins.",
+                                        "Diseñar webs con la característica de Drag and Drop."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Ambos constructores permiten diseñar webs mediante la función de arrastrar y soltar (Drag and Drop), como se menciona en la página 4."
+                                },
+                                {
+                                    "pregunta": "¿En qué año fue lanzado al mercado Elementor?",
+                                    "opciones": [
+                                        "2013.",
+                                        "2016.",
+                                        "2017.",
+                                        "2006."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Elementor fue lanzado en 2016, según se indica en la página 5."
+                                },
+                                {
+                                    "pregunta": "Elementor y Divi para realizar comercio electrónico son compatibles con:",
+                                    "opciones": [
+                                        "Woocommerce.",
+                                        "CSS2.",
+                                        "Red social.",
+                                        "Python."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Ambos constructores son compatibles con WooCommerce para comercio electrónico, como se detalla en la página 5."
+                                },
+                                {
+                                    "pregunta": "En los ajustes de Elementor los ajustes de 'Gestores de perfiles' permite:",
+                                    "opciones": [
+                                        "Definir qué perfiles de WordPress tienen o tendrán acceso a la base de datos de Elementor.",
+                                        "Definir qué perfiles de Elementor tienen o tendrán acceso al constructor.",
+                                        "Definir qué perfiles de WordPress tienen o tendrán acceso a los contactos de Elementor.",
+                                        "Definir qué perfiles de WordPress tienen o tendrán acceso al editor de Elementor."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "La opción 'Gestores de perfiles' en Elementor permite definir el acceso al editor para diferentes perfiles de WordPress, como se explica en la página 10."
+                                },
+                                {
+                                    "pregunta": "Elementor tiene versión:",
+                                    "opciones": [
+                                        "premium y archivos PHP.",
+                                        "premium y gratuita.",
+                                        "premium y temas dinámicos.",
+                                        "premium y archivos zip."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Elementor ofrece una versión gratuita y una versión premium, como se menciona en la página 5."
+                                },
+                                {
+                                    "pregunta": "¿Qué ajustes de Elementor permiten indicar donde deseamos guardar el código CSS generado?",
+                                    "opciones": [
+                                        "Ajustes Experimentos.",
+                                        "Ajustes Avanzados.",
+                                        "Ajustes General.",
+                                        "Ajustes Estilo."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "En los ajustes avanzados de Elementor se puede especificar dónde guardar el código CSS generado, como se detalla en la página 8."
+                                },
+                                {
+                                    "pregunta": "Si queremos colocar el Logo del sitio web usando el constructor Divi, el logo se carga desde:",
+                                    "opciones": [
+                                        "General > Logo.",
+                                        "Navegación > Logo.",
+                                        "Diseño > Logo.",
+                                        "Constructor > Logo."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "El logo del sitio web en Divi se carga desde la pestaña 'General' en los ajustes, como se indica en la página 24."
+                                },
+                                {
+                                    "pregunta": "La pestaña de 'Anuncios' de los ajustes de Divi permite:",
+                                    "opciones": [
+                                        "Gestionar anuncios e integrar CCS y HTML en el contenido en caso de que se decidiera por monetizar el blog o sitio web.",
+                                        "Gestionar anuncios e integrar funciones PHP en el contenido en caso de que se decidiera por monetizar el blog o sitio web.",
+                                        "Gestionar anuncios e integrar el Hosting en el contenido en caso de que se decidiera por monetizar el blog o sitio web.",
+                                        "Gestionar anuncios e integrar banners en el contenido en caso de que se decidiera por monetizar el blog o sitio web."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "La pestaña 'Anuncios' en Divi permite gestionar e integrar banners publicitarios, como se menciona en la página 32."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es la pestaña de ajustes Divi que permite ingresar los datos de usuario y clave API de Divi?",
+                                    "opciones": [
+                                        "Pestaña Actualizaciones.",
+                                        "Pestaña Constructor.",
+                                        "Pestaña Integración.",
+                                        "Pestaña Diseño."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Los datos de usuario y clave API de Divi se ingresan en la pestaña 'Actualizaciones', como se explica en la página 24."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las opciones de los ajustes Divi permite agregar código adicional en la cabecera, body o footer sin necesidad de ingresar en el código interno del tema?",
+                                    "opciones": [
+                                        "General.",
+                                        "Constructor.",
+                                        "Diseño.",
+                                        "Integración."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "La pestaña 'Integración' en Divi permite agregar código en la cabecera, body o footer sin modificar el código interno, como se detalla en la página 34."
+                                },
+                                {
+                                    "pregunta": "¿Qué función de Elementor permite desactivar plugins y temas para diagnosticar errores?",
+                                    "opciones": [
+                                        "Modo seguro.",
+                                        "Barra de depuración.",
+                                        "Regenerar CSS.",
+                                        "Sincronizar biblioteca."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "El 'Modo seguro' en Elementor permite desactivar plugins y temas para diagnosticar errores, como se menciona en la página 10."
+                                },
+                                {
+                                    "pregunta": "¿Cuántos módulos personalizables incluye Divi?",
+                                    "opciones": [
+                                        "Más de 10.",
+                                        "Más de 20.",
+                                        "Más de 30.",
+                                        "Más de 40."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Divi incluye más de 30 módulos personalizables, como se detalla en la página 42."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción en Divi permite mejorar la experiencia de navegación con un desplazamiento más suave?",
+                                    "opciones": [
+                                        "Desplazamiento suave.",
+                                        "Modo blog.",
+                                        "Barra de navegación fija.",
+                                        "Volver al inicio."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La opción 'Desplazamiento suave' en Divi mejora la experiencia de navegación, como se indica en la página 26."
+                                },
+                                {
+                                    "pregunta": "¿Qué pestaña en Elementor permite probar funciones en desarrollo antes de su lanzamiento oficial?",
+                                    "opciones": [
+                                        "Experimentos.",
+                                        "Avanzado.",
+                                        "General.",
+                                        "Estilo."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La pestaña 'Experimentos' en Elementor permite probar funciones en desarrollo, como se menciona en la página 8."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción en Divi permite clonar páginas existentes?",
+                                    "opciones": [
+                                        "Construir desde cero.",
+                                        "Elegir diseño.",
+                                        "Clonar página existente.",
+                                        "Modo especialidad."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Divi permite clonar páginas existentes para agilizar el diseño, como se explica en la página 36."
+                                },
+                                {
+                                    "pregunta": "¿Qué función en Elementor permite regenerar el código CSS?",
+                                    "opciones": [
+                                        "Regenerar CSS.",
+                                        "Sincronizar biblioteca.",
+                                        "Modo seguro.",
+                                        "Barra de depuración."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La opción 'Regenerar CSS' en Elementor permite actualizar el código CSS, como se detalla en la página 10."
+                                },
+                                {
+                                    "pregunta": "¿Qué sección en Divi permite crear cajas con un ancho del 100% para destacar contenido?",
+                                    "opciones": [
+                                        "Sección Regular.",
+                                        "Sección Especialidad.",
+                                        "Sección Ancho Completo.",
+                                        "Sección Módulos."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La 'Sección Ancho Completo' en Divi permite crear cajas con un ancho del 100%, como se menciona en la página 40."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción en Divi permite definir el formato de fecha para los artículos?",
+                                    "opciones": [
+                                        "Formato de fecha.",
+                                        "Uso de extractos.",
+                                        "Modo blog.",
+                                        "Paleta de colores."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La opción 'Formato de fecha' en Divi permite definir el formato de fecha para los artículos, como se indica en la página 26."
+                                },
+                                {
+                                    "pregunta": "¿Qué pestaña en Elementor permite sincronizar la biblioteca de elementos y plantillas?",
+                                    "opciones": [
+                                        "Herramientas > Sincronizar biblioteca.",
+                                        "Ajustes > General.",
+                                        "Experimentos.",
+                                        "Gestores de perfiles."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La opción 'Sincronizar biblioteca' en la pestaña 'Herramientas' de Elementor permite actualizar la biblioteca, como se detalla en la página 10."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción en Divi permite agregar un botón para ir al inicio de la página?",
+                                    "opciones": [
+                                        "Volver al inicio.",
+                                        "Desplazamiento suave.",
+                                        "Barra de navegación fija.",
+                                        "Modo blog."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La opción 'Volver al inicio' en Divi permite agregar un botón para ir al inicio de la página, como se menciona en la página 26."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 9001,
+                            "nombre": "tema 10: Migración en WordPress",
+                            "teoria": [
+                                "La migración web implica transferir todos los datos de un sitio web, incluyendo imágenes, archivos y bases de datos, desde un hosting local o remoto a un nuevo alojamiento (p. 4).",
+                                "Antes de realizar una migración manual, es crucial realizar una copia de seguridad del sitio web para evitar pérdidas de datos en caso de fallos (p. 5).",
+                                "Para migrar manualmente un sitio WordPress, se deben copiar las carpetas y archivos del sitio mediante FTP, como FileZilla, desde el servidor remoto al local (p. 5).",
+                                "La base de datos del sitio WordPress debe exportarse en formato .sql desde phpMyAdmin o mediante plugins como Migrate DB (p. 6).",
+                                "En la migración manual, es necesario editar la tabla 'wp_options' en la base de datos para actualizar las URLs 'site URL' y 'Home' con el nuevo dominio (p. 7).",
+                                "El archivo 'wp-config.php' debe modificarse para incluir los nuevos datos de la base de datos: usuario, nombre, contraseña y hosting (p. 8).",
+                                "El plugin All-in-One WP Migration permite migrar sitios WordPress de forma sencilla, con una interfaz drag & drop y soporte para archivos de hasta 400 MB en su versión gratuita (p. 10).",
+                                "All-in-One WP Migration automatiza la sustitución de URLs y datos de la base de datos durante la migración, sin necesidad de intervención manual (p. 22).",
+                                "Otros plugins útiles para migración incluyen Duplicator, ideal para sitios grandes, y UpdraftPlus Migrator, que requiere versión de pago para migraciones (p. 23).",
+                                "Migrate Guru es un plugin gratuito que permite migrar sitios de hasta 200 GB, realizando la transferencia desde sus propios servidores (p. 24).",
+                                "La migración manual requiere acceso FTP y conocimientos técnicos para manipular archivos y bases de datos (p. 5).",
+                                "Los plugins de migración son ideales para usuarios sin conocimientos técnicos, ya que automatizan procesos complejos como la actualización de URLs (p. 10).",
+                                "Duplicator es útil para sitios que superan el límite de tamaño de All-in-One WP Migration, pero no soporta multisitios en su versión gratuita (p. 23).",
+                                "UpdraftPlus Migrator ofrece 1 GB de almacenamiento en la nube en su versión de pago, además de funciones de copia de seguridad y restauración (p. 23).",
+                                "Antes de migrar con plugins, es recomendable realizar una copia de seguridad del sitio destino para evitar sobrescribir información importante (p. 15).",
+                                "El proceso de importación con All-in-One WP Migration sobrescribe todos los datos del sitio destino, incluyendo temas, plugins y medios (p. 19).",
+                                "Migrate Guru realiza migraciones desde sus servidores, lo que facilita la transferencia de sitios muy grandes sin consumir recursos locales (p. 24).",
+                                "La migración manual requiere crear una nueva base de datos en el hosting destino e importar la base de datos exportada desde el sitio original (p. 7).",
+                                "Los plugins de migración suelen incluir opciones para exportar e importar sitios en formatos como archivos locales, FTP o servicios en la nube (p. 12).",
+                                "Tras una migración exitosa, es fundamental verificar que el sitio funcione correctamente accediendo al nuevo dominio y al panel de administración (p. 9)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "Antes de realizar una migración web se recomienda:",
+                                    "opciones": [
+                                        "Realizar una copia de seguridad del sitio web.",
+                                        "Sustituir la versión PHP de WordPress.",
+                                        "Administrar la base de datos.",
+                                        "Comprobar la transferencia de archivos FTP."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Se recomienda realizar una copia de seguridad para evitar pérdidas de datos en caso de fallos durante la migración (p. 5)."
+                                },
+                                {
+                                    "pregunta": "Para realizar copias de seguridad desde un servidor local, se copiarán los archivos de la carpeta de proyectos:",
+                                    "opciones": [
+                                        "«Perl».",
+                                        "«Python».",
+                                        "«htdocs».",
+                                        "«PHP»."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los archivos del sitio WordPress se encuentran típicamente en la carpeta 'htdocs' en entornos locales (p. 5)."
+                                },
+                                {
+                                    "pregunta": "¿En qué formato debe estar la base de datos a migrar?",
+                                    "opciones": [
+                                        ".htp.",
+                                        ".sql.",
+                                        ".docs.",
+                                        ".phg."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La base de datos debe exportarse en formato .sql para su correcta importación en el nuevo hosting (p. 6)."
+                                },
+                                {
+                                    "pregunta": "Para asegurarnos que la base de datos apunte al nuevo dominio, se deben modificar los datos del nombre del dominio que se encuentran en la tabla de la base de datos con el nombre:",
+                                    "opciones": [
+                                        "wp_options.",
+                                        "wp_admin.",
+                                        "wp_php.",
+                                        "wp_config."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La tabla 'wp_options' contiene las URLs 'site URL' y 'Home' que deben actualizarse con el nuevo dominio (p. 7)."
+                                },
+                                {
+                                    "pregunta": "Los enlaces que deben modificarse en la tabla de la base de datos se encuentran en:",
+                                    "opciones": [
+                                        "site URL y Home.",
+                                        "adminemail.",
+                                        "resussexcept.",
+                                        "startofweek."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las URLs 'site URL' y 'Home' en la tabla 'wp_options' deben actualizarse para que el sitio funcione correctamente (p. 7)."
+                                },
+                                {
+                                    "pregunta": "En el proceso de migración de un sitio en WordPress, el archivo que se debe modificar con los nuevos datos de la base de datos es:",
+                                    "opciones": [
+                                        "wp-config.php.",
+                                        "wp-admin.",
+                                        "wp-config.",
+                                        "wp-php."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "El archivo 'wp-config.php' contiene los datos de conexión a la base de datos que deben actualizarse (p. 8)."
+                                },
+                                {
+                                    "pregunta": "Los datos que se deben modificar en el archivo del WordPress para migrar una web son:",
+                                    "opciones": [
+                                        "Usuario de la base de datos, «URL config» y contraseña de la base de datos.",
+                                        "Usuario de la base de datos, nombre de la base de datos y admin.",
+                                        "Usuario de correo electrónico, nombre de la base de datos y contraseña de la base de datos.",
+                                        "Usuario de la base de datos, nombre de la base de datos y contraseña de la base de datos."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "El archivo 'wp-config.php' requiere actualizar el usuario, nombre y contraseña de la base de datos (p. 8)."
+                                },
+                                {
+                                    "pregunta": "Plugin que permite realizar migraciones web de forma sencilla lleva el nombre de:",
+                                    "opciones": [
+                                        "All – duplicator– Migration.",
+                                        "All – updraft – Migration.",
+                                        "All – in - One - WP – Admin.",
+                                        "All – in - One - WP – Migration."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "All-in-One WP Migration es un plugin popular para migrar sitios WordPress con interfaz intuitiva (p. 10)."
+                                },
+                                {
+                                    "pregunta": "El plugin explicado para realizar migraciones web, en su versión gratuita, permite importar sitios con un máximo de:",
+                                    "opciones": [
+                                        "400 MB.",
+                                        "100 MB.",
+                                        "300 MB.",
+                                        "500 MB."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La versión gratuita de All-in-One WP Migration soporta archivos de hasta 400 MB (p. 10)."
+                                },
+                                {
+                                    "pregunta": "El plugin explicado para realizar migraciones web sustituye de forma automática:",
+                                    "opciones": [
+                                        "Las URL y datos del correo electrónico.",
+                                        "Las cookies y datos de la base de datos.",
+                                        "Las URL y datos de la base de datos.",
+                                        "Los números de contacto y datos de la base de datos."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "All-in-One WP Migration automatiza la sustitución de URLs y datos de la base de datos durante la migración (p. 22)."
+                                },
+                                {
+                                    "pregunta": "¿Qué plugin es ideal para migrar sitios WordPress que superan los 400 MB?",
+                                    "opciones": [
+                                        "All-in-One WP Migration.",
+                                        "Duplicator.",
+                                        "UpdraftPlus Migrator.",
+                                        "Migrate Guru."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Duplicator es útil para sitios grandes, aunque no soporta multisitios en su versión gratuita (p. 23)."
+                                },
+                                {
+                                    "pregunta": "¿Qué función ofrece UpdraftPlus Migrator en su versión de pago?",
+                                    "opciones": [
+                                        "1 GB de almacenamiento en la nube.",
+                                        "Migración de multisitios.",
+                                        "Soporte para sitios de más de 200 GB.",
+                                        "Exportación a servicios en la nube."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "UpdraftPlus Migrator incluye 1 GB de almacenamiento en UpdraftVault en su versión de pago (p. 23)."
+                                },
+                                {
+                                    "pregunta": "¿Qué plugin permite migrar sitios de hasta 200 GB sin consumir recursos locales?",
+                                    "opciones": [
+                                        "All-in-One WP Migration.",
+                                        "Duplicator.",
+                                        "UpdraftPlus Migrator.",
+                                        "Migrate Guru."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Migrate Guru realiza migraciones desde sus servidores, ideal para sitios muy grandes (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tabla de la base de datos se debe modificar para actualizar el dominio en una migración manual?",
+                                    "opciones": [
+                                        "wp_users.",
+                                        "wp_posts.",
+                                        "wp_options.",
+                                        "wp_comments."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La tabla 'wp_options' contiene las URLs 'site URL' y 'Home' que deben actualizarse (p. 7)."
+                                },
+                                {
+                                    "pregunta": "¿Qué archivo se debe editar para actualizar los datos de conexión a la base de datos?",
+                                    "opciones": [
+                                        "wp-admin.php.",
+                                        "wp-config.php.",
+                                        "wp-settings.php.",
+                                        "wp-load.php."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El archivo 'wp-config.php' contiene los datos de conexión a la base de datos (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción NO es un formato de exportación soportado por All-in-One WP Migration?",
+                                    "opciones": [
+                                        "Archivo local.",
+                                        "FTP.",
+                                        "Dropbox.",
+                                        "GitHub."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "All-in-One WP Migration no soporta exportación directa a GitHub (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué plugin es recomendable para usuarios sin conocimientos técnicos?",
+                                    "opciones": [
+                                        "Duplicator.",
+                                        "All-in-One WP Migration.",
+                                        "Migrate Guru.",
+                                        "UpdraftPlus Migrator."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "All-in-One WP Migration tiene una interfaz intuitiva ideal para principiantes (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Qué se debe verificar después de completar una migración?",
+                                    "opciones": [
+                                        "El tamaño del sitio web.",
+                                        "El funcionamiento del sitio en el nuevo dominio.",
+                                        "La versión de PHP.",
+                                        "Los plugins desactivados."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Es crucial acceder al nuevo dominio y al panel de administración para confirmar que la migración fue exitosa (p. 9)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica tiene Migrate Guru?",
+                                    "opciones": [
+                                        "Requiere conocimientos técnicos avanzados.",
+                                        "Realiza migraciones desde sus servidores.",
+                                        "Solo funciona en sitios pequeños.",
+                                        "No es gratuito."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Migrate Guru realiza migraciones desde sus servidores, facilitando la transferencia de sitios grandes (p. 24)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 10001,
+                            "nombre": "Tema 10: Optimización SEO y herramientas SEO",
+                            "teoria": [
+                                "El SEO (Search Engine Optimization) se refiere al posicionamiento orgánico o natural de un sitio web en los motores de búsqueda, lo que aumenta su visibilidad y visitas (p. 4).",
+                                "El SEO permite incrementar la visibilidad de un sitio web y atraer más visitantes, lo que puede convertir clientes potenciales en reales (p. 4).",
+                                "Los crawlers son programas utilizados por los motores de búsqueda para rastrear y catalogar páginas web, almacenando los datos en una base de datos (p. 5).",
+                                "Google es el motor de búsqueda más importante y utiliza algoritmos como el PageRank para determinar la relevancia de una página web (p. 5).",
+                                "Los motores de búsqueda priorizan la indexación de textos, por lo que el contenido de una web debe ser descriptivo, relevante y contener palabras clave estratégicas (p. 6).",
+                                "Un sitemap es un documento que lista todas las páginas de un sitio web, facilitando su indexación por los motores de búsqueda (p. 9).",
+                                "El archivo robots.txt indica a los rastreadores qué URLs del sitio web pueden o no pueden ser indexadas, evitando sobrecargas y contenido duplicado (p. 9).",
+                                "GTmetrix es una herramienta gratuita que analiza el estado de optimización de una web, incluyendo su velocidad de carga (p. 11).",
+                                "Los meta tags son etiquetas HTML que proporcionan una descripción breve del contenido de una página, aunque no afectan directamente el ranking en Google (p. 8).",
+                                "Un tema SEO-friendly debe tener una arquitectura que facilite la indexación, código de cabecera optimizado y soporte para plugins de caché (p. 6).",
+                                "WordPress es inherentemente amigable con los motores de búsqueda, pero su optimización depende también del tema y plugins utilizados (p. 6).",
+                                "Las palabras clave deben aparecer en títulos, URLs y encabezados (h1, h2, etc.) para mejorar el posicionamiento SEO (p. 8).",
+                                "Google Analytics es una herramienta esencial para medir el tráfico, comportamiento de usuarios y detectar errores en un sitio web (p. 12).",
+                                "Yoast SEO es un plugin popular que ayuda a optimizar metadescripciones, legibilidad y mapas del sitio XML (p. 11).",
+                                "SEMRush es una herramienta avanzada que analiza el tráfico orgánico y pagado, además de realizar auditorías técnicas (p. 11).",
+                                "Incluir imágenes con atributos 'alt' y 'title' mejora la accesibilidad y el SEO (p. 8).",
+                                "Para nuevas webs, es recomendable añadir manualmente la URL a buscadores como Google y Bing (p. 9).",
+                                "El exceso de palabras clave puede ser penalizado por los motores de búsqueda (p. 7).",
+                                "Los temas SEO-friendly deben cargar rápidamente y minimizar el tamaño de los scripts (p. 6).",
+                                "El archivo robots.txt también puede definir la ubicación del sitemap y reducir solicitudes al servidor (p. 9)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿A qué hace referencia el SEO?",
+                                    "opciones": [
+                                        "Posicionamiento orgánico o natural.",
+                                        "Estructura correcta de HTML.",
+                                        "Contenido adecuado de sitemaps.",
+                                        "Archivos PHP."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "El SEO (Search Engine Optimization) se refiere al posicionamiento orgánico de un sitio web en motores de búsqueda (p. 4)."
+                                },
+                                {
+                                    "pregunta": "¿Qué permite el SEO?",
+                                    "opciones": [
+                                        "Artículos con estructura.",
+                                        "Imágenes con tamaños específicos.",
+                                        "Archivos pesados.",
+                                        "Incrementar la visibilidad y aumentar el número de visitas que tendrá una web."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "El SEO incrementa la visibilidad y visitas de un sitio web (p. 4)."
+                                },
+                                {
+                                    "pregunta": "¿Qué son los crawlers?",
+                                    "opciones": [
+                                        "Editor de portadas web.",
+                                        "Rastreadores.",
+                                        "Gestor de contenidos o CMS.",
+                                        "Una red social."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los crawlers son programas que rastrean y catalogan páginas web para los motores de búsqueda (p. 5)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es el buscador web más importante?",
+                                    "opciones": [
+                                        "Baidu.",
+                                        "Bing.",
+                                        "Yahoo.",
+                                        "Google."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Google es el motor de búsqueda más relevante y utiliza algoritmos como el PageRank (p. 5)."
+                                },
+                                {
+                                    "pregunta": "¿Qué indexan primero los motores de búsqueda?",
+                                    "opciones": [
+                                        "Imágenes.",
+                                        "Archivos PHP.",
+                                        "Textos.",
+                                        "Números."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los motores de búsqueda priorizan la indexación de textos (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué contiene el sitemap de un sitio web?",
+                                    "opciones": [
+                                        "Listado de todas y cada una de las páginas del sitio web.",
+                                        "Archivos PHP.",
+                                        "Es un fichero que permite hacer redirecciones en el sitio web.",
+                                        "Contiene el back-end de WordPress."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Un sitemap es un listado de todas las páginas del sitio web (p. 9)."
+                                },
+                                {
+                                    "pregunta": "¿Qué permite el archivo robots.txt de un sitio web?",
+                                    "opciones": [
+                                        "Qué imágenes y vídeos debe mostrar.",
+                                        "Crear temas dinámicos para web.",
+                                        "Indica a los rastreadores de los buscadores cuáles URL del sitio web debe acceder.",
+                                        "Archivo que controla el acceso al administrador de WordPress."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El archivo robots.txt controla qué URLs pueden ser rastreadas por los motores de búsqueda (p. 9)."
+                                },
+                                {
+                                    "pregunta": "¿Qué es GTmetrix?",
+                                    "opciones": [
+                                        "Servicio que permite crear bases de datos.",
+                                        "Aplicación programada en PHP.",
+                                        "Es un protocolo de comunicación.",
+                                        "Herramienta gratuita que permite conocer el estado de optimización una web."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "GTmetrix analiza la optimización y velocidad de carga de una web (p. 11)."
+                                },
+                                {
+                                    "pregunta": "¿Qué son los meta tags?",
+                                    "opciones": [
+                                        "Pequeña descripción sobre el contenido general de la web.",
+                                        "Es un archivo que se crea cuando se habilitan las URL amigables.",
+                                        "Sistema de identificación.",
+                                        "Es un gestor de contenidos."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Los meta tags proporcionan una descripción breve del contenido de una página (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica debe tener un tema SEO-friendly?",
+                                    "opciones": [
+                                        "Todos los archivos de la base de datos accesibles.",
+                                        "Plugins e imágenes reducidas.",
+                                        "Archivos PHP en el sitemap.",
+                                        "Arquitectura adecuada que permita una indexación sencilla por los crawlers."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Un tema SEO-friendly debe facilitar la indexación por crawlers (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué plugin de WordPress es popular para optimizar SEO?",
+                                    "opciones": [
+                                        "Elementor.",
+                                        "Yoast SEO.",
+                                        "Divi Builder.",
+                                        "All-in-One WP Migration."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Yoast SEO es un plugin que optimiza metadescripciones, legibilidad y mapas del sitio (p. 11)."
+                                },
+                                {
+                                    "pregunta": "¿Qué herramienta analiza el tráfico orgánico y pagado?",
+                                    "opciones": [
+                                        "Google Analytics.",
+                                        "SEMRush.",
+                                        "GTmetrix.",
+                                        "XML Sitemap Validator."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "SEMRush se enfoca en analizar el tráfico orgánico y pagado (p. 11)."
+                                },
+                                {
+                                    "pregunta": "¿Qué atributos son importantes para las imágenes en SEO?",
+                                    "opciones": [
+                                        "alt y title.",
+                                        "src y href.",
+                                        "width y height.",
+                                        "class y id."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Los atributos 'alt' y 'title' mejoran la accesibilidad y el SEO de las imágenes (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué acción se recomienda para nuevas webs?",
+                                    "opciones": [
+                                        "Ocultar el sitemap.",
+                                        "Añadir manualmente la URL a buscadores.",
+                                        "Desactivar los crawlers.",
+                                        "Eliminar el archivo robots.txt."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Para nuevas webs, es útil añadir manualmente la URL a buscadores como Google (p. 9)."
+                                },
+                                {
+                                    "pregunta": "¿Qué puede ocurrir si se abusa de las palabras clave?",
+                                    "opciones": [
+                                        "Mejorar el ranking en Google.",
+                                        "Ser penalizado por los motores de búsqueda.",
+                                        "Aumentar la velocidad de carga.",
+                                        "Bloquear el acceso a crawlers."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El exceso de palabras clave puede ser penalizado por los motores de búsqueda (p. 7)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica es clave para un tema SEO-friendly?",
+                                    "opciones": [
+                                        "Código de cabecera extenso.",
+                                        "Soporte para plugins de caché.",
+                                        "Imágenes sin comprimir.",
+                                        "Contenido duplicado."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Un tema SEO-friendly debe soportar plugins de caché para mejorar la velocidad (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué función adicional tiene el archivo robots.txt?",
+                                    "opciones": [
+                                        "Definir la ubicación del sitemap.",
+                                        "Crear contenido duplicado.",
+                                        "Aumentar el tamaño de los scripts.",
+                                        "Ocultar metadescripciones."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "El archivo robots.txt puede definir la ubicación del sitemap (p. 9)."
+                                },
+                                {
+                                    "pregunta": "¿Qué herramienta de Google mide el comportamiento de los usuarios?",
+                                    "opciones": [
+                                        "Google Search Console.",
+                                        "Google Analytics.",
+                                        "Google Ads.",
+                                        "Google My Business."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Google Analytics mide el tráfico y comportamiento de los usuarios (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué etiqueta HTML es crucial para el SEO?",
+                                    "opciones": [
+                                        "<div>.",
+                                        "<title>.",
+                                        "<footer>.",
+                                        "<nav>."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La etiqueta <title> es esencial para incluir palabras clave y mejorar el SEO (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué práctica mejora el SEO de los enlaces?",
+                                    "opciones": [
+                                        "Usar URLs genéricas.",
+                                        "Incluir palabras clave en el texto del enlace.",
+                                        "Ocultar enlaces en el footer.",
+                                        "Evitar enlaces externos."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Incluir palabras clave en el texto de los enlaces mejora su relevancia para el SEO (p. 8)."
                                 }
                             ]
                         }
