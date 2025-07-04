@@ -17,6 +17,8 @@ body {
     background-color: black;
     color: var(--color-blanco);
     line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .hidden {
@@ -27,19 +29,32 @@ body {
 .app-container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
-    min-height: calc(100vh - 120px);
+    padding: 5px;
+    height: 100vh;
     background-color: black;
 }
 
 .app-header {
     background-color: var(--color-primario);
     color: var(--color-blanco);
-    padding: 15px 20px;
+    padding: 5px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    width: 100%;
+}
+
+.app-header h1{
+    display: flex;
+    width: auto;
+    font-size: 1.5rem;
+}
+.app-header .user-profile{
+    display: flex;
+    width: auto;
 }
 
 .app-footer {
@@ -53,24 +68,26 @@ body {
 }
 
 .user-profile {
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     color: var(--color-blanco);
 }
 
 /* Secciones */
 .section-container {
+    height: 85%;
     background-color: var(--color-negro);
     border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 0px;
+    margin-bottom: 0px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .section-container h2 {
     color: var(--color-secundario);
-    margin-bottom: 20px;
     text-align: center;
+    font-size: 1rem;
+    padding: 5px;
 }
 
 /* Grid containers */
@@ -85,7 +102,7 @@ body {
 .card {
     background-color:#cecece;
     border-radius: 8px;
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     border-left: 4px solid var(--color-secundario);
@@ -136,11 +153,11 @@ body {
     border-radius: 5px;
     background: none;
     color: var(--color-blanco);
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     margin: 2px;
 
 }
@@ -154,13 +171,12 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
 }
 
 /* Contenido */
 .content-container {
-    padding: 15px;
-    height: 600px;
+    padding: 0px 10px;
+    height: 85%;
     overflow-y: auto;
     background: var(--color-negro);
     border-radius: 8px;
@@ -302,23 +318,20 @@ p {
 /* Responsive */
 @media (max-width: 768px) {
     .app-container {
-        padding: 10px;
     }
 
     .section-container {
-        padding: 10px;
+        padding: 0px ;
     }
 }
 
 @media (max-width: 480px) {
     .app-header {
-        flex-direction: column;
         align-items: flex-start;
-        padding: 10px;
     }
 
     .app-footer {
-        font-size: 14px;
-        padding: 8px;
+        font-size: 10px;
+        padding: 5px;
     }
 }
