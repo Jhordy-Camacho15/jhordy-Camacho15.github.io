@@ -889,6 +889,254 @@
                                     "explicacion": "Insertar desde YouTube evita consumir espacio de almacenamiento y ancho de banda del hosting (p. 27)."
                                 }
                             ]
+                        },
+                        {
+                            "id": 5001,
+                            "nombre": "Tema 5: Diseño del sitio web en WordPress",
+                            "teoria": [
+                                "Los temas en WordPress son conjuntos de archivos que definen la estructura y estilos visuales de un sitio web, permitiendo separar el contenido del diseño (p. 5).",
+                                "Los temas deben estar actualizados a las últimas versiones de WordPress para evitar errores de compatibilidad, como se especifica en los requerimientos técnicos (Tabla 1, p. 10).",
+                                "Las opciones de configuración de los temas se encuentran en el área de administrador bajo 'Apariencia > Personalizar', donde se pueden ajustar colores, fuentes y más (p. 11).",
+                                "Para crear menús en WordPress, se debe navegar a 'Apariencia > Menús', donde se pueden organizar enlaces a páginas, entradas y categorías (p. 20).",
+                                "WordPress permite añadir tanto temas gratuitos como de pago, ya sea desde su biblioteca interna o subiendo archivos .zip (p. 7-8).",
+                                "Para importar un tema, se debe acceder a 'Apariencia > Temas' y usar la opción 'Añadir nuevo' para subir el archivo .zip (p. 7).",
+                                "El CSS adicional se puede añadir desde 'Apariencia > Personalizar > CSS adicional', permitiendo personalizaciones avanzadas sin modificar el tema directamente (p. 18).",
+                                "La imagen destacada se puede establecer tanto en entradas como en páginas, y aparece como representación visual del contenido (p. 26).",
+                                "Los elementos predeterminados para añadir a un menú incluyen páginas, entradas, enlaces personalizados y categorías (p. 22).",
+                                "Las propiedades avanzadas de los menús permiten configurar el destino del enlace, atributos del título, clases CSS, relación XFN y descripciones (p. 23).",
+                                "Los temas afectan no solo al diseño, sino también a la funcionalidad del sitio, como la ubicación de widgets y menús (p. 5).",
+                                "La compatibilidad con navegadores es un criterio clave al seleccionar un tema, ya que garantiza una visualización correcta en diferentes dispositivos (Tabla 1, p. 10).",
+                                "El personalizador de temas permite previsualizar cambios en tiempo real antes de publicarlos, facilitando el diseño (p. 12).",
+                                "Los menús son esenciales para la navegación del sitio y deben reflejar la estructura del contenido de manera clara y organizada (p. 20).",
+                                "WordPress incluye temas predeterminados como Twenty Twenty-One, que pueden activarse o desactivarse según las necesidades del sitio (p. 6).",
+                                "La identidad del sitio, como el título y el icono, se configura en 'Personalizar > Identidad del sitio' (p. 13).",
+                                "Los widgets, como los del pie de página, se gestionan desde 'Apariencia > Widgets' y pueden personalizarse según el tema (p. 15).",
+                                "Las páginas en WordPress son ideales para contenido estático, como 'Inicio' o 'Contacto', y se crean desde 'Páginas > Añadir nueva' (p. 25).",
+                                "La vista previa de páginas permite revisar el contenido antes de publicarlo, asegurando que todo esté correcto (p. 29).",
+                                "Los temas premium suelen ofrecer más opciones de configuración y soporte técnico que los gratuitos (p. 30)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Qué son los temas en WordPress?",
+                                    "opciones": [
+                                        "Conjunto de bases de datos.",
+                                        "Archivos .zip.",
+                                        "Un tipo de lenguaje de programación.",
+                                        "Un conjunto de archivos que definen la estructura y estilos de una web."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Los temas son archivos que definen el diseño y funcionalidad del sitio sin alterar el contenido (p. 5)."
+                                },
+                                {
+                                    "pregunta": "Es importante que los temas se encuentren ______ a las últimas versiones del WordPress.",
+                                    "opciones": [
+                                        "Comprimidos.",
+                                        "Incrustados.",
+                                        "Actualizados.",
+                                        "En un archivo .zip."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los temas desactualizados pueden causar errores de compatibilidad (Tabla 1, p. 10)."
+                                },
+                                {
+                                    "pregunta": "Las opciones de configuración del tema se encuentran en área de administrador > ______ > ______.",
+                                    "opciones": [
+                                        "> Apariencia > Personalizar",
+                                        "> Temas > Personalizar.",
+                                        "> Páginas > Personalizar.",
+                                        "> Entradas > Personalizar."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "El personalizador de temas está bajo 'Apariencia > Personalizar' (p. 11)."
+                                },
+                                {
+                                    "pregunta": "Para crear un menú en WordPress se debe ir a ______ > ______.",
+                                    "opciones": [
+                                        "Páginas > Menú.",
+                                        "Entradas > Menú.",
+                                        "Apariencia > Menú.",
+                                        "Herramientas > Menú."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los menús se gestionan en 'Apariencia > Menús' (p. 20)."
+                                },
+                                {
+                                    "pregunta": "WordPress permite añadir temas:",
+                                    "opciones": [
+                                        "Sólo los incluidos en su biblioteca de temas.",
+                                        "Sólo temas gratuitos.",
+                                        "Solo temas de pago.",
+                                        "Se pueden añadir temas gratuitos y de pago."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "WordPress admite temas gratuitos y de pago, ya sea desde su biblioteca o subiendo archivos (p. 7-8)."
+                                },
+                                {
+                                    "pregunta": "Para subir (importar) un tema a WordPress se realiza desde:",
+                                    "opciones": [
+                                        "Medios > Biblioteca.",
+                                        "Páginas > Añadir nueva.",
+                                        "Apariencia > Temas.",
+                                        "Herramientas > Temas."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La opción 'Añadir nuevo' en 'Apariencia > Temas' permite subir temas (p. 7)."
+                                },
+                                {
+                                    "pregunta": "Añadir CSS adicional al tema activado, usualmente se realiza desde:",
+                                    "opciones": [
+                                        "Apariencia > Temas.",
+                                        "Apariencia > Personalizar.",
+                                        "Apariencia > Fondo.",
+                                        "Apariencia > Widgets."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El CSS adicional se configura en 'Personalizar > CSS adicional' (p. 18)."
+                                },
+                                {
+                                    "pregunta": "La imagen destacada se puede establecer a:",
+                                    "opciones": [
+                                        "Medios y menús.",
+                                        "Temas y fondo.",
+                                        "Entradas y páginas.",
+                                        "Entradas y widgets."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La imagen destacada se asigna tanto a entradas como a páginas (p. 26)."
+                                },
+                                {
+                                    "pregunta": "Los elementos por defecto para añadir al menú son:",
+                                    "opciones": [
+                                        "Páginas, Entradas, widgets y categorías.",
+                                        "Páginas, Entradas, Fondo y categorías.",
+                                        "Páginas, Entradas, Enlaces personalizados y categorías.",
+                                        "Páginas, Entradas, CSS y categorías."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los menús admiten páginas, entradas, enlaces personalizados y categorías (p. 22)."
+                                },
+                                {
+                                    "pregunta": "Las propiedades avanzadas a mostrar en la construcción de un menú son:",
+                                    "opciones": [
+                                        "Destino del enlace, Atributos del título, Clases CSS, Relación con el enlace (XFN) y Descripción.",
+                                        "Destino del enlace, Atributos del título, Clases CSS, Páginas y Descripción.",
+                                        "Destino del enlace, Atributos del título, Entradas, Relación con el enlace (XFN) y Descripción.",
+                                        "Destino del enlace, Atributos del título, Clases CSS, Etiquetas y Descripción."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las propiedades avanzadas incluyen XFN y clases CSS (p. 23)."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción NO es un criterio para seleccionar un tema en WordPress?",
+                                    "opciones": [
+                                        "Compatibilidad con HTML5 y CSS3.",
+                                        "Actualización a la última versión de WordPress.",
+                                        "Incluir publicidad obligatoria.",
+                                        "Soporte para widgets."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La publicidad obligatoria no es un criterio recomendado (Tabla 1, p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Dónde se configura el modo oscuro en un tema de WordPress?",
+                                    "opciones": [
+                                        "Apariencia > Temas.",
+                                        "Apariencia > Personalizar > Colores.",
+                                        "Ajustes > General.",
+                                        "Herramientas > Opciones."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El modo oscuro se ajusta en 'Personalizar > Colores' (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué permite la opción 'Vista previa' al activar un tema?",
+                                    "opciones": [
+                                        "Editar el código PHP del tema.",
+                                        "Ver cómo se verá el tema antes de activarlo.",
+                                        "Eliminar temas no utilizados.",
+                                        "Descargar temas premium."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La vista previa muestra el diseño del tema sin activarlo (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué se puede modificar en 'Identidad del sitio'?",
+                                    "opciones": [
+                                        "El título del sitio y la descripción.",
+                                        "Los colores del menú.",
+                                        "Las entradas recientes.",
+                                        "Los plugins instalados."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La identidad del sitio incluye título y descripción (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tipo de contenido es ideal para las páginas en WordPress?",
+                                    "opciones": [
+                                        "Noticias temporales.",
+                                        "Contenido estático como 'Contacto' o 'Inicio'.",
+                                        "Comentarios de usuarios.",
+                                        "Configuración de plugins."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Las páginas son ideales para contenido estático (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Qué opción NO es parte de la estructura de carpetas principales de WordPress?",
+                                    "opciones": [
+                                        "Wp-admin.",
+                                        "Wp-content.",
+                                        "Wp-includes.",
+                                        "Wp-database."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "No existe una carpeta 'Wp-database' en la estructura básica (p. 29)."
+                                },
+                                {
+                                    "pregunta": "¿Qué sección del personalizador permite cambiar la página de inicio?",
+                                    "opciones": [
+                                        "Widgets.",
+                                        "Ajustes de la página de inicio.",
+                                        "Menús.",
+                                        "CSS adicional."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los ajustes de la página de inicio se encuentran en el personalizador (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica es común en los temas premium?",
+                                    "opciones": [
+                                        "Menos opciones de configuración que los gratuitos.",
+                                        "Soporte técnico incluido.",
+                                        "No requieren actualizaciones.",
+                                        "No permiten personalización."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los temas premium suelen incluir soporte técnico (p. 30)."
+                                },
+                                {
+                                    "pregunta": "¿Qué acción es necesaria para guardar cambios en el personalizador de temas?",
+                                    "opciones": [
+                                        "Cerrar la ventana.",
+                                        "Pulsar 'Publicar'.",
+                                        "Desactivar el tema.",
+                                        "Eliminar el CSS adicional."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los cambios se guardan pulsando 'Publicar' (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué elemento NO se puede agregar directamente desde el editor de menús?",
+                                    "opciones": [
+                                        "Páginas.",
+                                        "Entradas.",
+                                        "Plugins.",
+                                        "Enlaces personalizados."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los plugins no se agregan desde el editor de menús (p. 22)."
+                                }
+                            ]
                         }
                     ]
                 },
@@ -970,7 +1218,7 @@
                         }
                     ]
                 },
-                 {
+                {
                     "id": 301,
                     "nombre": "UX y UI",
                     "temas": [
