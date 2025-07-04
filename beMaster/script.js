@@ -6,6 +6,8 @@ let currentTopic = null;
 let currentQuestionIndex = 0;
 let userAnswers = [];
 let correctAnswers = 0;
+let shuffledQuestionIndices = []; // <-- Añade esto
+
 
 // Elementos del DOM
 const sections = {
@@ -153,18 +155,19 @@ function startLeccion() {
 
 // Función para cargar pregunta
 function loadQuestion() {
-    const pregunta = currentTopic.lecciones[currentQuestionIndex];
+    const preguntaIndex = shuffledQuestionIndices[currentQuestionIndex];
+    const pregunta = currentTopic.lecciones[preguntaIndex];
     const totalQuestions = currentTopic.lecciones.length;
-    
+
     // Actualizar barra de progreso
     const progressPercentage = (currentQuestionIndex / totalQuestions) * 100;
     document.querySelector('.progress-fill').style.width = `${progressPercentage}%`;
     document.querySelector('.progress-text').textContent = `${currentQuestionIndex + 1}/${totalQuestions}`;
-    
+
     // Mostrar pregunta
     contentElements.preguntaText.textContent = pregunta.pregunta;
     contentElements.opcionesContainer.innerHTML = '';
-    
+
     // Mostrar opciones
     pregunta.opciones.forEach((opcion, index) => {
         const opcionElement = document.createElement('div');
@@ -174,7 +177,7 @@ function loadQuestion() {
         opcionElement.addEventListener('click', () => selectAnswer(index));
         contentElements.opcionesContainer.appendChild(opcionElement);
     });
-    
+
     // Resetear botones y feedback
     contentElements.feedbackContainer.className = 'feedback hidden';
     contentElements.feedbackContainer.innerHTML = '';
@@ -184,26 +187,28 @@ function loadQuestion() {
 
 // Función para seleccionar respuesta
 function selectAnswer(selectedIndex) {
-    const pregunta = currentTopic.lecciones[currentQuestionIndex];
+    const preguntaIndex = shuffledQuestionIndices[currentQuestionIndex];
+    const pregunta = currentTopic.lecciones[preguntaIndex];
     const opciones = document.querySelectorAll('.opcion');
-    
+
     // Marcar opción seleccionada
     opciones.forEach(opcion => opcion.classList.remove('selected'));
     opciones[selectedIndex].classList.add('selected');
-    
+
     // Guardar respuesta del usuario
     userAnswers[currentQuestionIndex] = selectedIndex;
-    
+
     // Mostrar botón para validar
     contentElements.revealAnswerBtn.classList.remove('hidden');
 }
 
 // Función para revelar respuesta
 function revealAnswer() {
-    const pregunta = currentTopic.lecciones[currentQuestionIndex];
+    const preguntaIndex = shuffledQuestionIndices[currentQuestionIndex];
+    const pregunta = currentTopic.lecciones[preguntaIndex];
     const selectedIndex = userAnswers[currentQuestionIndex];
     const opciones = document.querySelectorAll('.opcion');
-    
+
     // Marcar respuestas correctas e incorrectas
     opciones.forEach((opcion, index) => {
         if (index === pregunta.respuesta) {
@@ -212,10 +217,10 @@ function revealAnswer() {
             opcion.classList.add('incorrect');
         }
     });
-    
+
     // Mostrar feedback
     contentElements.feedbackContainer.className = selectedIndex === pregunta.respuesta ? 'feedback correct' : 'feedback incorrect';
-    
+
     if (selectedIndex === pregunta.respuesta) {
         contentElements.feedbackContainer.innerHTML = `
             <p><strong>¡Correcto!</strong></p>
@@ -228,7 +233,7 @@ function revealAnswer() {
             <p>${pregunta.explicacion}</p>
         `;
     }
-    
+
     // Mostrar botón siguiente
     contentElements.revealAnswerBtn.classList.add('hidden');
     contentElements.nextQuestionBtn.classList.remove('hidden');
@@ -274,6 +279,30 @@ function showSection(sectionName) {
     
     // Mostrar la sección solicitada
     sections[sectionName].classList.remove('hidden');
+}
+
+function startLeccion() {
+    if (!currentTopic || currentTopic.lecciones.length === 0) {
+        alert('No hay lecciones disponibles para este tema.');
+        return;
+    }
+
+    currentQuestionIndex = 0;
+    userAnswers = [];
+    correctAnswers = 0;
+    // Mezcla los índices de las preguntas
+    shuffledQuestionIndices = shuffleArray([...Array(currentTopic.lecciones.length).keys()]);
+    contentElements.leccionTitle.textContent = currentTopic.nombre;
+    loadQuestion();
+    showSection('leccion');
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
 // Event listeners
