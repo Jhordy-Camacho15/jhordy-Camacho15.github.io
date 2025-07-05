@@ -144,10 +144,12 @@ function startLeccion() {
         alert('No hay lecciones disponibles para este tema.');
         return;
     }
-    
+
     currentQuestionIndex = 0;
     userAnswers = [];
     correctAnswers = 0;
+    // Mezcla los índices de las preguntas
+    shuffledQuestionIndices = shuffleArray([...Array(currentTopic.lecciones.length).keys()]);
     contentElements.leccionTitle.textContent = currentTopic.nombre;
     loadQuestion();
     showSection('leccion');
@@ -188,6 +190,8 @@ function loadQuestion() {
     contentElements.feedbackContainer.innerHTML = '';
     contentElements.revealAnswerBtn.classList.remove('hidden');
     contentElements.nextQuestionBtn.classList.add('hidden');
+
+    updateProgressBar(); // <-- Añade esto aquí
 }
 // Función para seleccionar respuesta
 function selectAnswer(selectedIndex) {
@@ -266,6 +270,7 @@ function showResults() {
         <p>Porcentaje de aciertos: ${percentage}%</p>
     `;
     
+    updateProgressBar(); // <-- Añade esto aquí para mostrar 100%
     showSection('resultados');
 }
 
@@ -309,13 +314,6 @@ function shuffleArray(array) {
     return array;
 }
 
-
-
-
-
-
-
-
 // para ordenar aleatoriamente las opciones de las preguntas
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -323,6 +321,33 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
+}
+
+// Función para actualizar la barra de progreso
+function updateProgressBar() {
+    const total = currentTopic?.lecciones?.length || 1;
+    const current = Math.min(currentQuestionIndex + 1, total);
+    const percent = Math.round((current / total) * 100);
+
+    // Actualiza el ancho de la barra
+    const progressFill = document.querySelector('.progress-fill');
+    if (progressFill) {
+        progressFill.style.width = percent + '%';
+        // Cambia el color según el porcentaje
+        if (percent < 40) {
+            progressFill.style.backgroundColor = '#e23c1b'; // rojo
+        } else if (percent < 80) {
+            progressFill.style.backgroundColor = '#234f9e'; // azul
+        } else {
+            progressFill.style.backgroundColor = '#4caf50'; // verde
+        }
+    }
+
+    // Actualiza el texto de progreso
+    const progressText = document.querySelector('.progress-text');
+    if (progressText) {
+        progressText.textContent = `${current}/${total}`;
+    }
 }
 
 // Event listeners
