@@ -1884,7 +1884,7 @@
                         },
                         {
                             "id": 9001,
-                            "nombre": "tema 10: Migración en WordPress",
+                            "nombre": "tema 9: Migración en WordPress",
                             "teoria": [
                                 "La migración web implica transferir todos los datos de un sitio web, incluyendo imágenes, archivos y bases de datos, desde un hosting local o remoto a un nuevo alojamiento (p. 4).",
                                 "Antes de realizar una migración manual, es crucial realizar una copia de seguridad del sitio web para evitar pérdidas de datos en caso de fallos (p. 5).",
