@@ -298,7 +298,6 @@ body {
 
 .progress-fill {
     height: 5px;
-    background-color: var(--color-primario);
     width: 0;
     transition: width 0.3s;
 }
@@ -310,6 +309,8 @@ body {
     color: var(--color-negro);
     font-weight: bold;
     margin-top: 0px;
+    height: 18px;
+    align-items: center;
 }
 
 /* Títulos y textos */
