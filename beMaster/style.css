@@ -77,7 +77,7 @@ body {
 .section-container {
     display: flex;
     flex-direction: column;
-    height: 90%;
+    height: 85%;
     background-color: var(--color-negro);
     border-radius: 10px;
     padding: 5px;
@@ -335,9 +335,7 @@ p {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .app-container {
-    }
-
+   
     .section-container {
         padding: 0px ;
     }
