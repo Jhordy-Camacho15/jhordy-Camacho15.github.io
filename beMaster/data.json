@@ -2374,27 +2374,1742 @@
                     "nombre": "Desarrollo de Recursos Animados",
                     "temas": [
                         {
-                            "id": 2001,
-                            "nombre": "Tema 1: Conociendo WordPress",
+                            "id": 1002,
+                            "nombre": "Primeros pasos en animación web",
                             "teoria": [
-                                "WordPress utiliza MySQL como sistema de gestión de bases de datos relacionales (RDBMS). Referencia: Tabla 6 del PDF, página 28."
+                                "La animación web se define como una rápida sucesión de imágenes que generan la ilusión de movimiento. No existe una definición única aceptada, lo que provoca ambigüedades en su conceptualización (p. 5).",
+                                "Una respuesta cognitiva es la reacción emocional o conductual que surge después de analizar un estímulo, como el movimiento en una interfaz web. Este proceso es clave para la experiencia de usuario (p. 9).",
+                                "Reducir la carga cognitiva en aplicaciones web permite al cerebro liberar recursos para aprender o retener información, mejorando la experiencia del usuario y aumentando la satisfacción (p. 10).",
+                                "Las animaciones funcionales mejoran la experiencia de usuario resolviendo problemas específicos, mientras que las estéticas se centran en el deleite visual. Ambas deben usarse con propósito (p. 12-13).",
+                                "Una animación funcional no debe priorizar la decoración; su objetivo es facilitar procesos, informar estados o guiar al usuario, no embellecer (p. 13).",
+                                "Las tecnologías principales para animaciones web son CSS y JavaScript, cada una con ventajas según la complejidad y control requerido (p. 14).",
+                                "Los principios de Disney son 12 reglas que dotan de vida a las animaciones, como estirar/encoger o timing, originalmente aplicados al cine y adaptados a la web (p. 16).",
+                                "El principio de 'acento' no forma parte de los 12 principios de Disney; estos incluyen arcos, timing y exageración, entre otros (p. 16-27).",
+                                "La exageración y el atractivo en animaciones web rompen la monotonía y crean conexión emocional, útiles para engagement pero sin excesos (p. 26-27).",
+                                "La 'puesta en escena' guía la atención del usuario, mientras 'arcos' simulan trayectorias realistas y 'solidez' mantiene coherencia espacial (p. 19, 23, 26).",
+                                "Las animaciones web surgieron de técnicas cinematográficas, adaptando principios como los de Disney para interfaces digitales (p. 16).",
+                                "El abuso de animaciones puede causar fatiga o distracción, por lo que su diseño debe seguir guías de estilo como las de Apple o Google (p. 9-10).",
+                                "Las microanimaciones son ejemplos de interacciones sutiles que mejoran la usabilidad sin sobrecargar al usuario (p. 8).",
+                                "BrowserSync es una herramienta que sincroniza cambios en el código con el navegador en tiempo real, agilizando el desarrollo (p. 28-29).",
+                                "El principio de 'timing' define la velocidad de una animación mediante fotogramas, afectando la percepción de peso o ligereza (p. 25).",
+                                "Las animaciones estéticas pueden reforzar la identidad de marca, pero deben equilibrarse con funcionalidad para no frustrar al usuario (p. 12).",
+                                "Canvas y Flash son tecnologías obsoletas para animaciones web; hoy se prefieren CSS y JavaScript por su compatibilidad (p. 15).",
+                                "La 'anticipación' prepara al usuario para una acción inminente, mejorando la claridad y fluidez de la interacción (p. 18).",
+                                "Las guías de Material Design o iOS ejemplifican cómo implementar animaciones funcionales sin comprometer el rendimiento (p. 11).",
+                                "Instalar Node.js es un paso previo para usar herramientas como BrowserSync, que automatizan tareas de desarrollo (p. 28-29)."
                             ],
                             "lecciones": [
                                 {
-                                    "pregunta": "¿Cuál es la base de datos que usa WordPress?",
+                                    "pregunta": "Definición de animación web:",
                                     "opciones": [
-                                        "PostgraseSQL",
-                                        "MySQL",
-                                        "Notes",
-                                        "Oracle"
+                                        "En las películas de dibujos animados, procedimiento de diseñar los movimientos de los personajes, objetos o elementos.",
+                                        "Un proceso utilizado por uno o más animadores para dar la sensación de movimiento a imágenes, dibujos u objetos inanimados.",
+                                        "Rápida sucesión o una secuencia de imágenes que difieren unas de otras que generan una ilusión de movimiento.",
+                                        "No existe definición aceptada."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Aunque hay múltiples definiciones, la animación web se basa en secuencias de imágenes que simulan movimiento (p. 5)."
+                                },
+                                {
+                                    "pregunta": "¿Qué es una respuesta cognitiva?",
+                                    "opciones": [
+                                        "Es la respuesta que ofrecen las religiones a determinadas preguntas complejas.",
+                                        "Es la respuesta emocional o conductual que se produce después de un análisis.",
+                                        "Es el nombre que se le da al movimiento de un elemento después de ser cliqueado.",
+                                        "Es el nombre de una técnica publicitaria."
                                     ],
                                     "respuesta": 1,
-                                    "explicacion": "WordPress utiliza MySQL, un sistema de gestión de bases de datos relacionales (RDBMS) de código abierto. Referencia: Tabla 6, página 28."
+                                    "explicacion": "Surge tras analizar estímulos como el movimiento, clave en la experiencia de usuario (p. 9)."
+                                },
+                                {
+                                    "pregunta": "¿Por qué es bueno reducir la carga cognitiva de las aplicaciones webs?",
+                                    "opciones": [
+                                        "Porque la tarjeta gráfica del ordenador se recalienta menos.",
+                                        "Porque la web carga más rápidamente.",
+                                        "Porque permiten a nuestro cerebro liberar memoria y centrarse en tareas como aprender nuevas habilidades o retener información.",
+                                        "Porque los frameworks web aprovechan esa ventaja al renderizar."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Libera recursos mentales para mejorar la retención y satisfacción del usuario (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes afirmaciones es falsa?",
+                                    "opciones": [
+                                        "Las mejores animaciones proporcionan un factor decorativo.",
+                                        "Las mejores animaciones mejoran la experiencia de usuario.",
+                                        "Las animaciones estéticas están centradas en agradar mediante experiencia visual.",
+                                        "Las animaciones funcionales se centran en la eficiencia o solución de un problema."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las animaciones deben priorizar funcionalidad sobre decoración (p. 12-13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica no cumpliría una animación funcional?",
+                                    "opciones": [
+                                        "Tutorización del uso de determinados elementos.",
+                                        "Informar sobre el estado de algún elemento.",
+                                        "Ralentizar cambios para mejorar su visualización.",
+                                        "Decorar y embellecer para obtener mejores resultados en marketing."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Las funcionales resuelven problemas, no son meramente decorativas (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tecnologías podemos emplear para crear animaciones web?",
+                                    "opciones": [
+                                        "JavaScript y CSS.",
+                                        "Java, JavaScript y Blender.",
+                                        "JavaScript accesibilidad y CSS.",
+                                        "HTML, Flash, DOM, BOM y USB."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "CSS y JavaScript son las tecnologías principales según el PDF (p. 14)."
+                                },
+                                {
+                                    "pregunta": "¿Qué son los principios Disney?",
+                                    "opciones": [
+                                        "Un conjunto de doce reglas o principios que hay que seguir siempre que se realizan animaciones web.",
+                                        "Una recopilación de principios o normas que debe tener un dibujo para dar la sensación de estar vivo.",
+                                        "Las normas que estableció Walt Disney para poder trabajar en las empresas de animación.",
+                                        "Son las normas establecidas para las animaciones y la piratería para poder establecer castigos cuando se saltan algunas de ellas."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Son principios para dotar de vida a las animaciones, aplicables a la web (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de los siguientes no es uno de los principios Disney?",
+                                    "opciones": [
+                                        "Estirar y encoger.",
+                                        "Arcos.",
+                                        "Timing.",
+                                        "Acento."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Los 12 principios no incluyen 'acento' (p. 16-27)."
+                                },
+                                {
+                                    "pregunta": "¿Para qué se pueden utilizar los principios de exageración o atractivo en una web?",
+                                    "opciones": [
+                                        "Para simular la gravedad.",
+                                        "Para sacar de la monotonía o crear conexión con el usuario.",
+                                        "Para crear modales más grandes y bonitas.",
+                                        "Para conseguir una cita en Google."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Ambos principios buscan engagement sin comprometer usabilidad (p. 26-27)."
+                                },
+                                {
+                                    "pregunta": "Relaciona cada principio con su explicación:",
+                                    "opciones": [
+                                        "Puesta en escena → Se usa para guiar el ojo del espectador y contextualizar.",
+                                        "Arcos → En movimientos como lanzamientos, los objetos siguen un arco.",
+                                        "Solidez → Los objetos deben mantener su consistencia en cuanto a peso, anatomía, balance o perspectiva.",
+                                        "Estirar y encoger → Permite dar la sensación de tener propiedades como gravedad, peso o flexibilidad."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las correlaciones correctas se explican en las páginas 19, 23 y 26."
+                                },
+                                {
+                                    "pregunta": "¿Qué herramienta permite sincronizar automáticamente cambios en el navegador durante el desarrollo?",
+                                    "opciones": [
+                                        "Visual Studio Code.",
+                                        "BrowserSync.",
+                                        "Google Analytics.",
+                                        "Adobe Flash."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "BrowserSync actualiza el navegador en tiempo real al modificar el código (p. 28-29)."
+                                },
+                                {
+                                    "pregunta": "Según los principios Disney, ¿qué técnica simula trayectorias realistas como las de un lanzamiento?",
+                                    "opciones": [
+                                        "Anticipación.",
+                                        "Arcos.",
+                                        "Timing.",
+                                        "Acción secundaria."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los arcos replican movimientos naturales como parábolas (p. 23)."
+                                },
+                                {
+                                    "pregunta": "¿Qué principio Disney se relaciona con la asignación de fotogramas para definir velocidad?",
+                                    "opciones": [
+                                        "Solidez.",
+                                        "Timing.",
+                                        "Exageración.",
+                                        "Puesta en escena."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El 'timing' controla la velocidad mediante fotogramas (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es un ejemplo de animación funcional?",
+                                    "opciones": [
+                                        "Un banner decorativo con colores cambiantes.",
+                                        "Un botón que se deforma al hacer clic para confirmar la acción.",
+                                        "Una ilustración animada en el encabezado.",
+                                        "Un vídeo promocional automático."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La deformación del botón proporciona feedback útil al usuario (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tecnología está obsoleta para animaciones web según el PDF?",
+                                    "opciones": [
+                                        "CSS.",
+                                        "JavaScript.",
+                                        "Flash.",
+                                        "HTML5."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Flash se considera obsoleto en los estándares web actuales (p. 15)."
+                                },
+                                {
+                                    "pregunta": "¿Qué principio asegura que un objeto mantenga su forma tridimensional al moverse?",
+                                    "opciones": [
+                                        "Estirar y encoger.",
+                                        "Solidez.",
+                                        "Acción continuada.",
+                                        "Atractivo."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La 'solidez' preserva la coherencia espacial (p. 26)."
+                                },
+                                {
+                                    "pregunta": "¿Qué porcentaje de usuarios probablemente no volverá a un sitio tras una mala experiencia?",
+                                    "opciones": [
+                                        "45%.",
+                                        "88%.",
+                                        "12%.",
+                                        "63%."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El 88% abandona definitivamente según estudios citados (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Qué instinto humano explotan las animaciones para captar atención?",
+                                    "opciones": [
+                                        "Curiosidad por patrones repetitivos.",
+                                        "Sensibilidad al movimiento rápido.",
+                                        "Atracción por colores brillantes.",
+                                        "Preferencia por sonidos agudos."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El cerebro humano prioriza detectar movimientos rápidos (p. 9)."
+                                },
+                                {
+                                    "pregunta": "¿Qué preprocesador se menciona para agilizar el desarrollo con Visual Studio Code?",
+                                    "opciones": [
+                                        "Sass.",
+                                        "Less.",
+                                        "PostCSS.",
+                                        "Stylus."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Sass es uno de los preprocesadores mencionados (p. 28)."
+                                },
+                                {
+                                    "pregunta": "¿Qué efecto negativo puede tener el abuso de animaciones?",
+                                    "opciones": [
+                                        "Mejorar el SEO.",
+                                        "Aumentar la carga cognitiva.",
+                                        "Reducir el tiempo de carga.",
+                                        "Simplificar la navegación."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El exceso de animaciones causa fatiga y distracción (p. 9)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2002,
+                            "nombre": "Principios de animación web",
+                            "teoria": [
+                                "Los principios de animación web son normas no estandarizadas propuestas por diseñadores y programadores para dotar de funcionalidad y mejorar la experiencia de usuario. Surgen como adaptación de técnicas cinematográficas al contexto web, evitando animaciones sin propósito (p. 4).",
+                                "El principio de cambio de estado muestra visualmente interacciones del usuario o modificaciones del sistema, como efectos hover o actualizaciones de datos. Refuerza la retroalimentación visual (p. 6).",
+                                "Las cajas en bloque (div, section) ocupan todo el ancho disponible y respetan propiedades como width/height, mientras que las cajas en línea (a, span) se ajustan al contenido y no afectan el flujo vertical (p. 24).",
+                                "La propiedad transform en CSS permite trasladar, rotar o escalar elementos. Ejemplo correcto: `transform: translateX(-15px) rotate(30deg)`. El orden de las funciones afecta el resultado (p. 26-33).",
+                                "No todas las propiedades CSS son animables; `transition: display 0.5s` no funciona porque 'display' no tiene valores intermedios matemáticos (p. 20-21).",
+                                "Para deformar un elemento horizontalmente se usa `skewX`. Ejemplo: `transform: translateX(3rem) skewX(-10deg)` sesga el elemento 10 grados (p. 30).",
+                                "Ralentizar cambios de valor (ej: porcentajes) hace más visible la transición, evitando que pase desapercibida. Es clave en gráficas o contadores (p. 13).",
+                                "La tutorización usa secuencias animadas para guiar al usuario, como mostrar pasos ordenados en un formulario. Mejora la comprensión de funcionalidades (p. 14).",
+                                "Un delay de 0.25s se define con `transition-delay: 0.25s` o `transition: opacity 0.2s 250ms`. Las unidades (s/ms) son intercambiables (p. 20).",
+                                "La jerarquía establece relaciones entre elementos mediante movimiento (origen, simultaneidad), mientras el énfasis intensifica información clave (p. 11-12).",
+                                "Las micro-animaciones, como cambios de estado sutiles, generan personalidad de marca sin saturar al usuario. Ejemplo: transiciones de 0.1-0.3s en botones (p. 5-7).",
+                                "La propiedad transition controla cómo cambia un elemento entre estados, con parámetros como duration (0.5s) y timing-function (ease-out) (p. 20).",
+                                "El Box Model define las partes de un elemento (content, padding, border, margin). Ejemplo: un padding de 10px aumenta el tamaño total de la caja (p. 22-23).",
+                                "El flujo normal posiciona elementos en bloque verticalmente y en línea horizontalmente. Los márgenes verticales adyacentes se solapan (p. 25).",
+                                "La secuenciación mantiene la atención durante cargas (ej: spinners), mientras pregunta-respuesta confirma acciones (ej: desplegables) (p. 10-11).",
+                                "La personalidad de marca se logra con animaciones coherentes en tiempo y estilo. Movimientos rápidos transmiten energía; los suaves, calma (p. 16-17).",
+                                "Evitar el abuso de animaciones es clave: deben tener funcionalidad clara, como guiar al usuario o mostrar feedback, no solo decorar (p. 37).",
+                                "CSS es ideal para animaciones simples (transiciones, transformaciones), mientras JavaScript maneja interacciones complejas (p. 19).",
+                                "Las funciones de transform 2D incluyen translate (movimiento), scale (tamaño), skew (deformación) y rotate (giro). Ejemplo: `rotate(45deg)` (p. 26-32).",
+                                "La regla de oro: las animaciones web deben tener un propósito funcional, como reducir carga cognitiva o mejorar la navegación (p. 18)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Qué son los principios de animación web?",
+                                    "opciones": [
+                                        "Un conjunto de normas establecidas por Steve Jobs para el uso correcto de las animaciones web.",
+                                        "Un conjunto de normas no estándares que definen diferentes programadores y diseñadores para mejorar la experiencia de usuario y dotar de sentido a las animaciones en un contexto web.",
+                                        "Un estándar web que necesitan cumplir las diferentes aplicaciones web para obtener el sello de calidad.",
+                                        "Ocho normas que es obligatorio cumplir para evitar que el gobierno sancione a la empresa propietaria de la web."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Son pautas no estandarizadas para animaciones funcionales (p. 4)."
+                                },
+                                {
+                                    "pregunta": "En una aplicación web, llamamos principio de cambio de estado cuando:",
+                                    "opciones": [
+                                        "Un elemento cambia debido a la interacción de un usuario.",
+                                        "Un elemento cambia debido a condiciones ajenas al usuario.",
+                                        "Un elemento cambia ya sea por condiciones provocadas por el usuario o por el sistema.",
+                                        "Un elemento cambia de posición cada cinco segundos."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Incluye interacciones del usuario y cambios del sistema (p. 6)."
+                                },
+                                {
+                                    "pregunta": "Indica cuál de las siguientes afirmaciones son verdaderas:",
+                                    "opciones": [
+                                        "Tanto las cajas con modelo de bloque como las cajas con modelo en línea se posicionan una encima de otra.",
+                                        "Las cajas modeladas como en línea siempre se posicionan a la derecha de la anterior sin producir salto de línea.",
+                                        "Las cajas en línea no tienen siempre forma rectangular.",
+                                        "Las cajas en bloque permiten configurar el ancho y el alto."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Las cajas en bloque respetan width/height; las en línea no (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes líneas de CSS está correctamente escrita o definida?",
+                                    "opciones": [
+                                        "transform: translateY(7).",
+                                        "scale: 2.5.",
+                                        "transform-rotate: 30deg.",
+                                        "transform: translateX(-15px) rotate(30deg)."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Transform combina funciones como translate y rotate (p. 26-33)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes líneas de CSS no funcionará en ningún navegador?",
+                                    "opciones": [
+                                        "transition: transform 0.5s.",
+                                        "transition: display 0.5s.",
+                                        "transition: all 0.5s.",
+                                        "transition: opacity 0.5s."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "'display' no es una propiedad animable (p. 20-21)."
+                                },
+                                {
+                                    "pregunta": "Para lograr un efecto como el de la imagen, ¿qué propiedad CSS se ha aplicado?",
+                                    "opciones": [
+                                        "transform: translateX(3rem) skewX(-10deg).",
+                                        "transform: translateX(3rem) rotate(10deg).",
+                                        "transform: scale(1.2) skewX(-10deg).",
+                                        "transform: translate(3rem) skew(10deg, 10deg)."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "skewX deforma el elemento horizontalmente (p. 30)."
+                                },
+                                {
+                                    "pregunta": "¿Qué sentido tiene ralentizar el cambio de valor de un número?",
+                                    "opciones": [
+                                        "Puramente estético.",
+                                        "Producir el efecto tiempo bala como en la película Matrix.",
+                                        "Dar tiempo al sistema para que pueda realizar otras funcionalidades paralelas.",
+                                        "Hacer más visible el cambio de valor."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Facilita la percepción del cambio (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿A qué nos referimos con el principio de tutorización?",
+                                    "opciones": [
+                                        "A la secuencia animada que genera un orden para entender un funcionamiento concreto.",
+                                        "Al enlace que se coloca en algunas webs que explica el funcionamiento de la página.",
+                                        "Al chat que se coloca para facilitar la comunicación del usuario.",
+                                        "Al clip de windows."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Guía al usuario mediante animaciones ordenadas (p. 14)."
+                                },
+                                {
+                                    "pregunta": "Indica qué opciones podrían crear un delay de 0.25s en una animación:",
+                                    "opciones": [
+                                        "transition-delay: 0.25s.",
+                                        "transition: all 0.1s 0.25s.",
+                                        "transition: opacity 0.25s.",
+                                        "transition: opacity 0.2s 250ms."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "250ms equivale a 0.25s (p. 20)."
+                                },
+                                {
+                                    "pregunta": "Relaciona cada principio con su explicación:",
+                                    "opciones": [
+                                        "Jerarquía → Consiste en generar movimiento de forma que sea fácil establecer una jerarquía entre componentes.",
+                                        "Secuenciación → Genera movimiento un elemento o varios para mantener la atención del usuario mientras se adapta la interfaz.",
+                                        "Énfasis → Intensifica la información que se desea transmitir.",
+                                        "Pregunta-Respuesta → Muestra al usuario el resultado de sus acciones, comunicando que su acción ha quedado registrada por el sistema."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Correlación exacta en páginas 11-12 y 8."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad CSS se usa para animar cambios entre estados como hover?",
+                                    "opciones": [
+                                        "animation",
+                                        "transition",
+                                        "transform",
+                                        "keyframes"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Transition maneja cambios suaves entre estados (p. 20)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es un ejemplo de animación funcional?",
+                                    "opciones": [
+                                        "Un banner decorativo con colores cambiantes.",
+                                        "Un botón que muestra un efecto ripple al hacer clic.",
+                                        "Una ilustración animada en el encabezado.",
+                                        "Un vídeo promocional automático."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Proporciona feedback táctil al usuario (p. 7)."
+                                },
+                                {
+                                    "pregunta": "¿Qué principio Disney NO se adapta comúnmente a la web?",
+                                    "opciones": [
+                                        "Estirar y encoger.",
+                                        "Anticipación.",
+                                        "Atractivo.",
+                                        "Solidez."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La exageración (estirar/encoger) es menos usada en interfaces (p. 4)."
+                                },
+                                {
+                                    "pregunta": "¿Qué técnica muestra jerarquía padre-hijo en una interfaz?",
+                                    "opciones": [
+                                        "Cambio de tamaño.",
+                                        "Desvanecimiento.",
+                                        "Movimiento simultáneo.",
+                                        "Rotación."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "El cambio de tamaño indica relaciones jerárquicas (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué valor de transition-timing-function suaviza el inicio y fin de una animación?",
+                                    "opciones": [
+                                        "linear",
+                                        "ease",
+                                        "ease-in",
+                                        "step-end"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "'ease' es el valor por defecto para transiciones suaves (p. 20)."
+                                },
+                                {
+                                    "pregunta": "¿Qué elemento NO es parte del Box Model?",
+                                    "opciones": [
+                                        "Content",
+                                        "Padding",
+                                        "Shadow",
+                                        "Margin"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El Box Model incluye content, padding, border y margin (p. 22)."
+                                },
+                                {
+                                    "pregunta": "¿Qué función de transform gira un elemento 45 grados?",
+                                    "opciones": [
+                                        "translate(45deg)",
+                                        "skew(45deg)",
+                                        "rotate(45deg)",
+                                        "scale(45deg)"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "rotate() permite girar elementos (p. 31)."
+                                },
+                                {
+                                    "pregunta": "¿Qué principio evita saturar al usuario con animaciones excesivas?",
+                                    "opciones": [
+                                        "Personalidad de marca.",
+                                        "Regla de oro (funcionalidad).",
+                                        "Jerarquía.",
+                                        "Secuenciación."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La regla de oro prioriza animaciones con propósito (p. 18)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad CSS NO es animable?",
+                                    "opciones": [
+                                        "opacity",
+                                        "width",
+                                        "display",
+                                        "background-color"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "'display' no tiene valores intermedios para animar (p. 21)."
+                                },
+                                {
+                                    "pregunta": "¿Qué efecto tiene usar transform: scale(1.5)?",
+                                    "opciones": [
+                                        "Mueve el elemento 1.5 píxeles a la derecha.",
+                                        "Aumenta el tamaño al 150%.",
+                                        "Rota el elemento 1.5 grados.",
+                                        "Deforma el elemento un 50%."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "scale() modifica el tamaño (1.5 = 150%) (p. 28)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3002,
+                            "nombre": "Tiempo de vida en animaciones web",
+                            "teoria": [
+                                "Los triggers o disparadores inician animaciones mediante interacciones del usuario (hover, clic) o funciones del sistema (temporizadores, llamadas asíncronas). CSS y JavaScript ofrecen múltiples opciones, como pseudoclases (:hover, :focus) o eventos (scroll, mousedown) (p. 5-7).",
+                                "Las funciones de easing (aceleración) definen la suavidad del movimiento. CSS incluye linear, ease, ease-in, ease-out, ease-in-out, steps y cubic-bezier. JavaScript requiere librerías externas para funciones avanzadas (p. 8-14).",
+                                "Los tiempos de animación ideales varían entre 100 ms (rápido) y 500 ms (lento). Material Design recomienda tiempos específicos según el tamaño del elemento: 100 ms para botones, 250 ms para pop-ups y 300 ms para modales (p. 15-16).",
+                                "La propiedad opacity controla la transparencia (0 a 1). Es animable y útil para efectos de desvanecimiento, pero puede causar problemas con eventos de ratón si no se maneja correctamente (p. 18).",
+                                "La propiedad color define el color del texto y es animable cuando se usan valores numéricos (hexadecimal, rgb, hsl). Evitar 'transparent' para animaciones, ya que no es compatible en todos los navegadores (p. 19-21).",
+                                "La propiedad background permite animar solo subpropiedades con valores numéricos (background-color, background-position, background-size). Subpropiedades como background-image no son animables (p. 22-23).",
+                                "Las animaciones deben equilibrar usabilidad y experiencia: demasiado rápidas (menos de 100 ms) parecen bruscas; demasiado lentas (más de 500 ms) frustran al usuario. Ejemplo: cambios de color en 100 ms, modales en 300 ms (p. 15-17).",
+                                "Las curvas de Bézier personalizan aceleraciones con cubic-bezier(x1,y1,x2,y2). Equivalentes CSS: linear (0,0,1,1), ease-in (0.42,0,1,1), ease-out (0,0,0.58,1) (p. 12-13).",
+                                "JavaScript amplía las posibilidades de triggers con eventos como Intersection Observer para scroll, pero requiere mayor control para evitar latencia. Las llamadas asíncronas son útiles para animaciones de carga (p. 6-7).",
+                                "La consistencia en tiempos y aceleraciones refuerza la personalidad de marca. Ejemplo: animaciones 'enérgicas' usan ease-out; 'suaves' usan ease-in-out (p. 16-17).",
+                                "El problema de precisión con hover se soluciona añadiendo delays (ej: 200 ms) o tiempos de animación para menús desplegables, mejorando la usabilidad (p. 16).",
+                                "Pasos para animar background-color: usar valores hexadecimales o rgb (animables), evitar nombres de colores (no animables). Ejemplo: transition: background-color 0.3s ease (p. 23).",
+                                "Pseudoelementos (::before, ::after) y selectores CSS avanzados (nth-child) permiten animaciones complejas sin JavaScript, como iconos que cambian de estado (p. 31-32).",
+                                "Las librerías de easing en JavaScript (ej: easings.net) ofrecen efectos como bounce o elastic, pero aumentan el peso del código. Usar solo cuando CSS no sea suficiente (p. 14).",
+                                "Ejemplo de cubic-bezier personalizada: cubic-bezier(0.39,0.4,0.58,1.45) crea un efecto de rebote. Herramientas como cubic-bezier.com ayudan a visualizarlas (p. 12).",
+                                "La propiedad steps(n) divide la animación en saltos discretos. Opciones: jump-start (salto inicial), jump-end (salto final), jump-both (ambos saltos) (p. 10-11).",
+                                "Problema común: animar opacity en elementos interactivos puede interferir con eventos de ratón. Solución: usar visibility: hidden junto a opacity: 0 (p. 27).",
+                                "Las guías como Material Design estandarizan duraciones: 100 ms (micro-interacciones), 250 ms (transiciones medias), 300 ms (animaciones complejas) (p. 15).",
+                                "Técnica para delays: transition-delay: 0.2s o transition: opacity 0.3s 200ms. Unidades (s/ms) son intercambiables (p. 20).",
+                                "Regla clave: priorizar animaciones funcionales (feedback, navegación) sobre las estéticas. Ejemplo: un botón que cambia de color al hacer clic (p. 17)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "Indica cuál de las siguientes afirmaciones son falsas:",
+                                    "opciones": [
+                                        "En HTML se puede utilizar hover de CSS como trigger.",
+                                        "En HTML se puede utilizar añadir o quitar una clase como trigger.",
+                                        "En JavaScript solo podemos usar como triggers los eventos asociados a elementos de HTML.",
+                                        "En JavaScript se pueden utilizar como trigger todos los eventos estándar disponibles por ser más seguros que los que se utilizan en CSS."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "JavaScript permite usar eventos estándar y personalizados, no solo los asociados a HTML (p. 6-7)."
+                                },
+                                {
+                                    "pregunta": "Relaciona los tipos de aceleración CSS con sus gráficas:",
+                                    "opciones": [
+                                        "linear → Gráfica A (línea recta).",
+                                        "ease-in-out → Gráfica B (curva simétrica).",
+                                        "ease-in → Gráfica C (inicio lento, final rápido).",
+                                        "cubic-bezier(0.39,0.4,0.58,1.45) → Gráfica D (curva personalizada con rebote)."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Correlación exacta en páginas 8-13."
+                                },
+                                {
+                                    "pregunta": "¿Cuáles de las siguientes afirmaciones son falsas?",
+                                    "opciones": [
+                                        "El estándar web establece que las fracciones de tiempo adecuadas son 100 ms, 250 ms y 500 ms.",
+                                        "Se recomienda que todas las animaciones de una web duren el mismo tiempo.",
+                                        "El tiempo adecuado para las animaciones es cualquier valor comprendido entre el rango de 25 ms y 250 ms.",
+                                        "Se recomienda que el tiempo adecuado para las animaciones es cualquier valor comprendido entre el rango de 0.1 s y 0.5 s."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El rango óptimo es 100-500 ms, no 25-250 ms (p. 15)."
+                                },
+                                {
+                                    "pregunta": "¿Cuáles de las siguientes líneas de CSS están mal escritas o definidas?",
+                                    "opciones": [
+                                        "opacity: 0.2.",
+                                        "transform: opacity 0.2.",
+                                        "opacity: 20%.",
+                                        "opacity: 1.2."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "opacity usa valores decimales (0-1), no porcentajes (p. 18)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes líneas de CSS está mal escrita o definida?",
+                                    "opciones": [
+                                        "color: #efc.",
+                                        "color: #A7C512.",
+                                        "color: #a75b3.",
+                                        "color: rgba(123, 25, 180, 0.4)."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los valores hexadecimales deben tener 3 o 6 caracteres (p. 19)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedades son animables en CSS?",
+                                    "opciones": [
+                                        "background-attachment: scroll.",
+                                        "background-image: linear-gradient(red, orange).",
+                                        "background-position: left bottom.",
+                                        "background-position: 30% 30%."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Solo valores numéricos/porcentuales son animables (p. 23)."
+                                },
+                                {
+                                    "pregunta": "¿Cuáles de las siguientes afirmaciones son falsas?",
+                                    "opciones": [
+                                        "Cuando cargamos una librería de aceleraciones (easings) podemos utilizarla en nuestro CSS.",
+                                        "Algunas funciones de aceleración de librerías de JavaScript se pueden representar mediante una curva de Bézier.",
+                                        "Es muy recomendable cargar una librería de easings de JavaScript en todos nuestros proyectos.",
+                                        "Todas las funciones de aceleración de librerías JavaScript se pueden representar mediante una curva de Bézier."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "No todas las funciones avanzadas (ej: bounce) tienen equivalente en Bézier (p. 14)."
+                                },
+                                {
+                                    "pregunta": "Dado el siguiente código, ¿qué propiedades no se animarán?",
+                                    "opciones": [
+                                        "opacity.",
+                                        "background-image.",
+                                        "color.",
+                                        "transform."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "background-image no es animable (p. 23)."
+                                },
+                                {
+                                    "pregunta": "De las cosas que podemos usar como disparadores que se muestran a continuación, ¿qué afirmación de las siguientes es errónea?",
+                                    "opciones": [
+                                        "Algunas de las pseudoclases de CSS como :hover o :focus.",
+                                        "Eventos de JavaScript.",
+                                        "Añadir o quitar clases a elementos de HTML.",
+                                        "Todas las pseudoclases de CSS como :checked o :last-of-type."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "No todas las pseudoclases son útiles como triggers (p. 5-6)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes funciones de aceleración no se pueden utilizar en CSS?",
+                                    "opciones": [
+                                        "bounce-in.",
+                                        "step.",
+                                        "ease.",
+                                        "ease-all."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "bounce-in requiere librerías de JavaScript (p. 14)."
+                                },
+                                {
+                                    "pregunta": "¿Qué pseudoclase CSS se activa al hacer clic en un checkbox?",
+                                    "opciones": [
+                                        ":hover",
+                                        ":focus",
+                                        ":checked",
+                                        ":active"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": ":checked detecta el estado de elementos como checkboxes (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué función de easing es ideal para elementos que entran en la pantalla?",
+                                    "opciones": [
+                                        "ease-in",
+                                        "ease-out",
+                                        "linear",
+                                        "steps(4)"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "ease-out proporciona receptividad al inicio (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad CSS permite animar un cambio de tamaño gradual?",
+                                    "opciones": [
+                                        "width",
+                                        "display",
+                                        "visibility",
+                                        "position"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "width es animable con valores numéricos (p. 20-21)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es el valor por defecto de transition-timing-function?",
+                                    "opciones": [
+                                        "linear",
+                                        "ease",
+                                        "ease-in",
+                                        "step-end"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El valor predeterminado es ease (p. 20)."
+                                },
+                                {
+                                    "pregunta": "¿Qué técnica evita problemas de precisión en menús desplegables con hover?",
+                                    "opciones": [
+                                        "Usar opacity: 0",
+                                        "Añadir un delay de 200 ms",
+                                        "Desactivar JavaScript",
+                                        "Usar background-image"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Un delay mejora la usabilidad en hover (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Qué valor de cubic-bezier equivale a ease-in-out?",
+                                    "opciones": [
+                                        "cubic-bezier(0.25,0.1,0.25,1)",
+                                        "cubic-bezier(0.42,0,0.58,1)",
+                                        "cubic-bezier(0,0,1,1)",
+                                        "cubic-bezier(0.42,0,1,1)"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "ease-in-out se define con cubic-bezier(0.42,0,0.58,1) (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué evento JavaScript es útil para animaciones al hacer scroll?",
+                                    "opciones": [
+                                        "click",
+                                        "mousemove",
+                                        "Intersection Observer",
+                                        "keydown"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Intersection Observer optimiza animaciones en scroll (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad background NO es animable?",
+                                    "opciones": [
+                                        "background-color: #fff",
+                                        "background-position: 10%",
+                                        "background-size: cover",
+                                        "background-size: 200px"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "cover es un valor textual no animable (p. 23)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tiempo recomienda Material Design para un modal?",
+                                    "opciones": [
+                                        "100 ms",
+                                        "250 ms",
+                                        "300 ms",
+                                        "500 ms"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Modales usan 300 ms de entrada (p. 15)."
+                                },
+                                {
+                                    "pregunta": "¿Qué función CSS divide una animación en pasos discretos?",
+                                    "opciones": [
+                                        "cubic-bezier",
+                                        "steps",
+                                        "linear",
+                                        "ease-in"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "steps(n) crea n saltos en la animación (p. 10)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4002,
+                            "nombre": "Agrupando animaciones",
+                            "teoria": [
+                                "Los sprites son colecciones de imágenes en un único archivo que reducen conexiones al servidor y aceleran la carga, pero presentan problemas de accesibilidad y rendimiento (p. 5).",
+                                "Los SVG son gráficos vectoriales escalables que permiten animaciones complejas, pero no son recomendables para imágenes fotográficas (p. 10).",
+                                "Las coreografías en interfaces ayudan a los usuarios a entender secuencias de movimientos, evitando confusión o frustración (p. 15).",
+                                "Agrupar código en componentes facilita el desarrollo y depuración, pero puede complicar animaciones sincronizadas entre componentes (p. 21).",
+                                "Los keyframes en CSS permiten definir animaciones complejas con múltiples pasos intermedios, usando porcentajes o palabras clave como 'from' y 'to' (p. 26).",
+                                "La propiedad 'animation' en CSS configura parámetros como duración, repetición y dirección de los keyframes, optimizando el control de animaciones (p. 31).",
+                                "Los sprites permiten crear efectos similares a GIFs pero pueden sobrecargar la GPU y presentar problemas de accesibilidad (p. 9).",
+                                "Los SVG son compatibles con todos los navegadores y herramientas de diseño, pero requieren un formato de código adecuado para animaciones (p. 14).",
+                                "Las coreografías mal diseñadas pueden generar fatiga en los usuarios al obligarlos a pensar en cómo navegar (p. 20).",
+                                "La planificación de animaciones antes del desarrollo evita problemas como la imposibilidad de animar ciertos componentes (p. 25).",
+                                "Los sprites son útiles para reducir el número de descargas de imágenes, aunque su uso ha disminuido por su complejidad (p. 6).",
+                                "Los SVG pueden animarse mediante CSS, JavaScript o SMIL, siendo CSS el método más sencillo (p. 13).",
+                                "Las coreografías efectivas generan historias visuales que guían al usuario sin necesidad de explicaciones adicionales (p. 17).",
+                                "La agrupación de componentes debe planificarse cuidadosamente para evitar dificultades en animaciones futuras (p. 22).",
+                                "Los keyframes pueden agrupar propiedades similares para reducir líneas de código, aunque esto puede afectar su legibilidad (p. 30).",
+                                "La propiedad 'animation' admite múltiples keyframes separados por comas, permitiendo animaciones simultáneas (p. 36).",
+                                "Los sprites son ideales para conexiones lentas, ya que cargan todas las imágenes de golpe (p. 3).",
+                                "Los SVG son indexables por motores de búsqueda y permiten mayor control sobre iconos e ilustraciones (p. 12).",
+                                "Las coreografías deben reflejar la jerarquía y relaciones entre componentes para una experiencia de usuario intuitiva (p. 19).",
+                                "La propiedad 'animation-fill-mode' define cómo se aplican los estilos antes y después de la animación (p. 32)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "Indica cuál de las siguientes afirmaciones son falsas respecto de los sprites de imágenes:",
+                                    "opciones": [
+                                        "Realizan menos conexiones con el servidor.",
+                                        "Son adecuadas por sus ventajas de accesibilidad.",
+                                        "Se suelen cargar todas las imágenes de la web además de los iconos en un único archivo.",
+                                        "Acelera la visualización o carga total de los navegadores."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los sprites presentan problemas de accesibilidad, por lo que la opción B es falsa (p. 5)."
+                                },
+                                {
+                                    "pregunta": "Indica cuál de las siguientes afirmaciones son falsas respecto de los SVG:",
+                                    "opciones": [
+                                        "Dependiendo de su construcción son fáciles de animar.",
+                                        "Debido a su alta calidad se recomienda usar este formato para todas las imágenes de la web.",
+                                        "No son compatibles con los programas de los diseñadores.",
+                                        "Están soportados por todos los navegadores."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los SVG son compatibles con herramientas de diseño, por lo que la opción C es falsa (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Qué ventajas presentan las coreografías en las animaciones?",
+                                    "opciones": [
+                                        "Pueden ayudar a entender lo que pasa en pantalla.",
+                                        "Es fácil crear una coreografía que entienda todo el mundo, ya que son objetivas.",
+                                        "Facilita al cerebro la identificación de elementos individuales así como los elementos agrupados.",
+                                        "Aligeran la carga de las llamadas del servidor."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las coreografías ayudan a los usuarios a entender secuencias de movimientos (p. 15)."
+                                },
+                                {
+                                    "pregunta": "Indica cuál de las siguientes afirmaciones son falsas respecto de las agrupaciones o componentes:",
+                                    "opciones": [
+                                        "Agrupar es malo porque impide realizar animaciones.",
+                                        "Agrupar facilita el desarrollo y la depuración.",
+                                        "Las agrupaciones facilitan la creación o separación en componentes.",
+                                        "No se pueden animar dos componentes diferentes con la misma animación."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Agrupar no impide realizar animaciones, aunque puede complicar sincronizaciones (p. 21)."
+                                },
+                                {
+                                    "pregunta": "Dado el siguiente código, ¿qué opciones no son equivalentes al siguiente keyframe?",
+                                    "opciones": [
+                                        "Opción A (keyframes con números en lugar de porcentajes).",
+                                        "Opción B (usa translateX en lugar de translateY).",
+                                        "Opción C (agrupa porcentajes correctamente).",
+                                        "Opción D (usa 'middle' en lugar de porcentajes)."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "La opción D es incorrecta porque 'middle' no es una palabra clave válida en keyframes (p. 28)."
+                                },
+                                {
+                                    "pregunta": "Dadas las instrucciones descritas, ¿qué dos opciones reproducen la animación siguiente?",
+                                    "opciones": [
+                                        "Opción A y B (animación infinita con pausa al hacer hover).",
+                                        "Opción C y D (animación alternada con pausa incorrecta).",
+                                        "Opción A y C (combinación incorrecta).",
+                                        "Opción B y D (combinación correcta)."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las opciones A y B cumplen con los requisitos de animación infinita y pausa (p. 33)."
+                                },
+                                {
+                                    "pregunta": "Dado el siguiente código, ¿por qué se pierde el efecto de skew?",
+                                    "opciones": [
+                                        "Porque debe estar justo antes de transform: rotate en cada keyframe.",
+                                        "Porque debe estar justo después de la propiedad animation.",
+                                        "Porque la función skew y la función rotate de transform son incompatibles.",
+                                        "Porque la propiedad transform del keyframe está sobrescribiendo la propiedad transform."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "La propiedad transform del keyframe sobrescribe la inicial, por lo que se debe combinar (p. 49)."
+                                },
+                                {
+                                    "pregunta": "Dado el siguiente código, ¿qué se tiene que poner en la línea marcada para que la visualización de la tarjeta muestre el botón de la misma forma que en las imágenes?",
+                                    "opciones": [
+                                        ".productbuy:focus",
+                                        ".card-productinfo:hover",
+                                        ".card-product:hover .card-productdecorator",
+                                        ".card-productdecorator:focus"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La opción C activa el estilo al hacer hover en el contenedor principal (p. 51)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes opciones de código CSS es equivalente a la siguiente línea?",
+                                    "opciones": [
+                                        "Opción A (configuración incorrecta de propiedades).",
+                                        "Opción B (usa delay en lugar de duration).",
+                                        "Opción C (usa delay en lugar de iteration-count).",
+                                        "Opción D (configuración correcta)."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "La opción D replica correctamente la línea de animación (p. 54)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad de animation permite pausar la reproducción de una animación?",
+                                    "opciones": [
+                                        "animation-pause",
+                                        "animation-state",
+                                        "animation-play-state",
+                                        "animation-stop"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La propiedad 'animation-play-state' controla la pausa de animaciones (p. 32)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es una ventaja clave de usar SVG sobre sprites para animaciones?",
+                                    "opciones": [
+                                        "Mayor compatibilidad con imágenes fotográficas.",
+                                        "Mejor rendimiento en la GPU.",
+                                        "Mayor facilidad para escalar sin perder calidad.",
+                                        "Requiere menos herramientas de diseño."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los SVG son escalables sin pérdida de calidad, ideal para animaciones (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Qué principio de animación se relaciona con el uso de keyframes en CSS?",
+                                    "opciones": [
+                                        "Acción directa.",
+                                        "Pose a pose.",
+                                        "Slow in and slow out.",
+                                        "Squash and stretch."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los keyframes funcionan como el principio 'pose a pose' (p. 26)."
+                                },
+                                {
+                                    "pregunta": "¿Qué valor de animation-direction reproduce una animación en orden inverso?",
+                                    "opciones": [
+                                        "normal",
+                                        "reverse",
+                                        "alternate",
+                                        "backwards"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El valor 'reverse' reproduce la animación en orden inverso (p. 31)."
+                                },
+                                {
+                                    "pregunta": "¿Qué técnica se recomienda para animar listados sin causar mala experiencia de usuario?",
+                                    "opciones": [
+                                        "Animarlos gradualmente con duraciones fijas.",
+                                        "Evitar animaciones en listados largos.",
+                                        "Usar librerías externas para animaciones eficientes.",
+                                        "Animar solo los elementos visibles."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Las librerías externas optimizan animaciones en listados (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad de animation permite que los estilos finales persistan después de la animación?",
+                                    "opciones": [
+                                        "animation-fill-mode: none",
+                                        "animation-fill-mode: forwards",
+                                        "animation-fill-mode: backwards",
+                                        "animation-fill-mode: both"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "'forwards' mantiene los estilos finales (p. 32)."
+                                },
+                                {
+                                    "pregunta": "¿Por qué los sprites pueden causar problemas de rendimiento?",
+                                    "opciones": [
+                                        "Porque requieren múltiples conexiones al servidor.",
+                                        "Porque sobrecargan la GPU en animaciones.",
+                                        "Porque no son compatibles con navegadores modernos.",
+                                        "Porque aumentan el tamaño de los archivos HTML."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los sprites pueden sobrecargar la GPU en animaciones complejas (p. 5)."
+                                },
+                                {
+                                    "pregunta": "¿Qué formato de SVG es más fácil de animar con CSS?",
+                                    "opciones": [
+                                        "SVG con múltiples trazados sin clases.",
+                                        "SVG con un único trazado.",
+                                        "SVG con clases asignadas a elementos.",
+                                        "SVG con elementos agrupados en etiquetas 'g'."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los SVG con clases facilitan la animación mediante CSS (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué error común ocurre al usar la versión abreviada de 'animation'?",
+                                    "opciones": [
+                                        "No se pueden definir múltiples keyframes.",
+                                        "Los valores no declarados toman valores por defecto.",
+                                        "No se puede pausar la animación.",
+                                        "No admite propiedades personalizadas."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los valores no declarados en 'animation' toman valores por defecto (p. 34)."
+                                },
+                                {
+                                    "pregunta": "¿Qué técnica de animación se recomienda para transformar un botón en una card?",
+                                    "opciones": [
+                                        "Usar sprites con cambios de posición.",
+                                        "Aplicar una técnica FLIP.",
+                                        "Utilizar SVG con SMIL.",
+                                        "Agrupar múltiples keyframes."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La técnica FLIP es útil para transformaciones complejas (p. 23)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad CSS controla la aceleración de una animación entre keyframes?",
+                                    "opciones": [
+                                        "animation-timing",
+                                        "animation-curve",
+                                        "animation-timing-function",
+                                        "animation-speed"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "'animation-timing-function' define la curva de aceleración (p. 31)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 5001,
+                            "nombre": "Rendimiento en animaciones web",
+                            "teoria": [
+                                "Los navegadores renderizan páginas en pasos: JavaScript, Style, Layout, Paint y Composite. Las propiedades que evitan Layout y Paint (como transform y opacity) son más eficientes para animaciones (p. 6).",
+                                "Las capas de composición (Composite) mejoran el rendimiento al usar la GPU, pero su abuso puede saturar la memoria, especialmente en dispositivos móviles (p. 14).",
+                                "box-shadow permite sombras internas/externas con valores como offset, blur y color, pero animarla es menos eficiente que usar transform (p. 19).",
+                                "transform-origin define el punto de referencia para transformaciones (rotate, scale). Debe declararse antes que transform para que surta efecto (p. 22).",
+                                "La propiedad perspective aplicada al contenedor padre permite efectos 3D realistas en transformaciones como rotateX/Y (p. 25).",
+                                "Las transformaciones 3D (translate3d, rotate3d) requieren perspective en el padre y valores numéricos (no porcentajes) para el eje Z (p. 27).",
+                                "Modificar propiedades como width o height fuerza recalculos de Layout, mientras que transform y opacity solo afectan a Composite (p. 12).",
+                                "will-change anticipa cambios para optimizar animaciones, pero su uso excesivo puede consumir memoria innecesariamente (p. 15).",
+                                "Las imágenes en animaciones 3D aumentan el peso de las capas de composición; se recomienda usar SVG (p. 15).",
+                                "rotateX/Y/Z necesita perspective para efectos 3D visibles; rotateZ funciona igual que rotate en 2D (p. 28).",
+                                "Evitar animar contenedores con imágenes pesadas mejora el rendimiento al reducir la carga en la GPU (p. 15).",
+                                "Las propiedades como border y background-color son costosas para animar porque disparan Layout y Paint (p. 12).",
+                                "translateX/Y es más eficiente que left/top para desplazamientos, ya que evita recálculos de Layout (p. 12).",
+                                "La jerarquía de especificidad en Style afecta el rendimiento; estilos anidados aumentan el tiempo de procesamiento (p. 7).",
+                                "Composite gestiona capas con propiedades como opacity y transform, optimizando el uso de la GPU (p. 8).",
+                                "Las animaciones con JavaScript pueden ser menos eficientes que las de CSS si no se optimizan (p. 6).",
+                                "box-shadow con inset crea efectos internos útiles para simulaciones de bordes animados (p. 20).",
+                                "scale3d permite escalar en 3D pero requiere perspective para apreciar la profundidad (p. 28).",
+                                "Las transformaciones 3D consumen más recursos que las 2D, pero ofrecen efectos más realistas (p. 27).",
+                                "La propiedad animation-timing-function controla la aceleración, clave para animaciones fluidas (p. 31)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "Indica cuál de las siguientes opciones son falsas:",
+                                    "opciones": [
+                                        "Los pasos de JavaScript y Style dependen de la cantidad de líneas de código mientras que los pasos de Layout, Paint y Composite de las propiedades que necesite aplicar el navegador.",
+                                        "A la hora de animar, son más rápidas las propiedades que se inician en el paso del Layout que las que se inician en Composite.",
+                                        "Para animar, se recomienda hacer uso de propiedades que usen el paso de Layout antes que del Paint.",
+                                        "Las mejores propiedades para animar suelen renderizarse en los pasos Paint y Composite."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Las propiedades de Composite (como transform) son más eficientes que las de Layout (p. 6)."
+                                },
+                                {
+                                    "pregunta": "Abusar de las propiedades que renderizan en Composite provoca:",
+                                    "opciones": [
+                                        "Usar más recursos del procesador CPU.",
+                                        "Si contienen imágenes, llenado demasiado rápido de la memoria.",
+                                        "Hacer uso excesivo de la memoria y llegar a bloquear al navegador.",
+                                        "Nada en los dispositivos móviles ya que no disponen de ese paso de renderización."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El abuso de capas de composición puede saturar la memoria, especialmente en móviles (p. 14)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes propiedades están mal escrita o mal definida?",
+                                    "opciones": [
+                                        "box-shadow: 10% 0 green;",
+                                        "box-shadow: 10px 0 rgb(0,128,0);",
+                                        "box-shadow: 10rem 0 #008000; box-shadow-blur-radius: 1rem;",
+                                        "box-shadow: outset 10px 0 rgba(0,128,0,1);"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "El valor correcto es 'inset', no 'outset' (p. 19)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes opciones no realiza el cambio para que la pieza azul rote como en la imagen?",
+                                    "opciones": [
+                                        "transform-origin: 100% 0; transform: rotate(-15seg);",
+                                        "transform: rotate(-15deg); transform-origin: 100px 0;",
+                                        "transform-origin: right top; transform: rotate(-15deg);",
+                                        "transform-origin: 0 100%; transform: rotate(-15deg);"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "'15seg' no es una unidad válida; debe ser 'deg' (p. 22)."
+                                },
+                                {
+                                    "pregunta": "Dado el siguiente código, que opciones fallan al reproducir el efecto de la imagen:",
+                                    "opciones": [
+                                        ".box { perspective: 40rem; }",
+                                        ".box { perspective: 40%; }",
+                                        ".box { perspective: -40px; }",
+                                        ".box { perspective: 40; }"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "perspective no acepta porcentajes (p. 26)."
+                                },
+                                {
+                                    "pregunta": "¿Por qué el siguiente código se visualiza como el caso A en lugar de como el caso B?",
+                                    "opciones": [
+                                        "Porque debería haber usado la propiedad skewY en lugar de rotateY.",
+                                        "Porque no ha puesto suficientes grados.",
+                                        "Porque no tiene transform-style: preserve-3d.",
+                                        "Porque el elemento padre no tiene la propiedad perspective."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "rotateY requiere perspective en el contenedor padre para efectos 3D (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad genera mejor rendimiento para desplazar un elemento a la derecha?",
+                                    "opciones": [
+                                        "margin-left: 5rem;",
+                                        "transform: translateX(5rem);",
+                                        "padding-left: 5rem;",
+                                        "position: relative; left: 5rem;"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "translateX evita recálculos de Layout (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad genera mejor rendimiento a la hora de realizar un borde animado que crece y decrece?",
+                                    "opciones": [
+                                        "La propiedad border.",
+                                        "La propiedad border en conjunto con la propiedad box-sizing: border-box.",
+                                        "La propiedad background en conjunto con el uso de gradientes de colores.",
+                                        "La propiedad box-shadow."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "box-shadow es más eficiente que border para animaciones (p. 11)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes opciones puede producir el efecto de la imagen?",
+                                    "opciones": [
+                                        ".box { box-shadow: 10px 10px 10px green; }",
+                                        ".box { box-shadow: 10px 10px 10px green, -10px -10px 10px orange; }",
+                                        ".box { box-shadow: 10px 10px 10px green; box-shadow: -10px -10px 10px orange; }",
+                                        "No se puede realizar a menos que se incluya un elemento envoltorio."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Múltiples sombras se definen separadas por comas (p. 20)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad CSS es esencial para visualizar correctamente una rotación 3D en el eje Y?",
+                                    "opciones": [
+                                        "transform-style: flat;",
+                                        "perspective-origin: center;",
+                                        "perspective: 500px;",
+                                        "backface-visibility: visible;"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "perspective en el contenedor padre es necesaria para efectos 3D (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de estas propiedades NO fuerza un recálculo de Layout?",
+                                    "opciones": [
+                                        "width",
+                                        "transform",
+                                        "margin",
+                                        "padding"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "transform solo afecta a Composite, no a Layout (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué técnica optimiza animaciones con imágenes pesadas?",
+                                    "opciones": [
+                                        "Usar capas de composición para cada imagen.",
+                                        "Reemplazar imágenes PNG con SVG.",
+                                        "Aplicar will-change a todas las imágenes.",
+                                        "Evitar animaciones en dispositivos móviles."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los SVG son más ligeros y escalables (p. 15)."
+                                },
+                                {
+                                    "pregunta": "¿Qué valor de transform-origin es equivalente a 'top right'?",
+                                    "opciones": [
+                                        "100% 0",
+                                        "0 100%",
+                                        "right top",
+                                        "100% 100%"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "'100% 0' coloca el origen en la esquina superior derecha (p. 22)."
+                                },
+                                {
+                                    "pregunta": "¿Por qué rotateZ(45deg) no necesita perspective?",
+                                    "opciones": [
+                                        "Porque es una transformación 2D.",
+                                        "Porque el eje Z no requiere profundidad.",
+                                        "Porque usa valores angulares en grados.",
+                                        "Porque se aplica automáticamente con transform-style."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "rotateZ funciona igual que rotate en 2D (p. 28)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es el orden correcto de los pasos de renderización?",
+                                    "opciones": [
+                                        "JavaScript → Style → Layout → Paint → Composite",
+                                        "Style → JavaScript → Layout → Composite → Paint",
+                                        "Layout → JavaScript → Paint → Style → Composite",
+                                        "Composite → Paint → Layout → Style → JavaScript"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "El orden es JavaScript, Style, Layout, Paint y Composite (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad permite expandir una sombra hacia afuera?",
+                                    "opciones": [
+                                        "blur-radius",
+                                        "spread-radius",
+                                        "offset-x",
+                                        "inset"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "spread-radius controla la expansión/contracción de la sombra (p. 19)."
+                                },
+                                {
+                                    "pregunta": "¿Qué sucede si se anima la propiedad 'left' en un elemento con position: absolute?",
+                                    "opciones": [
+                                        "Solo se repinta el elemento (Paint).",
+                                        "Se recalcula el Layout completo.",
+                                        "Se crea una capa de composición automáticamente.",
+                                        "No se requiere procesamiento adicional."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Modificar 'left' dispara Layout y Paint (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es el valor por defecto de transform-origin?",
+                                    "opciones": [
+                                        "0 0",
+                                        "left top",
+                                        "50% 50%",
+                                        "center center"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El valor por defecto es '50% 50%' (p. 22)."
+                                },
+                                {
+                                    "pregunta": "¿Qué función de transformación 3D NO existe?",
+                                    "opciones": [
+                                        "skewZ",
+                                        "rotate3d",
+                                        "translate3d",
+                                        "scale3d"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "skewZ no es una función válida (p. 28)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad CSS activa la aceleración por GPU para un elemento?",
+                                    "opciones": [
+                                        "will-change: transform;",
+                                        "gpu: accelerate;",
+                                        "render: gpu;",
+                                        "hardware: acceleration;"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "will-change promueve el elemento a una capa de composición (p. 15)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 6001,
+                            "nombre": "Diferentes formas de visualizar",
+                            "teoria": [
+                                "El diseño responsive busca adaptar una misma página a distintos dispositivos, considerando contenido fijo o variable, agrupaciones y comportamiento con scroll (p. 5).",
+                                "La accesibilidad abarca no solo discapacidades permanentes, sino también temporales y situacionales, mejorando la experiencia para todos los usuarios (p. 16).",
+                                "La propiedad prefers-reduced-motion permite desactivar animaciones para usuarios con sensibilidades, usando media queries o clases CSS (p. 21).",
+                                "perspective-origin define el punto de fuga en transformaciones 3D, admitiendo valores como 'left center' o coordenadas numéricas (p. 24).",
+                                "backface-visibility controla si la cara trasera de un elemento 3D es visible al rotarlo, con valores 'visible' (default) o 'hidden' (p. 25).",
+                                "transform-style establece si los elementos hijos tienen espacio 3D independiente ('preserve-3d') o comparten el del padre ('flat') (p. 26).",
+                                "Las funciones matrix y matrix3d simplifican transformaciones complejas pero son difíciles de leer; se prefieren translate/rotate/scale (p. 29-30).",
+                                "Problemas comunes en responsive incluyen contenido no adaptable, fuentes ilegibles y elementos táctiles demasiado cercanos (p. 12).",
+                                "La navegación por teclado y el SEO mejoran con accesibilidad, usando etiquetas HTML semánticas y alternativas para gráficos (p. 17-18).",
+                                "Ejemplos de accesibilidad incluyen formularios navegables por teclado y evitar hover exclusivo en móviles (p. 19-20).",
+                                "responsive design puede ser adaptativo (puntos de ruptura) o receptivo (unidades relativas como vw/vh) (p. 12).",
+                                "Las animaciones en responsive deben planificarse para evitar conflictos con scroll o cambios de tamaño (p. 10-11).",
+                                "WCAG ofrece pautas de accesibilidad (niveles AA/AAA), pero este tema se centra en aspectos técnicos (p. 20).",
+                                "perspective-origin se aplica al contenedor padre de elementos 3D, no a los hijos transformados (p. 24).",
+                                "transform-style: preserve-3d permite efectos 3D anidados, como tarjetas que giran independientemente (p. 26).",
+                                "prefers-reduced-motion ayuda a usuarios con mareos o epilepsia, desactivando animaciones no esenciales (p. 21).",
+                                "Errores en accesibilidad incluyen gráficos sin texto alternativo y dependencia de hover en móviles (p. 18-19).",
+                                "matrix() combina scale, skew y translate en 2D, pero skewY y skewX usan radianes (p. 29).",
+                                "matrix3d() extiende matrix a 3D, pero rotate3d y translate3d son más legibles (p. 30).",
+                                "Inclusive design beneficia a usuarios con discapacidades, contextos temporales (ej: padres) y buscadores web (p. 16)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "Indica cuál de las siguientes afirmaciones son falsas:",
+                                    "opciones": [
+                                        "Todas las piezas o componentes tienen una versión responsive que podemos encontrar en la guía disponible en internet.",
+                                        "Cada pieza o componente puede tener un responsive diferente según casos de uso, página o proyecto.",
+                                        "El responsive no afecta a las animaciones.",
+                                        "Los eventos que activan las animaciones son siempre los mismos para dispositivos móviles que para sus versiones de escritorio."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "No existe una guía universal para responsive; cada componente requiere adaptación única (p. 5)."
+                                },
+                                {
+                                    "pregunta": "¿Qué no debemos tener en cuenta respecto al responsive y las animaciones?",
+                                    "opciones": [
+                                        "Los casos a máximos y mínimos.",
+                                        "Para cuántas vistas existirá el componente o pieza.",
+                                        "El tamaño de las imágenes que se incluyen.",
+                                        "Dar prioridad a la versión de móvil, ya que siempre se ven bien en escritorio."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Ambas versiones (móvil y escritorio) deben planificarse por igual (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué público nos podemos encontrar cuando pensamos en accesibilidad?",
+                                    "opciones": [
+                                        "Buscadores web.",
+                                        "A usuarios con discapacidades o impedimentos permanentes.",
+                                        "A usuarios sin discapacidades pero con impedimentos temporales o situacionales.",
+                                        "Usuarios sanos sin problemas de discapacidad."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "La accesibilidad beneficia a todos, incluyendo usuarios temporales y buscadores (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Qué acciones no mejoran la accesibilidad a nivel técnico?",
+                                    "opciones": [
+                                        "Usar etiquetas de HTML de forma correcta.",
+                                        "Reemplazar gráficas en imágenes por alternativas en HTML animadas.",
+                                        "Utilizar imágenes para reemplazar textos.",
+                                        "Utilizar SVGs con las etiquetas de título y descripción."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Reemplazar textos con imágenes perjudica la accesibilidad (p. 18)."
+                                },
+                                {
+                                    "pregunta": "¿Para qué sirve la media query prefers-reduced-motion?",
+                                    "opciones": [
+                                        "Para desactivar todas las animaciones.",
+                                        "Para permitir al usuario desactivar las animaciones que hayamos configurado en nuestro CSS desde su dispositivo.",
+                                        "Para reducir los colores de la aplicación y poner el modo de alto contraste.",
+                                        "Para calmar el estrés de los usuarios y permitirles reducir sus emociones."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Responde a la configuración del sistema para reducir animaciones (p. 21)."
+                                },
+                                {
+                                    "pregunta": "Dado el siguiente código y la imagen del resultado: ¿dónde se deben colocar las propiedades perspective: 24rem; perspective-origin: 50% 100%;?",
+                                    "opciones": [
+                                        "Dentro de la clase .boxcontainer.",
+                                        "Dentro de la clase .boxwrapper.",
+                                        "Dentro de la clase .box.",
+                                        "Dentro de las clases .boxwrapper y .boxcontainer."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "perspective y perspective-origin se aplican al contenedor padre (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Cuáles son los valores permitidos para backface-visibility?",
+                                    "opciones": [
+                                        "0 y 1.",
+                                        "show y visible.",
+                                        "hidden y visible.",
+                                        "normal y reverse."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los valores válidos son 'visible' (default) y 'hidden' (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Para qué sirve transform-style?",
+                                    "opciones": [
+                                        "Para definir la velocidad de las transformaciones en CSS.",
+                                        "Para añadir estilos experimentales a la propiedad transform.",
+                                        "Para modificar el flow de un elemento.",
+                                        "Para definir si un elemento está integrado en el plano del elemento o en su propio espacio 3D."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Controla si los hijos tienen espacio 3D independiente (p. 26)."
+                                },
+                                {
+                                    "pregunta": "Dado el siguiente código y las imágenes que muestran sus estados, ¿qué puede fallar respecto a accesibilidad?",
+                                    "opciones": [
+                                        "Falta el efecto hover sobre el input checked, distinguir el estado checked de checked:hover.",
+                                        "El estado focus en los dos tipos.",
+                                        "No es accesible por teclado.",
+                                        "Está correcto."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La navegación por teclado es clave para accesibilidad (p. 19)."
+                                },
+                                {
+                                    "pregunta": "Dadas las imágenes de escritorio y móvil del mismo elemento menú, ¿qué fallos relativos al responsive o interacción de accesibilidad podemos encontrar?",
+                                    "opciones": [
+                                        "Está correcto.",
+                                        "El contenedor es más ancho que el dispositivo.",
+                                        "El tamaño de la letra puede ser ilegible o necesitar zoom.",
+                                        "Elementos clicable son diminutos y muy cercanos."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Elementos táctiles pequeños y cercanos dificultan la interacción (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad CSS permite crear un efecto de tarjeta que gira mostrando contenido en su parte trasera?",
+                                    "opciones": [
+                                        "transform-origin",
+                                        "backface-visibility",
+                                        "perspective-origin",
+                                        "transform-style"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "backface-visibility controla la visibilidad de la cara trasera al rotar (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Qué técnica de responsive evita recalcular dimensiones al cambiar el tamaño de la pantalla?",
+                                    "opciones": [
+                                        "Usar unidades absolutas como px.",
+                                        "Usar unidades relativas como vw o %.",
+                                        "Definir múltiples puntos de ruptura con media queries.",
+                                        "Ocultar elementos en dispositivos pequeños."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Unidades relativas se adaptan automáticamente (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué problema surge al usar hover para mostrar contenido en móviles?",
+                                    "opciones": [
+                                        "No hay problema, los móviles soportan hover.",
+                                        "Requiere toques largos, lo que confunde a los usuarios.",
+                                        "Los lectores de pantalla no interpretan hover.",
+                                        "Solo funciona en dispositivos con stylus."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Hover no es intuitivo en móviles; se recomienda usar clicks (p. 19)."
+                                },
+                                {
+                                    "pregunta": "¿Qué valor de transform-style permite anidar transformaciones 3D?",
+                                    "opciones": [
+                                        "flat",
+                                        "preserve-3d",
+                                        "none",
+                                        "inherit"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "preserve-3d permite efectos 3D anidados (p. 26)."
+                                },
+                                {
+                                    "pregunta": "¿Cómo se define una perspectiva con punto de fuga en la esquina inferior derecha?",
+                                    "opciones": [
+                                        "perspective-origin: right bottom;",
+                                        "perspective-origin: 100% 100%;",
+                                        "perspective-origin: bottom right;",
+                                        "Todas las anteriores."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Todas las opciones son equivalentes (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad mejora el SEO al hacer contenido accesible?",
+                                    "opciones": [
+                                        "alt en imágenes",
+                                        "title en SVGs",
+                                        "etiquetas semánticas (header, nav, etc.)",
+                                        "Todas las anteriores."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Todas estas prácticas mejoran el SEO (p. 17-18)."
+                                },
+                                {
+                                    "pregunta": "¿Qué función CSS combina translateX y skewY en 2D?",
+                                    "opciones": [
+                                        "matrix()",
+                                        "matrix3d()",
+                                        "rotate3d()",
+                                        "perspective()"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "matrix() agrupa transformaciones 2D (p. 29)."
+                                },
+                                {
+                                    "pregunta": "¿Qué error de accesibilidad es común en formularios?",
+                                    "opciones": [
+                                        "Campos sin etiquetas asociadas.",
+                                        "Uso excesivo de placeholders.",
+                                        "Falta de focus styles.",
+                                        "Todas las anteriores."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Todos son errores comunes (p. 17)."
+                                },
+                                {
+                                    "pregunta": "¿Qué unidad es ideal para animaciones responsive?",
+                                    "opciones": [
+                                        "px",
+                                        "rem",
+                                        "vh/vw",
+                                        "ch"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "vh/vw se basan en el viewport, ideal para adaptabilidad (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad evita que un elemento 3D muestre su parte trasera al rotar?",
+                                    "opciones": [
+                                        "backface-visibility: hidden;",
+                                        "transform-style: flat;",
+                                        "perspective: none;",
+                                        "rotateY(180deg);"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "backface-visibility: hidden oculta la cara trasera (p. 25)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 7,
+                            "nombre": "Librerías y frameworks JavaScript",
+                            "teoria": [
+                                "Las librerías de animación JavaScript facilitan la agregación de efectos complejos como rebotes, aceleraciones personalizadas y control de estados (pausa, rebobinado), lo que las hace ideales para animaciones estéticas o escenas complejas (p. 6).",
+                                "Incorporar librerías aumenta el peso del proyecto y requiere aprender su API, aunque simplifica tareas complejas en comparación con JavaScript nativo (p. 5).",
+                                "Las librerías basadas en clases CSS, como AniJS, funcionan añadiendo/quitando clases CSS para activar animaciones, con un mecanismo simple basado en eventos (p. 8).",
+                                "Anime.js permite animar propiedades CSS, SVG y textos con configuraciones independientes para cada propiedad, incluyendo diferentes tiempos y aceleraciones (p. 22-23).",
+                                "En Anime.js, 'seek' permite saltar a un punto específico de la animación (en milisegundos), función no disponible en CSS nativo (p. 32).",
+                                "Anime.js incluye funciones de aceleración como 'spring' y 'elastic', además de las estándar de CSS y las de Robert Penner, permitiendo incluso crear funciones personalizadas (p. 36).",
+                                "Anime.js puede manipular SVGs mediante morphing, line drawing y motion path, lo que contradice la afirmación de que no puede modificar SVGs (p. 41-43).",
+                                "Las timelines en Anime.js permiten agrupar y sincronizar múltiples animaciones en secuencia, ya sea en el mismo elemento o en diferentes, creando efectos complejos (p. 44-46).",
+                                "Las librerías basadas en objetos, como Anime.js, no siempre usan canvas y permiten animar elementos del DOM directamente, siendo transparentes para el SEO técnico (p. 22).",
+                                "Three.js permite crear luces, sombras y reflejos en escenas 3D, ajustando materiales y texturas para efectos visuales avanzados (p. 56).",
+                                "Las librerías de animación JavaScript son más potentes que CSS para efectos complejos, pero requieren más conocimientos de programación y pueden ralentizar la carga (p. 5).",
+                                "AniJS utiliza un formato de cuatro pasos (evento, elemento, acción, destino) para activar animaciones mediante clases CSS, ideal para desarrolladores con poco conocimiento de JavaScript (p. 8-9).",
+                                "Anime.js ofrece controles de reproducción como play, pause, reverse y restart, similares a los de un reproductor multimedia, para gestionar animaciones (p. 31-32).",
+                                "Las funciones de aceleración en Anime.js incluyen opciones avanzadas como 'elastic' y 'spring', que simulan efectos físicos realistas en las animaciones (p. 36).",
+                                "Anime.js permite animar propiedades de SVG, como morphing y line drawing, lo que facilita la creación de efectos visuales complejos con gráficos vectoriales (p. 41-42).",
+                                "Las timelines en Anime.js permiten secuenciar animaciones de manera precisa, controlando duraciones, delays y orden de ejecución para crear flujos animados complejos (p. 44-46).",
+                                "Las librerías basadas en objetos, como Anime.js, almacenan configuraciones de animación en objetos, facilitando su reutilización y modificación (p. 22).",
+                                "Three.js requiere conocimientos avanzados de JavaScript y matemáticas para crear escenas 3D con iluminación, cámaras y materiales (p. 54).",
+                                "Three.js utiliza WebGL para renderizar escenas 3D en el navegador, permitiendo efectos como sombras, reflejos y partículas (p. 54-56).",
+                                "Las animaciones con Three.js son difíciles de hacer responsive y accesibles, ya que no interactúan directamente con el DOM y requieren potencia de procesamiento (p. 54)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Qué ventajas tienen las librerías de animación basadas en JavaScript?",
+                                    "opciones": [
+                                        "Tienen una API común que facilita su uso.",
+                                        "Agilizan la agregación de efectos complicados.",
+                                        "No generan conflictos si se instalan varias librerías.",
+                                        "Requieren menos conocimientos de programación."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Las librerías facilitan efectos avanzados como rebotes y control de estados, ideal para animaciones complejas (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué inconvenientes tienen incorporar librerías?",
+                                    "opciones": [
+                                        "A veces es necesario instalar más de una librería para lo que se necesita.",
+                                        "Normalmente no son compatibles con los diferentes navegadores.",
+                                        "Se necesita aprender su API para poder desarrollarlas.",
+                                        "Aportan peso adicional al proyecto web."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Las librerías aumentan el peso de la página y requieren aprendizaje de su API (p. 5)."
+                                },
+                                {
+                                    "pregunta": "Respecto a las librerías basadas en clases de CSS, ¿cuáles de las siguientes afirmaciones son ciertas?",
+                                    "opciones": [
+                                        "Permiten almacenar sus efectos en objetos Javascript.",
+                                        "Su funcionalidad básica consiste en agregar efectos mediante las acciones de agregar o eliminar clases al HTML.",
+                                        "Suelen usar colecciones de efectos CSS.",
+                                        "Tienen un buen control de reproducción de las animaciones, ya que nunca fallan."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "AniJS funciona añadiendo/quitando clases CSS basadas en eventos (p. 8)."
+                                },
+                                {
+                                    "pregunta": "Respecto a la librería Anime.js, ¿cuáles de las siguientes afirmaciones son falsas?",
+                                    "opciones": [
+                                        "Permite animar diferentes funciones de transform con diferentes tiempos y aceleraciones cada función.",
+                                        "Permite crear una línea temporal para secuenciar efectos.",
+                                        "Permite crear gráficos complejos como mapas o gráficas de datos.",
+                                        "Permite animar textos con diferentes efectos."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Anime.js no está diseñada para gráficos de datos, sino para animaciones CSS/SVG (p. 22-23)."
+                                },
+                                {
+                                    "pregunta": "Respecto a la librería Anime.js, entre las funciones de control de animación play, pause, reverse, seek, restart, cuáles no podemos reproducir en CSS",
+                                    "opciones": [
+                                        "seek.",
+                                        "reverse.",
+                                        "restart.",
+                                        "pause."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "'seek' permite saltar a un punto específico de la animación, función no disponible en CSS (p. 32)."
+                                },
+                                {
+                                    "pregunta": "Respecto a la librería Anime.js, ¿qué funciones de aceleración podemos usar?",
+                                    "opciones": [
+                                        "Solo las mismas que en CSS.",
+                                        "Las mismas que en CSS y las funciones de creadas por Robert Penner.",
+                                        "Las mismas que en CSS, las funciones de creadas por Robert Penner y dos adicionales (spring y elastic).",
+                                        "Las mismas que en CSS, las funciones de creadas por Robert Penner, dos adicionales (spring y elastic) y permite crear funciones propias."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Anime.js incluye múltiples funciones de aceleración, incluyendo personalizadas (p. 36)."
+                                },
+                                {
+                                    "pregunta": "Respecto a la librería Anime.js, ¿cuáles de las siguientes afirmaciones son falsas?",
+                                    "opciones": [
+                                        "Permite controlar las timelines igual que las animaciones de un elemento.",
+                                        "No puede modificar SVGs.",
+                                        "Proporciona alto control sobre su estado, ya que dispone de diferentes eventos durante el transcurso de la animación a los que asociar funciones de callbacks.",
+                                        "No es accesible a diferentes dispositivos, ya que trabaja con canvas."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Anime.js puede manipular SVGs mediante morphing y otras técnicas (p. 41-43)."
+                                },
+                                {
+                                    "pregunta": "En la librería anime.js aparece el concepto y la función necesaria para crear una línea de tiempo o timeline, pero ¿qué es?",
+                                    "opciones": [
+                                        "Es la forma que tiene esta librería de llamar a los keyframes empleados en CSS.",
+                                        "El término usado para agrupar diferentes animaciones ya sean en el mismo elemento HTML o en diferentes elementos de HTML, cada una con propiedades específicas, creando animaciones complejas de forma sincronizada.",
+                                        "La representación gráfica del proceso de ordenación de acontecimientos de forma cronológica.",
+                                        "Es la duración de las animaciones."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Las timelines permiten secuenciar animaciones de manera sincronizada (p. 44-46)."
+                                },
+                                {
+                                    "pregunta": "Respecto a las librerías de Javascript basadas en objetos, ¿cuáles de las siguientes afirmaciones son verdaderas?",
+                                    "opciones": [
+                                        "Suelen ser transparentes para el SEO técnico a diferencia de las basadas en canvas.",
+                                        "Permiten animar gráficos de datos o mapas que estén dentro de un canvas.",
+                                        "Siempre son fáciles de usar gracias a su breve documentación.",
+                                        "No utilizan un canvas."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las librerías basadas en objetos animan el DOM directamente, sin afectar al SEO (p. 22)."
+                                },
+                                {
+                                    "pregunta": "Respecto a la librería Three.js, ¿cuáles de las siguientes afirmaciones son ciertas?",
+                                    "opciones": [
+                                        "Dispone de un panel de control con interfaz gráfica como las herramientas de diseño en 3D para editar los objetos.",
+                                        "Permite crear diferentes focos de luz.",
+                                        "Permite escoger si renderizar mediante la CPU o la GPU.",
+                                        "Permite crear reflejos y sombras dependiendo de los objetos materiales que se empleen."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Three.js permite configurar luces, sombras y materiales para efectos 3D (p. 56)."
+                                },
+                                {
+                                    "pregunta": "¿Por qué las librerías de animación JavaScript son preferidas para animaciones estéticas frente a CSS nativo?",
+                                    "opciones": [
+                                        "Porque requieren menos código.",
+                                        "Porque permiten efectos avanzados como control de timeline y aceleraciones personalizadas.",
+                                        "Porque son más rápidas de renderizar en todos los dispositivos.",
+                                        "Porque no necesitan ser cargadas externamente."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Ofrecen mayor control para efectos complejos como timelines y easing personalizado (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica de AniJS la hace ideal para desarrolladores con poco conocimiento de JavaScript?",
+                                    "opciones": [
+                                        "Usa jQuery para simplificar el código.",
+                                        "Su mecanismo basado en añadir/quitar clases CSS ante eventos.",
+                                        "Permite manipular directamente el DOM sin selectores.",
+                                        "Incluye un editor visual para crear animaciones."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "AniJS activa animaciones mediante clases CSS con un formato simple de cuatro pasos (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué función de Anime.js permite aplicar delays escalonados a un grupo de elementos?",
+                                    "opciones": [
+                                        "stagger",
+                                        "sequence",
+                                        "delayGroup",
+                                        "timeline"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La función 'stagger' aplica delays progresivos a múltiples elementos (p. 38-39)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tipo de animaciones SVG puede crear Anime.js?",
+                                    "opciones": [
+                                        "Solo cambiar colores y tamaños.",
+                                        "Morphing, line drawing y motion path.",
+                                        "Animaciones 3D con texturas.",
+                                        "Solo rotación y traslación básica."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Anime.js soporta morphing, line drawing y motion path para SVGs (p. 41-43)."
+                                },
+                                {
+                                    "pregunta": "¿Qué ventaja tiene usar timelines en Anime.js?",
+                                    "opciones": [
+                                        "Reducir el peso del código final.",
+                                        "Sincronizar múltiples animaciones en secuencia.",
+                                        "Evitar el uso de callbacks.",
+                                        "Generar automáticamente código CSS compatible."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Las timelines permiten secuenciar animaciones de forma precisa (p. 44-46)."
+                                },
+                                {
+                                    "pregunta": "¿Por qué Three.js no es recomendable para proyectos con requisitos de accesibilidad?",
+                                    "opciones": [
+                                        "Porque no funciona en móviles.",
+                                        "Porque sus animaciones no son fluidas.",
+                                        "Porque no interactúa con el DOM y es difícil hacerlo responsive.",
+                                        "Porque requiere plugins adicionales."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Three.js renderiza en canvas, lo que complica la accesibilidad y el responsive (p. 54)."
+                                },
+                                {
+                                    "pregunta": "¿Qué elemento de Three.js define la perspectiva desde la que se visualiza una escena 3D?",
+                                    "opciones": [
+                                        "Renderer",
+                                        "Scene",
+                                        "Camera",
+                                        "Mesh"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La 'Camera' en Three.js configura la perspectiva de visualización (p. 55)."
+                                },
+                                {
+                                    "pregunta": "¿Qué técnica usa Three.js para renderizar gráficos 3D en el navegador?",
+                                    "opciones": [
+                                        "SVG",
+                                        "WebGL",
+                                        "CSS 3D Transforms",
+                                        "Canvas 2D"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Three.js utiliza WebGL para renderizar escenas 3D (p. 56)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica de las librerías basadas en objetos facilita la reutilización de animaciones?",
+                                    "opciones": [
+                                        "Guardar configuraciones en objetos JavaScript.",
+                                        "Usar clases CSS predefinidas.",
+                                        "Generar automáticamente keyframes.",
+                                        "Integrarse con frameworks front-end."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Almacenar configuraciones en objetos permite reutilizarlas fácilmente (p. 22)."
                                 }
                             ]
                         }
+
+
+
+
+
                     ]
                 },
+
+
+
+
+
                 {
                     "id": 301,
                     "nombre": "Desarrollo Web Responsive",
