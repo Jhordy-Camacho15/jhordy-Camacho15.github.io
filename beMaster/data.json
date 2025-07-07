@@ -2375,7 +2375,7 @@
                     "temas": [
                         {
                             "id": 1002,
-                            "nombre": "Primeros pasos en animación web",
+                            "nombre": "Tema 1: Primeros pasos en animación web",
                             "teoria": [
                                 "La animación web se define como una rápida sucesión de imágenes que generan la ilusión de movimiento. No existe una definición única aceptada, lo que provoca ambigüedades en su conceptualización (p. 5).",
                                 "Una respuesta cognitiva es la reacción emocional o conductual que surge después de analizar un estímulo, como el movimiento en una interfaz web. Este proceso es clave para la experiencia de usuario (p. 9).",
@@ -2623,7 +2623,7 @@
                         },
                         {
                             "id": 2002,
-                            "nombre": "Principios de animación web",
+                            "nombre": "Tema 2: Principios de animación web",
                             "teoria": [
                                 "Los principios de animación web son normas no estandarizadas propuestas por diseñadores y programadores para dotar de funcionalidad y mejorar la experiencia de usuario. Surgen como adaptación de técnicas cinematográficas al contexto web, evitando animaciones sin propósito (p. 4).",
                                 "El principio de cambio de estado muestra visualmente interacciones del usuario o modificaciones del sistema, como efectos hover o actualizaciones de datos. Refuerza la retroalimentación visual (p. 6).",
@@ -2871,7 +2871,7 @@
                         },
                         {
                             "id": 3002,
-                            "nombre": "Tiempo de vida en animaciones web",
+                            "nombre": "Tema 3: Tiempo de vida en animaciones web",
                             "teoria": [
                                 "Los triggers o disparadores inician animaciones mediante interacciones del usuario (hover, clic) o funciones del sistema (temporizadores, llamadas asíncronas). CSS y JavaScript ofrecen múltiples opciones, como pseudoclases (:hover, :focus) o eventos (scroll, mousedown) (p. 5-7).",
                                 "Las funciones de easing (aceleración) definen la suavidad del movimiento. CSS incluye linear, ease, ease-in, ease-out, ease-in-out, steps y cubic-bezier. JavaScript requiere librerías externas para funciones avanzadas (p. 8-14).",
@@ -3119,7 +3119,7 @@
                         },
                         {
                             "id": 4002,
-                            "nombre": "Agrupando animaciones",
+                            "nombre": "Tema 4: Agrupando animaciones",
                             "teoria": [
                                 "Los sprites son colecciones de imágenes en un único archivo que reducen conexiones al servidor y aceleran la carga, pero presentan problemas de accesibilidad y rendimiento (p. 5).",
                                 "Los SVG son gráficos vectoriales escalables que permiten animaciones complejas, pero no son recomendables para imágenes fotográficas (p. 10).",
@@ -3366,8 +3366,8 @@
                             ]
                         },
                         {
-                            "id": 5001,
-                            "nombre": "Rendimiento en animaciones web",
+                            "id": 5002,
+                            "nombre": "Tema 5: Rendimiento en animaciones web",
                             "teoria": [
                                 "Los navegadores renderizan páginas en pasos: JavaScript, Style, Layout, Paint y Composite. Las propiedades que evitan Layout y Paint (como transform y opacity) son más eficientes para animaciones (p. 6).",
                                 "Las capas de composición (Composite) mejoran el rendimiento al usar la GPU, pero su abuso puede saturar la memoria, especialmente en dispositivos móviles (p. 14).",
@@ -3614,8 +3614,8 @@
                             ]
                         },
                         {
-                            "id": 6001,
-                            "nombre": "Diferentes formas de visualizar",
+                            "id": 6002,
+                            "nombre": "Tema 6: Diferentes formas de visualizar",
                             "teoria": [
                                 "El diseño responsive busca adaptar una misma página a distintos dispositivos, considerando contenido fijo o variable, agrupaciones y comportamiento con scroll (p. 5).",
                                 "La accesibilidad abarca no solo discapacidades permanentes, sino también temporales y situacionales, mejorando la experiencia para todos los usuarios (p. 16).",
@@ -3862,8 +3862,8 @@
                             ]
                         },
                         {
-                            "id": 7,
-                            "nombre": "Librerías y frameworks JavaScript",
+                            "id": 7002,
+                            "nombre": "Tema 7: Librerías y frameworks JavaScript",
                             "teoria": [
                                 "Las librerías de animación JavaScript facilitan la agregación de efectos complejos como rebotes, aceleraciones personalizadas y control de estados (pausa, rebobinado), lo que las hace ideales para animaciones estéticas o escenas complejas (p. 6).",
                                 "Incorporar librerías aumenta el peso del proyecto y requiere aprender su API, aunque simplifica tareas complejas en comparación con JavaScript nativo (p. 5).",
@@ -4097,19 +4097,505 @@
                                     "explicacion": "Almacenar configuraciones en objetos permite reutilizarlas fácilmente (p. 22)."
                                 }
                             ]
+                        },
+                        {
+                            "id": 8002,
+                            "nombre": "Tema 8: JavaScript vainilla",
+                            "teoria": [
+                                "Las APIs nativas de JavaScript para animaciones no requieren librerías externas y evitan problemas de versiones, aunque su soporte en navegadores puede variar (p. 3).",
+                                "La Web Animations API (WAAPI) permite crear animaciones complejas con timelines y control de propiedades, similar a librerías como Anime.js, pero de forma nativa (p. 6).",
+                                "Canvas 2D es eficiente para renderizar gráficos pero complicado para animaciones accesibles y responsive, además de no ser óptimo en pantallas retina (p. 18).",
+                                "WebGL, basado en OpenGL, permite gráficos 3D avanzados y soporte para Realidad Virtual, pero requiere conocimientos profundos de JavaScript y matemáticas (p. 33).",
+                                "WAAPI usa KeyframeEffect para definir animaciones con propiedades como duration, easing y iterations, similares a CSS pero con mayor control programático (p. 7).",
+                                "El método animate() de WAAPI simplifica la creación de animaciones con keyframes y opciones de timing, reduciendo la necesidad de librerías externas (p. 7).",
+                                "Canvas requiere limpiar manualmente el lienzo en cada frame para evitar artefactos visuales, usando clearRect() dentro de un bucle con requestAnimationFrame (p. 27).",
+                                "WebGL utiliza shaders (vertex y fragment) para renderizar gráficos 3D, combinando JavaScript con código de bajo nivel similar a C/C++ (p. 34).",
+                                "La propiedad fill de WAAPI controla si los estilos finales de una animación persisten (forwards) o se restablecen (none), útil para transiciones fluidas (p. 10).",
+                                "Canvas es ideal para juegos 2D y gráficos dinámicos, pero su API extensa y falta de intuitividad lo hacen menos accesible para desarrolladores novatos (p. 32).",
+                                "WAAPI permite animaciones complejas con control de eventos (onfinish, oncancel) y métodos como play(), pause(), y reverse(), similares a las librerías (p. 15).",
+                                "Canvas utiliza requestAnimationFrame para animaciones fluidas, evitando problemas de rendimiento asociados a setTimeout o setInterval (p. 26).",
+                                "WebGL requiere configurar buffers, shaders y matrices de transformación, lo que aumenta su complejidad pero ofrece alto rendimiento en GPU (p. 36).",
+                                "La API de Canvas 2D incluye funciones como fillRect() y strokeRect() para dibujar formas, pero carece de sistemas de animación integrados como WAAPI (p. 21).",
+                                "WebGL es compatible con herramientas como Blender para importar modelos 3D, aunque su programación directa es compleja (p. 46).",
+                                "WAAPI soporta composición de animaciones (add, replace, accumulate) para combinar efectos, aunque algunas funciones aún están en desarrollo (p. 12).",
+                                "Canvas permite guardar y restaurar estados de dibujo con save() y restore(), útil para animaciones con múltiples transformaciones (p. 24).",
+                                "WebGL es utilizado por librerías como Three.js para abstraer su complejidad, permitiendo crear escenas 3D con menos código (p. 46).",
+                                "WAAPI es compatible con polyfills para navegadores antiguos, pero su adopción gradual limita su uso en proyectos que requieren soporte universal (p. 6).",
+                                "Canvas y WebGL comparten el uso de requestAnimationFrame para animaciones, pero WebGL añade capas de complejidad con shaders y gestión de GPU (p. 39)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "Indica cuál de las siguientes afirmaciones son ventajas respecto al uso de API nativas:",
+                                    "opciones": [
+                                        "Son más sencillas de utilizar.",
+                                        "No es necesario cargarlas en los proyectos.",
+                                        "Están soportadas por todos los navegadores.",
+                                        "No presentan problemas de compatibilidad con las diferentes versiones."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Las APIs nativas no requieren librerías externas, evitando cargar código adicional (p. 3)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes opciones no genera una animación de un elemento moviéndose hacia la derecha?",
+                                    "opciones": [
+                                        "document.querySelector('.box').animate([{transform: 'translateX(0)'}, {transform: 'translateX(100px)'}], 1000);",
+                                        "document.querySelector('.box').style.transform = 'translateX(100px)';",
+                                        "new KeyframeEffect(document.querySelector('.box'), [{transform: 'translateX(0)'}, {transform: 'translateX(100px)'}], 1000).play();",
+                                        "document.querySelector('.box').animate([{left: '0'}, {left: '100px'}], 1000);"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "WAAPI requiere usar transform para movimientos fluidos; animar 'left' es menos eficiente (p. 7)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de los siguientes métodos permite cambiar los valores de aceleración?",
+                                    "opciones": [
+                                        "getTiming()",
+                                        "setTiming()",
+                                        "setKeyframe()",
+                                        "updateTiming()"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "updateTiming() modifica propiedades como easing en tiempo de ejecución (p. 9)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de los siguientes códigos no provoca que la animación se repita de forma indefinida?",
+                                    "opciones": [
+                                        "{ iterations: Infinity }",
+                                        "{ iterations: -1 }",
+                                        "{ iterations: 'Infinity' }",
+                                        "{ iterations: Infinity }"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El valor debe ser Infinity (número) o -1, no una cadena 'Infinity' (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Qué evento de callback no está disponible en la API de Web Animations?",
+                                    "opciones": [
+                                        "oncancel",
+                                        "onfinish",
+                                        "onloopbegin",
+                                        "onremove"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "WAAPI no incluye onloopbegin, aunque sí oncancel, onfinish y onremove (p. 15)."
+                                },
+                                {
+                                    "pregunta": "¿Cómo se puede conseguir que el elemento mantenga el estado final al terminar la animación?",
+                                    "opciones": [
+                                        "Con la propiedad fill: 'both'",
+                                        "Con el método commitStyles()",
+                                        "Con la propiedad playState: 'finished'",
+                                        "Con la propiedad fill: 'forwards'"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "fill: 'forwards' mantiene los estilos finales de la animación (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Qué funciones ejecutan las animaciones en un canvas?",
+                                    "opciones": [
+                                        "Mediante la función play() o resume()",
+                                        "Mediante la función requestAnimationFrame()",
+                                        "Mediante la función requestAnimationFrame(), la función setTimeout() o la función setInterval()",
+                                        "Mediante la función setTimeout() o la función setInterval()"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Canvas usa requestAnimationFrame, setTimeout o setInterval para animaciones (p. 26)."
+                                },
+                                {
+                                    "pregunta": "Indique cuáles de las siguientes afirmaciones respecto a Canvas2DContext son falsas:",
+                                    "opciones": [
+                                        "En poco tiempo se producen resultados complejos.",
+                                        "Produce buenos resultados en pantallas de retina.",
+                                        "Está orientada a desarrollo 2D.",
+                                        "No suele consumir muchos recursos al renderizarse."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Canvas no renderiza bien en pantallas retina debido a su enfoque rasterizado (p. 18)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es el ciclo habitual para realizar animaciones dentro de un canvas?",
+                                    "opciones": [
+                                        "Pintar, esperar, actualizar posiciones y limpiar la pantalla.",
+                                        "Pintar y actualizar posiciones.",
+                                        "Pintar, esperar y actualizar posiciones.",
+                                        "Pintar, esperar, actualizar posiciones, limpiar la pantalla y salvar estados."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "El ciclo típico incluye limpiar el lienzo (clearRect) antes de redibujar (p. 27)."
+                                },
+                                {
+                                    "pregunta": "Indique cuál de las siguientes afirmaciones son falsas respecto a WebGL:",
+                                    "opciones": [
+                                        "Desarrollar animaciones en WebGL es más sencillo y rápido al estar desarrollado en Javascript.",
+                                        "Se puede utilizar para Realidad Aumentada o Realidad Virtual.",
+                                        "Trabaja con código a bajo nivel.",
+                                        "No es compatible con herramientas de diseño 3D."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "WebGL es complejo y requiere conocimientos avanzados, a pesar de usar JavaScript (p. 33)."
+                                },
+                                {
+                                    "pregunta": "¿Qué método de WAAPI devuelve una lista de animaciones activas?",
+                                    "opciones": [
+                                        "document.getAnimations()",
+                                        "Animation.getActive()",
+                                        "KeyframeEffect.list()",
+                                        "window.activeAnimations()"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "document.getAnimations() retorna un array de animaciones en ejecución (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad de WAAPI controla la velocidad de reproducción de una animación?",
+                                    "opciones": [
+                                        "playbackRate",
+                                        "speed",
+                                        "rate",
+                                        "velocity"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "playbackRate ajusta la velocidad (1 = normal, 2 = doble, -1 = reversa) (p. 14)."
+                                },
+                                {
+                                    "pregunta": "En Canvas, ¿qué función se usa para dibujar un rectángulo relleno?",
+                                    "opciones": [
+                                        "ctx.drawRect()",
+                                        "ctx.fillRect()",
+                                        "ctx.createRect()",
+                                        "ctx.strokeRect()"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "fillRect() dibuja un rectángulo con el color definido en fillStyle (p. 21)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tipo de shader en WebGL calcula el color de cada píxel?",
+                                    "opciones": [
+                                        "Vertex shader",
+                                        "Fragment shader",
+                                        "Geometry shader",
+                                        "Pixel shader"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El fragment shader determina los colores de los píxeles (p. 34)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es la principal desventaja de Canvas 2D frente a WAAPI?",
+                                    "opciones": [
+                                        "No soporta animaciones.",
+                                        "Requiere limpieza manual del lienzo.",
+                                        "No es compatible con navegadores modernos.",
+                                        "No permite dibujar formas geométricas."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Canvas necesita clearRect() para evitar superposición de frames (p. 27)."
+                                },
+                                {
+                                    "pregunta": "¿Qué librería simplifica el uso de WebGL para crear escenas 3D?",
+                                    "opciones": [
+                                        "Two.js",
+                                        "Three.js",
+                                        "D3.js",
+                                        "Anime.js"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Three.js abstrae la complejidad de WebGL (p. 46)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad de OptionalEffectTiming define el punto de inicio de una animación?",
+                                    "opciones": [
+                                        "startTime",
+                                        "iterationStart",
+                                        "begin",
+                                        "offset"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "iterationStart especifica dónde comienza la animación (p. 10)."
+                                },
+                                {
+                                    "pregunta": "En Canvas, ¿qué método guarda el estado actual de dibujo?",
+                                    "opciones": [
+                                        "ctx.store()",
+                                        "ctx.save()",
+                                        "ctx.push()",
+                                        "ctx.backup()"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "save() guarda el estado actual en una pila (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Qué hace la función degToRad en WebGL?",
+                                    "opciones": [
+                                        "Convierte radianes a grados.",
+                                        "Convierte grados a radianes.",
+                                        "Calcula la distancia entre dos puntos.",
+                                        "Genera una matriz de rotación."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "degToRad convierte ángulos en grados a radianes para cálculos 3D (p. 38)."
+                                },
+                                {
+                                    "pregunta": "¿Qué método de WAAPI fija los estilos finales de una animación en el atributo style del elemento?",
+                                    "opciones": [
+                                        "applyStyles()",
+                                        "commitStyles()",
+                                        "setStyles()",
+                                        "finishStyles()"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "commitStyles() aplica los estilos finales al DOM (p. 15)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 9002,
+                            "nombre": "Tema 9: Desarrollo de Recursos Animados para Web",
+                            "teoria": [
+                                "La UI optimista muestra el estado final antes de que la acción se complete, mejorando la percepción de velocidad aunque no necesariamente la velocidad real. Esto puede generar problemas si hay errores frecuentes en las llamadas al servidor (p. 7-8).",
+                                "Las variables CSS permiten definir valores reutilizables en hojas de estilo, pero no pueden usarse en media queries o funciones RGB, y no son animables directamente (p. 12-14).",
+                                "CSS Houdini es una API que permite acceder al CSSOM y crear propiedades animables personalizadas, aunque su soporte en navegadores aún es limitado y su uso debe ser cuidadoso (p. 16-17).",
+                                "CSS in JS es una técnica que genera estilos mediante JavaScript, facilitando la encapsulación pero añadiendo complejidad y posibles problemas de rendimiento (p. 18-20).",
+                                "Las herramientas de diseño modernas como Figma y Adobe XD están incorporando funciones para crear animaciones, aunque la colaboración entre diseñadores y desarrolladores sigue siendo clave para resultados óptimos (p. 26-27).",
+                                "Frameworks como Vue, React y Angular incluyen secciones sobre animaciones en su documentación, pero no todos los frameworks ofrecen estas funcionalidades de forma nativa (p. 28-30).",
+                                "Las animaciones web han evolucionado desde tecnologías obsoletas como Flash hasta enfoques modernos como CSS y JavaScript, siendo hoy más diversas y complejas (p. 3).",
+                                "CSS3 introdujo un sistema modular donde cada módulo evoluciona independientemente, y las 'instantáneas' (snapshots) publicadas por el grupo de trabajo de CSS permiten conocer el estado actual de los estándares (p. 21-23).",
+                                "WebXR es una API diseñada para realidad virtual y aumentada, mientras que WebGPU es una alternativa más eficiente a WebGL, aunque aún en desarrollo (p. 24).",
+                                "Frameworks como Ionic y React Native permiten crear aplicaciones híbridas con apariencia nativa, mientras que otros como Electron facilitan la exportación de aplicaciones web a formatos instalables (p. 29-30).",
+                                "La UI optimista mejora la experiencia del usuario al evitar estados de carga bloqueantes, pero requiere un manejo cuidadoso de errores para no dañar la percepción de la aplicación (p. 8-9).",
+                                "Las variables CSS simplifican el mantenimiento de estilos y permiten integración con JavaScript, aunque tienen limitaciones técnicas como la imposibilidad de usarlas en animaciones (p. 14-15).",
+                                "CSS Houdini permite a los desarrolladores extender las capacidades de CSS, pero su uso puede comprometer estándares de seguridad y accesibilidad si no se implementa correctamente (p. 17).",
+                                "CSS in JS ofrece ventajas como la encapsulación de estilos, pero también introduce desafíos como la paralelización de descargas y el cálculo del critical CSS (p. 19).",
+                                "La colaboración entre diseñadores y desarrolladores es esencial para garantizar que las animaciones diseñadas se implementen con fidelidad en el código (p. 27).",
+                                "La elección de frameworks para animaciones depende de factores como el conocimiento del equipo, la integración con otras librerías y el rendimiento requerido (p. 30).",
+                                "La evolución de CSS ha pasado de versiones monolíticas (CSS1, CSS2) a un sistema modular (CSS3) donde cada módulo puede desarrollarse a su propio ritmo (p. 21-22).",
+                                "WebXR busca estandarizar las APIs para dispositivos de realidad virtual y aumentada, incluyendo soporte para sensores como acelerómetros (p. 24).",
+                                "Flutter, aunque no es un framework web, destaca por su capacidad para crear animaciones fluidas en aplicaciones móviles nativas (p. 30).",
+                                "Las herramientas de diseño y desarrollo deben estar sincronizadas para reducir discrepancias entre lo diseñado y lo implementado, especialmente en animaciones complejas (p. 26)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "Respecto a los conceptos de UI optimista, ¿cuál de las siguientes afirmaciones es falsa?",
+                                    "opciones": [
+                                        "La aplicación se percibe más rápida.",
+                                        "La aplicación se vuelve más rápida gracias a este enfoque.",
+                                        "La aplicación es más rápida, ya que no necesita mostrar errores por pantalla.",
+                                        "Si se producen muchos errores de envío, se genera una cola de espera que puede bloquear la aplicación."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La UI optimista mejora la percepción de velocidad, pero no necesariamente la velocidad real. Además, los errores deben manejarse cuidadosamente (p. 8-9)."
+                                },
+                                {
+                                    "pregunta": "¿Qué características no poseen las variables de CSS?",
+                                    "opciones": [
+                                        "Son animables.",
+                                        "Se pueden sobrescribir, ya que respetan la especificidad de las clases.",
+                                        "Para poder usarlas es necesario instalar un preprocesador de texto como Sass, Less o Stylus.",
+                                        "Si se saben utilizar, facilitan el mantenimiento."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las variables CSS no son animables directamente, aunque permiten reutilización y facilitan el mantenimiento (p. 14-15)."
+                                },
+                                {
+                                    "pregunta": "Respecto a la API CSS Houdini, ¿cuál de las siguientes afirmaciones es falsa?",
+                                    "opciones": [
+                                        "Actualmente no está soportada al completo por todos los navegadores.",
+                                        "Permite a los programadores acceder al CSSOM.",
+                                        "Permite animar algunas propiedades que no eran animables.",
+                                        "Se recomienda su uso siempre que sea posible."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "CSS Houdini debe usarse con cuidado debido a posibles problemas de seguridad y accesibilidad (p. 17)."
+                                },
+                                {
+                                    "pregunta": "Respecto al CSS in JS, ¿cuál de las siguientes afirmaciones es incorrecta?",
+                                    "opciones": [
+                                        "Facilita la encapsulación de componentes.",
+                                        "Puede asegurar los estilos con mayor eficiencia.",
+                                        "Elimina conflictos de especificidad de CSS.",
+                                        "La única técnica de implementación que tiene es muy ineficiente."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "CSS in JS no elimina conflictos de especificidad, aunque mejora la encapsulación (p. 18-19)."
+                                },
+                                {
+                                    "pregunta": "Respecto a las herramientas de diseño, ¿cuál de las siguientes afirmaciones es falsa?",
+                                    "opciones": [
+                                        "Las más nuevas o las últimas actualizaciones de muchas herramientas están incorporando formas de crear y reproducir animaciones.",
+                                        "Es bueno que las herramientas de desarrollo estén desacopladas de las herramientas de diseño.",
+                                        "Cuando las herramientas de diseño no son suficientes, se recomienda acompañarlas de guías de estilos, sistemas de diseño u otra documentación adicional.",
+                                        "Los mejores resultados se producen cuando programadores y diseñadores trabajan colaborativamente."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El desacoplamiento entre herramientas de diseño y desarrollo puede generar discrepancias, por lo que la colaboración es clave (p. 26-27)."
+                                },
+                                {
+                                    "pregunta": "Respecto a los frameworks de desarrollo, ¿cuál de las siguientes afirmaciones es falsa?",
+                                    "opciones": [
+                                        "Todos los frameworks incluyen en su documentación una sección sobre animaciones.",
+                                        "Cuando no incluyen nada sobre animaciones, tiene que ser desarrolladas a mano o mediante librerías.",
+                                        "Flutter es un framework con un poderoso conjunto de librerías y funciones para realizar animaciones eficientes y con buen rendimiento.",
+                                        "Ionic incluye una implementación de WebGL."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "No todos los frameworks incluyen secciones sobre animaciones en su documentación (p. 28-30)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes afirmaciones es falsa?",
+                                    "opciones": [
+                                        "Las animaciones tienen pocas formas de desarrollarse, por lo que es fácil encontrar programadores que las sepan crear.",
+                                        "En las últimas versiones de los frameworks para desarrollo se están teniendo en cuenta las animaciones.",
+                                        "Otras ramas de desarrollo web como son SEO, accesibilidad o tratamiento de datos en gráficos no se ven afectados por las animaciones.",
+                                        "La forma de crear animaciones hoy en día es muy similar a la que se utilizaba en el pasado."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las animaciones modernas son diversas y complejas, requiriendo conocimientos especializados (p. 3, 5)."
+                                },
+                                {
+                                    "pregunta": "Respecto a CSS Levels, ¿cuál de las siguientes afirmaciones es verdadera?",
+                                    "opciones": [
+                                        "En CSS3 se dividen las nuevas características por módulos independientes.",
+                                        "CSS4 se encuentra actualmente en desarrollo.",
+                                        "Para conocer el estado actual de CSS, se puede consultar la última Snapshot o instantánea.",
+                                        "Es difícil ampliar las funcionalidades de CSS, ya que todas tienen la misma prioridad."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "CSS3 introdujo un sistema modular donde cada módulo evoluciona independientemente (p. 21-22)."
+                                },
+                                {
+                                    "pregunta": "Respecto a nuevas interfaces para dispositivos de Realidad Virtual y Realidad Aumentada, ¿cuál de las siguientes afirmaciones es falsa?",
+                                    "opciones": [
+                                        "Se desea abandonar el proyecto de WebGL debido a su escaso éxito.",
+                                        "WebGPU ofrece una API alternativa a WebGL, aunque su desarrollo está todavía en etapas muy tempranas.",
+                                        "WebXR intenta cubrir las nuevas necesidades para los dispositivos de Realidad Virtual y Realidad Aumentada.",
+                                        "WebXR es la nueva versión de WebGL."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "WebXR es una API distinta a WebGL, enfocada en realidad virtual y aumentada (p. 24)."
+                                },
+                                {
+                                    "pregunta": "Respecto a los frameworks de desarrollo, ¿cuál de las siguientes afirmaciones es falsa?",
+                                    "opciones": [
+                                        "Frameworks como Vue, Angular y Phonegap están pensados para desarrollar una web SPA o SSR.",
+                                        "Ionic y Quasar son frameworks para generar aplicaciones híbridas.",
+                                        "Entre los frameworks para exportar aplicaciones webs a formatos para instalación tenemos Capacitor, Electron o Cordova.",
+                                        "Flutter es el nombre de la nueva versión de Android."
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Flutter es un SDK para crear aplicaciones nativas, no una versión de Android (p. 30)."
+                                },
+                                {
+                                    "pregunta": "¿Qué ventaja ofrece la UI optimista en aplicaciones web?",
+                                    "opciones": [
+                                        "Reduce el tiempo real de carga de la aplicación.",
+                                        "Permite al usuario realizar otras acciones mientras se procesan las llamadas al servidor.",
+                                        "Elimina la necesidad de manejar errores en las llamadas asíncronas.",
+                                        "Aumenta la velocidad de respuesta del servidor."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La UI optimista mejora la experiencia al no bloquear al usuario durante las llamadas asíncronas (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es una limitación técnica de las variables CSS?",
+                                    "opciones": [
+                                        "No pueden ser modificadas mediante JavaScript.",
+                                        "No pueden usarse en declaraciones de media queries.",
+                                        "No admiten valores numéricos.",
+                                        "No respetan la cascada de estilos."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Las variables CSS no pueden usarse en media queries, aunque sí pueden modificarse con JavaScript (p. 14)."
+                                },
+                                {
+                                    "pregunta": "¿Qué problema puede surgir al usar CSS Houdini sin precaución?",
+                                    "opciones": [
+                                        "Aumento excesivo del tamaño del archivo CSS.",
+                                        "Conflictos con estándares de seguridad y accesibilidad.",
+                                        "Incompatibilidad con preprocesadores como Sass o Less.",
+                                        "Dificultad para integrarse con frameworks como React o Angular."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "CSS Houdini puede comprometer estándares si no se implementa correctamente (p. 17)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica de CSS in JS facilita el trabajo en equipos de desarrollo?",
+                                    "opciones": [
+                                        "Elimina la necesidad de usar convenciones de nombres como BEM.",
+                                        "Permite paralelizar la descarga de HTML y CSS.",
+                                        "Reduce el costo de cálculo del critical CSS.",
+                                        "Genera automáticamente documentación de estilos."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "CSS in JS simplifica la nomenclatura al evitar convenciones como BEM (p. 18)."
+                                },
+                                {
+                                    "pregunta": "¿Qué herramienta es más adecuada para crear animaciones complejas similares a las de Adobe After Effects?",
+                                    "opciones": [
+                                        "CSS puro.",
+                                        "JavaScript sin librerías.",
+                                        "Librerías como WebGL.",
+                                        "Preprocesadores como Sass."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "WebGL permite crear animaciones complejas comparables a las de herramientas de diseño profesionales (p. 26)."
+                                },
+                                {
+                                    "pregunta": "¿Qué framework está específicamente diseñado para crear aplicaciones con apariencia nativa en dispositivos móviles?",
+                                    "opciones": [
+                                        "Vue.",
+                                        "React Native.",
+                                        "Angular.",
+                                        "Svelte."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "React Native permite desarrollar aplicaciones con apariencia nativa (p. 29)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tecnología ha sido reemplazada progresivamente por alternativas más modernas en el desarrollo de animaciones web?",
+                                    "opciones": [
+                                        "HTML5.",
+                                        "Flash.",
+                                        "JavaScript.",
+                                        "CSS Grid."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Flash ha quedado obsoleto en el desarrollo web moderno (p. 3)."
+                                },
+                                {
+                                    "pregunta": "¿Qué permite el sistema modular de CSS3?",
+                                    "opciones": [
+                                        "Reducir la necesidad de usar JavaScript para animaciones.",
+                                        "Que cada módulo evolucione independientemente.",
+                                        "Compatibilidad con versiones anteriores como CSS1 y CSS2.",
+                                        "Simplificar la sintaxis de las propiedades CSS."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "CSS3 permite que los módulos se desarrollen de forma independiente (p. 21-22)."
+                                },
+                                {
+                                    "pregunta": "¿Qué API está diseñada específicamente para dispositivos de realidad virtual y aumentada?",
+                                    "opciones": [
+                                        "WebGPU.",
+                                        "WebXR.",
+                                        "WebGL.",
+                                        "WebSocket."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "WebXR está enfocada en realidad virtual y aumentada (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Qué framework permite exportar aplicaciones web a formatos nativos para instalación en dispositivos móviles?",
+                                    "opciones": [
+                                        "Vue.",
+                                        "Ionic.",
+                                        "Electron.",
+                                        "Flutter."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Electron facilita la creación de aplicaciones instalables a partir de proyectos web (p. 30)."
+                                }
+                            ]
                         }
-
-
-
-
-
                     ]
                 },
-
-
-
-
-
                 {
                     "id": 301,
                     "nombre": "Desarrollo Web Responsive",
