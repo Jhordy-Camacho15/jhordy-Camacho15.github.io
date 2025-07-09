@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeMáster</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="app-header">
         <h1>BeMáster</h1>
@@ -31,7 +33,23 @@
         </section>
 
         <section id="teoria-section" class="section-container hidden">
-            <button id="back-to-temas" class="back-button">← Volver a Temas</button>
+            <div class="top-controls">
+                <button id="back-to-temas" class="back-button">← Volver a Temas</button>
+                <div class="audio-controls">
+                    <button id="audio-btn" class="secondary-button" title="Escuchar teoría">
+                        <img src="audio.png" alt="Audio">
+                    </button>
+                    <button id="audio-pause-btn" class="secondary-button" title="Pausar">
+                        <img src="pause.png" alt="Pausar">
+                    </button>
+                    <button id="audio-resume-btn" class="secondary-button" title="Reanudar">
+                        <img src="play.png" alt="Reanudar">
+                    </button>
+                    <button id="audio-restart-btn" class="secondary-button" title="Volver a empezar">
+                        <img src="restart.png" alt="Reiniciar">
+                    </button>
+                </div>
+            </div>
             <h2 id="teoria-title"></h2>
             <div class="content-container">
                 <div id="teoria-content"></div>
@@ -39,6 +57,7 @@
             <div class="action-buttons">
                 <button id="start-leccion" class="primary-button">Comenzar Lección</button>
             </div>
+
         </section>
 
         <section id="leccion-section" class="section-container hidden">
@@ -79,4 +98,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
