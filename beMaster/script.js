@@ -7,7 +7,7 @@ let currentQuestionIndex = 0;
 let userAnswers = [];
 let correctAnswers = 0;
 let shuffledQuestionIndices = []; // <-- Añade esto
-
+let teoriaUtterance = null;
 
 // Elementos del DOM
 const sections = {
@@ -52,12 +52,46 @@ const actionButtons = {
     returnToTema: document.getElementById('return-to-tema')
 };
 
+// Botones de audio
+const audioBtn = document.getElementById('audio-btn');
+const audioPauseBtn = document.getElementById('audio-pause-btn');
+const audioResumeBtn = document.getElementById('audio-resume-btn');
+const audioRestartBtn = document.getElementById('audio-restart-btn');
+
+// Estado inicial: solo audio-btn visible
+function resetAudioButtons() {
+    audioBtn.classList.add('audio-visible');
+    audioPauseBtn.classList.remove('audio-visible');
+    audioResumeBtn.classList.remove('audio-visible');
+    audioRestartBtn.classList.remove('audio-visible');
+}
+
+// Mostrar pausa y reiniciar, ocultar audio-btn
+function showPauseRestart() {
+    audioBtn.classList.remove('audio-visible'); // OCULTA audio.png
+    audioPauseBtn.classList.add('audio-visible');
+    audioRestartBtn.classList.add('audio-visible');
+    audioResumeBtn.classList.remove('audio-visible');
+}
+
+// Mostrar play, ocultar pausa
+function showResume() {
+    audioPauseBtn.classList.remove('audio-visible');
+    audioResumeBtn.classList.add('audio-visible');
+}
+
+// Mostrar pausa, ocultar play
+function showPause() {
+    audioResumeBtn.classList.remove('audio-visible');
+    audioPauseBtn.classList.add('audio-visible');
+}
+
 // Cargar datos JSON
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
         appData = data;
-        loadCursos();
+        loadCursos(); // Solo aquí
     })
     .catch(error => console.error('Error al cargar los datos:', error));
 
@@ -135,6 +169,7 @@ function showTeoria(tema) {
         });
     }
     
+    resetAudioButtons(); // <-- Añade esto
     showSection('teoria');
 }
 
@@ -281,11 +316,11 @@ function restartLeccion() {
 
 // Función para mostrar una sección específica
 function showSection(sectionName) {
+    stopAudio(); // <-- Añade esto aquí
     // Ocultar todas las secciones
     Object.values(sections).forEach(section => {
         section.classList.add('hidden');
     });
-    
     // Mostrar la sección solicitada
     sections[sectionName].classList.remove('hidden');
 }
@@ -363,5 +398,65 @@ actionButtons.returnToTema.addEventListener('click', () => showTeoria(currentTop
 contentElements.revealAnswerBtn.addEventListener('click', revealAnswer);
 contentElements.nextQuestionBtn.addEventListener('click', nextQuestion);
 
-// Inicializar aplicación
-showSection('cursos');
+
+
+// Añadir funcionalidad de audio
+function stopAudio() {
+    window.speechSynthesis.cancel();
+    teoriaUtterance = null;
+    resetAudioButtons();
+}
+
+// AUDIO: reproducir teoría
+if (audioBtn) {
+    audioBtn.addEventListener('click', () => {
+        const teoriaText = document.getElementById('teoria-content').innerText;
+        if ('speechSynthesis' in window && teoriaText.trim() !== '') {
+            stopAudio();
+            teoriaUtterance = new SpeechSynthesisUtterance(teoriaText);
+            teoriaUtterance.lang = 'es-ES';
+            teoriaUtterance.onend = stopAudio;
+            window.speechSynthesis.speak(teoriaUtterance);
+            showPauseRestart();
+        }
+    });
+}
+
+if (audioPauseBtn) {
+    audioPauseBtn.addEventListener('click', () => {
+        if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+            window.speechSynthesis.pause();
+            showResume();
+        }
+    });
+}
+
+if (audioResumeBtn) {
+    audioResumeBtn.addEventListener('click', () => {
+        if ('speechSynthesis' in window && window.speechSynthesis.paused) {
+            window.speechSynthesis.resume();
+            showPause();
+        }
+    });
+}
+
+if (audioRestartBtn) {
+    audioRestartBtn.addEventListener('click', () => {
+        stopAudio();
+        if (audioBtn) audioBtn.click();
+    });
+}
+
+// Detener audio al cambiar de sección, iniciar lección, volver a inicio, etc.
+function stopAudioOnSectionChange() {
+    stopAudio();
+}
+
+// Llama a stopAudioOnSectionChange() en cada cambio de sección relevante
+window.addEventListener('beforeunload', stopAudioOnSectionChange);
+
+// Ejemplo: llama a stopAudioOnSectionChange() en tus funciones de navegación
+// function showSection(sectionName) {
+//     stopAudioOnSectionChange();
+//     // ...tu lógica de mostrar sección...
+
