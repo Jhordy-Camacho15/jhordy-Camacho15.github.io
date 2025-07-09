@@ -77,7 +77,7 @@ body {
 .section-container {
     display: flex;
     flex-direction: column;
-    height: 85%;
+    height: 90%;
     background-color: var(--color-negro);
     border-radius: 10px;
     padding: 5px;
@@ -146,9 +146,9 @@ body {
 }
 
 .secondary-button {
-    background-color: var(--color-blanco);
+    background-color: transparent;
     color: var(--color-secundario);
-    padding: 10px 15px;
+    padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid var(--color-secundario);
 }
@@ -168,7 +168,7 @@ body {
     align-items: center;
     padding: 5px;
     margin: 2px;
-
+    margin-right: 10px;
 }
 
 .back-button:hover {
@@ -199,12 +199,15 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     scrollbar-width: thin;
     scrollbar-color: var(--color-primario) var(--color-blanco);
+    scrollbar-width: none;           /* Firefox */
+    -ms-overflow-style: none;        /* IE y Edge */
 }
 
 .content-container::-webkit-scrollbar {
     width: 8px;
-    background: var(--color-blanco);
+    background: var(--color-negro);
     border-radius: 8px;
+    display: none;                   /* Chrome, Safari, Opera */
 }
 
 .content-container::-webkit-scrollbar-thumb {
@@ -298,6 +301,7 @@ body {
 
 .progress-fill {
     height: 5px;
+    background-color: var(--color-primario);
     width: 0;
     transition: width 0.3s;
 }
@@ -309,8 +313,6 @@ body {
     color: var(--color-negro);
     font-weight: bold;
     margin-top: 0px;
-    height: 18px;
-    align-items: center;
 }
 
 /* Títulos y textos */
@@ -336,7 +338,9 @@ p {
 
 /* Responsive */
 @media (max-width: 768px) {
-   
+    .app-container {
+    }
+
     .section-container {
         padding: 0px ;
     }
@@ -351,4 +355,32 @@ p {
         font-size: 10px;
         padding: 5px;
     }
+}
+
+.top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+    gap: 10px;
+}
+
+.audio-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.audio-controls button {
+    display: none;
+}
+
+
+
+.audio-controls .audio-visible {
+    display: flex;
+}
+
+.audio-controls img {
+    width: 30px;
+    height: 30px;
 }
