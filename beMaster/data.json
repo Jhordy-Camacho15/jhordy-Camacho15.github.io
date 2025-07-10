@@ -10307,7 +10307,7 @@
                         },
                         {
                             "id": 4005,
-                            "nombre": "Metodologías y proceso de diseño UX",
+                            "nombre": "Tema 4: Metodologías y proceso de diseño UX",
                             "teoria": [
                                 "El diseño centrado en el usuario (DCU) tiene como objetivo principal evaluar la usabilidad de un diseño mediante test, priorizando las necesidades del usuario sobre otros factores como la tecnología o la empresa (p. 8).",
                                 "Los círculos de Morville representan la flexibilidad en el diseño UX, donde las decisiones dependen del contexto, usuarios y contenido, evitando rigideces en el proceso (p. 10).",
@@ -10555,7 +10555,7 @@
                         },
                         {
                             "id": 5005,
-                            "nombre": "Investigación y requisitos de usuario en UX/UI",
+                            "nombre": "Tema 5: Investigación y requisitos de usuario en UX/UI",
                             "teoria": [
                                 "La etnografía virtual aplica metodologías cualitativas de la etnografía tradicional al estudio de interacciones en espacios digitales, complementándose con datos cuantitativos. Esto ha influido en la investigación UX/UI al permitir un análisis más profundo de los comportamientos culturales en internet (p. 5).",
                                 "El desplazamiento de la estrategia de negocio hacia la satisfacción del usuario ha priorizado la investigación y el capital humano en UX/UI. Esto se debe a la simplificación de procesos tecnológicos y la accesibilidad de herramientas de investigación (p. 6).",
@@ -10803,7 +10803,7 @@
                         },
                         {
                             "id": 6005,
-                            "nombre": "Diagramación UX: Mapa del sitio, flujo de usuario y flujo de tarea",
+                            "nombre": "Tema 6: Diagramación UX: Mapa del sitio, flujo de usuario y flujo de tarea",
                             "teoria": [
                                 "En el plano de estructura de Garrett, la arquitectura de información (IA) y el diseño de interacción son disciplinas clave. La IA organiza el contenido, mientras que el diseño de interacción modela la experiencia del usuario (p. 6).",
                                 "Los diagramas de flujo en UX representan procesos mediante figuras geométricas e iconos estandarizados, como rectángulos para páginas y rombos para decisiones. Se leen de izquierda a derecha y evitan cruces de líneas (p. 7-8).",
@@ -11052,7 +11052,7 @@
                         },
                         {
                             "id": 7005,
-                            "nombre": "Interfaces de usuario",
+                            "nombre": "Tema 7: Interfaces de usuario",
                             "teoria": [
                                 "Las interfaces gráficas de usuario (GUI) se caracterizan por el uso de ventanas, iconos, menús y puntero (WIMP). Estas interfaces son menos limitantes que las de línea de comandos y utilizan metáforas visuales como ventanas y cuadros de diálogo (p. 6).",
                                 "Una interfaz web típica se organiza en tres áreas principales: '¿Dónde estoy?', '¿Dónde puedo ir?' y '¿Qué hay aquí?'. Estas áreas ayudan a los usuarios a navegar y encontrar información rápidamente (p. 8).",
@@ -11300,7 +11300,7 @@
                         },
                         {
                             "id": 8005,
-                            "nombre": "Prototipado UX",
+                            "nombre": "Tema 8: Prototipado UX",
                             "teoria": [
                                 "Los prototipos de baja fidelidad, como los sketchs, son herramientas esenciales en el diseño UX para transmitir ideas y conceptos de manera rápida y económica. Se realizan en papel o pizarras y ayudan a detectar problemas tempranos en el diseño (p. 10).",
                                 "Los wireframes son prototipos digitales de baja o media fidelidad que muestran la estructura y ubicación de los elementos en una interfaz. No incluyen aspectos estéticos finales como colores o tipografías (p. 13).",
@@ -11548,7 +11548,7 @@
                         },
                         {
                             "id": 9005,
-                            "nombre": "Diseño visual",
+                            "nombre": "Tema 9: Diseño visual",
                             "teoria": [
                                 "Un moodboard es una herramienta visual que traduce en imágenes, textos, colores y texturas el concepto de diseño. Puede ser físico o digital y ayuda a mantener la coherencia visual del proyecto (p. 10).",
                                 "La jerarquía visual guía la mirada del usuario hacia los elementos más importantes mediante atributos como escala, contraste y ubicación. Esto facilita la lectura y comprensión de la interfaz (p. 5).",
@@ -11798,7 +11798,7 @@
                         },
                         {
                             "id": 10005,
-                            "nombre": "Diseño Visual II",
+                            "nombre": "Tema 10: Diseño Visual II",
                             "teoria": [
                                 "La colaboración entre diseñador y desarrollador es clave en entornos ágiles. Se utilizan archivos digitales con capas separadas y etiquetadas para facilitar la traducción a código (p. 7).",
                                 "El diseño modular consiste en deconstruir interfaces para identificar componentes reutilizables, lo que agiliza el proceso de diseño y desarrollo (p. 9).",
@@ -12054,7 +12054,7 @@
             "asignaturas": [
                 {
                     "id": 201,
-                    "nombre": "Matemáticas Avanzadas",
+                    "nombre": "Sin información",
                     "temas": []
                 }
             ]
