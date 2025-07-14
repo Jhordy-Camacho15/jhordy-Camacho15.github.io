@@ -3,19 +3,20 @@ body {
     margin: 0;
     padding: 0;
     background: #f4f4f4;
-    width: 320px;
-    height: 750px;
-    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 #app {
     width: 320px;
-    height: 750px;
+    height: 600px;
     margin: 0 auto;
     background: #fff;
     display: flex;
@@ -23,8 +24,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
     position: relative;
 
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between; /* Cambiado */
+    align-items: stretch;           /* Cambiado */
 
     border-radius: 10px;
 }
@@ -35,9 +36,8 @@ header {
     color: #fff;
     padding: 16px 0 8px 0;
     text-align: center;
-
-        border-radius: 10px;
-
+    border-radius: 10px 10px 0 0; /* Solo arriba */
+    flex-shrink: 0; /* No reducir */
 }
 
 header h1 {
@@ -46,12 +46,9 @@ header h1 {
 }
 
 main {
-    border-radius: 10px;
-
-
-
-    width: 90%;
-    flex: 1 1 auto;
+    border-radius: 0;
+    width: 100%;
+    flex: 1 1 auto; /* Crece para ocupar espacio */
     padding: 16px 12px 60px 12px;
     overflow-y: auto;
 }
@@ -61,17 +58,16 @@ footer {
     color: #fff;
     text-align: center;
     padding: 0;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     height: 56px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-top: 1px solid #222;
-
-        border-radius: 10px;
-
+    border-radius: 0 0 10px 10px; /* Solo abajo */
+    flex-shrink: 0; /* No reducir */
+    position: static; /* Quita absolute */
+    bottom: auto;     /* Quita bottom */
 }
 
 footer button {
@@ -268,12 +264,3 @@ ul {
     background: #bdbdbd;
 }
 
-@media (min-width: 321px),
-(min-height: 751px) {
-
-    body,
-    #app {
-        width: 320px !important;
-        height: 750px !important;
-    }
-}
