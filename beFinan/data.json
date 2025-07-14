@@ -1,0 +1,32 @@
+{
+  "user": "Usuario",
+  "fixedIncome": 3000,
+  "expenses": [
+    { "value": 200, "type": "gasto", "category": "supermercado" },
+    { "value": 100, "type": "gasto", "category": "arriendo" }
+  ],
+  "categories": {
+    "gasto": [
+      "comida",
+      "arriendo",
+      "supermercado",
+      "lavandería",
+      "panaderia",
+      "transporte",
+      "luz",
+      "internet",
+      "mantenimiento",
+      "matricula",
+      "cursos",
+      "talleres"
+    ],
+    "ingreso": [
+      "empleo",
+      "bonos",
+      "familia",
+      "proyectos",
+      "fondos de ahorro",
+      "refuerzo academico"
+    ]
+  }
+}
