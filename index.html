@@ -1,65 +1,293 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Empresa</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhordy Camacho DesignDev</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/styles/info-container.css">
+  <link rel="stylesheet" href="/paginas/servicios.css">
+  <link rel="stylesheet" href="/paginas/proyectos.css">
+  <link rel="stylesheet" href="/paginas/certificados.css">
 </head>
+
 <body>
-    <header>
-        <div class="navbar">
-            <div class="navbar-center">
-                <div class="logo">
-                    <img src="isaac.png" alt="Logo" style="height: 100%; width: 100%; object-fit: cover; border-radius: 50%;">
-                </div>
+  <div class="container">
+    <!-- Contenedor de información general -->
+    <div class="info-container"></div>
+
+    <!-- Contenedor de pestañas -->
+    <div class="content-container">
+
+      <div class="tabs">
+        <a href="/index.html">
+          <img src="img/logo1.png" alt="Logo Completo" class="logo-completo">
+          <img src="img/logo2.png" alt="Logo Símbolo" class="logo-simbolo">
+        </a>
+        <button class="tablink active" onclick="openTab(event, 'Servicios')">Servicios</button>
+        <button class="tablink" onclick="openTab(event, 'Proyectos')">Proyectos</button>
+        <button class="tablink" onclick="openTab(event, 'Certificados')">Certificados</button>
+      </div>
+
+      <div id="Servicios" class="tabcontent active">
+        <h2></h2>
+        <p></p>
+
+        <section class="introduccion">
+
+          <div class="contenedor-imagen">
+            <!-- Imagen de fondo -->
+            <section class="portada">
+              <div class="slider-frame">
+                <ul>
+                  <li><img src="img/clases1.png" alt="Imagen 1 del slider"></li>
+                  <li><img src="img/clases2.png" alt="Imagen 2 del slider"></li>
+                  <li><img src="img/clases3.png" alt="Imagen 3 del slider"></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          <div class="contenedor-texto">
+            <div class="fila">
+              <h2>Clases de Fundamentos de la programación</h2>
             </div>
+            <div class="fila">
+              <p>Aprende los fundamentos de la programación desde cero, con un enfoque práctico y dinámico con diagramas de flujo</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="introduccion">
+
+          <div class="contenedor-imagen">
+            <!-- Imagen de fondo -->
+            <section class="portada">
+              <div class="slider-frame">
+                <ul>
+                  <li><img src="img/diseno1.png" alt="Imagen 1 del slider"></li>
+                  <li><img src="img/diseno2.png" alt="Imagen 2 del slider"></li>
+                  <li><img src="img/diseno3.png" alt="Imagen 3 del slider"></li>
+                </ul>
+              </div>
+            </section>
+
+          </div>
+
+          <div class="contenedor-texto">
+            <div class="fila">
+              <h2>Diseño Web</h2>
+            </div>
+            <div class="fila">
+              <p>Un buen diseño de interfaz mejora la credibilidad de tu empresa.
+              </p>
+            </div>
+          </div>
+
+
+        </section>
+
+        <section class="introduccion">
+
+          <div class="contenedor-imagen">
+            <!-- Imagen de fondo -->
+            <section class="portada">
+              <div class="slider-frame">
+                <ul>
+                  <li><img src="img/desarrollo1.png" alt="Imagen 1 del slider"></li>
+                  <li><img src="img/desarrollo2.png" alt="Imagen 2 del slider"></li>
+                  <li><img src="img/desarrollo3.png" alt="Imagen 3 del slider"></li>
+                </ul>
+              </div>
+            </section>
+
+
+
+          </div>
+
+          <div class="contenedor-texto">
+            <div class="fila">
+              <h2>Desarrollo Web</h2>
+            </div>
+            <div class="fila">
+              <p>Contruir tu Web con las últimas tecnologías para llegar a tu público objetivo.
+              </p>
+            </div>
+
+
+          </div>
+
+
+        </section>
+
+        <section class="introduccion">
+
+          <div class="contenedor-imagen">
+            <!-- Imagen de fondo -->
+            <section class="portada">
+              <div class="slider-frame">
+                <ul>
+                  <li><img src="img/identidad1.png" alt="Imagen 1 del slider"></li>
+                  <li><img src="img/identidad2.png" alt="Imagen 2 del slider"></li>
+                  <li><img src="img/identidad3.png" alt="Imagen 3 del slider"></li>
+                </ul>
+              </div>
+            </section>
+
+
+
+          </div>
+
+          <div class="contenedor-texto">
+            <div class="fila">
+              <h2>Identidad Corporativa</h2>
+            </div>
+            <div class="fila">
+              <p>Convierte tu marca en una experiencia visual inolvidable trabajando con <strong>Jois Designs</strong>
+              </p>
+            </div>
+            <div class="fila">
+              <a href="https://www.instagram.com/jois.designs/?hl=es">Ver a Jois</a>
+
+            </div>
+
+          </div>
+
+
+        </section>
+
+        <section class="introduccion">
+
+          <div class="contenedor-imagen">
+            <!-- Imagen de fondo -->
+            <section class="portada">
+              <div class="slider-frame">
+                <ul>
+                  <li><img src="img/filtros1.png" alt="Imagen 1 del slider"></li>
+                  <li><img src="img/filtros2.png" alt="Imagen 2 del slider"></li>
+                  <li><img src="img/filtros3.png" alt="Imagen 3 del slider"></li>
+                </ul>
+              </div>
+            </section>
+
+          </div>
+
+          <div class="contenedor-texto">
+            <div class="fila">
+              <h2>Filtros para Empresa</h2>
+            </div>
+            <div class="fila">
+              <p>Viraliza tu empresa con filtros personalizados
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+      </div>
+
+      <div id="Proyectos" class="tabcontent">
+        <h2></h2>
+        <p></p>
+        <section class="proyectos" id="proyectos">
+          <h2 class="titulo-seccion"></h2>
+          <!-- Botones de filtro -->
+          <div class="filtros">
+            <button class="boton-filtro" data-tag="todos">Todos</button>
+            <button class="boton-filtro" data-tag="paginasWeb">Páginas Web</button>
+            <button class="boton-filtro" data-tag="logos">Logos</button>
+            <button class="boton-filtro" data-tag="disenos">Diseños</button>
+            <button class="boton-filtro" data-tag="otros">Otros</button>
+          </div>
+          <!-- Contenedor de cartas -->
+          <div class="cartas" id="cartas">
+            <!-- Las cartas se generarán dinámicamente con JavaScript -->
+          </div>
+
+        </section>
+
+      </div>
+
+      <div id="Certificados" class="tabcontent">
+        <h2></h2>
+        <p></p>
+
+
+        <div class="certificados-container">
+          <!-- Certificado 1 -->
+          <div class="certificado-item">
+            <div class="certificado-header">
+              <span>Escuela Superior Politécnica de Chimborazo - Escuela de Diseño Gráfico</span>
+              <span class="icon">+</span>
+            </div>
+            <div class="certificado-content">
+              <img src="/paginas/certificados/c1.png" alt="Certificado 1">
+              <img src="/paginas/certificados/c1_2.png" alt="Certificado 1">
+
+            </div>
+          </div>
+
+          <!-- Certificado 2 -->
+          <div class="certificado-item">
+            <div class="certificado-header">
+              <span>Proyecto de Investigación LUDOTEK - ESPOCH</span>
+              <span class="icon">+</span>
+            </div>
+            <div class="certificado-content">
+              <img src="/paginas/certificados/c2.jpeg" alt="Certificado 2">
+            </div>
+          </div>
+
+          <!-- Certificado 3 -->
+          <div class="certificado-item">
+            <div class="certificado-header">
+              <span>Adobe Premier Pro</span>
+              <span class="icon">+</span>
+            </div>
+            <div class="certificado-content">
+              <img src="" alt="Certificado 3">
+            </div>
+          </div>
+
+          <!-- Certificado 4 -->
+          <div class="certificado-item">
+            <div class="certificado-header">
+              <span>Socio Empleo - Adobe After Effects</span>
+              <span class="icon">+</span>
+            </div>
+            <div class="certificado-content">
+              <img src="/paginas/certificados/c4.png" alt="Certificado 4">
+            </div>
+          </div>
+
+          <!-- Certificado 5 -->
+          <div class="certificado-item">
+            <div class="certificado-header">
+              <span>Impresión 3D Microfilamentos</span>
+              <span class="icon">+</span>
+            </div>
+            <div class="certificado-content">
+              <img src="img/certificado5.jpg" alt="Certificado 5">
+            </div>
+          </div>
         </div>
-    </header>
-    <main>
-        <section class="section1">
-            <div class="ruleta-landing">
-                <h1 class="ruleta-title">¡Gira la Ruleta y Gana un Descuento!</h1>
-                <div class="ruleta-container">
-                    <div class="flecha"></div>
-                    <canvas id="ruleta" width="400" height="400"></canvas>
-                </div>
-                <button class="boton-girar" id="girarBtn">Girar</button>
-                <div class="modal" id="modal">
-                    <div class="modal-content" id="modalContent">
-                        <span id="premioTexto"></span><br>
-                        <button onclick="cerrarModal()">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section2">
-            <div class="parent">
-                <div class="child-img">
-                    <img src="isaac.png" alt="Imagen 1">
-                </div>
-                <div class="child-content">
-                    <h3>Título 1</h3>
-                    <p>Descripción breve del servicio o producto 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="https://wa.me/1234567890" target="_blank"><button class="whatsapp-btn">Contactar por WhatsApp</button></a>
-                </div>
-            </div>
-            <div class="parent">
-                <div class="child-img">
-                    <img src="isaac.png" alt="Imagen 2">
-                </div>
-                <div class="child-content">
-                    <h3>Título 2</h3>
-                    <p>Descripción breve del servicio o producto 2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="https://wa.me/1234567890" target="_blank"><button class="whatsapp-btn">Contactar por WhatsApp</button></a>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        Empresa S.A.S. &copy; 2025 | Todos los derechos reservados<br>
-        contacto@empresa.com | +57 123 456 7890
-    </footer>
-    <script src="script.js"></script>
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
