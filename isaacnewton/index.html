@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Empresa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="navbar-center">
+                <div class="logo">
+                    <img src="isaac.png" alt="Logo" style="height: 100%; width: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="section1">
+            <div class="ruleta-landing">
+                <h1 class="ruleta-title">¡Gira la Ruleta y Gana un Descuento!</h1>
+                <div class="ruleta-container">
+                    <div class="flecha"></div>
+                    <canvas id="ruleta" width="400" height="400"></canvas>
+                </div>
+                <button class="boton-girar" id="girarBtn">Girar</button>
+                <div class="modal" id="modal">
+                    <div class="modal-content" id="modalContent">
+                        <span id="premioTexto"></span><br>
+                        <button onclick="cerrarModal()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="parent">
+                <div class="child-img">
+                    <img src="isaac.png" alt="Imagen 1">
+                </div>
+                <div class="child-content">
+                    <h3>Título 1</h3>
+                    <p>Descripción breve del servicio o producto 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="https://wa.me/1234567890" target="_blank"><button class="whatsapp-btn">Contactar por WhatsApp</button></a>
+                </div>
+            </div>
+            <div class="parent">
+                <div class="child-img">
+                    <img src="isaac.png" alt="Imagen 2">
+                </div>
+                <div class="child-content">
+                    <h3>Título 2</h3>
+                    <p>Descripción breve del servicio o producto 2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="https://wa.me/1234567890" target="_blank"><button class="whatsapp-btn">Contactar por WhatsApp</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        Empresa S.A.S. &copy; 2025 | Todos los derechos reservados<br>
+        contacto@empresa.com | +57 123 456 7890
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
