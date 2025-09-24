@@ -1,0 +1,137 @@
+/* media.css
+   Contiene únicamente media queries (las únicas 5 medidas solicitadas en px):
+   1024, 768, 425, 375, 320
+   Las reglas trasladadas desde styles.css se colocan en el breakpoint más cercano.
+*/
+
+/* <= 1024px */
+@media (max-width: 1024px) {
+
+    /* Layout adjustments for tablets / small laptops */
+    .info-containers {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .info-box {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Allow the ruleta canvas to scale down */
+    #ruleta {
+        max-width: 360px;
+        width: 80%;
+        height: auto;
+    }
+
+    /* Slightly reduce card grid to fit narrower screens */
+    .pares-container {
+        max-width: 360px;
+        grid-template-columns: repeat(4, 72px);
+    }
+}
+
+/* <= 768px */
+@media (max-width: 768px) {
+
+    /* Tablet / large phone portrait */
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-right {
+        margin-top: 0.6rem;
+    }
+
+    .pares-container {
+        grid-template-columns: repeat(4, 80px);
+        gap: 8px;
+        max-width: 280px;
+    }
+
+    .carta {
+        width: 72px;
+        height: 100px;
+    }
+
+    .carta .carta-front img {
+        width: 52px;
+        height: 70px;
+    }
+}
+
+/* <= 425px */
+@media (max-width: 425px) {
+
+    /* Small phones */
+    .pares-container {
+        grid-template-columns: repeat(4, 72px);
+        gap: 8px;
+        max-width: 160px;
+    }
+
+    .carta {
+        width: 72px;
+        height: 100px;
+    }
+
+    .carta .carta-front img {
+        width: 48px;
+        height: 64px;
+    }
+
+    .pares-section {
+        padding: 1.2rem 0.8rem 2rem 0.8rem;
+        height: auto;
+    }
+}
+
+/* <= 375px */
+@media (max-width: 375px) {
+    .pares-container {
+        grid-template-columns: repeat(4, 66px);
+        gap: 6px;
+        max-width: 140px;
+    }
+
+    .carta {
+        width: 66px;
+        height: 92px;
+    }
+
+    .carta .carta-front img {
+        width: 44px;
+        height: 60px;
+    }
+
+    .header .logo {
+        height: 64px;
+    }
+}
+
+/* <= 320px */
+@media (max-width: 320px) {
+
+    /* Very small phones */
+    .pares-container {
+        grid-template-columns: repeat(4, 60px);
+        gap: 6px;
+        max-width: 128px;
+    }
+
+    .carta {
+        width: 60px;
+        height: 84px;
+    }
+
+    .carta .carta-front img {
+        width: 40px;
+        height: 56px;
+    }
+
+    .pares-section {
+        padding: 1rem 0.6rem 1.5rem 0.6rem;
+        min-height: 600px;
+    }
+}

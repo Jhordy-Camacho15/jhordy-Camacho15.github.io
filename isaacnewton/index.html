@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Juegos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <img src="isaac.png" alt="Logo" class="logo">
+    </header>
+
+    <!-- Sección 1: Ruleta -->
+    <section class="ruleta-section">
+        <h2>Juega a la Ruleta</h2>
+        <div class="ruleta-container">
+            <div class="ruleta-indicador">
+                <svg width="40" height="30" viewBox="0 0 40 30" style="transform: rotate(180deg);">
+                    <polygon points="20,0 0,30 40,30" fill="#f6ae01" stroke="#280e00" stroke-width="2"/>
+                </svg>
+            </div>
+            <canvas id="ruleta" width="400" height="400"></canvas>
+            <button id="girar-btn">GIRAR</button>
+        </div>
+    </section>
+
+    <!-- Modal Ruleta -->
+    <div id="modal-ruleta" class="modal hidden">
+        <div class="modal-content">
+            <p id="resultado-ruleta"></p>
+            <button id="cerrar-modal-ruleta">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Sección 2: Información -->
+    <section class="info-section">
+        <div class="info-containers">
+            <div class="info-box">
+                <img src="edificio.png" alt="Edificio">
+                <h3>Título 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="info-box">
+                <img src="isaac.png" alt="Logo">
+                <h3>Título 2</h3>
+                <p>Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio.</p>
+            </div>
+        </div>
+        <a href="https://wa.me/" target="_blank" class="whatsapp-btn">Contactar por Whatsapp</a>
+    </section>
+
+    <!-- Sección 3: Juego de Pares -->
+    <section class="pares-section">
+        <h2>Juego de Memoria: Pares</h2>
+        <div class="pares-stats">
+            <span>Tiempo: <span id="tiempo">60</span>s</span>
+            <span>Intentos: <span id="intentos">0</span></span>
+            <span>Pares: <span id="pares">0</span>/8</span>
+        </div>
+        <div class="pares-btns">
+            <button id="iniciar-pares">INICIAR</button>
+            <button id="reiniciar-pares">REINICIAR</button>
+        </div>
+        <div class="pares-container" id="pares-container"></div>
+    </section>
+
+    <!-- Modal Pares -->
+    <div id="modal-pares" class="modal hidden">
+        <div class="modal-content">
+            <p id="resultado-pares"></p>
+            <button id="cerrar-modal-pares">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <img src="isaac.png" alt="Logo" class="footer-logo">
+                <p>Juego de Memorama — Practica y diviértete</p>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav">
+                    <a href="#">Inicio</a>
+                    <a href="#ruleta">Ruleta</a>
+                    <a href="#pares">Memorama</a>
+                </nav>
+                <p class="copyright">&copy; 2025 Tu Nombre</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="ruleta.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
