@@ -6,6 +6,7 @@
     <title>Landing Page Juegos</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="geo.css">
 </head>
 <body>
     <!-- Header -->
@@ -75,6 +76,36 @@
         </div>
     </div>
 
+        <!-- Sección: Juego de Geografía -->
+        <section class="geo-section">
+            <h2>Juego de Geografía: Países y Capitales</h2>
+            <p class="geo-instructions">Haz clic en un país (columna izquierda) y luego en su capital (columna derecha) para emparejar.</p>
+            <div class="geo-board">
+                <div class="geo-column geo-countries" id="geo-countries"></div>
+                <div class="geo-column geo-capitals" id="geo-capitals"></div>
+            </div>
+                <div class="geo-stats">
+                    <span>Pares encontrados: <span id="geo-found">0</span>/24</span>
+                </div>
+                <div class="geo-controls">
+                    <div class="geo-stats">
+                        <span>Tiempo: <span id="geo-time">90</span>s</span>
+                        <span>Intentos: <span id="geo-attempts">0</span></span>
+                    </div>
+                    <div class="geo-buttons">
+                        <button id="geo-start">INICIAR</button>
+                        <button id="geo-restart" class="hidden">Reiniciar Geografía</button>
+                    </div>
+                </div>
+                <!-- Modal Geografía -->
+                <div id="modal-geo" class="modal hidden">
+                    <div class="modal-content">
+                        <p id="resultado-geo"></p>
+                        <button id="cerrar-modal-geo">Cerrar</button>
+                    </div>
+                </div>
+        </section>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-inner">
@@ -88,12 +119,14 @@
                     <a href="#ruleta">Ruleta</a>
                     <a href="#pares">Memorama</a>
                 </nav>
-                <p class="copyright">&copy; 2025 Tu Nombre</p>
+                <p class="copyright">&copy; 2025 Isaac Newton</p>
             </div>
         </div>
     </footer>
 
     <script src="ruleta.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="geo.css">
+    <script src="geo.js"></script>
 </body>
 </html>

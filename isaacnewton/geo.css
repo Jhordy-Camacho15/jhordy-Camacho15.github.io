@@ -1,0 +1,171 @@
+/* geo.css - estilos para el juego de geografía */
+.geo-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    /* match container height with the memory game */
+    min-height: 850px;
+    /* same as pares-section height to match layout */
+}
+
+.geo-board {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.geo-column {
+    width: 320px;
+    border-radius: 8px;
+    padding: 0.6rem;
+    /* make column act as a list of cards */
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.geo-column {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    background: linear-gradient(#fff, #fcfcfc);
+    /* Keep the column tall enough for the maximum number of items so it doesn't shrink during play */
+    min-height: 450px;
+}
+
+.geo-column .geo-item {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 0.8rem 0.9rem;
+    min-height: 35px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.2s, opacity 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.geo-column .geo-item.hidden {
+    /* keep the element in layout but hide its content so the board size doesn't change */
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    /* force it to remain in the flow even if a global .hidden rule exists */
+    display: flex !important;
+}
+
+.geo-column .geo-item.shake {
+    animation: geo-shake 360ms ease;
+}
+
+@keyframes geo-shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-6px);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+
+    75% {
+        transform: translateX(-4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.geo-column .geo-item.selected {
+    outline: 2px solid #f6ae01;
+    box-shadow: 0 4px 12px rgba(246, 174, 1, 0.12);
+}
+
+.geo-column.matched {
+    border: 3px solid #2ecc71 !important;
+}
+
+.geo-stats {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.geo-instructions {
+    margin: 0.4rem 0 0;
+    color: #444;
+}
+
+/* feedback states */
+.geo-column .geo-item.error {
+    border-color: #e74c3c;
+    color: #b83a31;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.08);
+}
+
+.geo-column .geo-item.correct {
+    border-color: #2ecc71;
+    color: #1a8f4a;
+    box-shadow: 0 6px 16px rgba(46, 204, 113, 0.08);
+}
+
+/* Ensure correct green shows prominently even if parent has .matched */
+.geo-column.matched .geo-item.correct,
+.geo-board.matched .geo-item.correct {
+    border-color: #27ae60 !important;
+    color: #12783a !important;
+    background: linear-gradient(#f7fff8,#ffffff) !important;
+    box-shadow: 0 8px 20px rgba(39,174,96,0.09) !important;
+}
+
+/* Restart button styles */
+.geo-buttons button, #geo-restart {
+    background: #2b8a3e;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(43,138,62,0.12);
+}
+.geo-buttons button:hover, #geo-restart:hover { transform: translateY(-1px); opacity: 0.98; }
+.geo-buttons button:active, #geo-restart:active { transform: translateY(0); box-shadow: 0 2px 6px rgba(43,138,62,0.12); }
+
+/* utility */
+.hidden { display: none !important; }
+
+/* start button share styles with restart */
+#geo-start { background: #f6ae01; color: #2b2b2b; border-radius: 18px; padding: 0.5rem 0.9rem; border: none; cursor: pointer; font-weight:700; }
+#geo-start:hover{ transform: translateY(-1px); }
+
+/* entry animation for new items (optional subtle) */
+.geo-item.enter {
+    animation: geo-enter 260ms ease;
+}
+
+@keyframes geo-enter {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* small responsive adjustments kept in media.css */
+
+/* Simple modal styles for geo modal */
+.modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.45); z-index: 9999; }
+.modal.hidden { display: none; }
+.modal .modal-content { background: #fff; padding: 1.1rem 1.4rem; border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.25); max-width: 420px; width: 90%; text-align: center; }
+.modal .modal-content p { margin: 0 0 0.8rem; font-weight: 600; }
+.modal .modal-content button { background: #2b8a3e; color: #fff; border: none; padding: 0.5rem 0.8rem; border-radius: 8px; cursor: pointer; }
+.modal .modal-content button:hover { opacity: 0.95; transform: translateY(-1px); }
