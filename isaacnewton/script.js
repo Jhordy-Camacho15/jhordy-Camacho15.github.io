@@ -199,6 +199,8 @@ function mostrarResultado(ganaste) {
 cerrarModalPares.addEventListener('click', () => {
     modalPares.classList.add('hidden');
     stopTimer();
+    // Al cerrar modal, resetear el juego completamente
+    reiniciarJuegoPares();
 });
 
 // === Botones ===
@@ -211,12 +213,32 @@ iniciarParesBtn.addEventListener('click', () => {
     mostrarPreview();
 });
 
-reiniciarParesBtn.addEventListener('click', () => {
+// Función global para reiniciar el juego de pares
+function reiniciarJuegoPares() {
+    stopTimer();
     paresEncontrados = 0;
     intentos = 0;
+    tiempo = 60;
     crearCartas();
     renderCartas();
     puedeInteractuar = false;
+    
+    // Actualizar UI
+    document.getElementById('pares').textContent = paresEncontrados;
+    document.getElementById('intentos').textContent = intentos;
+    document.getElementById('tiempo').textContent = tiempo;
+    
+    // Ocultar botón reiniciar y mostrar iniciar
+    const iniciarBtn = document.getElementById('iniciar-pares');
+    const reiniciarBtn = document.getElementById('reiniciar-pares');
+    if (iniciarBtn && reiniciarBtn) {
+        iniciarBtn.style.display = 'inline-block';
+        reiniciarBtn.style.display = 'none';
+    }
+}
+
+reiniciarParesBtn.addEventListener('click', () => {
+    reiniciarJuegoPares();
 });
 
 // === Init ===

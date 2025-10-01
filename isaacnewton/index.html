@@ -28,14 +28,6 @@
         </div>
     </section>
 
-    <!-- Modal Ruleta -->
-    <div id="modal-ruleta" class="modal hidden">
-        <div class="modal-content">
-            <p id="resultado-ruleta"></p>
-            <button id="cerrar-modal-ruleta">Cerrar</button>
-        </div>
-    </div>
-
     <!-- Sección 2: Información -->
     <section class="info-section">
         <div class="info-containers">
@@ -53,22 +45,118 @@
         <a href="https://wa.me/" target="_blank" class="whatsapp-btn">Contactar por Whatsapp</a>
     </section>
 
-    <!-- Sección 3: Juego de Pares -->
-    <section class="pares-section">
-        <h2>Juego de Memoria: Pares</h2>
-        <div class="pares-stats">
-            <span>Tiempo: <span id="tiempo">60</span>s</span>
-            <span>Intentos: <span id="intentos">0</span></span>
-            <span>Pares: <span id="pares">0</span>/8</span>
+    <!-- Sección de Juegos - Nueva estructura con carrusel -->
+    <section class="games-section">
+        <div class="games-header">
+            <h2>Elige tu Juego Favorito</h2>
+            <div class="games-navigation">
+                <button class="game-nav-btn active" data-game="0" id="nav-pares">
+                    <span>Juego 1</span>
+                    <!-- Aquí irá la imagen del ícono -->
+                </button>
+                <button class="game-nav-btn" data-game="1" id="nav-geografia">
+                    <span>Juego 2</span>
+                    <!-- Aquí irá la imagen del ícono -->
+                </button>
+                <button class="game-nav-btn" data-game="2" id="nav-tercero">
+                    <span>Juego 3</span>
+                    <!-- Aquí irá la imagen del ícono -->
+                </button>
+            </div>
         </div>
-        <div class="pares-btns">
-            <button id="iniciar-pares">INICIAR</button>
-            <button id="reiniciar-pares">REINICIAR</button>
+        
+        <div class="games-carousel">
+            <div class="games-container" id="games-container">
+                <!-- Juego 1: Pares (por defecto activo) -->
+                <section class="game-slide pares-section">
+                    <h3>Juego de Memoria: Pares</h3>
+                    <div class="pares-stats">
+                        <span>Tiempo: <span id="tiempo">60</span>s</span>
+                        <span>Intentos: <span id="intentos">0</span></span>
+                        <span>Pares: <span id="pares">0</span>/8</span>
+                    </div>
+                    <div class="pares-btns">
+                        <button id="iniciar-pares">INICIAR</button>
+                        <button id="reiniciar-pares">REINICIAR</button>
+                    </div>
+                    <div class="pares-container" id="pares-container"></div>
+                </section>
+                
+                <!-- Juego 2: Geografía -->
+                <section class="game-slide geo-section">
+                    <h3>Juego de Geografía: Países y Capitales</h3>
+                    <p class="geo-instructions">Haz clic en un país (columna izquierda) y luego en su capital (columna derecha) para emparejar.</p>
+                    <div class="geo-board">
+                        <div class="geo-column geo-countries" id="geo-countries"></div>
+                        <div class="geo-column geo-capitals" id="geo-capitals"></div>
+                    </div>
+                    <div class="geo-stats">
+                        <span>Pares encontrados: <span id="geo-found">0</span>/24</span>
+                    </div>
+                    <div class="geo-controls">
+                        <div class="geo-stats">
+                            <span>Tiempo: <span id="geo-time">90</span>s</span>
+                            <span>Intentos: <span id="geo-attempts">0</span></span>
+                        </div>
+                        <div class="geo-buttons">
+                            <button id="geo-start">INICIAR</button>
+                            <button id="geo-restart" class="hidden">Reiniciar Geografía</button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Juego 3: Trivia de Cultura General -->
+                <section class="game-slide trivia-section">
+                    <h3>Trivia: Cultura General</h3>
+                    <p class="trivia-instructions"></p>
+                    
+                    <div class="trivia-stats">
+                        <div class="trivia-progress">
+                            <div class="trivia-progress-header">
+                                <span>Pregunta <span id="trivia-current">0</span> de 10</span>
+                                <span class="trivia-timer">Tiempo: <span id="trivia-time">10</span>s</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="trivia-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trivia-game" id="trivia-game">
+                        <div class="trivia-question">
+                            <h4 id="trivia-question-text">Presiona INICIAR para comenzar</h4>
+                        </div>
+                        
+                        <div class="trivia-options" id="trivia-options">
+                            <!-- Las opciones se generarán dinámicamente -->
+                        </div>
+                    </div>
+
+                    <div class="trivia-controls">
+                        <div class="trivia-score">
+                            <span>Correctas: <span id="trivia-correct">0</span></span>
+                            <span>Incorrectas: <span id="trivia-wrong">0</span></span>
+                            <span>Sin respuesta: <span id="trivia-unanswered">0</span></span>
+                        </div>
+                        <div class="trivia-buttons">
+                            <button id="trivia-start">INICIAR TRIVIA</button>
+                            <button id="trivia-restart" class="hidden">REINICIAR TRIVIA</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-        <div class="pares-container" id="pares-container"></div>
     </section>
 
-    <!-- Modal Pares -->
+    <!-- Modal Ruleta (independiente) -->
+    <div id="modal-ruleta" class="modal hidden">
+        <div class="modal-content">
+            <p id="resultado-ruleta"></p>
+            <button id="cerrar-modal-ruleta">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Modales de los juegos del carrusel -->
     <div id="modal-pares" class="modal hidden">
         <div class="modal-content">
             <p id="resultado-pares"></p>
@@ -76,35 +164,37 @@
         </div>
     </div>
 
-        <!-- Sección: Juego de Geografía -->
-        <section class="geo-section">
-            <h2>Juego de Geografía: Países y Capitales</h2>
-            <p class="geo-instructions">Haz clic en un país (columna izquierda) y luego en su capital (columna derecha) para emparejar.</p>
-            <div class="geo-board">
-                <div class="geo-column geo-countries" id="geo-countries"></div>
-                <div class="geo-column geo-capitals" id="geo-capitals"></div>
+    <div id="modal-geo" class="modal hidden">
+        <div class="modal-content">
+            <p id="resultado-geo"></p>
+            <button id="cerrar-modal-geo">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="modal-trivia" class="modal hidden">
+        <div class="modal-content trivia-result">
+            <h3>🎉 ¡Trivia Completada! 🎉</h3>
+            <div class="trivia-stars" id="trivia-stars">
+                <!-- Estrellas se generan dinámicamente -->
             </div>
-                <div class="geo-stats">
-                    <span>Pares encontrados: <span id="geo-found">0</span>/24</span>
+            <div class="trivia-final-stats">
+                <div class="stat-item correct">
+                    <span class="stat-number" id="final-correct">0</span>
+                    <span class="stat-label">Correctas</span>
                 </div>
-                <div class="geo-controls">
-                    <div class="geo-stats">
-                        <span>Tiempo: <span id="geo-time">90</span>s</span>
-                        <span>Intentos: <span id="geo-attempts">0</span></span>
-                    </div>
-                    <div class="geo-buttons">
-                        <button id="geo-start">INICIAR</button>
-                        <button id="geo-restart" class="hidden">Reiniciar Geografía</button>
-                    </div>
+                <div class="stat-item wrong">
+                    <span class="stat-number" id="final-wrong">0</span>
+                    <span class="stat-label">Incorrectas</span>
                 </div>
-                <!-- Modal Geografía -->
-                <div id="modal-geo" class="modal hidden">
-                    <div class="modal-content">
-                        <p id="resultado-geo"></p>
-                        <button id="cerrar-modal-geo">Cerrar</button>
-                    </div>
+                <div class="stat-item unanswered">
+                    <span class="stat-number" id="final-unanswered">0</span>
+                    <span class="stat-label">Sin respuesta</span>
                 </div>
-        </section>
+            </div>
+            <p id="trivia-performance-message"></p>
+            <button id="cerrar-modal-trivia">Cerrar</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -124,9 +214,11 @@
         </div>
     </footer>
 
+    <script src="games-navigation.js"></script>
     <script src="ruleta.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="geo.css">
     <script src="geo.js"></script>
+    <script src="trivia.js"></script>
 </body>
 </html>
