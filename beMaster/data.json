@@ -12045,6 +12045,1240 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": 601,
+                    "nombre": "Aplicaciones Móviles Multiplataforma",
+                    "temas": [
+                        {
+                            "id": 1006,
+                            "nombre": "JavaScript Asíncrono",
+                            "teoria": [
+                                "La concurrencia gestiona múltiples tareas intercalando su ejecución en un único hilo, dando la apariencia de simultaneidad sin ejecutarlas realmente al mismo tiempo (p. 5).",
+                                "El paralelismo ejecuta tareas simultáneamente en múltiples unidades de procesamiento, reduciendo el tiempo total de ejecución cuando las tareas son independientes (p. 6).",
+                                "El código síncrono se ejecuta de forma secuencial, bloqueando el flujo hasta que cada operación finaliza, lo que puede afectar el rendimiento con tareas lentas (p. 7).",
+                                "El código asíncrono permite iniciar operaciones sin bloquear el flujo principal, continuando con otras tareas mientras se esperan resultados (p. 8).",
+                                "El Event Loop monitorea el Call Stack y la Callback Queue, ejecutando callbacks asíncronos cuando el stack está vacío para evitar bloqueos en el hilo único (p. 10).",
+                                "Los callbacks son funciones pasadas como argumentos para ser invocadas posteriormente, fundamentales en la programación basada en eventos en JavaScript (p. 13).",
+                                "Las funciones de orden superior como forEach, map y filter operan sobre arrays aplicando callbacks a cada elemento para recorrer, derivar o filtrar datos (p. 16-17).",
+                                "Las promesas representan operaciones asíncronas con estados pendiente, cumplida o rechazada, simplificando el manejo de código asíncrono frente a callbacks anidados (p. 18).",
+                                "Promise.all espera a que todas las promesas en un iterable se cumplan, devolviendo un array con los resultados, o se rechaza si alguna falla (p. 23).",
+                                "Promise.race retorna la primera promesa que se resuelva o rechace, útil para implementar timeouts o carreras de ejecución (p. 24).",
+                                "El código asíncrono con setTimeout se ejecuta después del código síncrono, demostrando la no bloqueabilidad del flujo principal (p. 10).",
+                                "Async/await simplifica el trabajo con promesas, permitiendo escribir código asíncrono con una sintaxis similar a la síncrona (p. 19).",
+                                "Promise.allSettled devuelve el estado de todas las promesas, independientemente de si fueron cumplidas o rechazadas (p. 25).",
+                                "Promise.any retorna la primera promesa que se cumpla, ignorando los rechazos hasta que todas fallen (p. 26).",
+                                "El encadenamiento de promesas con .then() permite procesar resultados de forma secuencial, donde cada then recibe el resultado del anterior (p. 20).",
+                                "Los callbacks asíncronos se colocan en la Callback Queue y son ejecutados por el Event Loop cuando el Call Stack está vacío (p. 11).",
+                                "JavaScript es monohilo pero maneja asincronía mediante Web APIs y Event Loop, evitando bloqueos en la interfaz de usuario (p. 9).",
+                                "Las promesas rechazadas sin .catch() generan 'UnhandledPromiseRejectionWarning', afectando la estabilidad de la aplicación (p. 34).",
+                                "Los métodos estáticos de Promise como all, race, allSettled y any ofrecen diferentes estrategias para manejar múltiples promesas (p. 23-26).",
+                                "La programación asíncrona es esencial en navegadores para mantener la UI responsiva mientras se ejecutan operaciones de red o temporizadores (p. 9)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Cuál de las siguientes definiciones describe mejor el concepto de concurrencia?",
+                                    "opciones": [
+                                        "La ejecución simultánea de varias tareas en múltiples núcleos de procesamiento.",
+                                        "La capacidad de gestionar múltiples tareas en el mismo intervalo de tiempo, intercalando su ejecución en un único hilo.",
+                                        "La ejecución secuencial y bloqueante de una serie de operaciones.",
+                                        "Dividir una tarea en subprocesos que se ejecutan en paralelo para aumentar el rendimiento."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La concurrencia implica gestionar múltiples tareas intercalando su ejecución en un solo hilo (p. 5)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es la diferencia principal entre el código síncrono y el código asíncrono?",
+                                    "opciones": [
+                                        "El código síncrono ejecuta operaciones en paralelo y el asíncrono en secuencia.",
+                                        "El código asíncrono permite iniciar operaciones en segundo plano sin bloquear el flujo principal, mientras que el código síncrono espera a que cada operación finalice antes de continuar.",
+                                        "El código síncrono se ejecuta en múltiples hilos y el asíncrono en un único hilo.",
+                                        "No existe diferencia, ambos se ejecutan de la misma forma."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El código asíncrono no bloquea el flujo principal, a diferencia del síncrono que es secuencial (p. 7-8)."
+                                },
+                                {
+                                    "pregunta": "Analiza el siguiente fragmento de código y selecciona el orden correcto de impresión en la consola: console.log('Inicio'); setTimeout(() => { console.log('Callback'); }, 2000); console.log('Fin');",
+                                    "opciones": [
+                                        "\"Inicio\", \"Callback\", \"Fin\"",
+                                        "\"Inicio\", \"Fin\", \"Callback\"",
+                                        "\"Callback\", \"Inicio\", \"Fin\"",
+                                        "\"Fin\", \"Inicio\", \"Callback\""
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El código síncrono se ejecuta primero, luego el callback asíncrono después del timeout (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Qué función cumple el event loop en JavaScript?",
+                                    "opciones": [
+                                        "Permite la ejecución de múltiples hilos en paralelo.",
+                                        "Coordina la ejecución de tareas asíncronas, extrayendo callbacks de la cola y poniéndolos en el call stack cuando este está vacío.",
+                                        "Compila el código JavaScript a código nativo para mejorar el rendimiento.",
+                                        "Gestiona la asignación y liberación de memoria durante la ejecución."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El Event Loop gestiona la ejecución de callbacks asíncronos cuando el Call Stack está vacío (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Qué método estático de Promise se utiliza para esperar a que todas las promesas se cumplan y obtener sus resultados en un arreglo?",
+                                    "opciones": [
+                                        "Promise.race",
+                                        "Promise.all",
+                                        "Promise.any",
+                                        "Promise.allSettled"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Promise.all retorna un array con los resultados cuando todas las promesas se cumplen (p. 23)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál método estático de Promise retorna la primera promesa que se cumpla, ignorando las que se rechacen?",
+                                    "opciones": [
+                                        "Promise.all",
+                                        "Promise.any",
+                                        "Promise.race",
+                                        "Promise.allSettled"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Promise.any devuelve la primera promesa exitosa, ignorando los rechazos (p. 26)."
+                                },
+                                {
+                                    "pregunta": "Observa el siguiente fragmento de código y selecciona cuál es la salida en consola: new Promise((resolve) => setTimeout(() => resolve(2), 500)).then(result => { console.log(result); return result * 3; }).then(result => { console.log(result); });",
+                                    "opciones": [
+                                        "Imprime \"2\" y luego \"3\"",
+                                        "Imprime \"2\" y luego \"6\"",
+                                        "Imprime \"3\" y luego \"6\"",
+                                        "Imprime \"6\" y luego \"2\""
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El primer then imprime 2, luego multiplica por 3 y el segundo then imprime 6 (p. 20)."
+                                },
+                                {
+                                    "pregunta": "Si una promesa se rechaza y no se maneja su error (por ejemplo, sin usar .catch), ¿qué ocurre?",
+                                    "opciones": [
+                                        "El error se ignora silenciosamente.",
+                                        "El programa se detiene inmediatamente.",
+                                        "Se genera un error de rechazo no controlado, que se muestra como 'UnhandledPromiseRejectionWarning' en la consola.",
+                                        "La promesa se convierte automáticamente en cumplida."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Los rechazos no manejados generan advertencias en consola (p. 34)."
+                                },
+                                {
+                                    "pregunta": "Sobre la ejecución asíncrona en JavaScript, ¿cuál de las siguientes afirmaciones es verdadera?",
+                                    "opciones": [
+                                        "El código asíncrono se ejecuta en un hilo separado para no bloquear el hilo principal.",
+                                        "El event loop permite que el código asíncrono se ejecute en un único hilo al gestionar la cola de callbacks.",
+                                        "El código asíncrono requiere un mecanismo de concurrencia basado en hilos múltiples.",
+                                        "El event loop es responsable de la ejecución simultánea de múltiples procesos."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El Event Loop coordina la asincronía en un único hilo mediante la gestión de colas (p. 9-10)."
+                                },
+                                {
+                                    "pregunta": "Si se ejecuta el siguiente código, ¿cuál será el resultado impreso en la consola? const promise1 = new Promise(resolve => setTimeout(() => resolve('A'), 1000)); const promise2 = new Promise(resolve => setTimeout(() => resolve('B'), 2000)); Promise.race([promise1, promise2]).then(result => console.log(result));",
+                                    "opciones": [
+                                        "Imprime 'B'",
+                                        "Imprime 'A'",
+                                        "Imprime un arreglo con ['A', 'B']",
+                                        "Imprime un error"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Promise.race retorna la primera promesa en resolverse, que es 'A' después de 1 segundo (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Qué característica distingue a Promise.allSettled de Promise.all?",
+                                    "opciones": [
+                                        "Promise.allSettled espera solo a las promesas exitosas.",
+                                        "Promise.allSettled retorna cuando todas las promesas finalizan, independientemente de si fueron cumplidas o rechazadas.",
+                                        "Promise.allSettled solo funciona con promesas que se resuelven inmediatamente.",
+                                        "Promise.allSettled ejecuta las promesas en secuencia en lugar de paralelo."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Promise.allSettled espera a que todas las promesas terminen, sin importar su resultado (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es el propósito principal de las funciones async/await?",
+                                    "opciones": [
+                                        "Crear nuevos hilos de ejecución para operaciones paralelas.",
+                                        "Simplificar la sintaxis para trabajar con promesas, haciendo el código asíncrono más legible.",
+                                        "Reemplazar completamente el uso de callbacks en JavaScript.",
+                                        "Ejecutar código síncrono de forma más eficiente."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Async/await proporciona una sintaxis más clara para trabajar con promesas (p. 19)."
+                                },
+                                {
+                                    "pregunta": "En el contexto del Event Loop, ¿qué representa la Callback Queue?",
+                                    "opciones": [
+                                        "El lugar donde se almacenan las variables globales.",
+                                        "Una cola que contiene los callbacks listos para ejecutarse cuando el Call Stack esté vacío.",
+                                        "El espacio de memoria para funciones recursivas.",
+                                        "Una lista de todas las promesas pendientes en el programa."
+                                    ],
+                                    "explicacion": "La Callback Queue almacena callbacks esperando a ser ejecutados por el Event Loop (p. 11).",
+                                    "respuesta": 1
+                                },
+                                {
+                                    "pregunta": "¿Qué ocurre cuando una función marcada como async encuentra la palabra await?",
+                                    "opciones": [
+                                        "La función se detiene permanentemente.",
+                                        "El hilo principal se bloquea hasta que la operación await finalice.",
+                                        "La ejecución de la función se pausa hasta que la promesa se resuelva, sin bloquear el hilo principal.",
+                                        "Se genera inmediatamente una nueva promesa en estado pendiente."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Await pausa la ejecución de la función async sin bloquear el hilo principal (p. 19)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál de estos métodos de array NO es una función de orden superior?",
+                                    "opciones": [
+                                        "forEach",
+                                        "map",
+                                        "filter",
+                                        "push"
+                                    ],
+                                    "respuesta": 3,
+                                    "explicacion": "Push no recibe un callback como parámetro, por tanto no es función de orden superior (p. 16-17)."
+                                },
+                                {
+                                    "pregunta": "¿Qué ventaja tiene el uso de promesas sobre los callbacks anidados?",
+                                    "opciones": [
+                                        "Las promesas ejecutan código más rápido que los callbacks.",
+                                        "Las promesas permiten un mejor manejo de errores y evitan el 'callback hell'.",
+                                        "Las promesas pueden ejecutarse en múltiples hilos simultáneamente.",
+                                        "Las promesas no necesitan manejo de errores."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Las promesas simplifican el manejo de código asíncrono y evitan la anidación excesiva (p. 18)."
+                                },
+                                {
+                                    "pregunta": "En el diseño de JavaScript, ¿por qué es importante la asincronía?",
+                                    "opciones": [
+                                        "Para permitir la programación orientada a objetos.",
+                                        "Para mantener la interfaz de usuario responsiva evitando bloqueos en el hilo principal.",
+                                        "Para compilar código más eficientemente.",
+                                        "Para permitir la manipulación directa del DOM."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La asincronía evita que operaciones lentas bloqueen la UI del navegador (p. 9)."
+                                },
+                                {
+                                    "pregunta": "¿Qué retorna Promise.any cuando todas las promesas en el iterable son rechazadas?",
+                                    "opciones": [
+                                        "Un array con todos los errores.",
+                                        "La primera promesa que se rechazó.",
+                                        "Un AggregateError que contiene todos los errores individuales.",
+                                        "Una promesa en estado pendiente permanente."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Promise.any rechaza con AggregateError cuando todas las promesas fallan (p. 26-27)."
+                                },
+                                {
+                                    "pregunta": "¿Cómo se maneja adecuadamente el rechazo de una promesa?",
+                                    "opciones": [
+                                        "Ignorándolo completamente.",
+                                        "Usando el método .catch() después de .then().",
+                                        "Convirtiendo manualmente el rechazo en una resolución.",
+                                        "Reiniciando el programa cuando ocurre un rechazo."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El método .catch() permite manejar errores en las promesas de forma adecuada (p. 20)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2006,
+                            "nombre": "Peticiones HTTP",
+                            "teoria": [
+                                "HTTP es el protocolo fundamental para la comunicación web que permite el intercambio de información entre clientes y servidores de forma estandarizada y basada en texto (p. 5).",
+                                "El método GET recupera información del servidor sin modificar recursos, es seguro e idempotente, y puede usar path params y query params para filtrar datos (p. 5-6).",
+                                "POST envía datos al servidor para crear nuevos recursos, no es seguro ni idempotente, y requiere un cuerpo con la información en formato JSON o XML (p. 6-7).",
+                                "PUT reemplaza completamente un recurso existente con los datos enviados, es idempotente pero no seguro, y requiere identificar el recurso mediante path params (p. 7-8).",
+                                "PATCH realiza actualizaciones parciales de recursos modificando solo campos específicos, generalmente no es idempotente y requiere path params para identificar el recurso (p. 8).",
+                                "DELETE elimina recursos del servidor, es idempotente pero no seguro, y requiere path params para identificar el recurso específico a eliminar (p. 8-9).",
+                                "HEAD recupera solo los encabezados de respuesta sin el cuerpo, útil para verificar metadatos como tamaño de respuesta antes de realizar peticiones completas (p. 9).",
+                                "La arquitectura cliente-servidor establece roles claros donde el cliente consume servicios y el servidor procesa peticiones, comunicándose mediante APIs HTTP (p. 10).",
+                                "Las APIs definen interfaces de comunicación que abstraen la lógica interna del servidor y facilitan la integración entre diferentes aplicaciones (p. 10-11).",
+                                "Los códigos de estado HTTP indican el resultado de las peticiones: 2xx para éxito, 4xx para errores del cliente y 5xx para errores del servidor (p. 11-12).",
+                                "El ciclo de vida de una petición HTTP incluye resolución DNS, establecimiento de conexión TCP, envío de solicitud, procesamiento y envío de respuesta (p. 13-14).",
+                                "Los headers HTTP transmiten metadatos esenciales como Content-Type para el formato de datos, Authorization para autenticación y Accept para tipos aceptados (p. 15).",
+                                "API Fetch es una solución nativa de JavaScript para peticiones HTTP basada en promesas, que requiere conversión manual de respuestas JSON (p. 17).",
+                                "Axios es una biblioteca externa que simplifica las peticiones HTTP con conversión automática a JSON y mejor manejo de errores que Fetch (p. 17-18).",
+                                "Fetch no considera errores HTTP como 404 o 500 como rechazos de promesa, requiriendo verificación manual con response.ok (p. 18).",
+                                "Axios permite configurar interceptores para modificar peticiones y respuestas globalmente, una funcionalidad no disponible de forma nativa en Fetch (p. 25).",
+                                "Los interceptores de Axios ejecutan código antes del envío de peticiones y después de recibir respuestas, útil para headers globales y manejo centralizado de errores (p. 25).",
+                                "El método PATCH se diferencia de PUT al actualizar solo campos específicos del recurso en lugar de reemplazarlo completamente (p. 8).",
+                                "La resolución DNS es el primer paso en el ciclo de vida HTTP, traduciendo nombres de dominio a direcciones IP antes de establecer conexiones (p. 13).",
+                                "Content-Type header especifica el formato de datos en el cuerpo de peticiones POST/PUT, mientras que Accept indica formatos aceptados en respuestas (p. 15)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Qué es HTTP?",
+                                    "opciones": [
+                                        "Un lenguaje de programación.",
+                                        "Un protocolo de transferencia de hipertexto.",
+                                        "Un sistema de gestión de bases de datos.",
+                                        "Un formato de compresión de imágenes."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "HTTP es el protocolo fundamental para la transferencia de documentos en la web (p. 5)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es la función principal de una API en el modelo cliente-servidor?",
+                                    "opciones": [
+                                        "Administrar la conexión a la base de datos.",
+                                        "Definir la interfaz y los protocolos de comunicación entre aplicaciones.",
+                                        "Acelerar la carga de imágenes.",
+                                        "Controlar la seguridad física de los servidores."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Las APIs definen cómo las aplicaciones se comunican exponiendo métodos y datos estructurados (p. 10-11)."
+                                },
+                                {
+                                    "pregunta": "¿Cuáles métodos HTTP se consideran operaciones seguras (que no modifican el recurso)?",
+                                    "opciones": [
+                                        "GET y HEAD.",
+                                        "POST y PUT.",
+                                        "PATCH y DELETE.",
+                                        "GET y POST."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "GET y HEAD solo recuperan información sin modificar el estado del recurso (p. 5, 9)."
+                                },
+                                {
+                                    "pregunta": "¿Qué elementos componen una respuesta HTTP?",
+                                    "opciones": [
+                                        "Línea de estado, headers y cuerpo.",
+                                        "URL, método y parámetros.",
+                                        "Protocolo, dominio y puerto.",
+                                        "DNS, IP y puerto."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las respuestas HTTP constan de línea de estado, headers metadatos y cuerpo con datos (p. 13)."
+                                },
+                                {
+                                    "pregunta": "En el ciclo de vida de una petición HTTP, ¿qué etapa ocurre primero?",
+                                    "opciones": [
+                                        "Establecimiento de la conexión TCP.",
+                                        "Resolución de DNS.",
+                                        "Envío de la petición HTTP.",
+                                        "Recepción de la respuesta."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "La resolución DNS traduce el nombre de dominio a IP antes de cualquier conexión (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué header se utiliza para indicar el tipo de contenido enviado en una solicitud HTTP?",
+                                    "opciones": [
+                                        "Accept.",
+                                        "User-Agent.",
+                                        "Content-Type.",
+                                        "Authorization."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Content-Type especifica el formato del contenido en el cuerpo de la solicitud (p. 15)."
+                                },
+                                {
+                                    "pregunta": "¿Qué código de estado HTTP indica que un recurso no fue encontrado?",
+                                    "opciones": [
+                                        "200",
+                                        "404",
+                                        "500",
+                                        "301"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El código 404 (Not Found) significa que el recurso solicitado no existe en el servidor (p. 11)."
+                                },
+                                {
+                                    "pregunta": "¿Qué hace una petición PATCH en el siguiente código Fetch?",
+                                    "opciones": [
+                                        "Elimina una película con ID 1.",
+                                        "Actualiza parcialmente la información de la película con ID 1.",
+                                        "Crea una nueva película.",
+                                        "Obtiene los detalles completos de la película con ID 1."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "PATCH realiza actualizaciones parciales modificando solo campos específicos del recurso (p. 8, 22)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es la principal ventaja de Axios sobre Fetch en el manejo de respuestas?",
+                                    "opciones": [
+                                        "Axios convierte automáticamente la respuesta a JSON.",
+                                        "Axios requiere especificar el header 'Content-Type' en cada petición GET.",
+                                        "Axios solo soporta el método GET.",
+                                        "No hay diferencias significativas."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Axios convierte automáticamente las respuestas a JSON, mientras que Fetch requiere response.json() (p. 17-18)."
+                                },
+                                {
+                                    "pregunta": "¿Qué describen correctamente los interceptores en Axios?",
+                                    "opciones": [
+                                        "Permiten modificar y gestionar globalmente respuestas y errores.",
+                                        "Son necesarios para establecer conexión TCP y TLS.",
+                                        "Se usan para convertir respuestas a formato XML.",
+                                        "Se utilizan exclusivamente para configurar headers."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Los interceptores permiten gestión centralizada de peticiones y respuestas antes de su procesamiento (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Qué diferencia principal existe entre PUT y PATCH?",
+                                    "opciones": [
+                                        "PUT crea recursos mientras PATCH los elimina.",
+                                        "PUT reemplaza completamente el recurso, PATCH actualiza parcialmente.",
+                                        "PUT requiere autenticación, PATCH no.",
+                                        "PUT es más rápido que PATCH."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "PUT reemplaza el recurso completo mientras PATCH modifica solo campos específicos (p. 7-8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué método HTTP sería más apropiado para obtener solo los metadatos de un recurso?",
+                                    "opciones": [
+                                        "GET",
+                                        "POST",
+                                        "HEAD",
+                                        "DELETE"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "HEAD recupera solo los encabezados de respuesta sin el cuerpo, ideal para verificar metadatos (p. 9)."
+                                },
+                                {
+                                    "pregunta": "¿Qué header se utiliza para enviar credenciales de autenticación en peticiones HTTP?",
+                                    "opciones": [
+                                        "Content-Type",
+                                        "Authorization",
+                                        "User-Agent",
+                                        "Accept"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El header Authorization transporta tokens o credenciales para acceder a recursos protegidos (p. 15)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es la principal desventaja de API Fetch comparada con Axios?",
+                                    "opciones": [
+                                        "No soporta peticiones asíncronas.",
+                                        "Requiere verificación manual de errores HTTP.",
+                                        "No funciona en navegadores modernos.",
+                                        "No permite peticiones POST."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Fetch no rechaza promesas automáticamente con errores 4xx/5xx, requiriendo verificación de response.ok (p. 18)."
+                                },
+                                {
+                                    "pregunta": "En una arquitectura cliente-servidor, ¿qué rol inicia las peticiones HTTP?",
+                                    "opciones": [
+                                        "El servidor",
+                                        "El cliente",
+                                        "La base de datos",
+                                        "El balanceador de carga"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El cliente es el consumidor que inicia las peticiones hacia el servidor (p. 10)."
+                                },
+                                {
+                                    "pregunta": "¿Qué código de estado indica éxito en la creación de un recurso?",
+                                    "opciones": [
+                                        "200 OK",
+                                        "201 Created",
+                                        "204 No Content",
+                                        "301 Moved Permanently"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El código 201 Created indica que un nuevo recurso fue creado exitosamente (p. 11)."
+                                },
+                                {
+                                    "pregunta": "¿Qué ventaja ofrecen los interceptores de Axios?",
+                                    "opciones": [
+                                        "Ejecutar código antes del envío y después de recibir respuestas.",
+                                        "Mejorar la velocidad de las peticiones.",
+                                        "Comprimir automáticamente los datos.",
+                                        "Convertir XML a JSON."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Los interceptores permiten modificar peticiones y respuestas globalmente antes de su procesamiento (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Qué método HTTP es idempotente pero no seguro?",
+                                    "opciones": [
+                                        "GET",
+                                        "POST",
+                                        "PUT",
+                                        "HEAD"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "PUT es idempotente (múltiples llamadas mismo efecto) pero no seguro (modifica recursos) (p. 7)."
+                                },
+                                {
+                                    "pregunta": "¿Qué representa el código de estado 500?",
+                                    "opciones": [
+                                        "Recurso no encontrado",
+                                        "Error interno del servidor",
+                                        "No autorizado",
+                                        "Solicitud incorrecta"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El código 500 indica un error interno del servidor al procesar una petición válida (p. 12)."
+                                },
+                                {
+                                    "pregunta": "¿Qué header indica los tipos de contenido que el cliente acepta recibir?",
+                                    "opciones": [
+                                        "Content-Type",
+                                        "Accept",
+                                        "User-Agent",
+                                        "Authorization"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El header Accept especifica los formatos que el cliente está dispuesto a recibir en la respuesta (p. 15)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3006,
+                            "nombre": "El DOM",
+                            "teoria": [
+                                "El DOM (Document Object Model) es la representación en forma de árbol que los navegadores crean de los elementos HTML, permitiendo interactuar con ellos mediante JavaScript (p. 4).",
+                                "JavaScript utiliza el objeto 'document' como punto de entrada al DOM, proporcionando métodos para seleccionar y manipular elementos de la página web (p. 6).",
+                                "getElementById() devuelve el primer elemento con el id especificado o null si no existe, siendo ideal para elementos únicos en la página (p. 8).",
+                                "getElementsByTagName() retorna una HTMLCollection en vivo con todos los elementos que coinciden con el nombre de etiqueta especificado (p. 8).",
+                                "getElementsByClassName() devuelve una HTMLCollection en vivo con elementos que tienen la clase especificada, actualizándose automáticamente con cambios en el DOM (p. 8).",
+                                "querySelector() utiliza selectores CSS y retorna el primer elemento que coincide, mientras que querySelectorAll() devuelve todos los elementos coincidentes en una NodeList (p. 10-11).",
+                                "Los métodos de navegación como nextSibling y previousSibling permiten moverse entre nodos adyacentes en la estructura del árbol DOM (p. 13).",
+                                "setAttribute() y getAttribute() permiten modificar y leer valores de atributos HTML como class, id, o data-* personalizados (p. 13).",
+                                "createElement() crea nuevos elementos HTML, mientras que createTextNode() genera nodos de texto que pueden añadirse a los elementos (p. 15).",
+                                "appendChild() enlaza nodos hijos a elementos padres, insertBefore() e insertAfter() permiten posicionar elementos en lugares específicos del DOM (p. 15-16).",
+                                "El DOM permite modificar dinámicamente el contenido, estilo y estructura de una página web en tiempo de ejecución sin recargar la página (p. 15).",
+                                "classList.toggle() alterna la presencia de una clase CSS en un elemento, añadiéndola si no existe o eliminándola si ya está presente (p. 24).",
+                                "Los data attributes (ej: data-id) permiten almacenar información personalizada en elementos HTML accesible mediante JavaScript (p. 25).",
+                                "La modificación de clases CSS mediante JavaScript permite implementar funcionalidades como cambio de temas o modo oscuro en aplicaciones web (p. 17).",
+                                "HTMLCollection es una colección en vivo que se actualiza automáticamente cuando el DOM cambia, a diferencia de NodeList que puede ser estática (p. 23).",
+                                "removeChild() elimina nodos hijos específicos de un elemento padre, permitiendo la eliminación controlada de elementos del DOM (p. 16).",
+                                "innerHTML permite acceder y modificar el contenido HTML interno de un elemento, incluyendo etiquetas y texto (p. 16).",
+                                "Los selectores CSS complejos en querySelector permiten localizar elementos basados en relaciones jerárquicas, pseudoclases y atributos (p. 10).",
+                                "Event listeners como addEventListener permiten responder a interacciones del usuario y ejecutar código que modifica el DOM (p. 25).",
+                                "La manipulación del DOM es fundamental para crear aplicaciones web interactivas que responden a acciones del usuario sin recargas de página (p. 4)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Qué devuelve document.getElementById('titulo') en el código HTML dado?",
+                                    "opciones": [
+                                        "Un array con todos los elementos que tengan la etiqueta 'titulo'.",
+                                        "El primer elemento del DOM que tenga el atributo id igual a 'titulo'.",
+                                        "Un objeto JSON con los datos del elemento.",
+                                        "null, ya que getElementById siempre retorna null."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "getElementById busca un único elemento por su id, devolviendo el primer elemento encontrado o null si no existe (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué retorna document.getElementsByTagName('article') en la página de películas?",
+                                    "opciones": [
+                                        "Un objeto Array con todos los elementos article.",
+                                        "Un único elemento article.",
+                                        "Una HTMLCollection en vivo con todos los elementos article.",
+                                        "Una NodeList estática con los elementos article."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "getElementsByTagName devuelve una HTMLCollection en vivo que se actualiza con cambios en el DOM (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Cuál es la diferencia principal entre querySelector y querySelectorAll?",
+                                    "opciones": [
+                                        "querySelector devuelve el primer elemento coincidente; querySelectorAll devuelve todos en una NodeList.",
+                                        "querySelector devuelve una HTMLCollection; querySelectorAll devuelve un array.",
+                                        "querySelector busca por id solamente; querySelectorAll busca por clase solamente.",
+                                        "No hay diferencia, ambos devuelven exactamente lo mismo."
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "querySelector retorna el primer elemento que coincide, querySelectorAll devuelve todos en una NodeList (p. 10-11)."
+                                },
+                                {
+                                    "pregunta": "¿Qué hace classList.toggle('nombreClase') aplicado a un elemento?",
+                                    "opciones": [
+                                        "Añade la clase 'nombreClase' sin verificar si ya existe.",
+                                        "Elimina la clase 'nombreClase' si ya existe o la añade si no existe.",
+                                        "Siempre elimina la clase 'nombreClase'.",
+                                        "Siempre reemplaza todas las clases del elemento por 'nombreClase'."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "toggle verifica si la clase existe y alterna su estado (p. 24)."
+                                },
+                                {
+                                    "pregunta": "¿Qué efecto tiene el código que maneja el cambio de tema en el select?",
+                                    "opciones": [
+                                        "Redirige la página a otra URL.",
+                                        "Actualiza el atributo style inline del body.",
+                                        "Actualiza la clase del body para aplicar el tema seleccionado.",
+                                        "Cambia el contenido del header."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El código modifica las clases del body para cambiar el tema visual (p. 25)."
+                                },
+                                {
+                                    "pregunta": "En el elemento <article class='pelicula' data-id='2'>, ¿cuál es el valor del atributo data-id?",
+                                    "opciones": [
+                                        "\"pelicula\"",
+                                        "\"2\"",
+                                        "\"Romance en París\"",
+                                        "No tiene valor"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El atributo data-id está definido con el valor '2' en el elemento (p. 25)."
+                                },
+                                {
+                                    "pregunta": "¿Qué devuelve document.getElementsByClassName('btnSeleccionar')?",
+                                    "opciones": [
+                                        "Un único botón HTML.",
+                                        "Una HTMLCollection con 3 elementos correspondientes a los botones.",
+                                        "Una NodeList con los botones.",
+                                        "null, ya que no existe ningún elemento con esa clase."
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Retorna una HTMLCollection en vivo con los 3 botones que tienen la clase especificada (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué métodos son más adecuados para selecciones complejas con selectores CSS?",
+                                    "opciones": [
+                                        "document.getElementById()",
+                                        "document.getElementsByTagName()",
+                                        "document.querySelector() y document.querySelectorAll()",
+                                        "document.getElementsByClassName()"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "querySelector y querySelectorAll permiten usar selectores CSS complejos (p. 10-11)."
+                                },
+                                {
+                                    "pregunta": "Si no existe ningún elemento con id 'titulo', ¿qué devuelve getElementById('titulo')?",
+                                    "opciones": [
+                                        "undefined",
+                                        "Una colección vacía",
+                                        "null",
+                                        "Una cadena vacía"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "getElementById retorna null cuando no encuentra el elemento especificado (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tipo de estructura devuelve getElementsByClassName('película')?",
+                                    "opciones": [
+                                        "Un array de objetos DOM.",
+                                        "Una NodeList estática.",
+                                        "Una HTMLCollection en vivo.",
+                                        "Un objeto JSON con los elementos."
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "getElementsByClassName devuelve una HTMLCollection en vivo que se actualiza con cambios en el DOM (p. 8)."
+                                },
+                                {
+                                    "pregunta": "¿Qué método se utiliza para crear un nuevo elemento h1 en el DOM?",
+                                    "opciones": [
+                                        "document.createNode('h1')",
+                                        "document.createElement('h1')",
+                                        "document.addElement('h1')",
+                                        "document.newElement('h1')"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "createElement crea nuevos elementos HTML especificando la etiqueta (p. 15)."
+                                },
+                                {
+                                    "pregunta": "¿Cómo se añade un nodo de texto a un elemento recién creado?",
+                                    "opciones": [
+                                        "Usando appendText()",
+                                        "Usando addTextNode()",
+                                        "Usando appendChild() con un nodo de texto",
+                                        "Usando insertText()"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "appendChild enlaza nodos hijos como nodos de texto a elementos padres (p. 15-16)."
+                                },
+                                {
+                                    "pregunta": "¿Qué propiedad permite acceder al contenido HTML interno de un elemento?",
+                                    "opciones": [
+                                        "outerHTML",
+                                        "innerHTML",
+                                        "textContent",
+                                        "nodeValue"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "innerHTML devuelve el código HTML incluido en un nodo (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Qué método permite eliminar un elemento hijo específico del DOM?",
+                                    "opciones": [
+                                        "removeElement()",
+                                        "deleteChild()",
+                                        "removeChild()",
+                                        "removeNode()"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "removeChild elimina un nodo hijo específico de un elemento padre (p. 16)."
+                                },
+                                {
+                                    "pregunta": "¿Qué representa el DOM en términos de estructura de datos?",
+                                    "opciones": [
+                                        "Una lista enlazada",
+                                        "Una pila (stack)",
+                                        "Un árbol de nodos",
+                                        "Una tabla hash"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El DOM representa el documento HTML como un árbol de nodos interconectados (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué objeto es el punto de entrada principal para manipular el DOM en JavaScript?",
+                                    "opciones": [
+                                        "window",
+                                        "navigator",
+                                        "document",
+                                        "DOM"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El objeto document proporciona métodos para acceder y manipular el DOM (p. 6)."
+                                },
+                                {
+                                    "pregunta": "¿Qué método se utiliza para cambiar el valor de un atributo HTML?",
+                                    "opciones": [
+                                        "changeAttribute()",
+                                        "modifyAttribute()",
+                                        "setAttribute()",
+                                        "updateAttribute()"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "setAttribute permite establecer o modificar el valor de un atributo (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué tipo de lista devuelve querySelectorAll?",
+                                    "opciones": [
+                                        "HTMLCollection",
+                                        "Array",
+                                        "NodeList",
+                                        "DOMList"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "querySelectorAll devuelve una NodeList con todos los elementos coincidentes (p. 11)."
+                                },
+                                {
+                                    "pregunta": "¿Qué permite hacer la propiedad className de un elemento?",
+                                    "opciones": [
+                                        "Obtener el nombre de la clase CSS del elemento",
+                                        "Cambiar el nombre del elemento HTML",
+                                        "Obtener el id del elemento",
+                                        "Modificar el contenido de texto del elemento"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "className retorna la clase de un elemento del DOM (p. 13)."
+                                },
+                                {
+                                    "pregunta": "¿Qué ventaja tiene usar querySelector sobre getElementById?",
+                                    "opciones": [
+                                        "Es más rápido en todos los casos",
+                                        "Permite usar selectores CSS complejos",
+                                        "Siempre devuelve una colección",
+                                        "No requiere que el elemento tenga id"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "querySelector permite usar selectores CSS complejos, no solo ids (p. 10-11)."
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4006,
+                            "nombre": "React I: Conceptos básicos",
+                            "teoria": [
+                                "JSX es una extensión de la sintaxis de JavaScript utilizada en React para definir interfaces de usuario. Permite escribir código similar a HTML dentro de archivos JavaScript y se transpila a JavaScript estándar (p. 13).",
+                                "Los componentes funcionales son funciones de JavaScript que retornan JSX y pueden utilizar hooks para manejar estado y efectos. Han reemplazado en popularidad a los componentes de clase gracias a su sintaxis más simple (p. 19).",
+                                "Las props son propiedades que se pasan de componentes padres a hijos para configurar su comportamiento o apariencia. Se acceden mediante el parámetro props en componentes funcionales (p. 24).",
+                                "El método render en componentes de clase convierte JSX en elementos del DOM real. En componentes funcionales, el return cumple esta función automáticamente (p. 15).",
+                                "Los fragments permiten agrupar múltiples elementos JSX sin añadir nodos extra al DOM. Se pueden usar con la sintaxis <React.Fragment> o <> (p. 26).",
+                                "La sintaxis JSX válida requiere que las etiquetas se cierren correctamente y el contenido se coloque entre ellas sin comillas innecesarias. Las expresiones JavaScript se insertan con llaves {} (p. 13-14).",
+                                "Create React App despliega la aplicación en el puerto 3000 por defecto durante el desarrollo. Este puerto puede modificarse si está ocupado (p. 9).",
+                                "Vercel es una plataforma de despliegue especializada en aplicaciones frontend que permite desplegar proyectos React de forma gratuita y rápida. Ofrece URLs de preview y producción (p. 28-29).",
+                                "La comunicación entre componentes padre e hijo se realiza principalmente mediante props. El padre pasa datos al hijo a través de atributos en el JSX (p. 25).",
+                                "La diferencia principal entre componentes funcionales y de clase es su definición: funciones vs clases ES6. Ambos pueden manejar estado, pero con APIs diferentes (hooks vs métodos de ciclo de vida) (p. 19).",
+                                "React fue creado por Jordan Walke de Facebook y se liberó como código abierto en 2013. React Native llegó en 2015 para desarrollo móvil nativo (p. 5).",
+                                "El DOM virtual de React es una representación en memoria de la estructura del documento que optimiza las actualizaciones mediante reconciliación. Previene manipulaciones directas del DOM real (p. 5).",
+                                "Create React App genera una estructura de proyecto con carpetas src, public y node_modules. El archivo package.json contiene las dependencias del proyecto (p. 7-8).",
+                                "Vite es una alternativa más rápida a Create React App que usa ESBuild para bundling. Ofrece HMR más rápido y configuración más flexible (p. 10-12).",
+                                "Las expresiones JavaScript en JSX se insertan entre llaves {}. Esto permite ejecutar funciones, mostrar variables y realizar operaciones dentro del markup (p. 13-14).",
+                                "ReactDOM.render() es el método que renderiza la aplicación React en el nodo DOM especificado. Típicamente se usa un div con id='root' como contenedor principal (p. 15).",
+                                "La desestructuración de props permite acceder directamente a las propiedades sin usar 'props.' repetidamente. Mejora la legibilidad del código (p. 25).",
+                                "Los componentes permiten separar la interfaz en partes reutilizables e independientes. Ejemplos comunes incluyen Header, Footer, botones y menús (p. 17-18).",
+                                "Vercel CLI permite desplegar aplicaciones desde terminal mediante comandos. Ofrece despliegues de preview antes de pasar a producción (p. 30-31).",
+                                "El proceso de despliegue en Vercel detecta automáticamente proyectos React y configura los comandos de build apropiados. No requiere configuración manual compleja (p. 31-32)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Qué es JSX en React?",
+                                    "opciones": [
+                                        "Un lenguaje de programación independiente",
+                                        "Una extensión de JavaScript que permite escribir código HTML en el mismo archivo",
+                                        "Una herramienta de compilación",
+                                        "Un sistema de manejo de estado"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "JSX es una sintaxis que permite combinar HTML y JavaScript, facilitando la construcción de interfaces de usuario (p. 13)"
+                                },
+                                {
+                                    "pregunta": "¿Qué es un componente funcional en React?",
+                                    "opciones": [
+                                        "Una función que retorna JSX y puede utilizar hooks para manejar estado y ciclo de vida",
+                                        "Una clase de ES6 que extiende React.Component",
+                                        "Un archivo HTML que se importa en la aplicación",
+                                        "Un objeto de configuración de la aplicación"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Un componente funcional es una función de JavaScript que retorna JSX y puede gestionar estado y otros aspectos del ciclo de vida (p. 19)"
+                                },
+                                {
+                                    "pregunta": "¿Qué son las props en React?",
+                                    "opciones": [
+                                        "Propiedades que se pasan a los componentes para configurar o transmitir información",
+                                        "Métodos que permiten actualizar el estado del componente",
+                                        "Funciones que renderizan la interfaz de usuario",
+                                        "Archivos de configuración del proyecto"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Las props son propiedades que se envían de un componente padre a un componente hijo para personalizar su comportamiento o apariencia (p. 24)"
+                                },
+                                {
+                                    "pregunta": "¿Qué función cumple el método render en un componente de clase de React?",
+                                    "opciones": [
+                                        "Inicializa el estado del componente",
+                                        "Transforma el JSX en elementos del DOM",
+                                        "Gestiona los eventos del usuario",
+                                        "Define los estilos CSS del componente"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El método render se encarga de convertir el JSX en elementos reales que React inyecta en el DOM (p. 15)"
+                                },
+                                {
+                                    "pregunta": "¿Qué es un fragment en React?",
+                                    "opciones": [
+                                        "Una función que se utiliza para dividir el código en partes",
+                                        "Un contenedor que agrupa elementos sin añadir nodos extra al DOM",
+                                        "Un método para dividir cadenas de texto",
+                                        "Una librería para el manejo de rutas"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los fragments permiten agrupar varios elementos sin introducir nodos adicionales en el DOM (p. 26)"
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes es una forma válida de usar JSX para renderizar un título?",
+                                    "opciones": [
+                                        "return <h1>Hola Mundo</h1>;",
+                                        "return React.createElement(\"h1\", \"Hola Mundo\");",
+                                        "return { <h1>Hola Mundo</h1> };",
+                                        "return <h1>\"Hola Mundo\"</h1>;"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La sintaxis JSX apropiada para retornar un título es return <h1>Hola Mundo</h1>; (p. 13)"
+                                },
+                                {
+                                    "pregunta": "¿En qué puerto se despliega por defecto una aplicación creada con Create React App?",
+                                    "opciones": [
+                                        "3000",
+                                        "8080",
+                                        "5000",
+                                        "8000"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Por defecto, Create React App utiliza el puerto 3000 para servir la aplicación (p. 9)"
+                                },
+                                {
+                                    "pregunta": "¿Qué es Vercel en el contexto del desarrollo web?",
+                                    "opciones": [
+                                        "Una biblioteca de componentes para React",
+                                        "Un entorno de desarrollo integrado (IDE)",
+                                        "Una plataforma para desplegar aplicaciones web de forma sencilla y escalable",
+                                        "Un sistema de gestión de bases de datos"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "Vercel es una plataforma en la nube que facilita el despliegue y alojamiento de aplicaciones web (p. 28-29)"
+                                },
+                                {
+                                    "pregunta": "¿Cómo se pasa información de un componente padre a un componente hijo en React?",
+                                    "opciones": [
+                                        "A través de las props",
+                                        "Mediante el estado global",
+                                        "Utilizando variables globales",
+                                        "Con métodos del ciclo de vida del componente"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La comunicación de datos entre un componente padre y uno hijo se realiza mediante el paso de props (p. 25)"
+                                },
+                                {
+                                    "pregunta": "¿Cuál es la principal diferencia entre un componente funcional y uno de clase en React?",
+                                    "opciones": [
+                                        "Los componentes funcionales no pueden manejar estado",
+                                        "Los componentes de clase permiten utilizar hooks",
+                                        "Los componentes funcionales se definen como funciones, mientras que los de clase se definen como clases de ES6",
+                                        "No existe diferencia alguna entre ambos"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "La diferencia esencial es que los componentes funcionales son funciones y los de clase se definen mediante clases ES6 (p. 19)"
+                                },
+                                {
+                                    "pregunta": "¿Qué empresa desarrolló originalmente React y en qué año se liberó como código abierto?",
+                                    "opciones": [
+                                        "Google en 2010",
+                                        "Facebook en 2013",
+                                        "Microsoft en 2015",
+                                        "Twitter en 2012"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "React fue desarrollado por Facebook y liberado como código abierto en 2013 (p. 5)"
+                                },
+                                {
+                                    "pregunta": "¿Qué ventaja principal ofrece el DOM virtual de React?",
+                                    "opciones": [
+                                        "Elimina la necesidad de usar JavaScript",
+                                        "Optimiza el rendimiento mediante reconciliación eficiente",
+                                        "Permite acceso directo al DOM real",
+                                        "Reemplaza completamente al HTML"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El DOM virtual optimiza las actualizaciones mediante reconciliación, mejorando el rendimiento (p. 5)"
+                                },
+                                {
+                                    "pregunta": "¿Qué comando se usa para crear un nuevo proyecto React con Create React App?",
+                                    "opciones": [
+                                        "npm init react-app",
+                                        "npx create-react-app",
+                                        "react create app",
+                                        "npm start react"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El comando npx create-react-app nombre-proyecto crea un nuevo proyecto React (p. 6)"
+                                },
+                                {
+                                    "pregunta": "¿Qué característica hace a Vite más rápido que Create React App durante el desarrollo?",
+                                    "opciones": [
+                                        "Usa Webpack en lugar de Babel",
+                                        "Utiliza ESBuild para bundling y optimización de módulos",
+                                        "No soporta TypeScript",
+                                        "Requiere configuración manual extensa"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Vite es más rápido gracias a su uso de ESBuild para bundling y optimización de módulos (p. 11)"
+                                },
+                                {
+                                    "pregunta": "¿Cómo se insertan expresiones JavaScript dentro de JSX?",
+                                    "opciones": [
+                                        "Entre comillas dobles \"\"",
+                                        "Entre llaves {}",
+                                        "Entre paréntesis ()",
+                                        "Entre corchetes []"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Las expresiones JavaScript en JSX se insertan entre llaves {} (p. 13-14)"
+                                },
+                                {
+                                    "pregunta": "¿Qué método se utiliza para renderizar una aplicación React en el DOM?",
+                                    "opciones": [
+                                        "React.renderComponent()",
+                                        "DOM.render()",
+                                        "ReactDOM.render()",
+                                        "App.mount()"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "ReactDOM.render() es el método que renderiza la aplicación en el nodo DOM especificado (p. 15)"
+                                },
+                                {
+                                    "pregunta": "¿Qué técnica permite acceder directamente a las propiedades de un componente sin usar 'props.'?",
+                                    "opciones": [
+                                        "Destructuring assignment",
+                                        "Property chaining",
+                                        "Method binding",
+                                        "Object cloning"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "La desestructuración permite acceder directamente a las propiedades sin 'props.' (p. 25)"
+                                },
+                                {
+                                    "pregunta": "¿Cuál de estos NO es un ejemplo típico de componente React?",
+                                    "opciones": [
+                                        "Header",
+                                        "Database",
+                                        "Button",
+                                        "Footer"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los componentes típicos incluyen Header, Footer, Button, pero no Database (p. 17-18)"
+                                },
+                                {
+                                    "pregunta": "¿Qué comando de Vercel despliega los cambios directamente a producción?",
+                                    "opciones": [
+                                        "vercel --deploy",
+                                        "vercel --prod",
+                                        "vercel --production",
+                                        "vercel --live"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El comando vercel --prod despliega directamente a producción (p. 34)"
+                                },
+                                {
+                                    "pregunta": "¿Qué ventaja ofrece Vercel para el proceso de desarrollo?",
+                                    "opciones": [
+                                        "Genera automáticamente el código de la aplicación",
+                                        "Proporciona URLs de preview antes del despliegue a producción",
+                                        "Reemplaza la necesidad de usar Git",
+                                        "Elimina la necesidad de testing"
+                                    ],
+                                    "explicacion": "Vercel ofrece URLs de preview para evaluar cambios antes del despliegue a producción (p. 33)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 5006,
+                            "nombre": "React II: Hooks",
+                            "teoria": [
+                                "Los hooks son herramientas que permiten a los componentes funcionales acceder a características de React como estado y efectos. Fueron introducidos en React 16.8 para facilitar la reutilización de código y simplificar el desarrollo (p. 5).",
+                                "useState es el hook que gestiona el estado local en componentes funcionales. Devuelve un array con la variable de estado y una función setter para actualizarla, provocando un re-renderizado del componente (p. 6).",
+                                "useEffect ejecuta efectos secundarios después del renderizado del componente. Recibe una función de efecto y un array de dependencias opcional que controla cuándo se ejecuta el efecto (p. 9).",
+                                "Los custom hooks son funciones personalizadas que reutilizan lógica de estado y efectos entre componentes. Deben comenzar con 'use' y pueden usar otros hooks internamente (p. 13).",
+                                "useContext permite consumir datos de un contexto React sin prop drilling. Se usa junto con Context API para compartir datos globalmente en la aplicación (p. 21).",
+                                "El prop drilling ocurre cuando las props pasan por múltiples componentes que no las necesitan, complicando el código. Context API soluciona este problema proporcionando datos globalmente (p. 20).",
+                                "useState puede usarse múltiples veces en un componente para diferentes variables de estado. Cada actualización de estado provoca un re-renderizado del componente (p. 7).",
+                                "El array de dependencias en useEffect controla la ejecución del efecto: vacío = solo montaje, con variables = cuando cambian, sin array = en cada renderizado (p. 9).",
+                                "Los custom hooks encapsulan lógica reutilizable como peticiones HTTP. Pueden usar useState y useEffect internamente y devolver datos para usar en componentes (p. 14).",
+                                "Context API usa createContext para crear un contexto y Provider para hacerlo disponible. Los componentes consumen el contexto con useContext sin necesidad de props intermedias (p. 21-22).",
+                                "Los hooks deben llamarse siempre en el mismo orden y no dentro de bucles o condicionales. Esta regla asegura que React pueda gestionar correctamente el estado entre renderizados (p. 15).",
+                                "useEffect puede devolver una función de limpieza que se ejecuta al desmontar el componente. Es útil para cancelar suscripciones o timers y prevenir memory leaks (p. 31).",
+                                "Las funciones setter de useState son asíncronas. No se debe confiar en que el estado se actualice inmediatamente después de llamarlas, ya que React agenda la actualización (p. 8).",
+                                "Los custom hooks se ejecutan en cada renderizado del componente que los usa. Sin embargo, los efectos internos solo se ejecutan cuando cambian sus dependencias (p. 16-18).",
+                                "Context API soluciona el acoplamiento excesivo causado por prop drilling. Los componentes acceden directamente a los datos que necesitan sin depender de la estructura jerárquica (p. 20).",
+                                "useEffect con array vacío simula componentDidMount en componentes de clase. Se ejecuta una sola vez después del primer renderizado, ideal para inicializaciones (p. 9).",
+                                "Los custom hooks permiten abstraer lógica compleja como gestión de formularios o llamadas API. Mejoran la legibilidad al separar la lógica de la presentación (p. 13-14).",
+                                "El Provider de Context envuelve los componentes que necesitan acceso al contexto. El value del Provider puede contener tanto datos como funciones para actualizarlos (p. 22).",
+                                "useEffect con dependencias específicas se ejecuta cuando esas dependencias cambian. Esto optimiza el rendimiento evitando ejecuciones innecesarias del efecto (p. 9-10).",
+                                "Los hooks representan el enfoque moderno de React hacia la programación funcional. Han hecho obsoletos en gran medida los componentes de clase para la mayoría de casos de uso (p. 5)."
+                            ],
+                            "lecciones": [
+                                {
+                                    "pregunta": "¿Cuál es la función principal del hook useState en React?",
+                                    "opciones": [
+                                        "Ejecutar efectos secundarios tras renderizar el componente",
+                                        "Permitir acceder a datos globales sin pasar props a través de la jerarquía",
+                                        "Gestionar el estado local dentro de un componente funcional",
+                                        "Realizar peticiones HTTP a APIs externas"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "useState permite gestionar el estado local en componentes funcionales (p. 6)"
+                                },
+                                {
+                                    "pregunta": "¿Qué permite hacer el hook useEffect en un componente de React?",
+                                    "opciones": [
+                                        "Definir estados locales",
+                                        "Ejecutar código de efectos secundarios tras el renderizado",
+                                        "Crear un contexto global para la aplicación",
+                                        "Optimizar el rendimiento memorizando valores"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "useEffect se utiliza para ejecutar efectos secundarios después del renderizado (p. 9)"
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes definiciones describe correctamente un custom hook?",
+                                    "opciones": [
+                                        "Es un componente de clase que encapsula lógica de renderizado",
+                                        "Es una función que permite reutilizar lógica de estado y efectos entre componentes",
+                                        "Es una librería externa para gestionar peticiones HTTP",
+                                        "Es una función interna de React que reemplaza a useState"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Un custom hook es una función que utiliza otros hooks para encapsular y reutilizar lógica común (p. 13)"
+                                },
+                                {
+                                    "pregunta": "¿Qué es el Context API en React?",
+                                    "opciones": [
+                                        "Una técnica para definir estilos CSS en línea",
+                                        "Una herramienta para gestionar efectos secundarios",
+                                        "Un mecanismo para compartir datos globalmente sin necesidad de pasar props manualmente",
+                                        "Una función exclusiva para hacer peticiones HTTP"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El Context API permite compartir datos entre componentes sin necesidad de prop drilling (p. 21)"
+                                },
+                                {
+                                    "pregunta": "¿Cuál es la forma correcta de consumir un contexto en un componente funcional?",
+                                    "opciones": [
+                                        "Usar el hook useContext pasándole el contexto creado",
+                                        "Pasar el contexto como prop desde el componente padre",
+                                        "Llamar directamente al Provider en el componente",
+                                        "Utilizar la función createContext dentro del componente"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "Se utiliza useContext para acceder a los datos del contexto sin pasarlos manualmente (p. 22)"
+                                },
+                                {
+                                    "pregunta": "¿Qué se entiende por prop drilling en React?",
+                                    "opciones": [
+                                        "El proceso de renderizar condicionalmente componentes basados en el estado",
+                                        "El paso innecesario de props a través de múltiples niveles de componentes",
+                                        "La memorización de funciones para evitar renders innecesarios",
+                                        "El uso de hooks para gestionar peticiones HTTP"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El prop drilling consiste en pasar datos a través de varios niveles de componentes innecesariamente (p. 20)"
+                                },
+                                {
+                                    "pregunta": "¿Qué hook se utiliza para gestionar efectos secundarios en React?",
+                                    "opciones": [
+                                        "useState",
+                                        "useContext",
+                                        "useEffect",
+                                        "useReducer"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El hook useEffect se utiliza para ejecutar efectos secundarios como llamadas API (p. 9)"
+                                },
+                                {
+                                    "pregunta": "¿Cómo se evita el prop drilling en una aplicación React?",
+                                    "opciones": [
+                                        "Utilizando componentes de clase en lugar de componentes funcionales",
+                                        "Pasando props a través de cada componente de la jerarquía",
+                                        "Empleando el Context API junto con el hook useContext",
+                                        "Utilizando únicamente el hook useState"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "El Context API y useContext permiten compartir datos globalmente sin prop drilling (p. 21)"
+                                },
+                                {
+                                    "pregunta": "¿Cuál de las siguientes afirmaciones sobre los custom hooks es correcta?",
+                                    "opciones": [
+                                        "Un custom hook puede ser llamado condicionalmente dentro del componente",
+                                        "Los custom hooks deben comenzar con la palabra 'use' y pueden reutilizar lógica de estado y efectos",
+                                        "Los custom hooks son equivalentes a componentes de clase",
+                                        "Un custom hook no puede utilizar otros hooks dentro de él"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los custom hooks deben empezar con 'use' y encapsulan lógica que involucra otros hooks (p. 13)"
+                                },
+                                {
+                                    "pregunta": "¿Qué comportamiento tiene un componente con useEffect que establece un timeout?",
+                                    "opciones": [
+                                        "Muestra el mensaje final inmediatamente",
+                                        "Muestra 'Cargando...' y después de 2 segundos cambia al mensaje final",
+                                        "Muestra 'Cargando...' de forma permanente",
+                                        "Lanza un error por usar setTimeout en useEffect"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "useEffect con timeout muestra el estado inicial y actualiza tras el delay (p. 31)"
+                                },
+                                {
+                                    "pregunta": "¿Qué devuelve la función useState cuando se invoca?",
+                                    "opciones": [
+                                        "Solo el valor del estado actual",
+                                        "Un array con el valor del estado y una función para actualizarlo",
+                                        "Una función para modificar el estado",
+                                        "Un objeto con propiedades value y setValue"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "useState devuelve un array con la variable de estado y su función setter (p. 6)"
+                                },
+                                {
+                                    "pregunta": "¿Cuál es el propósito del array de dependencias en useEffect?",
+                                    "opciones": [
+                                        "Definir qué variables se pueden usar dentro del efecto",
+                                        "Controlar cuándo se debe ejecutar el efecto basado en cambios de variables",
+                                        "Especificar qué componentes deben recibir el efecto",
+                                        "Determinar el orden de ejecución de múltiples efectos"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "El array de dependencias controla la ejecución del efecto basado en cambios de variables (p. 9)"
+                                },
+                                {
+                                    "pregunta": "¿Qué problema principal resuelve Context API en React?",
+                                    "opciones": [
+                                        "La gestión compleja de estados locales",
+                                        "El paso innecesario de props a través de múltiples componentes (prop drilling)",
+                                        "La falta de soporte para componentes funcionales",
+                                        "La dificultad para hacer peticiones HTTP"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Context API resuelve el prop drilling permitiendo compartir datos globalmente (p. 20)"
+                                },
+                                {
+                                    "pregunta": "¿Qué regla deben seguir todos los custom hooks?",
+                                    "opciones": [
+                                        "Siempre devolver elementos JSX",
+                                        "Comenzar con la palabra 'use' en su nombre",
+                                        "No poder utilizar otros hooks internamente",
+                                        "Ser definidos dentro de componentes de clase"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los custom hooks deben comenzar con 'use' por convención (p. 13)"
+                                },
+                                {
+                                    "pregunta": "¿Qué hook se utiliza para acceder a valores de un contexto?",
+                                    "opciones": [
+                                        "useState",
+                                        "useEffect",
+                                        "useContext",
+                                        "useContextValue"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "useContext permite consumir datos de un contexto React (p. 22)"
+                                },
+                                {
+                                    "pregunta": "¿Cuándo se ejecuta un useEffect con array de dependencias vacío?",
+                                    "opciones": [
+                                        "En cada renderizado del componente",
+                                        "Solo cuando ciertas variables cambian",
+                                        "Una única vez después del primer renderizado",
+                                        "Nunca se ejecuta"
+                                    ],
+                                    "respuesta": 2,
+                                    "explicacion": "useEffect con array vacío se ejecuta una sola vez tras el primer renderizado (p. 9)"
+                                },
+                                {
+                                    "pregunta": "¿Qué característica de los hooks mejora la reutilización de código?",
+                                    "opciones": [
+                                        "Que solo funcionan en componentes de clase",
+                                        "La capacidad de crear custom hooks",
+                                        "Que no necesitan importarse",
+                                        "Su compatibilidad exclusiva con TypeScript"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los custom hooks permiten reutilizar lógica de estado y efectos entre componentes (p. 13)"
+                                },
+                                {
+                                    "pregunta": "¿Qué componente se usa para proveer datos de contexto a la aplicación?",
+                                    "opciones": [
+                                        "Context.Consumer",
+                                        "Context.Provider",
+                                        "Context.Container",
+                                        "Context.Wrapper"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Context.Provider envuelve los componentes para proveer datos de contexto (p. 22)"
+                                },
+                                {
+                                    "pregunta": "¿Por qué los hooks no pueden llamarse dentro de bucles o condicionales?",
+                                    "opciones": [
+                                        "Porque React necesita garantizar el mismo orden de llamadas en cada renderizado",
+                                        "Porque solo funcionan en componentes de clase",
+                                        "Porque causan errores de sintaxis en JavaScript",
+                                        "Porque no son compatibles con funciones asíncronas"
+                                    ],
+                                    "respuesta": 0,
+                                    "explicacion": "React necesita el mismo orden de llamadas a hooks entre renderizados (p. 15)"
+                                },
+                                {
+                                    "pregunta": "¿Qué ventaja tienen los hooks sobre los componentes de clase?",
+                                    "opciones": [
+                                        "Requieren más código boilerplate",
+                                        "Facilitan la reutilización de lógica y tienen una sintaxis más simple",
+                                        "Solo funcionan en aplicaciones pequeñas",
+                                        "No permiten manejar estado local"
+                                    ],
+                                    "respuesta": 1,
+                                    "explicacion": "Los hooks facilitan la reutilización de lógica y tienen sintaxis más simple que las clases (p. 5)"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
