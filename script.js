@@ -180,14 +180,6 @@ function openTab(evt, tabName) {
 
 // Array de cartas
 const cartas = [
-
-    {
-        titulo: "Restaurante",
-        descripcion: "",
-        imagen: "/paginas/proyectos/cakeworld.png",
-        tag: "paginasWeb", // Etiqueta para filtrar
-        enlace: "https://clubdisenodesarrollo.github.io/Proyectos/CakeWorld/index.html", // Enlace a la página del proyecto
-    },
     {
         titulo: "Club de Diseño y Desarrollo",
         descripcion: "",
@@ -303,4 +295,5 @@ document.addEventListener("DOMContentLoaded", () => {
         // Quitar la animación de atención después del primer clic
         hamburgerButton.classList.remove("attention");
     });
+
 });
