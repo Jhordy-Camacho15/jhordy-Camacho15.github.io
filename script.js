@@ -204,7 +204,7 @@ const cartas = [
     {
         titulo: "Identidad Club de Diseño y Desarrollo",
         descripcion: "",
-        imagen: "/paginas/proyectos/CDD_logo_completo_3.jpg",
+        imagen: "/paginas/proyectos/CDD_logo_completo_3.jpeg",
         tag: "logos", // Etiqueta para filtrar
         enlace: "", // Enlace a la página del proyecto
     },
@@ -297,3 +297,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
