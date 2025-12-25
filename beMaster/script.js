@@ -19,14 +19,6 @@ const sections = {
     resultados: document.getElementById('results-section')
 };
 
-// Botones de navegación
-const backButtons = {
-    cursos: document.getElementById('back-to-cursos'),
-    asignaturas: document.getElementById('back-to-asignaturas'),
-    temas: document.getElementById('back-to-temas'),
-    teoria: document.getElementById('back-to-teoria')
-};
-
 // Elementos de contenido
 const contentElements = {
     cursosList: document.getElementById('cursos-list'),
@@ -57,6 +49,8 @@ const audioBtn = document.getElementById('audio-btn');
 const audioPauseBtn = document.getElementById('audio-pause-btn');
 const audioResumeBtn = document.getElementById('audio-resume-btn');
 const audioRestartBtn = document.getElementById('audio-restart-btn');
+const globalBackButton = document.getElementById('global-back-button');
+const homeButton = document.getElementById('home-button');
 
 // Estado inicial: solo audio-btn visible
 function resetAudioButtons() {
@@ -323,6 +317,12 @@ function showSection(sectionName) {
     });
     // Mostrar la sección solicitada
     sections[sectionName].classList.remove('hidden');
+
+    if (sectionName === 'cursos') {
+        globalBackButton.classList.remove('is-active');
+    } else {
+        globalBackButton.classList.add('is-active');
+    }
 }
 
 function startLeccion() {
@@ -386,10 +386,43 @@ function updateProgressBar() {
 }
 
 // Event listeners
-backButtons.cursos.addEventListener('click', () => showSection('cursos'));
-backButtons.asignaturas.addEventListener('click', () => showAsignaturas(currentCourse));
-backButtons.temas.addEventListener('click', () => showTemas(currentSubject));
-backButtons.teoria.addEventListener('click', () => showTeoria(currentTopic));
+if (globalBackButton) {
+    globalBackButton.addEventListener('click', () => {
+        if (!globalBackButton.classList.contains('is-active')) {
+            return;
+        }
+
+        if (!sections.asignaturas.classList.contains('hidden')) {
+            showSection('cursos');
+            return;
+        }
+
+        if (!sections.temas.classList.contains('hidden')) {
+            showAsignaturas(currentCourse);
+            return;
+        }
+
+        if (!sections.teoria.classList.contains('hidden')) {
+            showTemas(currentSubject);
+            return;
+        }
+
+        if (!sections.leccion.classList.contains('hidden')) {
+            showTeoria(currentTopic);
+            return;
+        }
+
+        if (!sections.resultados.classList.contains('hidden')) {
+            showTemas(currentSubject);
+        }
+    });
+}
+
+if (homeButton) {
+    homeButton.addEventListener('click', () => {
+        showSection('cursos');
+    });
+}
 
 actionButtons.startLeccion.addEventListener('click', startLeccion);
 actionButtons.restartLeccion.addEventListener('click', restartLeccion);

@@ -6,95 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeMáster</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
 </head>
 
 <body>
-    <header class="app-header">
-        <h1>BeMáster</h1>
-        <div class="user-profile">👤</div>
-    </header>
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="header-start">
+                <button id="global-back-button" class="back-button back-button--global" type="button" aria-label="Volver">
+                    <span aria-hidden="true">←</span>
+                </button>
+            </div>
+            <h1 class="header-title">
+                <button id="home-button" class="logo-button" type="button" aria-label="Ir a inicio">BeMáster</button>
+            </h1>
+            <button class="user-profile" type="button" aria-label="Perfil">
+                <span aria-hidden="true">👤</span>
+            </button>
+        </header>
 
-    <main class="app-container">
-        <section id="cursos-section" class="section-container">
-            <h2>Selecciona un Curso</h2>
-            <div id="cursos-list" class="grid-container"></div>
-        </section>
+        <main class="app-container">
+            <section id="cursos-section" class="section-container">
+                <header class="section-header">
+                    <div class="section-titles">
+                        <h2>Selecciona un Curso</h2>
+                    </div>
+                </header>
+                <div id="cursos-list" class="grid-container"></div>
+            </section>
 
-        <section id="asignaturas-section" class="section-container hidden">
-            <button id="back-to-cursos" class="back-button">← Volver a Cursos</button>
-            <h2 id="asignaturas-title"></h2>
-            <div id="asignaturas-list" class="grid-container"></div>
-        </section>
+            <section id="asignaturas-section" class="section-container hidden">
+                <header class="section-header">
+                    <div class="section-titles">
+                        <h2 id="asignaturas-title"></h2>
+                    </div>
+                </header>
+                <div id="asignaturas-list" class="grid-container"></div>
+            </section>
 
-        <section id="temas-section" class="section-container hidden">
-            <button id="back-to-asignaturas" class="back-button">← Volver a Asignaturas</button>
-            <h2 id="temas-title"></h2>
-            <div id="temas-list" class="grid-container"></div>
-        </section>
+            <section id="temas-section" class="section-container hidden">
+                <header class="section-header">
+                    <div class="section-titles">
+                        <h2 id="temas-title"></h2>
+                    </div>
+                </header>
+                <div id="temas-list" class="grid-container"></div>
+            </section>
 
-        <section id="teoria-section" class="section-container hidden">
-            <div class="top-controls">
-                <button id="back-to-temas" class="back-button">← Volver a Temas</button>
-                <div class="audio-controls">
-                    <button id="audio-btn" class="secondary-button" title="Escuchar teoría">
-                        <img src="audio.png" alt="Audio">
-                    </button>
-                    <button id="audio-pause-btn" class="secondary-button" title="Pausar">
-                        <img src="pause.png" alt="Pausar">
-                    </button>
-                    <button id="audio-resume-btn" class="secondary-button" title="Reanudar">
-                        <img src="play.png" alt="Reanudar">
-                    </button>
-                    <button id="audio-restart-btn" class="secondary-button" title="Volver a empezar">
-                        <img src="restart.png" alt="Reiniciar">
-                    </button>
+            <section id="teoria-section" class="section-container hidden">
+                <header class="section-header">
+                    <div class="section-titles">
+                        <h2 id="teoria-title"></h2>
+                    </div>
+                    <div class="section-toolbar">
+                        <div class="audio-controls">
+                            <button id="audio-btn" class="secondary-button" title="Escuchar teoría">
+                                <img src="audio.png" alt="Audio">
+                            </button>
+                            <button id="audio-pause-btn" class="secondary-button" title="Pausar">
+                                <img src="pause.png" alt="Pausar">
+                            </button>
+                            <button id="audio-resume-btn" class="secondary-button" title="Reanudar">
+                                <img src="play.png" alt="Reanudar">
+                            </button>
+                            <button id="audio-restart-btn" class="secondary-button" title="Volver a empezar">
+                                <img src="restart.png" alt="Reiniciar">
+                            </button>
+                        </div>
+                    </div>
+                </header>
+                <div class="content-container">
+                    <div id="teoria-content" class="article-content"></div>
                 </div>
-            </div>
-            <h2 id="teoria-title"></h2>
-            <div class="content-container">
-                <div id="teoria-content"></div>
-            </div>
-            <div class="action-buttons">
-                <button id="start-leccion" class="primary-button">Comenzar Lección</button>
-            </div>
-
-        </section>
-
-        <section id="leccion-section" class="section-container hidden">
-            <button id="back-to-teoria" class="back-button">← Volver a Teoría</button>
-            <h2 id="leccion-title"></h2>
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 0%"></div>
+                <div class="action-buttons stacked">
+                    <button id="start-leccion" class="primary-button">Comenzar Lección</button>
                 </div>
-                <span class="progress-text">0/0</span>
-            </div>
-            <div class="content-container">
-                <div id="pregunta-container">
-                    <div id="pregunta-text" class="pregunta"></div>
-                    <div id="opciones-container" class="opciones"></div>
-                    <div id="feedback-container" class="feedback hidden"></div>
+            </section>
+
+            <section id="leccion-section" class="section-container hidden">
+                <header class="section-header">
+                    <div class="section-titles">
+                        <h2 id="leccion-title"></h2>
+                    </div>
+                </header>
+                <div class="progress-card">
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0/0</span>
+                    </div>
                 </div>
-            </div>
-            <div class="action-buttons">
-                <button id="reveal-answer" class="secondary-button">Revelar Respuesta</button>
-                <button id="next-question" class="primary-button hidden">Siguiente</button>
-            </div>
-        </section>
+                <div class="content-container">
+                    <div id="pregunta-container">
+                        <div id="pregunta-text" class="pregunta"></div>
+                        <div id="opciones-container" class="opciones"></div>
+                        <div id="feedback-container" class="feedback hidden"></div>
+                    </div>
+                </div>
+                <div class="action-buttons stacked">
+                    <button id="reveal-answer" class="secondary-button">Revelar Respuesta</button>
+                    <button id="next-question" class="primary-button hidden">Siguiente</button>
+                </div>
+            </section>
 
-        <section id="results-section" class="section-container hidden">
-            <h2>Resultados de la Lección</h2>
-            <div id="results-container" class="content-container"></div>
-            <div class="action-buttons">
-                <button id="restart-leccion" class="secondary-button">Repetir Lección</button>
-                <button id="return-to-tema" class="primary-button">Volver al Tema</button>
-            </div>
-        </section>
-    </main>
+            <section id="results-section" class="section-container hidden">
+                <header class="section-header">
+                    <div class="section-titles">
+                        <h2>Resultados de la Lección</h2>
+                    </div>
+                </header>
+                <div id="results-container" class="content-container results-content"></div>
+                <div class="action-buttons stacked">
+                    <button id="restart-leccion" class="secondary-button">Repetir Lección</button>
+                    <button id="return-to-tema" class="primary-button">Volver al Tema</button>
+                </div>
+            </section>
+        </main>
 
-    <footer class="app-footer">
-        <p></p>
-    </footer>
+        <footer class="app-footer">
+            <p>Hecho para que aprendas en cualquier momento.</p>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>

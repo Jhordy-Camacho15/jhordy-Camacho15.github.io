@@ -1,0 +1,105 @@
+@media (max-width: 1024px) {
+    .app-shell {
+        max-width: 640px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .app-shell {
+        max-width: 520px;
+        padding: 0 20px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .app-header {
+        grid-template-columns: 60px 1fr 60px;
+        gap: 10px;
+        padding: 12px 18px;
+    }
+
+    .header-title {
+        font-size: 1.7rem;
+    }
+
+    .header-start {
+        gap: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    body {
+        padding: 0 0 48px;
+    }
+
+    .app-shell {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0 12px;
+    }
+
+    .app-header {
+        width: 100%;
+        margin: 0;
+        border-radius: 0 0 20px 20px;
+        border-left: 1px solid var(--glass-outline);
+        border-right: 1px solid var(--glass-outline);
+        grid-template-columns: 56px 1fr 56px;
+        gap: 8px;
+        padding: 12px 16px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .section-container {
+        padding: 0;
+        border-radius: 18px;
+    }
+
+    .back-button {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 375px) {
+    .header-title {
+        font-size: 1.4rem;
+    }
+
+    .section-container {
+        padding: 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .app-shell {
+        padding: 0 8px;
+    }
+
+    .app-header {
+        grid-template-columns: 52px 1fr 52px;
+        gap: 6px;
+        padding: 10px 12px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    .grid-container {
+        gap: 10px;
+    }
+}
