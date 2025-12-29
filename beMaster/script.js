@@ -152,6 +152,9 @@ const globalPlaybackState = {
     utterance: null,
     title: '',
     subject: '',
+    course: '',
+    topic: '',
+    speechText: '',
     allowSeeking: false,
     isPaused: true,
     totalChars: 0,
@@ -216,10 +219,16 @@ function setGlobalAudioTitle(title, subject) {
         return;
     }
 
-    globalAudioTitle.innerHTML = `
-        <span>${base}</span>
-        <span aria-hidden="true">${base}</span>
-    `;
+    globalAudioTitle.innerHTML = '';
+    const primary = document.createElement('span');
+    primary.textContent = base;
+
+    const duplicate = document.createElement('span');
+    duplicate.textContent = base;
+    duplicate.setAttribute('aria-hidden', 'true');
+
+    globalAudioTitle.appendChild(primary);
+    globalAudioTitle.appendChild(duplicate);
 }
 
 function showGlobalAudioPlayer() {
@@ -254,17 +263,47 @@ function updateGlobalAudioUi() {
     updateGlobalAudioToggleIcon();
 
     if (globalAudioSeek) {
-        if (globalPlaybackState.allowSeeking) {
-            globalAudioSeek.removeAttribute('disabled');
+        if (globalPlaybackState.type === 'podcast') {
+            if (globalPlaybackState.allowSeeking) {
+                globalAudioSeek.removeAttribute('disabled');
+            } else {
+                globalAudioSeek.setAttribute('disabled', 'disabled');
+            }
+            if (Number.isFinite(globalPlaybackState.estimatedDuration) && globalPlaybackState.estimatedDuration > 0) {
+                globalAudioSeek.max = globalPlaybackState.estimatedDuration;
+            }
+            const audio = globalPlaybackState.audioElement;
+            globalAudioSeek.value = audio ? audio.currentTime : 0;
+        } else if (globalPlaybackState.type === 'teoria') {
+            if (globalPlaybackState.allowSeeking) {
+                globalAudioSeek.removeAttribute('disabled');
+            } else {
+                globalAudioSeek.setAttribute('disabled', 'disabled');
+            }
+            globalAudioSeek.max = 100;
+            const ratioVal = (speechProgressMeta?.lastRatio || 0) * 100;
+            globalAudioSeek.value = ratioVal.toFixed(2);
         } else {
+            globalAudioSeek.value = 0;
+            globalAudioSeek.max = 100;
             globalAudioSeek.setAttribute('disabled', 'disabled');
-            globalAudioSeek.value = ((speechProgressMeta?.lastRatio || 0) * 100).toFixed(2);
         }
     }
 
-    if (globalAudioCurrent && globalPlaybackState.type !== 'podcast') {
-        const elapsedSeconds = (speechProgressMeta?.lastRatio || 0) * (globalPlaybackState.estimatedDuration || 0);
-        globalAudioCurrent.textContent = formatTime(elapsedSeconds);
+    if (globalAudioCurrent) {
+        if (globalPlaybackState.type === 'podcast') {
+            const audio = globalPlaybackState.audioElement;
+            if (audio) {
+                globalAudioCurrent.textContent = formatTime(audio.currentTime);
+            } else {
+                globalAudioCurrent.textContent = '0:00';
+            }
+        } else if (globalPlaybackState.type === 'teoria') {
+            const elapsedSeconds = (speechProgressMeta?.lastRatio || 0) * (globalPlaybackState.estimatedDuration || 0);
+            globalAudioCurrent.textContent = formatTime(elapsedSeconds);
+        } else {
+            globalAudioCurrent.textContent = '0:00';
+        }
     }
 
     if (globalAudioDuration) {
@@ -272,8 +311,10 @@ function updateGlobalAudioUi() {
             globalAudioDuration.textContent = Number.isFinite(globalPlaybackState.estimatedDuration)
                 ? formatTime(globalPlaybackState.estimatedDuration)
                 : '0:00';
-        } else {
+        } else if (globalPlaybackState.type === 'teoria') {
             globalAudioDuration.textContent = formatTime(globalPlaybackState.estimatedDuration || 0);
+        } else {
+            globalAudioDuration.textContent = '0:00';
         }
     }
 }
@@ -289,6 +330,9 @@ function clearGlobalPlaybackState() {
     globalPlaybackState.utterance = null;
     globalPlaybackState.title = '';
     globalPlaybackState.subject = '';
+    globalPlaybackState.course = '';
+    globalPlaybackState.topic = '';
+    globalPlaybackState.speechText = '';
     globalPlaybackState.allowSeeking = false;
     globalPlaybackState.isPaused = true;
     globalPlaybackState.totalChars = 0;
@@ -331,10 +375,18 @@ function activateGlobalPodcastPlayback(entry, audioElement, card) {
     globalPlaybackState.utterance = null;
     globalPlaybackState.allowSeeking = true;
     globalPlaybackState.isPaused = audioElement.paused;
+    globalPlaybackState.title = entry.title || entry.topicName || 'Podcast';
+    globalPlaybackState.topic = entry.topicName || entry.title || '';
+    globalPlaybackState.subject = entry.subjectName || '';
+    globalPlaybackState.course = entry.courseName || '';
+    globalPlaybackState.speechText = '';
     globalPlaybackState.estimatedDuration = Number.isFinite(audioElement.duration) ? audioElement.duration : 0;
     globalPlaybackState.elapsedBeforePause = 0;
     globalPlaybackState.startTimestamp = null;
-    setGlobalAudioTitle(entry.title || 'Podcast', entry.subjectName || entry.courseName || '');
+    const marqueeTitle = [entry.topicName || entry.title || 'Podcast', entry.subjectName || '']
+        .filter(Boolean)
+        .join(' · ');
+    setGlobalAudioTitle(marqueeTitle, '');
     updateGlobalAudioUi();
     syncGlobalPodcastProgress(audioElement);
 }
@@ -364,23 +416,28 @@ function syncGlobalPodcastProgress(audioElement) {
     updateGlobalAudioToggleIcon();
 }
 
-function activateGlobalSpeechPlayback(title, subject, totalChars) {
+function activateGlobalSpeechPlayback({ title, subject, course, totalChars, text, utterance, offsetChars = 0 }) {
     globalPlaybackState.type = 'teoria';
     globalPlaybackState.audioElement = null;
     globalPlaybackState.podcastCard = null;
-    globalPlaybackState.utterance = teoriaUtterance;
+    globalPlaybackState.utterance = utterance || null;
     globalPlaybackState.title = title || 'Contenido del tema';
     globalPlaybackState.subject = subject || '';
-    globalPlaybackState.allowSeeking = false;
+    globalPlaybackState.topic = title || '';
+    globalPlaybackState.course = course || '';
+    globalPlaybackState.speechText = text || '';
+    globalPlaybackState.allowSeeking = totalChars > 0;
     globalPlaybackState.isPaused = false;
     globalPlaybackState.totalChars = totalChars;
     globalPlaybackState.estimatedDuration = totalChars > 0
         ? Math.max(totalChars / SPEECH_ESTIMATED_CHARS_PER_SECOND, 4)
         : 0;
-    globalPlaybackState.elapsedBeforePause = 0;
+    const validTotal = Math.max(totalChars, 1);
+    const clampedOffset = Math.min(Math.max(offsetChars, 0), validTotal - 1);
+    globalPlaybackState.elapsedBeforePause = (globalPlaybackState.estimatedDuration * clampedOffset) / validTotal;
     globalPlaybackState.startTimestamp = performance.now();
     setGlobalAudioTitle(globalPlaybackState.title, globalPlaybackState.subject);
-    startSpeechProgress(totalChars);
+    startSpeechProgress(totalChars, clampedOffset);
     updateGlobalAudioUi();
 }
 
@@ -408,7 +465,7 @@ function syncGlobalSpeechProgress(ratio) {
     }
 }
 
-function startSpeechProgress(totalChars) {
+function startSpeechProgress(totalChars, offsetChars = 0) {
     clearSpeechProgressTracking();
 
     if (!totalChars || totalChars <= 0) {
@@ -417,15 +474,21 @@ function startSpeechProgress(totalChars) {
     }
 
     const estimatedDuration = Math.max(totalChars / SPEECH_ESTIMATED_CHARS_PER_SECOND, 4);
+    const clampedOffset = Math.min(Math.max(offsetChars, 0), Math.max(totalChars - 1, 0));
+    const initialRatio = totalChars > 0 ? clampedOffset / totalChars : 0;
 
     speechProgressMeta = {
         totalChars,
         estimatedDuration,
-        lastRatio: 0
+        offsetChars: clampedOffset,
+        lastRatio: initialRatio
     };
 
     globalPlaybackState.estimatedDuration = estimatedDuration;
     globalPlaybackState.startTimestamp = performance.now();
+    globalPlaybackState.elapsedBeforePause = estimatedDuration * initialRatio;
+
+    syncGlobalSpeechProgress(initialRatio);
 
     globalPlaybackState.progressTimer = setInterval(() => {
         if (!speechProgressMeta || globalPlaybackState.type !== 'teoria' || globalPlaybackState.isPaused) {
@@ -1172,6 +1235,9 @@ function createPodcastCard(entry, index) {
             errorMessageAdded = true;
         }
         updateButtonStates();
+        if (globalPlaybackState.audioElement === audioElement) {
+            clearGlobalPlaybackState();
+        }
     });
 
     slider.addEventListener('input', () => {
@@ -1245,9 +1311,91 @@ function playPodcast(audioElement, card, metadata = null) {
         activateGlobalPodcastPlayback(metadata, audioElement, card);
     }
 
-    audioElement.play().catch(error => {
-        console.error('No se pudo reproducir el audio:', error);
-    });
+    audioElement.play()
+        .then(() => {
+            if (globalPlaybackState.audioElement === audioElement) {
+                globalPlaybackState.isPaused = false;
+                updateGlobalAudioUi();
+            }
+        })
+        .catch(error => {
+            console.error('No se pudo reproducir el audio:', error);
+        });
+}
+
+function beginTeoriaSpeech({ text, title, subject, course, startRatio = 0 } = {}) {
+    if (!('speechSynthesis' in window)) {
+        console.warn('Speech Synthesis API no disponible en este navegador.');
+        return false;
+    }
+
+    const normalizedText = (text || '').trim();
+    if (!normalizedText) {
+        return false;
+    }
+
+    stopAudio();
+    stopPodcastPlayback();
+
+    const totalChars = normalizedText.length;
+    const clampedRatio = Math.max(0, Math.min(1, startRatio));
+    const offsetChars = Math.min(Math.floor(totalChars * clampedRatio), Math.max(totalChars - 1, 0));
+    const playbackText = normalizedText.slice(offsetChars) || normalizedText;
+
+    teoriaUtterance = new SpeechSynthesisUtterance(playbackText);
+    teoriaUtterance.lang = 'es-ES';
+
+    const resolvedTitle = title || currentTopic?.nombre || 'Contenido del tema';
+    const resolvedCourse = course || currentCourse?.nombre || '';
+    const resolvedSubject = subject || currentSubject?.nombre || resolvedCourse;
+
+    teoriaUtterance.onstart = () => {
+        activateGlobalSpeechPlayback({
+            title: resolvedTitle,
+            subject: resolvedSubject,
+            course: resolvedCourse,
+            totalChars,
+            text: normalizedText,
+            utterance: teoriaUtterance,
+            offsetChars
+        });
+        globalPlaybackState.isPaused = false;
+        updateGlobalAudioUi();
+        showPauseRestart();
+    };
+
+    teoriaUtterance.onboundary = event => {
+        if (typeof event.charIndex === 'number' && totalChars > 0) {
+            const absoluteIndex = offsetChars + event.charIndex;
+            const ratio = Math.min(absoluteIndex / totalChars, 1);
+            syncGlobalSpeechProgress(ratio);
+        }
+    };
+
+    teoriaUtterance.onpause = () => {
+        pauseSpeechProgressTracking();
+        globalPlaybackState.isPaused = true;
+        updateGlobalAudioUi();
+        showResume();
+    };
+
+    teoriaUtterance.onresume = () => {
+        globalPlaybackState.isPaused = false;
+        resumeSpeechProgressTracking();
+        updateGlobalAudioUi();
+        showPause();
+    };
+
+    teoriaUtterance.onend = () => {
+        stopAudio();
+    };
+
+    teoriaUtterance.onerror = () => {
+        stopAudio();
+    };
+
+    window.speechSynthesis.speak(teoriaUtterance);
+    return true;
 }
 
 function resolveResourcePath(fileName, basePath = '') {
@@ -1370,6 +1518,7 @@ function showTeoria(tema = currentTopic) {
     }
 
     resetAudioButtons(); // <-- Añade esto
+    resetTeoriaProgress();
     showSection('teoria');
 }
 
@@ -1646,21 +1795,24 @@ contentElements.nextQuestionBtn.addEventListener('click', nextQuestion);
 
 // Añadir funcionalidad de audio
 function stopPodcastPlayback() {
-    if (!currentPodcastAudio) {
+    const audio = currentPodcastAudio || (globalPlaybackState.type === 'podcast' ? globalPlaybackState.audioElement : null);
+
+    if (!audio) {
         return;
     }
 
-    const audio = currentPodcastAudio;
     audio.pause();
     audio.currentTime = 0;
 
-    if (currentPodcastCard) {
-        currentPodcastCard.classList.remove('is-playing');
-        const slider = currentPodcastCard.querySelector('.podcast-slider');
+    const card = currentPodcastCard || globalPlaybackState.podcastCard;
+
+    if (card) {
+        card.classList.remove('is-playing');
+        const slider = card.querySelector('.podcast-slider');
         if (slider) {
             slider.value = 0;
         }
-        const currentLabel = currentPodcastCard.querySelector('.podcast-time.current');
+        const currentLabel = card.querySelector('.podcast-time.current');
         if (currentLabel) {
             currentLabel.textContent = '0:00';
         }
@@ -1668,33 +1820,50 @@ function stopPodcastPlayback() {
 
     currentPodcastAudio = null;
     currentPodcastCard = null;
+
+    if (globalPlaybackState.audioElement === audio) {
+        clearGlobalPlaybackState();
+    }
 }
 
 function stopAudio() {
-    window.speechSynthesis.cancel();
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+    }
     teoriaUtterance = null;
     resetAudioButtons();
+    clearSpeechProgressTracking();
+
+    if (globalPlaybackState.type === 'teoria') {
+        clearGlobalPlaybackState();
+    }
 }
 
 // AUDIO: reproducir teoría
 if (audioBtn) {
     audioBtn.addEventListener('click', () => {
-        const teoriaText = document.getElementById('teoria-content').innerText;
-        if ('speechSynthesis' in window && teoriaText.trim() !== '') {
-            stopAudio();
-            teoriaUtterance = new SpeechSynthesisUtterance(teoriaText);
-            teoriaUtterance.lang = 'es-ES';
-            teoriaUtterance.onend = stopAudio;
-            window.speechSynthesis.speak(teoriaUtterance);
-            showPauseRestart();
-        }
+        const teoriaElement = document.getElementById('teoria-content');
+        const teoriaText = teoriaElement ? teoriaElement.innerText : '';
+        const topicTitle = currentTopic?.nombre || 'Contenido del tema';
+        const subjectName = currentSubject?.nombre || '';
+        const courseName = currentCourse?.nombre || '';
+
+        beginTeoriaSpeech({
+            text: teoriaText,
+            title: topicTitle,
+            subject: subjectName,
+            course: courseName
+        });
     });
 }
 
 if (audioPauseBtn) {
     audioPauseBtn.addEventListener('click', () => {
-        if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+        if (globalPlaybackState.type === 'teoria' && 'speechSynthesis' in window && window.speechSynthesis.speaking) {
             window.speechSynthesis.pause();
+            pauseSpeechProgressTracking();
+            globalPlaybackState.isPaused = true;
+            updateGlobalAudioUi();
             showResume();
         }
     });
@@ -1702,8 +1871,11 @@ if (audioPauseBtn) {
 
 if (audioResumeBtn) {
     audioResumeBtn.addEventListener('click', () => {
-        if ('speechSynthesis' in window && window.speechSynthesis.paused) {
+        if (globalPlaybackState.type === 'teoria' && 'speechSynthesis' in window && window.speechSynthesis.paused) {
             window.speechSynthesis.resume();
+            globalPlaybackState.isPaused = false;
+            resumeSpeechProgressTracking();
+            updateGlobalAudioUi();
             showPause();
         }
     });
@@ -1713,6 +1885,165 @@ if (audioRestartBtn) {
     audioRestartBtn.addEventListener('click', () => {
         stopAudio();
         if (audioBtn) audioBtn.click();
+    });
+}
+
+if (globalAudioToggleBtn) {
+    globalAudioToggleBtn.addEventListener('click', () => {
+        if (!globalPlaybackState.type) {
+            return;
+        }
+
+        if (globalPlaybackState.type === 'podcast') {
+            const audio = globalPlaybackState.audioElement;
+            if (!audio) {
+                return;
+            }
+
+            if (audio.paused || audio.ended) {
+                audio.play()
+                    .then(() => {
+                        globalPlaybackState.isPaused = false;
+                        updateGlobalAudioUi();
+                    })
+                    .catch(error => console.error('No se pudo reanudar el audio:', error));
+            } else {
+                audio.pause();
+                globalPlaybackState.isPaused = true;
+                updateGlobalAudioUi();
+            }
+        } else if (globalPlaybackState.type === 'teoria') {
+            if (!('speechSynthesis' in window)) {
+                return;
+            }
+
+            if (globalPlaybackState.isPaused) {
+                window.speechSynthesis.resume();
+                globalPlaybackState.isPaused = false;
+                resumeSpeechProgressTracking();
+                showPause();
+            } else {
+                window.speechSynthesis.pause();
+                globalPlaybackState.isPaused = true;
+                pauseSpeechProgressTracking();
+                showResume();
+            }
+
+            updateGlobalAudioUi();
+        }
+    });
+}
+
+if (globalAudioRestartBtn) {
+    globalAudioRestartBtn.addEventListener('click', () => {
+        if (!globalPlaybackState.type) {
+            return;
+        }
+
+        if (globalPlaybackState.type === 'podcast') {
+            const audio = globalPlaybackState.audioElement;
+            if (!audio) {
+                return;
+            }
+            audio.currentTime = 0;
+            audio.play().catch(error => console.error('No se pudo reiniciar el audio:', error));
+        } else if (globalPlaybackState.type === 'teoria') {
+            if (!globalPlaybackState.speechText) {
+                return;
+            }
+
+            beginTeoriaSpeech({
+                text: globalPlaybackState.speechText,
+                title: globalPlaybackState.title,
+                subject: globalPlaybackState.subject,
+                course: globalPlaybackState.course
+            });
+            showPauseRestart();
+        }
+    });
+}
+
+if (globalAudioSeek) {
+    globalAudioSeek.addEventListener('input', () => {
+        if (globalPlaybackState.type === 'podcast') {
+            if (!globalPlaybackState.allowSeeking) {
+                return;
+            }
+
+            const audio = globalPlaybackState.audioElement;
+            if (!audio) {
+                return;
+            }
+
+            const newTime = Number(globalAudioSeek.value);
+            if (Number.isFinite(newTime) && globalAudioCurrent) {
+                globalAudioCurrent.textContent = formatTime(newTime);
+            }
+        } else if (globalPlaybackState.type === 'teoria') {
+            if (!globalPlaybackState.allowSeeking) {
+                return;
+            }
+            const ratio = Math.max(0, Math.min(1, Number(globalAudioSeek.value) / 100));
+            const estimatedDuration = globalPlaybackState.estimatedDuration || 0;
+            updateTeoriaProgress(ratio);
+            if (globalAudioCurrent) {
+                globalAudioCurrent.textContent = formatTime(ratio * estimatedDuration);
+            }
+        }
+    });
+
+    globalAudioSeek.addEventListener('change', () => {
+        if (globalPlaybackState.type === 'podcast') {
+            if (!globalPlaybackState.allowSeeking) {
+                return;
+            }
+
+            const audio = globalPlaybackState.audioElement;
+            if (!audio) {
+                return;
+            }
+
+            const newTime = Number(globalAudioSeek.value);
+            if (Number.isFinite(newTime)) {
+                audio.currentTime = newTime;
+            }
+        } else if (globalPlaybackState.type === 'teoria' && globalPlaybackState.speechText) {
+            if (!globalPlaybackState.allowSeeking) {
+                return;
+            }
+            const ratio = Math.max(0, Math.min(1, Number(globalAudioSeek.value) / 100));
+            const wasPaused = globalPlaybackState.isPaused;
+            beginTeoriaSpeech({
+                text: globalPlaybackState.speechText,
+                title: globalPlaybackState.title,
+                subject: globalPlaybackState.subject,
+                course: globalPlaybackState.course,
+                startRatio: ratio
+            });
+            if (wasPaused && 'speechSynthesis' in window) {
+                window.speechSynthesis.pause();
+                globalPlaybackState.isPaused = true;
+                pauseSpeechProgressTracking();
+                showResume();
+                updateGlobalAudioUi();
+            }
+        }
+    });
+}
+
+if (globalAudioCloseBtn) {
+    globalAudioCloseBtn.addEventListener('click', () => {
+        if (globalPlaybackState.type === 'podcast') {
+            stopPodcastPlayback();
+            return;
+        }
+
+        if (globalPlaybackState.type === 'teoria') {
+            stopAudio();
+            return;
+        }
+
+        clearGlobalPlaybackState();
     });
 }
 
