@@ -50,7 +50,21 @@
                         <h2 id="temas-title"></h2>
                     </div>
                 </header>
+                <div id="tema-shortcuts-panel" class="shortcuts-panel hidden">
+                    <div class="shortcuts-header">Acceso directo</div>
+                    <div id="tema-shortcuts-list" class="shortcuts-list"></div>
+                </div>
                 <div id="temas-list" class="grid-container"></div>
+            </section>
+
+            <section id="tema-options-section" class="section-container hidden">
+                <header class="section-header">
+                    <div class="section-titles">
+                        <h2 id="tema-options-title"></h2>
+                        <p id="tema-options-subtitle" class="section-description"></p>
+                    </div>
+                </header>
+                <div id="tema-options-list" class="grid-container"></div>
             </section>
 
             <section id="teoria-section" class="section-container hidden">
@@ -58,29 +72,46 @@
                     <div class="section-titles">
                         <h2 id="teoria-title"></h2>
                     </div>
-                    <div class="section-toolbar">
-                        <div class="audio-controls">
-                            <button id="audio-btn" class="secondary-button" title="Escuchar teoría">
-                                <img src="audio.png" alt="Audio">
-                            </button>
-                            <button id="audio-pause-btn" class="secondary-button" title="Pausar">
-                                <img src="pause.png" alt="Pausar">
-                            </button>
-                            <button id="audio-resume-btn" class="secondary-button" title="Reanudar">
-                                <img src="play.png" alt="Reanudar">
-                            </button>
-                            <button id="audio-restart-btn" class="secondary-button" title="Volver a empezar">
-                                <img src="restart.png" alt="Reiniciar">
-                            </button>
-                        </div>
-                    </div>
                 </header>
                 <div class="content-container">
+                    <div id="teoria-player" class="teoria-player">
+                        <div class="teoria-progress">
+                            <div id="teoria-progress-fill" class="teoria-progress__fill"></div>
+                        </div>
+                        <div class="teoria-controls audio-controls" role="group" aria-label="Controles de audio de teoría">
+                            <button id="audio-btn" class="audio-button" type="button" aria-label="Reproducir teoría">&#9654;</button>
+                            <button id="audio-pause-btn" class="audio-button" type="button" aria-label="Pausar">&#10074;&#10074;</button>
+                            <button id="audio-resume-btn" class="audio-button" type="button" aria-label="Reanudar">&#9654;</button>
+                            <button id="audio-restart-btn" class="audio-button" type="button" aria-label="Reiniciar">&#10226;</button>
+                        </div>
+                    </div>
                     <div id="teoria-content" class="article-content"></div>
                 </div>
                 <div class="action-buttons stacked">
                     <button id="start-leccion" class="primary-button">Comenzar Lección</button>
                 </div>
+            </section>
+
+            <section id="contenido-section" class="section-container hidden">
+                <header class="section-header">
+                    <div class="section-titles">
+                        <h2 id="contenido-title"></h2>
+                        <p id="contenido-subtitle" class="section-description"></p>
+                    </div>
+                </header>
+                <div class="content-container">
+                    <div id="contenido-body" class="article-content"></div>
+                </div>
+            </section>
+
+            <section id="podcast-section" class="section-container hidden">
+                <header class="section-header">
+                    <div class="section-titles">
+                        <h2>Podcasts</h2>
+                        <p id="podcast-subtitle" class="section-description"></p>
+                    </div>
+                </header>
+                <div id="podcast-list" class="content-container"></div>
             </section>
 
             <section id="leccion-section" class="section-container hidden">
@@ -127,6 +158,24 @@
         <footer class="app-footer">
             <p>Hecho para que aprendas en cualquier momento.</p>
         </footer>
+    </div>
+
+    <div id="global-audio-player" class="global-audio-player hidden" role="region" aria-live="polite">
+        <button id="global-audio-close" class="global-audio-button global-audio-button--close" type="button" aria-label="Detener reproducción">&#10005;</button>
+        <div class="global-audio-core">
+            <div class="global-audio-controls">
+                <button id="global-audio-toggle" class="global-audio-button" type="button" aria-label="Pausar o reproducir">&#10074;&#10074;</button>
+                <button id="global-audio-restart" class="global-audio-button" type="button" aria-label="Reiniciar">&#10226;</button>
+            </div>
+            <div class="global-audio-slider">
+                <span id="global-audio-current" class="global-audio-time">0:00</span>
+                <input id="global-audio-seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Posición de reproducción">
+                <span id="global-audio-duration" class="global-audio-time">0:00</span>
+            </div>
+            <div class="global-audio-marquee">
+                <div class="global-audio-marquee__inner" id="global-audio-title"></div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
